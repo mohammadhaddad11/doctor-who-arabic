@@ -1,0 +1,2919 @@
+﻿1
+00:00:01,710 --> 00:00:03,837
+DOCTOR: Get down!
+
+2
+00:00:05,297 --> 00:00:06,715
+-Did they see you?
+-I don't know.
+
+3
+00:00:06,798 --> 00:00:08,383
+-But did they see you?
+-I was too busy running!
+
+4
+00:00:08,467 --> 00:00:10,469
+Martha, it's important,
+did they see your face?
+
+5
+00:00:10,552 --> 00:00:13,263
+-No, they couldn't have.
+-Off we go.
+
+6
+00:00:16,433 --> 00:00:18,936
+Ah! They're following us.
+
+7
+00:00:19,061 --> 00:00:20,771
+How can they do that?
+You've got a time machine.
+
+8
+00:00:20,854 --> 00:00:23,941
+Stolen technology. They've got
+a time agent's vortex manipulator.
+
+9
+00:00:24,024 --> 00:00:26,235
+They can follow us wherever we go.
+
+10
+00:00:26,318 --> 00:00:29,613
+Right across the universe.
+They're never going to stop.
+
+11
+00:00:30,822 --> 00:00:33,283
+Unless... I'll have to do it.
+
+12
+00:00:34,284 --> 00:00:36,161
+-Martha, you trust me, don't you?
+-Of course I do.
+
+13
+00:00:36,286 --> 00:00:39,331
+-'Cause it all depends on you.
+-What does? What am I supposed to do?
+
+14
+00:00:39,456 --> 00:00:41,917
+Take this watch
+because my life depends on it.
+
+15
+00:00:42,000 --> 00:00:44,378
+This watch, Martha, this watch is...
+
+16
+00:00:58,725 --> 00:01:00,602
+(KNOCK ON DOOR)
+
+17
+00:01:00,686 --> 00:01:02,396
+Come in.
+
+18
+00:01:02,479 --> 00:01:05,399
+Pardon me, Mr Smith, you're not
+dressed yet. I can come back later.
+
+19
+00:01:05,482 --> 00:01:08,402
+No, it's all right, it's all right,
+put it down.
+
+20
+00:01:10,529 --> 00:01:12,072
+I was...
+
+21
+00:01:14,825 --> 00:01:16,410
+Sorry, sorry.
+
+22
+00:01:17,703 --> 00:01:20,497
+Sometimes I have
+these extraordinary dreams.
+
+23
+00:01:20,581 --> 00:01:23,125
+-What about, sir?
+-I dream I'm this...
+
+24
+00:01:24,251 --> 00:01:26,295
+adventurer.
+
+25
+00:01:26,420 --> 00:01:28,755
+This daredevil, a madman.
+
+26
+00:01:29,548 --> 00:01:31,592
+"The Doctor”, I'm called.
+
+27
+00:01:31,675 --> 00:01:35,387
+And last night,
+I dreamt that you were there,
+
+28
+00:01:36,430 --> 00:01:39,474
+as my...companion.
+
+29
+00:01:39,558 --> 00:01:42,728
+A teacher and a housemaid, sir?
+That's impossible.
+
+30
+00:01:42,853 --> 00:01:45,314
+I'm a man from another world, you know.
+
+31
+00:01:45,397 --> 00:01:48,191
+Well, then it can't be true
+'cause there's no such thing.
+
+32
+00:01:48,275 --> 00:01:51,028
+This thing, the watch...
+
+33
+00:01:56,241 --> 00:01:58,160
+It's funny how dreams slip away.
+
+34
+00:01:58,243 --> 00:02:00,162
+But I do remember one thing.
+
+35
+00:02:00,245 --> 00:02:02,456
+It all took place in the future.
+
+36
+00:02:03,248 --> 00:02:05,959
+In the year of our Lord, 2007.
+
+37
+00:02:06,043 --> 00:02:07,878
+I can prove that wrong for you, sir.
+
+38
+00:02:08,045 --> 00:02:10,088
+Here's the morning paper.
+
+39
+00:02:10,172 --> 00:02:14,343
+It's Monday November 10, 1913,
+and you're completely human, sir.
+
+40
+00:02:15,552 --> 00:02:18,305
+-As human as they come.
+-Mmm. That's me.
+
+41
+00:02:19,806 --> 00:02:21,850
+Completely human.
+
+42
+00:02:26,063 --> 00:02:29,066
+(DOCTOR WHO THEME)
+
+43
+00:03:24,204 --> 00:03:25,789
+Good morning, sir.
+
+44
+00:03:28,375 --> 00:03:29,918
+Good morning, sir.
+
+45
+00:03:36,299 --> 00:03:37,634
+Headmaster.
+
+46
+00:03:42,305 --> 00:03:44,266
+"The French were all but spent,
+
+47
+00:03:44,349 --> 00:03:47,102
+"with only two battalions
+of the old guard remaining.
+
+48
+00:03:47,185 --> 00:03:51,148
+"The final reserve force
+was charged with protecting Napoleon.
+
+49
+00:03:51,690 --> 00:03:54,401
+"But by evening,
+the advance of the allied troops
+
+50
+00:03:54,484 --> 00:03:57,195
+"had forced them to retreat."”
+
+51
+00:04:04,578 --> 00:04:06,496
+Morning, sir.
+
+52
+00:04:06,621 --> 00:04:07,956
+Yes, hi.
+
+53
+00:04:10,876 --> 00:04:15,714
+Head in the clouds, that one.
+I don't know why you're so sweet on him.
+
+54
+00:04:15,922 --> 00:04:17,758
+He's just kind to me, that's all.
+
+55
+00:04:17,841 --> 00:04:20,093
+Not everyone's that considerate,
+what with me being...
+
+56
+00:04:20,177 --> 00:04:23,430
+-A Londoner?
+-Exactly. Good old London town!
+
+57
+00:04:23,513 --> 00:04:24,723
+(BOTH LAUGHING)
+
+58
+00:04:24,848 --> 00:04:26,600
+Now then, you two.
+
+59
+00:04:26,767 --> 00:04:30,562
+You're not paid to have fun, are you?
+Put a little backbone into it.
+
+60
+00:04:30,645 --> 00:04:34,149
+-Yes, sir. Sorry, sir.
+-You there. What's your name again?
+
+61
+00:04:34,232 --> 00:04:35,901
+Martha, sir. Martha Jones.
+
+62
+00:04:36,067 --> 00:04:37,652
+Well, tell me then, Jones,
+
+63
+00:04:37,736 --> 00:04:41,698
+with hands like those,
+how can you tell when something's clean?
+
+64
+00:04:41,865 --> 00:04:43,992
+(LAUGHING)
+
+65
+00:04:44,075 --> 00:04:47,662
+-That's very funny, sir.
+-Careful now, don't tense about it.
+
+66
+00:04:47,746 --> 00:04:50,290
+I'd like to smack my bucket
+over his head.
+
+67
+00:04:50,373 --> 00:04:52,334
+Oh, I wish!
+
+68
+00:04:53,710 --> 00:04:55,796
+Just think, though.
+
+69
+00:04:55,879 --> 00:04:59,716
+In a few years' time, boys like that
+will be running the country.
+
+70
+00:04:59,800 --> 00:05:01,218
+1913.
+
+71
+00:05:02,135 --> 00:05:04,054
+They might not.
+
+72
+00:05:05,972 --> 00:05:08,350
+-Excuse me, ma'am.
+-Oh, good morning, Mr Smith.
+
+73
+00:05:08,433 --> 00:05:10,393
+Oh! Here we go.
+
+74
+00:05:10,894 --> 00:05:13,396
+-Let me help you.
+-No, no, I've got it, no.
+
+75
+00:05:14,648 --> 00:05:18,819
+Er... Just to retrieve...
+So, if you could take these...
+
+76
+00:05:18,902 --> 00:05:20,445
+Thank you.
+
+77
+00:05:20,529 --> 00:05:22,322
+-There we are.
+-Good.
+
+78
+00:05:22,405 --> 00:05:23,615
+No harm done.
+
+79
+00:05:23,698 --> 00:05:26,576
+-So, how was Jenkins?
+-Oh, just a cold, nothing serious.
+
+80
+00:05:26,660 --> 00:05:28,119
+I think he's missing his mother
+more than anything.
+
+81
+00:05:28,245 --> 00:05:29,412
+Ah, can't have that.
+
+82
+00:05:29,538 --> 00:05:31,790
+He received a letter this morning,
+so he's a lot more chipper.
+
+83
+00:05:31,873 --> 00:05:35,836
+-I appear to be holding your books.
+-Yes, so you are, sorry. Sorry.
+
+84
+00:05:35,919 --> 00:05:39,172
+-Yes, just let me...
+-No, why don't I take half?
+
+85
+00:05:39,256 --> 00:05:42,592
+Brilliant idea. Brilliant. Perfect.
+Division of lab our.
+
+86
+00:05:42,717 --> 00:05:45,595
+-We make quite a team.
+-Don't we just?
+
+87
+00:05:46,388 --> 00:05:50,016
+So these books, were they being taken
+in any particular direction?
+
+88
+00:05:50,100 --> 00:05:53,478
+Yes, um, this way.
+
+89
+00:05:55,480 --> 00:05:58,066
+I always say, Matron, you give the boys
+a good head of steam,
+
+90
+00:05:58,149 --> 00:06:00,527
+they'll soon wear themselves out.
+
+91
+00:06:00,610 --> 00:06:02,487
+Truth be told,
+when it's just you and me,
+
+92
+00:06:02,612 --> 00:06:04,865
+I'd much rather
+you call me Nurse Redfern.
+
+93
+00:06:04,948 --> 00:06:07,200
+Matron sounds rather, well, matronly.
+
+94
+00:06:07,284 --> 00:06:09,828
+Ah! Nurse Redfern it is, then.
+
+95
+00:06:10,036 --> 00:06:13,248
+Though we've known each other all of
+two months, you could even say Joan.
+
+96
+00:06:13,331 --> 00:06:14,916
+-Joan?
+-That's my name.
+
+97
+00:06:15,000 --> 00:06:16,251
+Well, obviously.
+
+98
+00:06:16,334 --> 00:06:18,378
+-And it's John, isn't it?
+-Yes, it is, yes.
+
+99
+00:06:18,461 --> 00:06:21,715
+Have you seen this, John? The annual
+dance at the village hall tomorrow?
+
+100
+00:06:21,798 --> 00:06:24,718
+It's nothing formal,
+but rather fun by all accounts.
+
+101
+00:06:24,801 --> 00:06:26,636
+Do you think you'll go?
+
+102
+00:06:28,138 --> 00:06:29,723
+I hadn't thought about it.
+
+103
+00:06:29,806 --> 00:06:33,685
+It's been ages since I've been
+to a dance, only no one's asked me.
+
+104
+00:06:35,312 --> 00:06:38,148
+Well, I should imagine that you'd be...
+
+105
+00:06:38,231 --> 00:06:41,484
+I mean... I mean,
+I never thought you'd be one for...
+
+106
+00:06:41,568 --> 00:06:44,029
+There's no reason why you shouldn't,
+if you do, you may not...
+
+107
+00:06:44,154 --> 00:06:46,156
+I probably won't,
+but even if I did, then I...
+
+108
+00:06:46,281 --> 00:06:49,326
+-I couldn't, um... I wouldn't want to...
+-The stairs.
+
+109
+00:06:49,409 --> 00:06:51,953
+-What about the stairs?
+-They're right behind you.
+
+110
+00:06:54,789 --> 00:06:55,832
+(GROANS)
+
+111
+00:06:55,957 --> 00:06:58,668
+Stop it. I get boys
+causing less fuss than this.
+
+112
+00:06:58,793 --> 00:06:59,961
+But it hurts.
+
+113
+00:07:00,045 --> 00:07:02,339
+-Is he all right?
+-Excuse me, Martha.
+
+114
+00:07:02,464 --> 00:07:04,925
+It's hardly good form to enter
+a master's study without knocking.
+
+115
+00:07:05,008 --> 00:07:07,177
+Sorry. You're right, yeah.
+
+116
+00:07:08,970 --> 00:07:12,015
+But is he all right?
+They said you fell down the stairs, sir.
+
+117
+00:07:12,098 --> 00:07:14,392
+It was just a tumble, that's all.
+
+118
+00:07:14,476 --> 00:07:16,478
+-Have you checked for concussion?
+-I have.
+
+119
+00:07:16,561 --> 00:07:19,898
+And I dare say
+I know a lot more about it than you.
+
+120
+00:07:20,607 --> 00:07:24,069
+Sorry. I'll just tidy your things.
+
+121
+00:07:25,820 --> 00:07:28,657
+I was just telling
+Nurse Redfern, Matron,
+
+122
+00:07:28,740 --> 00:07:32,202
+about my dreams.
+They are quite remarkable tales.
+
+123
+00:07:33,203 --> 00:07:37,290
+I keep imagining that I'm someone else
+and that I'm hiding.
+
+124
+00:07:37,374 --> 00:07:39,250
+Hiding. In what way?
+
+125
+00:07:39,584 --> 00:07:40,919
+Erm...
+
+126
+00:07:41,044 --> 00:07:43,546
+They're almost every night and...
+
+127
+00:07:43,630 --> 00:07:46,049
+-This is going to sound silly.
+-Tell me.
+
+128
+00:07:46,716 --> 00:07:49,386
+I dream, quite often, that...
+
+129
+00:07:50,220 --> 00:07:51,972
+That I have two hearts.
+
+130
+00:07:52,055 --> 00:07:55,225
+Well then, I can be the judge of that.
+Let's find out.
+
+131
+00:08:04,484 --> 00:08:06,069
+(HEART BEATING)
+
+132
+00:08:10,073 --> 00:08:13,827
+I can confirm the diagnosis.
+Just one heart. Singular.
+
+133
+00:08:15,662 --> 00:08:17,414
+I have, um, I have written down
+
+134
+00:08:17,497 --> 00:08:20,500
+some of these dreams
+in the form of fiction.
+
+135
+00:08:21,543 --> 00:08:24,004
+-Not that it would be of any interest.
+-I'd be very interested.
+
+136
+00:08:24,087 --> 00:08:26,631
+Yeah? Well...
+
+137
+00:08:28,758 --> 00:08:31,928
+Never actually
+shown it to anyone before.
+
+138
+00:08:34,305 --> 00:08:36,933
+"A Journal of Impossible Things."
+
+139
+00:08:43,565 --> 00:08:46,151
+Look at these creatures.
+Such imagination.
+
+140
+00:08:46,276 --> 00:08:48,903
+-Oh. It's become quite a hobby.
+-Oh.
+
+141
+00:08:55,785 --> 00:08:57,620
+It's wonderful.
+
+142
+00:08:58,246 --> 00:09:00,498
+You have quite an eye
+for the pretty girls.
+
+143
+00:09:00,582 --> 00:09:05,295
+Oh, no, no, she's just an invention.
+This character Rose. I call her Rose.
+
+144
+00:09:06,504 --> 00:09:08,631
+Seems to disappear later on.
+
+145
+00:09:14,012 --> 00:09:17,140
+Oh, that's the box, the blue box.
+It's always there.
+
+146
+00:09:17,307 --> 00:09:20,060
+Like a magic carpet...
+
+147
+00:09:20,143 --> 00:09:23,772
+This fun little box that transports me
+to faraway places.
+
+148
+00:09:23,855 --> 00:09:25,732
+-Like a doorway?
+-Mmm.
+
+149
+00:09:26,983 --> 00:09:28,860
+I sometimes think
+
+150
+00:09:28,943 --> 00:09:31,863
+how magical life would be
+if stories like this were true.
+
+151
+00:09:31,988 --> 00:09:33,448
+JOAN: If only.
+
+152
+00:09:34,407 --> 00:09:37,035
+It's just a dream.
+
+153
+00:09:42,123 --> 00:09:43,374
+Ma'am.
+
+154
+00:09:44,292 --> 00:09:46,419
+-That book.
+-Oh, I'll look after it, don't worry.
+
+155
+00:09:46,503 --> 00:09:49,881
+-He did say I could read it.
+-But it's silly, that's all.
+
+156
+00:09:50,673 --> 00:09:52,926
+Just stories.
+
+157
+00:09:53,009 --> 00:09:55,720
+-Who is he, Martha?
+-I'm sorry?
+
+158
+00:09:55,804 --> 00:09:59,140
+It's like he's left the kettle on,
+like he knows he has something
+
+159
+00:09:59,224 --> 00:10:01,768
+to get back to,
+but he can't remember what.
+
+160
+00:10:01,851 --> 00:10:04,354
+-It's just him.
+-You arrived with him, didn't you?
+
+161
+00:10:04,479 --> 00:10:06,815
+He found you employment here
+at the school, isn't that right?
+
+162
+00:10:06,898 --> 00:10:10,360
+I used to work for the family.
+He just sort of inherited me.
+
+163
+00:10:10,443 --> 00:10:13,196
+Well, I'd be careful.
+If you don't mind my saying,
+
+164
+00:10:13,321 --> 00:10:15,532
+you sometimes seem
+a little familiar with him.
+
+165
+00:10:15,615 --> 00:10:17,867
+Best remember your position.
+
+166
+00:10:18,868 --> 00:10:20,870
+Yes, ma'am.
+
+167
+00:10:22,580 --> 00:10:25,083
+Ah, Latimer, here you are.
+
+168
+00:10:25,166 --> 00:10:26,960
+Latin translation.
+
+169
+00:10:27,043 --> 00:10:29,629
+Blasted Catullus.
+I want it done by morning.
+
+170
+00:10:29,712 --> 00:10:31,798
+-Yes, sir.
+-And no mistakes.
+
+171
+00:10:31,881 --> 00:10:34,509
+I want it written
+in my best handwriting.
+
+172
+00:10:34,592 --> 00:10:38,555
+Listen, Father says he's been promoted.
+That means more money.
+
+173
+00:10:38,680 --> 00:10:42,225
+-Might end up in a better school.
+-Ah, you should enjoy it, sir.
+
+174
+00:10:42,308 --> 00:10:45,228
+My uncle had a six-month posting
+in Johannesburg.
+
+175
+00:10:45,311 --> 00:10:47,939
+Says it was the most beautiful
+countryside on God's earth.
+
+176
+00:10:48,022 --> 00:10:50,358
+-What are you talking about?
+-Africa.
+
+177
+00:10:50,441 --> 00:10:52,402
+-Your father.
+-Have you been reading my post?
+
+178
+00:10:52,527 --> 00:10:54,487
+-What?
+-Who said Africa?
+
+179
+00:10:55,363 --> 00:10:57,907
+I've only just read the word myself.
+
+180
+00:10:58,032 --> 00:11:00,535
+-How did you know that?
+-I haven't...
+
+181
+00:11:00,618 --> 00:11:04,038
+-Have you been spying on me?
+-No. I just guessed.
+
+182
+00:11:04,122 --> 00:11:08,501
+-What's that supposed to mean?
+-I'm good at guessing, that's all.
+
+183
+00:11:08,585 --> 00:11:10,044
+Idiot.
+
+184
+00:11:14,757 --> 00:11:18,011
+Sometimes I say things
+and they turn out to be correct.
+
+185
+00:11:18,094 --> 00:11:22,390
+Just little things. Tiny things.
+I can't help it.
+
+186
+00:11:23,850 --> 00:11:25,935
+It's just some sort of luck.
+
+187
+00:11:27,729 --> 00:11:30,315
+Right. Well, never mind
+that little toad. Who's for beer?
+
+188
+00:11:30,398 --> 00:11:31,608
+You've got beer?
+
+189
+00:11:31,691 --> 00:11:34,694
+No, but Baxter's hidden a secret supply
+in Blackdown Woods.
+
+190
+00:11:34,777 --> 00:11:36,946
+Well, what are you waiting for?
+
+191
+00:11:37,030 --> 00:11:39,866
+Make sure the bursar's down the pub
+before you go past his window.
+
+192
+00:11:39,949 --> 00:11:43,244
+-A bottle for everyone, is it?
+-And none for the filth.
+
+193
+00:11:43,995 --> 00:11:46,289
+And hurry back, Baines. I'm parched.
+
+194
+00:11:49,667 --> 00:11:53,171
+Ooh, it's freezing out here. Why can't
+we have a drink inside the pub?
+
+195
+00:11:53,254 --> 00:11:55,965
+Don't be ridiculous.
+You do get these notions.
+
+196
+00:11:56,090 --> 00:11:59,886
+It's all very well those suffragettes,
+but that's London. That's miles away.
+
+197
+00:11:59,969 --> 00:12:02,722
+Don't you want to scream sometimes,
+having to bow and scrape and behave?
+
+198
+00:12:02,805 --> 00:12:05,225
+-Don't you just want to tell them?
+-I don't know.
+
+199
+00:12:05,308 --> 00:12:07,227
+Things must be different
+in your country.
+
+200
+00:12:07,310 --> 00:12:09,729
+Well, they are.
+Thank God I'm not staying here.
+
+201
+00:12:09,812 --> 00:12:11,314
+You keep saying that.
+
+202
+00:12:11,439 --> 00:12:15,401
+Just you wait. One more month
+and I'm as free as the wind.
+
+203
+00:12:15,485 --> 00:12:17,737
+Wish you could come with me, Jenny.
+You'd love it.
+
+204
+00:12:17,820 --> 00:12:20,198
+-Where you gonna go?
+-Anywhere.
+
+205
+00:12:20,281 --> 00:12:22,033
+Just look up there.
+
+206
+00:12:22,659 --> 00:12:25,828
+Imagine you could go all the way
+out to the stars.
+
+207
+00:12:26,704 --> 00:12:28,915
+You don't half say mad things.
+
+208
+00:12:29,123 --> 00:12:32,710
+That's where I'm going.
+Into the sky, all the way out.
+
+209
+00:12:33,461 --> 00:12:34,754
+Hmm!
+
+210
+00:12:37,632 --> 00:12:39,342
+Did you see that?
+
+211
+00:12:39,425 --> 00:12:41,594
+-See what?
+-Did you see it, though?
+
+212
+00:12:41,678 --> 00:12:43,846
+Right up there, just for a second.
+
+213
+00:12:43,972 --> 00:12:45,932
+Martha, there's nothing there.
+
+214
+00:13:27,515 --> 00:13:30,184
+Matron, are you all right?
+
+215
+00:13:30,268 --> 00:13:32,812
+Did you see that?
+There was something in the woods.
+
+216
+00:13:32,895 --> 00:13:35,148
+-This light.
+-Anything wrong, ladies?
+
+217
+00:13:35,231 --> 00:13:37,233
+Far too cold
+to be standing round in the dark.
+
+218
+00:13:37,317 --> 00:13:40,194
+JOAN: There. There. Look, in the sky.
+
+219
+00:13:40,278 --> 00:13:42,739
+Oh, that's beautiful.
+
+220
+00:13:43,781 --> 00:13:47,785
+All gone. Commonly known as a meteorite.
+
+221
+00:13:48,411 --> 00:13:51,831
+It's just rocks falling to the ground,
+that's all.
+
+222
+00:13:51,914 --> 00:13:53,166
+Came down in the woods.
+
+223
+00:13:53,249 --> 00:13:56,961
+No, no, they always look close,
+but actually they're miles off.
+
+224
+00:13:57,045 --> 00:13:59,672
+Nothing left but a cinder.
+
+225
+00:13:59,756 --> 00:14:03,217
+Now, I should escort you
+back to the school.
+
+226
+00:14:03,301 --> 00:14:05,845
+-Ladies?
+-No, we're fine, thanks.
+
+227
+00:14:05,928 --> 00:14:08,056
+Then I shall bid you good night.
+
+228
+00:14:10,058 --> 00:14:12,101
+Jenny, where was that?
+
+229
+00:14:12,185 --> 00:14:14,145
+On the horizon,
+where the light was headed.
+
+230
+00:14:14,228 --> 00:14:16,773
+That's by Coopers Field.
+
+231
+00:14:16,856 --> 00:14:20,526
+You can't just run off! It's dark.
+You'll break a leg!
+
+232
+00:15:03,111 --> 00:15:04,821
+I say, hello?
+
+233
+00:15:07,824 --> 00:15:09,909
+Some kind of aeroplane?
+
+234
+00:15:12,161 --> 00:15:13,996
+You chaps all right?
+
+235
+00:15:30,513 --> 00:15:33,766
+What? That's... That's impossible.
+
+236
+00:15:47,947 --> 00:15:49,699
+Some kind of door.
+
+237
+00:15:51,742 --> 00:15:53,619
+(ECHOING) Hello?
+
+238
+00:15:55,788 --> 00:15:57,707
+Is there anyone there?
+
+239
+00:16:11,929 --> 00:16:16,142
+There you are.
+Nothing there. I told you so.
+
+240
+00:16:16,225 --> 00:16:17,935
+And that's Coopers Field?
+
+241
+00:16:18,019 --> 00:16:20,980
+As far as the eye can see,
+and no falling star.
+
+242
+00:16:21,063 --> 00:16:23,774
+Now, come on, I'm frozen to the bone.
+Let's go.
+
+243
+00:16:23,858 --> 00:16:26,736
+As your Mr Smith says, "Nothing to see.”
+
+244
+00:16:34,577 --> 00:16:37,497
+But I don't understand. Who are you?
+
+245
+00:16:37,580 --> 00:16:39,499
+MALE VOICE: We are the Family.
+
+246
+00:16:39,582 --> 00:16:43,503
+FEMALE VOICE: Far more important,
+who are you, little thing?
+
+247
+00:16:43,586 --> 00:16:48,257
+My name's Baines. Jeremy Baines.
+Please, can I go?
+
+248
+00:16:48,382 --> 00:16:51,677
+FEMALE VOICE: I'm so sorry, Baines,
+Jeremy Baines,
+
+249
+00:16:51,761 --> 00:16:55,014
+but I don't think you can ever leave.
+
+250
+00:16:55,097 --> 00:16:59,393
+But who are you? Why can't I see you?
+
+251
+00:16:59,477 --> 00:17:01,938
+MALE VOICE. Why would you want
+to see us?
+
+252
+00:17:03,272 --> 00:17:05,024
+I want to know what you look like.
+
+253
+00:17:05,107 --> 00:17:07,735
+FEMALE VOICE: Oh, that's easily answered
+
+254
+00:17:07,818 --> 00:17:11,864
+because very soon,
+we will look so familiar.
+
+255
+00:17:16,744 --> 00:17:20,122
+Where is he? Promises a beer
+and then vanishes into the night.
+
+256
+00:17:23,167 --> 00:17:25,628
+There he is. Let him in.
+
+257
+00:17:37,557 --> 00:17:41,394
+Well, Baines, you dolt. Thought you'd
+been caught by the rozzers.
+
+258
+00:17:43,688 --> 00:17:44,981
+Well, then?
+
+259
+00:17:45,064 --> 00:17:47,358
+Where is it, man?
+Where's the blessed beer?
+
+260
+00:17:47,441 --> 00:17:50,027
+There was no beer. It was gone.
+
+261
+00:17:50,111 --> 00:17:52,280
+Damn it all, I've been waiting.
+
+262
+00:17:52,363 --> 00:17:54,865
+Pretty poor show, Baines, I have to say.
+
+263
+00:17:55,491 --> 00:17:56,951
+(SNIFFS)
+
+264
+00:17:57,034 --> 00:17:59,287
+What's the matter with you?
+Caught the sniffles out there?
+
+265
+00:17:59,370 --> 00:18:02,206
+Yes, I must have. It was cold.
+
+266
+00:18:03,249 --> 00:18:04,834
+Very cold.
+
+267
+00:18:06,919 --> 00:18:09,589
+Well, don't spread it about.
+I don't want your germs.
+
+268
+00:18:09,672 --> 00:18:11,882
+Come on, might as well get some sleep.
+
+269
+00:18:11,966 --> 00:18:16,178
+Come on, chaps, maybe tomorrow.
+Jackson's got some beer in the pavilion.
+
+270
+00:19:07,980 --> 00:19:09,565
+Hello.
+
+271
+00:19:11,525 --> 00:19:13,402
+Talking to a machine.
+
+272
+00:19:30,836 --> 00:19:32,463
+DOCTOR: Get down!
+
+273
+00:19:43,766 --> 00:19:46,060
+Ah! They're following us.
+
+274
+00:19:46,143 --> 00:19:48,312
+They can follow us wherever we go.
+
+275
+00:19:48,396 --> 00:19:51,440
+Right across the universe.
+They're never gonna stop.
+
+276
+00:19:52,233 --> 00:19:54,443
+-Martha, you trust me, don't you?
+-Of course I do.
+
+277
+00:19:54,527 --> 00:19:56,779
+'Cause it all depends on you.
+
+278
+00:20:01,659 --> 00:20:05,287
+Martha, this watch is me.
+
+279
+00:20:05,830 --> 00:20:07,373
+Right, okay, gotcha.
+
+280
+00:20:07,456 --> 00:20:10,126
+No! Hold on! Completely lost.
+
+281
+00:20:10,209 --> 00:20:12,044
+Those creatures are hunters.
+They can sniff out anyone.
+
+282
+00:20:12,128 --> 00:20:14,213
+And me being a Time Lord,
+well, I'm unique.
+
+283
+00:20:14,296 --> 00:20:16,632
+They can track me down across
+the whole of time and space.
+
+284
+00:20:16,716 --> 00:20:18,592
+Huh. And the good news is?
+
+285
+00:20:18,676 --> 00:20:20,803
+They can smell me, they haven't seen me,
+
+286
+00:20:20,886 --> 00:20:23,472
+and their life supplies are running out,
+so we hide.
+
+287
+00:20:23,639 --> 00:20:26,892
+-Wait for them to die.
+-But they can track us down.
+
+288
+00:20:26,976 --> 00:20:29,353
+That's why I've got to do it.
+
+289
+00:20:29,478 --> 00:20:31,981
+I have to stop being a Time Lord.
+
+290
+00:20:32,690 --> 00:20:34,358
+I'm gonna become human.
+
+291
+00:20:48,080 --> 00:20:50,249
+Never thought I'd use this.
+
+292
+00:20:51,167 --> 00:20:53,586
+All the times I've wondered.
+
+293
+00:20:53,669 --> 00:20:56,672
+-What does it do?
+-Chameleon Arch.
+
+294
+00:20:56,756 --> 00:20:58,591
+Rewrites my biology.
+
+295
+00:20:58,674 --> 00:21:01,969
+It literally changes every single cell
+in my body. I've set it to human.
+
+296
+00:21:02,052 --> 00:21:03,763
+The Tardis will take care of everything.
+
+297
+00:21:03,846 --> 00:21:06,265
+Invent a life story for me,
+find me a setting and integrate.
+
+298
+00:21:06,348 --> 00:21:09,018
+It can't do the same for you.
+You'll just have to improvise.
+
+299
+00:21:09,143 --> 00:21:11,520
+I should have just enough
+residual awareness to let you in.
+
+300
+00:21:11,604 --> 00:21:15,816
+Hold on, if you're going to rewrite
+every cell, isn't it going to hurt?
+
+301
+00:21:15,900 --> 00:21:18,402
+Oh, yeah. It'll hurt.
+
+302
+00:21:43,219 --> 00:21:45,095
+Is this working?
+
+303
+00:21:45,221 --> 00:21:47,014
+Martha, before I change,
+
+304
+00:21:47,097 --> 00:21:49,391
+here's a list of instructions
+for when I'm human.
+
+305
+00:21:49,475 --> 00:21:51,602
+One, don't let me hurt anyone.
+
+306
+00:21:51,727 --> 00:21:53,646
+We can't have that, but you know what
+humans are like.
+
+307
+00:21:53,729 --> 00:21:55,731
+Two, don't worry about the Tardis.
+
+308
+00:21:55,815 --> 00:21:59,109
+I'll put it on emergency power so they
+can't detect it. Just let it hide away.
+
+309
+00:21:59,193 --> 00:22:01,153
+Four... No.
+
+310
+00:22:01,237 --> 00:22:05,074
+Wait a minute. Three, no getting
+involved in big historical events.
+
+311
+00:22:05,157 --> 00:22:08,244
+Four, you. Don't let me abandon you.
+
+312
+00:22:09,203 --> 00:22:10,704
+And five...
+
+313
+00:22:12,373 --> 00:22:16,544
+But there was a meteor, a shooting
+star, what am I supposed to do then?
+
+314
+00:22:16,627 --> 00:22:19,839
+And 23, if anything goes wrong,
+
+315
+00:22:19,922 --> 00:22:22,675
+if they find us, Martha,
+then you know what to do.
+
+316
+00:22:22,758 --> 00:22:24,677
+Open the watch.
+
+317
+00:22:24,760 --> 00:22:27,096
+Everything I am is kept safe in there.
+
+318
+00:22:27,179 --> 00:22:30,391
+I've put a perception filter on it so
+the human me won't think anything of it.
+
+319
+00:22:30,474 --> 00:22:35,062
+To him, it's just a watch.
+But don't open it unless you have to.
+
+320
+00:22:35,145 --> 00:22:39,191
+"Cause once it's open,
+then the Family will be able to find me.
+
+321
+00:22:39,275 --> 00:22:42,403
+It's all down to you, Martha.
+Your choice.
+
+322
+00:22:44,238 --> 00:22:46,782
+Oh! And thank you.
+
+323
+00:22:50,703 --> 00:22:53,122
+I wish you'd come back.
+
+324
+00:22:53,914 --> 00:22:54,123
+(KNOCKING)
+
+325
+00:22:54,123 --> 00:22:55,082
+(KNOCKING)
+
+326
+00:22:57,084 --> 00:22:59,336
+You told me to come
+and collect that book, sir.
+
+327
+00:22:59,420 --> 00:23:01,046
+Good lad, yes, yes!
+
+328
+00:23:02,047 --> 00:23:04,550
+The Definitive Account of Mafeking
+by Aitchinson Price.
+
+329
+00:23:04,633 --> 00:23:06,135
+Where did I put it?
+
+330
+00:23:06,260 --> 00:23:10,014
+And I wanted a little word.
+Your marks aren't quite good enough.
+
+331
+00:23:10,097 --> 00:23:12,016
+I'm top 10 in my class, sir.
+
+332
+00:23:12,141 --> 00:23:15,728
+Now, be honest, Timothy.
+You should be the very top.
+
+333
+00:23:15,811 --> 00:23:18,147
+You're a clever boy.
+You seem to be hiding it.
+
+334
+00:23:18,230 --> 00:23:20,065
+Where is that book?
+
+335
+00:23:20,149 --> 00:23:24,987
+And I know why. Keeping your head low
+avoids the mockery of your classmates.
+
+336
+00:23:25,779 --> 00:23:28,324
+But no man should hide himself,
+don't you think?
+
+337
+00:23:28,449 --> 00:23:30,492
+-Yes, sir.
+-You're clever.
+
+338
+00:23:30,618 --> 00:23:32,286
+FEMALE VOICE: Time Lord.
+
+339
+00:23:32,369 --> 00:23:34,496
+You should be proud of it. Use it.
+
+340
+00:23:34,580 --> 00:23:36,165
+(WHISPERING VOICES)
+
+341
+00:23:36,248 --> 00:23:38,125
+Time Lord.
+
+342
+00:23:38,417 --> 00:23:41,420
+FEMALE VOICE: Timothy, hide us.
+
+343
+00:23:41,503 --> 00:23:45,466
+DOCTOR: The secret lies within.
+I'm trapped. I'm caged.
+
+344
+00:23:45,549 --> 00:23:48,218
+Inside the cold, in the dark, waiting.
+
+345
+00:23:48,302 --> 00:23:52,097
+FEMALE VOICE: Reach out, boy. Reach out.
+DOCTOR: Always waiting.
+
+346
+00:23:52,640 --> 00:23:55,267
+Fascinating details about the siege,
+really quite remarkable.
+
+347
+00:23:55,351 --> 00:23:58,312
+-Are you all right?
+-Yes, sir. Fine, sir.
+
+348
+00:23:58,395 --> 00:24:00,439
+Right, then. Good.
+
+349
+00:24:00,522 --> 00:24:02,942
+And remember, use that brain of yours.
+
+350
+00:24:03,025 --> 00:24:05,402
+The power of a Time Lord.
+
+351
+00:24:08,030 --> 00:24:11,575
+You're really not looking yourself,
+old chap. Anything bothering you?
+
+352
+00:24:11,700 --> 00:24:14,203
+No, sir. Thank you, sir.
+
+353
+00:24:34,223 --> 00:24:37,309
+DOCTOR: You are not alone.
+Keep me hidden.
+
+354
+00:24:37,393 --> 00:24:40,312
+(WHISPERING VOICES)
+
+355
+00:24:40,396 --> 00:24:43,899
+FEMALE VOICE: Burn with the light.
+Burn and turn!
+
+356
+00:24:51,740 --> 00:24:53,701
+MAN: Now, boys, come along now.
+
+357
+00:24:54,535 --> 00:24:57,037
+Classes are ready...
+
+358
+00:24:57,997 --> 00:24:59,873
+Come along, Jenkins.
+
+359
+00:25:12,261 --> 00:25:15,264
+BAINES: There is a trace,
+but somehow scattered.
+
+360
+00:25:15,347 --> 00:25:17,266
+The scent is confused.
+
+361
+00:25:18,100 --> 00:25:20,769
+Nevertheless, we'd best arm ourselves.
+
+362
+00:25:21,937 --> 00:25:23,564
+Activate the soldiers.
+
+363
+00:25:40,247 --> 00:25:44,460
+That is my property!
+And you are trespassing on my land!
+
+364
+00:25:45,210 --> 00:25:46,587
+Come on, who's in there?
+
+365
+00:25:46,670 --> 00:25:49,214
+Is it one of those idiot boys
+from the school, is it? Eh?
+
+366
+00:25:49,298 --> 00:25:50,966
+Come on. I suppose...
+
+367
+00:25:53,969 --> 00:25:55,637
+Well, how did you...
+
+368
+00:25:59,475 --> 00:26:02,144
+No! No! Help me!
+
+369
+00:26:02,728 --> 00:26:04,188
+Help me!
+
+370
+00:26:18,160 --> 00:26:19,995
+(SCREAMS)
+
+371
+00:26:25,876 --> 00:26:27,795
+SMITH: Concentrate.
+
+372
+00:26:34,009 --> 00:26:36,178
+Hutchinson, excellent work.
+
+373
+00:26:37,054 --> 00:26:40,182
+-Cease fire!
+-Good day to you, Headmaster.
+
+374
+00:26:40,265 --> 00:26:42,101
+Your crew's on fine form today,
+Mr Smith.
+
+375
+00:26:42,184 --> 00:26:44,311
+Excuse me, Headmaster.
+We could do a lot better.
+
+376
+00:26:44,394 --> 00:26:46,688
+Latimer's being deliberately shoddy.
+
+377
+00:26:46,814 --> 00:26:49,233
+-I'm trying my best.
+-You need to be better than the best.
+
+378
+00:26:49,358 --> 00:26:52,069
+Those targets are tribesmen
+from the Dark Continent.
+
+379
+00:26:52,152 --> 00:26:55,614
+That's exactly the problem, sir.
+They only have spears.
+
+380
+00:26:55,697 --> 00:26:57,199
+Oh, dear me.
+
+381
+00:26:57,282 --> 00:27:00,828
+Latimer takes it upon himself
+to make us realise how wrong we all are.
+
+382
+00:27:00,911 --> 00:27:02,538
+I hope, Latimer, that one day
+
+383
+00:27:02,621 --> 00:27:06,208
+you may have a just and proper war
+in which to prove yourself.
+
+384
+00:27:06,333 --> 00:27:08,085
+Now, resume firing.
+
+385
+00:27:12,381 --> 00:27:14,383
+(BOMB WHISTLING)
+
+386
+00:27:15,592 --> 00:27:19,346
+-Under the wire!
+-Keep your heads down!
+
+387
+00:27:20,806 --> 00:27:24,393
+One minute past the hour. It's now.
+
+388
+00:27:25,394 --> 00:27:27,938
+Hutchinson, this is the time. It's now.
+
+389
+00:27:30,274 --> 00:27:32,526
+Stoppage. Immediate action.
+
+390
+00:27:32,985 --> 00:27:35,612
+Didn't I tell you, sir?
+The stupid boy's useless.
+
+391
+00:27:35,737 --> 00:27:38,448
+Permission to give Latimer
+a beating, sir.
+
+392
+00:27:38,532 --> 00:27:40,951
+-It's your class, Mr Smith.
+-Permission granted.
+
+393
+00:27:41,034 --> 00:27:43,704
+Right. Come with me, you little oik.
+
+394
+00:27:47,249 --> 00:27:48,917
+(SNIFFS)
+
+395
+00:27:50,627 --> 00:27:52,671
+Anything the matter, Baines?
+
+396
+00:27:52,754 --> 00:27:57,092
+I thought... No, sir, nothing, sir.
+
+397
+00:28:00,512 --> 00:28:02,431
+As you were, Mr Smith.
+
+398
+00:28:03,265 --> 00:28:07,060
+Er, Pemberton, Smythe, Wicks, take post.
+
+399
+00:28:08,061 --> 00:28:09,146
+Ah!
+
+400
+00:28:09,938 --> 00:28:11,565
+Nurse Redfern.
+
+401
+00:28:11,648 --> 00:28:14,568
+I'll give you back your journal
+when next I see you.
+
+402
+00:28:14,651 --> 00:28:17,196
+No, no, no, you don't have to.
+
+403
+00:28:17,279 --> 00:28:18,947
+If you'll excuse me, Mr Smith,
+
+404
+00:28:19,031 --> 00:28:22,159
+I was just thinking about the day
+my husband was shot.
+
+405
+00:28:37,216 --> 00:28:40,886
+His name was Oliver.
+He died at the Battle of Spion Kop.
+
+406
+00:28:41,803 --> 00:28:44,139
+We were childhood sweethearts.
+
+407
+00:28:45,307 --> 00:28:48,352
+But, you see, I was angry
+with the army for such a long time.
+
+408
+00:28:48,435 --> 00:28:50,395
+And you still are.
+
+409
+00:28:50,479 --> 00:28:55,025
+I find myself as part of that school,
+watching boys learn how to kill.
+
+410
+00:28:55,108 --> 00:28:57,402
+Don't you think discipline
+is good for them?
+
+411
+00:28:57,486 --> 00:28:59,196
+Does it have to be
+such military discipline?
+
+412
+00:28:59,321 --> 00:29:02,241
+If there's another war,
+those boys won't find it so amusing.
+
+413
+00:29:02,324 --> 00:29:05,661
+Well, Great Britain's at peace,
+long may it reign.
+
+414
+00:29:07,329 --> 00:29:13,043
+In your journal, in one of your stories,
+you wrote about next year, 1914.
+
+415
+00:29:13,460 --> 00:29:15,128
+It was just a dream.
+
+416
+00:29:15,212 --> 00:29:17,839
+All those images of mud and wire.
+
+417
+00:29:18,632 --> 00:29:23,512
+You told of a shadow. A shadow
+falling across the entire world.
+
+418
+00:29:24,388 --> 00:29:27,391
+Well, then, we can be thankful
+it's not true.
+
+419
+00:29:27,474 --> 00:29:32,020
+I'll admit, mankind doesn't need warfare
+and bloodshed to prove itself.
+
+420
+00:29:32,145 --> 00:29:35,148
+Everyday life can provide honour
+and valour and...
+
+421
+00:29:35,232 --> 00:29:40,862
+Let's hope that from now on this country
+can find its heroes in smaller places.
+
+422
+00:29:45,659 --> 00:29:48,161
+In the most
+
+423
+00:29:51,331 --> 00:29:53,375
+ordinary of...
+
+424
+00:29:54,084 --> 00:29:55,877
+Of deeds.
+
+425
+00:30:07,597 --> 00:30:09,182
+(WOMAN SCREAMS)
+
+426
+00:30:20,736 --> 00:30:22,738
+(BABY CRYING)
+
+427
+00:30:22,821 --> 00:30:24,531
+Are you all right?
+
+428
+00:30:26,199 --> 00:30:29,411
+-Lucky.
+-That was luck?
+
+429
+00:30:30,287 --> 00:30:34,416
+Miss Redfern, might I invite you
+to the village dance this evening
+
+430
+00:30:34,499 --> 00:30:36,293
+as my guest?
+
+431
+00:30:36,418 --> 00:30:38,962
+You extraordinary man!
+
+432
+00:30:42,758 --> 00:30:47,095
+Oh, it's all becoming clear now.
+The Doctor is the man you'd like to be,
+
+433
+00:30:47,179 --> 00:30:49,306
+doing impossible things
+with cricket balls.
+
+434
+00:30:49,431 --> 00:30:51,933
+Well, I discovered a talent,
+that's certainly true.
+
+435
+00:30:52,017 --> 00:30:53,727
+But the Doctor
+has an eye for the ladies.
+
+436
+00:30:53,810 --> 00:30:56,146
+-The devil!
+-A girl at every fireplace.
+
+437
+00:30:56,229 --> 00:31:00,359
+Ah! Now, there I have to protest, Joan.
+That is hardly me.
+
+438
+00:31:00,942 --> 00:31:03,820
+Says the man dancing with me tonight.
+
+439
+00:31:03,945 --> 00:31:06,073
+That scarecrow's all askew.
+
+440
+00:31:11,620 --> 00:31:14,664
+Ever the artist.
+Where did you learn to draw?
+
+441
+00:31:14,790 --> 00:31:17,000
+-Gallifrey.
+-Is that in Ireland?
+
+442
+00:31:18,752 --> 00:31:21,171
+-Yes, it must be.
+-You're not Irish.
+
+443
+00:31:21,296 --> 00:31:25,926
+Not at all, no. My father, Sidney,
+was a watchmaker from Nottingham
+
+444
+00:31:26,968 --> 00:31:29,304
+and my mother, Verity, was...
+
+445
+00:31:31,431 --> 00:31:33,642
+-Well, she was a nurse, actually.
+-Oh?
+
+446
+00:31:33,725 --> 00:31:37,104
+-We make such good wives.
+-Really? Right.
+
+447
+00:31:37,979 --> 00:31:39,314
+Yes.
+
+448
+00:31:40,649 --> 00:31:42,692
+Well, my work is done,
+what do you think?
+
+449
+00:31:42,776 --> 00:31:44,569
+Masterpiece.
+
+450
+00:31:44,653 --> 00:31:46,822
+All sorts of skills today.
+
+451
+00:32:00,836 --> 00:32:02,421
+Can I see?
+
+452
+00:32:08,176 --> 00:32:11,388
+Oh, goodness. Do I look like that?
+
+453
+00:32:12,097 --> 00:32:13,849
+Are you sure that's not me?
+
+454
+00:32:14,015 --> 00:32:16,601
+No, it's certainly this page.
+You like it?
+
+455
+00:32:16,726 --> 00:32:20,814
+-You've made me far too beautiful.
+-Well, that's how I see you.
+
+456
+00:32:22,357 --> 00:32:24,025
+Widows aren't supposed to be beautiful.
+
+457
+00:32:24,109 --> 00:32:27,028
+I think the world
+would rather we stopped.
+
+458
+00:32:28,947 --> 00:32:30,574
+Is that fair?
+
+459
+00:32:31,700 --> 00:32:33,201
+That we stop?
+
+460
+00:32:35,412 --> 00:32:37,539
+That's not fair at all.
+
+461
+00:32:55,098 --> 00:32:57,058
+I've never, um...
+
+462
+00:33:04,316 --> 00:33:05,859
+(DOOR OPENING)
+
+463
+00:33:06,234 --> 00:33:09,571
+Martha, what have I told you
+about entering unannounced?
+
+464
+00:33:12,324 --> 00:33:14,075
+Wasn't on the list.
+
+465
+00:33:18,538 --> 00:33:20,749
+(VIDEO FAST FORWARDING)
+
+466
+00:33:21,958 --> 00:33:25,504
+Four, you. Don't let me abandon you.
+
+467
+00:33:26,338 --> 00:33:27,756
+That's no good.
+
+468
+00:33:27,839 --> 00:33:31,092
+What about the stuff you didn't tell me?
+What about women?
+
+469
+00:33:31,301 --> 00:33:34,304
+Oh, no, you didn't think of that.
+
+470
+00:33:34,387 --> 00:33:37,182
+What the hell am I supposed to do, then?
+
+471
+00:33:37,265 --> 00:33:38,892
+Thank you.
+
+472
+00:33:41,269 --> 00:33:43,355
+You had to, didn't you?
+
+473
+00:33:44,105 --> 00:33:47,192
+You had to go and
+fall in love with a human.
+
+474
+00:33:48,068 --> 00:33:50,028
+And it wasn't me.
+
+475
+00:33:51,988 --> 00:33:53,114
+FEMALE VOICE: The darkness is coming.
+
+476
+00:33:53,198 --> 00:33:55,534
+DOCTOR: Keep me away
+from the false and empty man.
+
+477
+00:33:55,617 --> 00:34:00,997
+MALE VOICE: The last of the Time Lords,
+the last of that wise and ancient race.
+
+478
+00:34:01,081 --> 00:34:03,291
+(VOICES MINGLING)
+
+479
+00:34:36,449 --> 00:34:40,787
+Who's that playing silly beggars?
+Nearly broke me neck.
+
+480
+00:34:40,870 --> 00:34:43,498
+Who's that, then? Is that you, Saul?
+
+481
+00:34:53,883 --> 00:34:55,552
+(JENNY WHIMPERING)
+
+482
+00:34:56,678 --> 00:34:58,305
+I don't understand.
+
+483
+00:34:59,723 --> 00:35:01,725
+It's Mr Clark, isn't it?
+
+484
+00:35:02,684 --> 00:35:05,061
+What have I done wrong?
+
+485
+00:35:07,856 --> 00:35:10,108
+Nothing at all.
+
+486
+00:35:10,191 --> 00:35:11,901
+In fact,
+
+487
+00:35:12,986 --> 00:35:15,030
+you're just what we need, girl.
+
+488
+00:35:15,113 --> 00:35:17,157
+She works at the school.
+
+489
+00:35:18,491 --> 00:35:22,287
+And whatever's happening seems to be
+centred around that establishment.
+
+490
+00:35:22,370 --> 00:35:26,249
+The faintest of traces,
+but they all lead back there.
+
+491
+00:35:26,875 --> 00:35:28,585
+It's Baines, isn't it?
+
+492
+00:35:30,045 --> 00:35:31,546
+This isn't very funny, sir.
+
+493
+00:35:31,671 --> 00:35:35,425
+Just shut up, stop talking,
+cease and desist. There's a good girl!
+
+494
+00:35:36,217 --> 00:35:39,512
+Mother of mine is dying to meet you.
+
+495
+00:35:41,723 --> 00:35:43,183
+And here she is.
+
+496
+00:35:46,436 --> 00:35:49,105
+-Stop mocking me, sir!
+-No!
+
+497
+00:35:49,564 --> 00:35:52,942
+Mother of mine just needs a shape.
+
+498
+00:35:53,068 --> 00:35:55,612
+We go through shapes so very fast.
+
+499
+00:35:56,488 --> 00:35:58,740
+Yours is perfectly adequate.
+
+500
+00:35:59,741 --> 00:36:01,534
+If a little grim.
+
+501
+00:36:03,328 --> 00:36:04,913
+Mother of mine,
+
+502
+00:36:05,914 --> 00:36:07,749
+embrace her.
+
+503
+00:36:15,423 --> 00:36:17,258
+You look wonderful.
+
+504
+00:36:17,342 --> 00:36:21,346
+You'd best give me some warning.
+Um... Can you actually dance?
+
+505
+00:36:22,764 --> 00:36:25,767
+Um... I'm not certain.
+
+506
+00:36:26,726 --> 00:36:28,645
+There's a surprise.
+
+507
+00:36:28,728 --> 00:36:31,189
+Is there anything you're certain about?
+
+508
+00:36:31,272 --> 00:36:33,149
+Yes. Yes.
+
+509
+00:36:38,613 --> 00:36:41,116
+There you are. Come look what I've got.
+
+510
+00:36:41,199 --> 00:36:44,285
+Mr Pool didn't want his afternoon tea,
+so cook said I could have it.
+
+511
+00:36:44,452 --> 00:36:47,914
+And there's enough for two.
+What are you standing there for?
+
+512
+00:36:50,458 --> 00:36:53,795
+-Are you all right?
+-I must have a cold coming on.
+
+513
+00:36:55,130 --> 00:36:58,049
+Problem is, I keep thinking about them,
+but I don't know what to do.
+
+514
+00:36:58,133 --> 00:37:01,094
+-Thinking about who?
+-Mr Smith and Matron,
+
+515
+00:37:01,177 --> 00:37:04,764
+'cause it's never gonna last,
+he's gonna leave in a few weeks.
+
+516
+00:37:04,848 --> 00:37:06,141
+Why?
+
+517
+00:37:06,224 --> 00:37:09,269
+It's like his contract comes to an end
+and she's going to be heartbroken.
+
+518
+00:37:09,352 --> 00:37:12,313
+-Leave for where?
+-All sorts of places.
+
+519
+00:37:12,981 --> 00:37:16,443
+Oh, I wish I could tell you, Jenny,
+but it's complicated.
+
+520
+00:37:16,526 --> 00:37:18,862
+-In what way?
+-I just can't.
+
+521
+00:37:19,904 --> 00:37:23,158
+It sounds so interesting.
+Tell me. Tell me now.
+
+522
+00:37:27,662 --> 00:37:30,290
+-Would you like some tea?
+-Yes, thanks.
+
+523
+00:37:30,373 --> 00:37:34,502
+I could put a nice bit of gravy
+in the pot and some mutton.
+
+524
+00:37:35,086 --> 00:37:37,505
+Or sardines and jam, how about that?
+
+525
+00:37:38,381 --> 00:37:40,091
+I like the sound of that.
+
+526
+00:37:40,216 --> 00:37:43,178
+Right. Hold on a tick.
+
+527
+00:38:06,659 --> 00:38:08,369
+-They've found us!
+-This is ridiculous.
+
+528
+00:38:08,495 --> 00:38:11,080
+-Martha, I've warned you.
+-They've found us and I've seen them!
+
+529
+00:38:11,206 --> 00:38:13,333
+They look like people, like us,
+like normal.
+
+530
+00:38:13,416 --> 00:38:16,085
+I'm sorry, but you've got
+to open the watch.
+
+531
+00:38:18,171 --> 00:38:19,923
+Where is it?
+
+532
+00:38:20,715 --> 00:38:22,509
+Oh, my God! Where's it gone?
+Where's the watch?
+
+533
+00:38:22,592 --> 00:38:23,718
+What are you talking about?
+
+534
+00:38:23,843 --> 00:38:26,638
+You had a watch,
+a fob watch, right there.
+
+535
+00:38:26,721 --> 00:38:27,931
+Did I? I don't remember.
+
+536
+00:38:28,056 --> 00:38:30,391
+I can't think
+what concern it is of yours.
+
+537
+00:38:30,517 --> 00:38:32,227
+But we need it. Oh, my God, Doctor.
+
+538
+00:38:32,310 --> 00:38:34,854
+We're hiding from aliens
+and they've got Jenny
+
+539
+00:38:34,938 --> 00:38:37,565
+and they've possessed her
+or copied her or something,
+
+540
+00:38:37,690 --> 00:38:39,150
+and you've got to tell me,
+where's the watch?
+
+541
+00:38:39,234 --> 00:38:40,944
+Oh, I see.
+
+542
+00:38:41,903 --> 00:38:43,738
+Cultural differences.
+
+543
+00:38:45,114 --> 00:38:47,700
+It must be so confusing for you.
+
+544
+00:38:47,784 --> 00:38:50,954
+Martha, this is what we call a story.
+
+545
+00:38:51,913 --> 00:38:54,290
+Oh, you complete...
+
+546
+00:38:54,415 --> 00:38:58,211
+This is not you. This is 1913.
+
+547
+00:38:58,461 --> 00:39:00,296
+Good. This is 1913.
+
+548
+00:39:00,380 --> 00:39:03,758
+I'm sorry, I'm really sorry,
+but I've got to snap you out of this.
+
+549
+00:39:03,883 --> 00:39:05,009
+Martha!
+
+550
+00:39:05,093 --> 00:39:07,428
+Wake up! You're coming back
+to the Tardis with me.
+
+551
+00:39:07,512 --> 00:39:10,390
+How dare you! I'm not going anywhere
+with an insane servant.
+
+552
+00:39:10,473 --> 00:39:13,059
+Martha, you are dismissed. You will
+leave these premises immediately.
+
+553
+00:39:13,142 --> 00:39:14,853
+Now, get out!
+
+554
+00:39:15,436 --> 00:39:17,897
+The nerve of it! The absolute cheek!
+
+555
+00:39:17,981 --> 00:39:19,691
+You think I'm a fantasist,
+what about her?
+
+556
+00:39:19,774 --> 00:39:22,110
+The funny thing is,
+you did have a fob watch.
+
+557
+00:39:22,193 --> 00:39:24,612
+Right there. Don't you remember?
+
+558
+00:39:28,199 --> 00:39:29,450
+Oh! Sorry!
+
+559
+00:39:30,660 --> 00:39:32,161
+Sorry!
+
+560
+00:39:32,287 --> 00:39:33,788
+Martha?
+
+561
+00:39:33,913 --> 00:39:35,874
+Not now, Tim, I'm busy!
+
+562
+00:39:49,971 --> 00:39:51,723
+Mr Smith?
+
+563
+00:39:53,308 --> 00:39:54,767
+No one home.
+
+564
+00:39:55,518 --> 00:39:58,187
+The maid
+was definitely hiding something.
+
+565
+00:39:58,271 --> 00:40:00,648
+A secret around this Mr Smith.
+
+566
+00:40:00,773 --> 00:40:04,444
+We both scented him, though,
+he was plain and simply human.
+
+567
+00:40:04,527 --> 00:40:06,821
+But maybe he knows something.
+
+568
+00:40:07,864 --> 00:40:09,532
+Where is he?
+
+569
+00:40:10,992 --> 00:40:13,828
+She's infatuated.
+You're a dangerous man.
+
+570
+00:40:13,953 --> 00:40:16,998
+-You've taken my arm in public.
+-I'm very scared.
+
+571
+00:40:17,123 --> 00:40:19,792
+Spare a penny
+for the veterans of the Crimea, sir?
+
+572
+00:40:19,876 --> 00:40:23,087
+Yes, of course. There you are, then.
+
+573
+00:40:34,682 --> 00:40:40,188
+Ladies and gentlemen,
+please take your partners for a waltz.
+
+574
+00:40:53,242 --> 00:40:56,245
+-You can dance.
+-Quite surprised myself.
+
+575
+00:40:57,455 --> 00:41:00,541
+Oh, I say! Sorry.
+
+576
+00:41:10,218 --> 00:41:12,011
+I think this might help.
+
+577
+00:41:14,222 --> 00:41:16,474
+That makes it easy, Son of mine,
+
+578
+00:41:16,557 --> 00:41:19,102
+because Daughter of mine's
+already there.
+
+579
+00:41:19,227 --> 00:41:21,020
+We've been invited to the dance.
+
+580
+00:41:28,069 --> 00:41:31,114
+Oh, staff entrance I think, miss.
+
+581
+00:41:31,239 --> 00:41:33,282
+Yeah, well, think again, mate.
+
+582
+00:41:51,217 --> 00:41:53,636
+Please don't. Not again.
+
+583
+00:41:53,720 --> 00:41:57,265
+He's different from any other man
+you've ever met, right?
+
+584
+00:41:57,390 --> 00:41:58,516
+Yes.
+
+585
+00:41:58,599 --> 00:42:01,019
+And sometimes he says
+these strange things,
+
+586
+00:42:01,102 --> 00:42:04,022
+like people and places
+you've never heard of, yeah?
+
+587
+00:42:04,105 --> 00:42:05,898
+But it's deeper than that.
+
+588
+00:42:05,982 --> 00:42:08,776
+Sometimes when
+you look in his eyes, you know,
+
+589
+00:42:08,860 --> 00:42:12,071
+you just know
+that there's something else in there.
+
+590
+00:42:12,155 --> 00:42:13,865
+Something hidden.
+
+591
+00:42:14,615 --> 00:42:17,243
+Right behind the eyes,
+something hidden away.
+
+592
+00:42:17,326 --> 00:42:20,580
+-In the dark.
+-I don't know what you mean.
+
+593
+00:42:21,372 --> 00:42:22,832
+Yes, you do.
+
+594
+00:42:25,376 --> 00:42:27,295
+I don't mean to be rude,
+
+595
+00:42:27,462 --> 00:42:31,049
+but the awful thing is
+it doesn't even matter what you think.
+
+596
+00:42:31,132 --> 00:42:33,801
+But you're nice and you're lucky.
+
+597
+00:42:33,968 --> 00:42:36,721
+And I just wanted to say sorry
+for what I'm about to do.
+
+598
+00:42:36,804 --> 00:42:40,099
+Oh, now, really, Martha,
+this is getting out of hand.
+
+599
+00:42:40,183 --> 00:42:42,643
+I must insist that you leave.
+
+600
+00:42:42,727 --> 00:42:44,437
+Do you know what this is?
+
+601
+00:42:45,563 --> 00:42:46,939
+Name it.
+
+602
+00:42:47,023 --> 00:42:48,983
+Go on, name it.
+
+603
+00:42:49,734 --> 00:42:51,903
+John, what is that silly thing?
+
+604
+00:42:51,986 --> 00:42:53,237
+John?
+
+605
+00:43:01,829 --> 00:43:03,706
+You're not John Smith.
+
+606
+00:43:04,540 --> 00:43:06,667
+You're called the Doctor.
+
+607
+00:43:07,251 --> 00:43:09,837
+The man in your journal, he's real.
+
+608
+00:43:10,463 --> 00:43:11,798
+He's you.
+
+609
+00:43:14,217 --> 00:43:17,220
+Evening, all! Spare a penny, sir?
+
+610
+00:43:17,512 --> 00:43:19,305
+I didn't spare you.
+
+611
+00:43:40,701 --> 00:43:43,830
+You will be silent!
+
+612
+00:43:44,330 --> 00:43:46,165
+All of you!
+
+613
+00:43:46,582 --> 00:43:48,543
+I said, silent!
+
+614
+00:43:48,626 --> 00:43:51,129
+Mr Clark, what's going on?
+
+615
+00:43:55,883 --> 00:43:58,261
+Mr Smith, everything I told you,
+just forget it.
+
+616
+00:43:58,344 --> 00:43:59,512
+Don't say anything.
+
+617
+00:43:59,595 --> 00:44:01,889
+We asked for silence!
+
+618
+00:44:04,600 --> 00:44:06,018
+Now then,
+
+619
+00:44:06,936 --> 00:44:09,981
+we have a few questions for Mr Smith.
+
+620
+00:44:10,064 --> 00:44:13,109
+No, better than that.
+
+621
+00:44:13,192 --> 00:44:15,528
+The teacher, he's the Doctor.
+
+622
+00:44:16,195 --> 00:44:17,989
+I heard them talking.
+
+623
+00:44:18,072 --> 00:44:20,283
+You took human form.
+
+624
+00:44:20,366 --> 00:44:23,452
+Of course I'm human!
+I was born human, as were you, Baines!
+
+625
+00:44:23,536 --> 00:44:25,663
+And Jenny and you, Mr Clark.
+
+626
+00:44:25,746 --> 00:44:28,332
+What is going on? This is madness!
+
+627
+00:44:28,416 --> 00:44:32,837
+Ooh, and a human brain, too.
+Simple, thick and dull.
+
+628
+00:44:33,171 --> 00:44:35,339
+But he's no good like this.
+
+629
+00:44:35,423 --> 00:44:37,633
+We need a Time Lord.
+
+630
+00:44:37,758 --> 00:44:39,218
+Easily done.
+
+631
+00:44:41,596 --> 00:44:43,139
+(ALL GASP)
+
+632
+00:44:43,764 --> 00:44:45,975
+-Change back.
+-I don't know what you're talking about.
+
+633
+00:44:46,100 --> 00:44:47,435
+Change back!
+
+634
+00:44:47,560 --> 00:44:50,146
+I literally do not know...
+
+635
+00:44:50,438 --> 00:44:53,316
+-Get off me!
+-She's your friend, isn't she?
+
+636
+00:44:53,441 --> 00:44:55,943
+Doesn't this scare you enough
+to change back?
+
+637
+00:44:56,027 --> 00:44:59,197
+-I don't know what you mean!
+-Wait a minute.
+
+638
+00:44:59,280 --> 00:45:02,992
+The maid told me about
+Smith and the matron.
+
+639
+00:45:03,117 --> 00:45:05,661
+-That woman, there.
+-Then let's have you!
+
+640
+00:45:09,790 --> 00:45:12,668
+Have you enjoyed it, Doctor?
+Being human?
+
+641
+00:45:12,793 --> 00:45:17,006
+Has it taught you wonderful things?
+Are you better, richer, wiser?
+
+642
+00:45:17,673 --> 00:45:20,092
+Then let's see you answer this.
+
+643
+00:45:20,176 --> 00:45:23,054
+Which one of them
+do you want us to kill?
+
+644
+00:45:24,388 --> 00:45:26,015
+Maid or matron?
+
+645
+00:45:26,807 --> 00:45:28,643
+Your friend
+
+646
+00:45:28,726 --> 00:45:30,394
+or your lover?
+
+647
+00:45:31,145 --> 00:45:32,813
+Your choice.
+
+648
+00:46:29,370 --> 00:46:31,205
+We are the Family of Blood.
+
+649
+00:46:31,706 --> 00:46:33,416
+(CHURCH BELLS RINGING)
+
+650
+00:46:39,422 --> 00:46:40,798
+Save us.
+
+651
+00:46:40,881 --> 00:46:42,633
+I am not the Doctor.
+
+652
+00:46:42,717 --> 00:46:45,845
+TIM: He's like the night
+and the storm and the heart of the sun.
+
+653
+00:46:45,928 --> 00:46:47,263
+He's ancient and forever.
+
+654
+00:46:47,388 --> 00:46:50,850
+He burns at the centre of time
+and he can see the turn of the universe.
+

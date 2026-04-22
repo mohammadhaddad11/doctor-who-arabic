@@ -1,0 +1,40 @@
+﻿1
+00:00:00,960 --> 00:00:02,800
+(DOCTOR WHO THEME)
+
+2
+00:00:08,200 --> 00:00:13,680
+# Tick-tock goes the clock
+
+3
+00:00:14,680 --> 00:00:20,480
+# Tick-tock goes the clock
+
+4
+00:00:21,520 --> 00:00:26,840
+# Tick-tock goes the clock
+
+5
+00:00:29,960 --> 00:00:31,240
+Secure.
+
+6
+00:00:32,000 --> 00:00:33,200
+Secure.
+
+7
+00:00:40,560 --> 00:00:44,320
+# Doctor, brave and good
+
+8
+00:00:44,400 --> 00:00:48,720
+# He turned away from violence
+
+9
+00:00:48,800 --> 00:00:52,320
+# When he understood
+
+10
+00:00:52,400 --> 00:00:56,400
+# The falling of the Silence #
+

@@ -1,0 +1,505 @@
+﻿1
+00:00:01,418 --> 00:00:04,379
+CASS: Help me, please.
+Can anybody hear me?
+
+2
+00:00:04,463 --> 00:00:06,798
+COMPUTER: Please state the nature
+of your ailment or injury.
+
+3
+00:00:06,924 --> 00:00:09,676
+I'm not injured. I'm crashing.
+I don't need a doctor.
+
+4
+00:00:09,760 --> 00:00:12,054
+COMPUTER: A clear statement
+of your symptoms will help us provide
+
+5
+00:00:12,137 --> 00:00:16,308
+the medical practitioner appropriate
+to your individual needs.
+
+6
+00:00:16,433 --> 00:00:19,561
+I'm trying to send a distress signal.
+Stop talking about doctors.
+
+7
+00:00:19,645 --> 00:00:21,897
+MAN: I'm a doctor.
+
+8
+00:00:21,980 --> 00:00:25,442
+But probably not
+the one you were expecting.
+
+9
+00:00:26,944 --> 00:00:28,946
+(DOCTOR WHO THEME)
+
+10
+00:00:40,457 --> 00:00:42,543
+-Where are the rest of the crew?
+-Teleported off.
+
+11
+00:00:42,626 --> 00:00:44,545
+-But you're still here?
+- Iteleported them.
+
+12
+00:00:44,628 --> 00:00:46,380
+-Why you?
+-Everyone else was screaming.
+
+13
+00:00:46,463 --> 00:00:49,633
+-Welcome aboard.
+-Aboard what?
+
+14
+00:00:49,800 --> 00:00:51,593
+I'll show you.
+
+15
+00:00:53,178 --> 00:00:55,013
+Where are we going?
+
+16
+00:00:55,138 --> 00:00:56,348
+-Back of the ship.
+-Why?
+
+17
+00:00:56,473 --> 00:00:58,684
+Because the front crashes first.
+Think it through.
+
+18
+00:00:58,809 --> 00:01:01,019
+Oh, why did you do that?
+
+19
+00:01:01,144 --> 00:01:02,771
+-Emergency protocols.
+-(SCREWDRIVER BUZZES)
+
+20
+00:01:02,854 --> 00:01:04,606
+-What's your name?
+-Cass.
+
+21
+00:01:04,690 --> 00:01:06,775
+You're young to be
+crewing a gunship, Cass.
+
+22
+00:01:06,858 --> 00:01:09,820
+I wanted to see the universe.
+Is it always like this?
+
+23
+00:01:09,945 --> 00:01:12,197
+If you're lucky.
+
+24
+00:01:14,366 --> 00:01:17,244
+-Don't worry. It's bigger on the inside.
+-What did you say?
+
+25
+00:01:17,327 --> 00:01:19,413
+"Bigger on the inside"?
+Is that what you said?
+
+26
+00:01:19,496 --> 00:01:22,207
+-Yes. Come on, you'll love it.
+-Is this a Tardis?
+
+27
+00:01:22,332 --> 00:01:24,418
+Yes, but you'll be perfectly safe,
+I promise you.
+
+28
+00:01:24,501 --> 00:01:28,130
+-Don't touch me!
+-I'm not part of the war.
+
+29
+00:01:28,213 --> 00:01:30,257
+I swear to you, I never was.
+
+30
+00:01:30,340 --> 00:01:32,593
+-You're a Time Lord.
+-Yes, I'm a Time Lord.
+
+31
+00:01:32,676 --> 00:01:35,721
+-But I'm one of the nice ones.
+-Get away from me.
+
+32
+00:01:35,846 --> 00:01:37,556
+Well, look on the bright side.
+I'm not a Dalek!
+
+33
+00:01:37,681 --> 00:01:40,601
+Who can tell the difference any more?
+
+34
+00:01:40,684 --> 00:01:43,854
+-Cass!
+-It's deadlocked. Don't even try.
+
+35
+00:01:43,979 --> 00:01:46,189
+Cass, just open the door.
+I'm trying to help.
+
+36
+00:01:46,315 --> 00:01:49,276
+Go back to your battlefield.
+
+37
+00:01:49,359 --> 00:01:53,238
+You haven't finished yet. (SOBS)
+Some of the universe is still standing.
+
+38
+00:01:53,363 --> 00:01:57,367
+-I'm not leaving this ship without you.
+-Then you're gonna die right there.
+
+39
+00:01:58,535 --> 00:02:01,455
+-Best news all day.
+-Cass. Cass.
+
+40
+00:02:01,538 --> 00:02:04,207
+(SHOUTS) Cass!
+
+41
+00:02:04,333 --> 00:02:07,377
+Cass! Cass!
+
+42
+00:02:13,842 --> 00:02:16,345
+And here he is at last,
+
+43
+00:02:16,428 --> 00:02:18,555
+the man to end it all.
+
+44
+00:02:18,680 --> 00:02:22,559
+My sisters,
+the Doctor has returned to Karn.
+
+45
+00:02:22,684 --> 00:02:25,354
+PRIESTESS: We have always known
+in our bones
+
+46
+00:02:25,437 --> 00:02:28,106
+that one day he would return here.
+
+47
+00:02:28,231 --> 00:02:31,026
+Such a pity he's dead.
+
+48
+00:02:38,033 --> 00:02:39,951
+Cass!
+
+49
+00:02:41,244 --> 00:02:43,205
+If you refer to your companion,
+
+50
+00:02:43,288 --> 00:02:45,374
+we are still attempting
+to extract her from the wreckage.
+
+51
+00:02:45,457 --> 00:02:48,710
+-She wasn't my companion.
+-She's almost certainly dead.
+
+52
+00:02:48,794 --> 00:02:51,254
+-No one could survive that crash.
+-I did.
+
+53
+00:02:51,380 --> 00:02:53,882
+No, we restored you to life.
+
+54
+00:02:53,965 --> 00:02:58,845
+But it's a temporary measure.
+You have a little under four minutes.
+
+55
+00:02:58,929 --> 00:03:01,473
+Four minutes? That's ages.
+
+56
+00:03:01,598 --> 00:03:04,142
+What if I get bored?
+I need a television. Couple of books.
+
+57
+00:03:04,267 --> 00:03:06,103
+Anyone for chess? Bring me knitting.
+
+58
+00:03:06,228 --> 00:03:10,065
+You have so little breath left.
+Spend it wisely.
+
+59
+00:03:10,148 --> 00:03:13,902
+Hang on, is it you?
+
+60
+00:03:15,112 --> 00:03:17,572
+Am I back on Karn?
+
+61
+00:03:17,656 --> 00:03:20,158
+You're the Sisterhood of Karn.
+
+62
+00:03:20,283 --> 00:03:23,203
+Keepers of the Flame of Utter Boredom.
+
+63
+00:03:23,286 --> 00:03:25,580
+-"Eternal Life".
+-That's the one.
+
+64
+00:03:25,664 --> 00:03:28,083
+Mock us if you will, but our elixir
+
+65
+00:03:28,166 --> 00:03:31,002
+can trigger your regeneration,
+bring you back.
+
+66
+00:03:32,421 --> 00:03:35,173
+Time Lord science is elevated
+here on Karn.
+
+67
+00:03:35,298 --> 00:03:37,175
+The change doesn't have to be random.
+
+68
+00:03:38,510 --> 00:03:42,806
+Fat or thin, young or old,
+man or woman.
+
+69
+00:03:44,141 --> 00:03:46,977
+-Why would you do this for me?
+-You have helped us in the past.
+
+70
+00:03:47,102 --> 00:03:49,813
+You were never big on gratitude.
+
+71
+00:03:49,938 --> 00:03:52,691
+The war between the Daleks and
+the Time Lords threatens all reality.
+
+72
+00:03:52,816 --> 00:03:54,985
+You are the only hope left.
+
+73
+00:03:55,110 --> 00:03:57,571
+It's not my war.
+I will have no part of it.
+
+74
+00:03:57,654 --> 00:04:02,117
+-You can't ignore it forever.
+-I help where I can. I will not fight.
+
+75
+00:04:02,200 --> 00:04:04,161
+Because you are "the good man",
+as you call yourself?
+
+76
+00:04:04,286 --> 00:04:08,248
+-I call myself the Doctor.
+-It's the same thing, in your mind.
+
+77
+00:04:08,331 --> 00:04:11,168
+-I'd like to think so.
+-In that case, Doctor,
+
+78
+00:04:12,711 --> 00:04:15,505
+attend your patient.
+
+79
+00:04:21,845 --> 00:04:24,264
+-(SCREWDRIVER BUZZES)
+-PRIESTESS: You're wasting your time.
+
+80
+00:04:24,347 --> 00:04:26,600
+She is beyond even our help.
+
+81
+00:04:26,683 --> 00:04:29,895
+-She wanted to see the universe.
+-She didn't miss much.
+
+82
+00:04:30,020 --> 00:04:31,646
+It's very nearly over.
+
+83
+00:04:31,730 --> 00:04:34,441
+I could have saved her. I could have
+got her off there. She wouldn't listen.
+
+84
+00:04:34,524 --> 00:04:35,984
+Then she was wiser than you.
+
+85
+00:04:36,067 --> 00:04:38,445
+She understood there was no escaping
+the Time War.
+
+86
+00:04:38,528 --> 00:04:41,865
+You are a part of this, Doctor,
+whether you like it or not.
+
+87
+00:04:41,990 --> 00:04:44,701
+-I would rather die.
+-You're dead already.
+
+88
+00:04:44,826 --> 00:04:46,995
+How many more will you let join you?
+
+89
+00:04:48,997 --> 00:04:51,374
+If she could speak,
+
+90
+00:04:52,334 --> 00:04:55,003
+-what would she say?
+-To me? Nothing.
+
+91
+00:04:55,086 --> 00:04:58,256
+I'm a Time Lord.
+Everything she despised.
+
+92
+00:04:58,924 --> 00:05:02,594
+She would beg your help,
+as we beg your help now.
+
+93
+00:05:03,553 --> 00:05:08,058
+The universe stands on the brink.
+Will you let it fall?
+
+94
+00:05:09,893 --> 00:05:14,689
+Fast or strong? Wise or angry?
+What do you need now?
+
+95
+00:05:18,860 --> 00:05:21,404
+-Warrior.
+-Warrior?
+
+96
+00:05:22,531 --> 00:05:25,200
+I don't suppose there's any need
+for a Doctor any more.
+
+97
+00:05:26,785 --> 00:05:28,870
+Make me a Warrior, now.
+
+98
+00:05:28,954 --> 00:05:31,915
+I took the liberty
+of preparing this one myself.
+
+99
+00:05:34,376 --> 00:05:36,753
+Get out. Get out!
+
+100
+00:05:38,088 --> 00:05:39,923
+All of you.
+
+101
+00:05:42,300 --> 00:05:45,595
+-Will it hurt?
+-Yes.
+
+102
+00:05:45,720 --> 00:05:47,430
+Good.
+
+103
+00:05:48,765 --> 00:05:52,644
+Charley, C'rizz, Lucie, Tamsin, Molly,
+
+104
+00:05:53,812 --> 00:05:56,606
+friends, companions I've known,
+I salute you.
+
+105
+00:05:56,731 --> 00:05:58,775
+Cass...
+
+106
+00:05:58,900 --> 00:06:00,610
+I apologise.
+
+107
+00:06:03,613 --> 00:06:06,116
+"Physician, heal thyself."
+
+108
+00:06:21,798 --> 00:06:23,842
+Argh! (GROANS)
+
+109
+00:06:31,474 --> 00:06:33,476
+Is it done?
+
+110
+00:06:52,162 --> 00:06:55,290
+WAR DOCTOR: "Doctor" no more.
+

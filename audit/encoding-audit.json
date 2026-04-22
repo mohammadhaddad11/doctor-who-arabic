@@ -1,0 +1,1550 @@
+{
+  "generatedAt": "2026-04-22T08:27:19.532Z",
+  "summary": {
+    "totalFiles": 220,
+    "converted": 220,
+    "problematic": []
+  },
+  "files": [
+    {
+      "file": "E01_new_earth.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 603,
+      "arabicChars": 15268
+    },
+    {
+      "file": "E01_partners_in_crime.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 621,
+      "arabicChars": 13458
+    },
+    {
+      "file": "E01_rose.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 425,
+      "arabicChars": 10824
+    },
+    {
+      "file": "E01_smith_and_jones.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 603,
+      "arabicChars": 14247
+    },
+    {
+      "file": "E01_spyfall_part_1.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 1045,
+      "arabicChars": 18920
+    },
+    {
+      "file": "E01_the_church_on_ruby_road_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 747,
+      "arabicChars": 15072
+    },
+    {
+      "file": "E01_the_eleventh_hour.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 755,
+      "arabicChars": 18760
+    },
+    {
+      "file": "E01_the_halloween_apocalypse.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 815,
+      "arabicChars": 15669
+    },
+    {
+      "file": "E01_the_robot_revolution.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 705,
+      "arabicChars": 13586
+    },
+    {
+      "file": "E01_the_woman_who_fell_to_earth.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 807,
+      "arabicChars": 17282
+    },
+    {
+      "file": "E02_asylum_of_the_daleks_prequel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 22,
+      "arabicChars": 511
+    },
+    {
+      "file": "E02_deep_breath.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 1059,
+      "arabicChars": 23029
+    },
+    {
+      "file": "E02_lux.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 721,
+      "arabicChars": 13351
+    },
+    {
+      "file": "E02_meanwhile_in_the_tardis_1_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 58,
+      "arabicChars": 1598
+    },
+    {
+      "file": "E02_space_babies.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 776,
+      "arabicChars": 14104
+    },
+    {
+      "file": "E02_spyfall_part_2.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 1041,
+      "arabicChars": 18822
+    },
+    {
+      "file": "E02_the_end_of_the_world.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 524,
+      "arabicChars": 12849
+    },
+    {
+      "file": "E02_the_fires_of_pompeii.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 806,
+      "arabicChars": 16882
+    },
+    {
+      "file": "E02_the_ghost_monument.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 843,
+      "arabicChars": 17292
+    },
+    {
+      "file": "E02_the_pilot.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 631,
+      "arabicChars": 13136
+    },
+    {
+      "file": "E02_the_shakespeare_code.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 666,
+      "arabicChars": 14933
+    },
+    {
+      "file": "E02_the_star_beast_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 874,
+      "arabicChars": 16918
+    },
+    {
+      "file": "E02_tooth_and_claw.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 578,
+      "arabicChars": 14209
+    },
+    {
+      "file": "E02_war_of_the_sontarans.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 869,
+      "arabicChars": 19786
+    },
+    {
+      "file": "E03_asylum_of_the_daleks.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 569,
+      "arabicChars": 15140
+    },
+    {
+      "file": "E03_gridlock.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 698,
+      "arabicChars": 16240
+    },
+    {
+      "file": "E03_into_the_dalek.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 733,
+      "arabicChars": 16307
+    },
+    {
+      "file": "E03_once_upon_time.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 869,
+      "arabicChars": 17657
+    },
+    {
+      "file": "E03_orphan_55.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 893,
+      "arabicChars": 17640
+    },
+    {
+      "file": "E03_planet_of_the_ood.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 626,
+      "arabicChars": 14920
+    },
+    {
+      "file": "E03_rosa.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 850,
+      "arabicChars": 17404
+    },
+    {
+      "file": "E03_school_reunion.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 552,
+      "arabicChars": 14719
+    },
+    {
+      "file": "E03_smile.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 722,
+      "arabicChars": 15715
+    },
+    {
+      "file": "E03_the_beast_below.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 622,
+      "arabicChars": 13075
+    },
+    {
+      "file": "E03_the_devils_chord.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 621,
+      "arabicChars": 10852
+    },
+    {
+      "file": "E03_the_impossible_astronaut_prequel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 19,
+      "arabicChars": 304
+    },
+    {
+      "file": "E03_the_magicians_apprentice.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 703,
+      "arabicChars": 13439
+    },
+    {
+      "file": "E03_the_unquiet_dead.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 671,
+      "arabicChars": 15292
+    },
+    {
+      "file": "E03_the_well.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 784,
+      "arabicChars": 13333
+    },
+    {
+      "file": "E03_wild_blue_yonder_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 797,
+      "arabicChars": 15586
+    },
+    {
+      "file": "E04_aliens_of_london.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 420,
+      "arabicChars": 12961
+    },
+    {
+      "file": "E04_arachnids_in_the_uk.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 828,
+      "arabicChars": 16470
+    },
+    {
+      "file": "E04_boom.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 801,
+      "arabicChars": 15693
+    },
+    {
+      "file": "E04_daleks_in_manhattan.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 603,
+      "arabicChars": 13456
+    },
+    {
+      "file": "E04_lucky_day.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 667,
+      "arabicChars": 15453
+    },
+    {
+      "file": "E04_nikola_teslas_night_of_terror.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 916,
+      "arabicChars": 17373
+    },
+    {
+      "file": "E04_robot_of_sherwood.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 675,
+      "arabicChars": 15329
+    },
+    {
+      "file": "E04_the_giggle_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 927,
+      "arabicChars": 17900
+    },
+    {
+      "file": "E04_the_girl_in_the_fireplace.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 618,
+      "arabicChars": 15334
+    },
+    {
+      "file": "E04_the_impossible_astronaut.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 603,
+      "arabicChars": 14390
+    },
+    {
+      "file": "E04_the_inforarium_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 37,
+      "arabicChars": 1021
+    },
+    {
+      "file": "E04_the_sontaran_stratagem.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 686,
+      "arabicChars": 17429
+    },
+    {
+      "file": "E04_the_witchs_familiar.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 818,
+      "arabicChars": 13988
+    },
+    {
+      "file": "E04_thin_ice.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 704,
+      "arabicChars": 13209
+    },
+    {
+      "file": "E04_victory_of_the_daleks.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 602,
+      "arabicChars": 13523
+    },
+    {
+      "file": "E04_village_of_the_angels.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 895,
+      "arabicChars": 17637
+    },
+    {
+      "file": "E05_73_yards.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 699,
+      "arabicChars": 13931
+    },
+    {
+      "file": "E05_day_of_the_moon.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 624,
+      "arabicChars": 15325
+    },
+    {
+      "file": "E05_dinosaurs_on_a_spaceship.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 637,
+      "arabicChars": 17227
+    },
+    {
+      "file": "E05_evolution_of_the_daleks.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 608,
+      "arabicChars": 13956
+    },
+    {
+      "file": "E05_fugitive_of_the_judoon.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 964,
+      "arabicChars": 17791
+    },
+    {
+      "file": "E05_knock_knock.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 662,
+      "arabicChars": 12392
+    },
+    {
+      "file": "E05_listen.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 728,
+      "arabicChars": 15417
+    },
+    {
+      "file": "E05_rise_of_the_cybermen.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 654,
+      "arabicChars": 16148
+    },
+    {
+      "file": "E05_survivors_of_the_flux.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 786,
+      "arabicChars": 18672
+    },
+    {
+      "file": "E05_the_poison_sky.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 623,
+      "arabicChars": 14745
+    },
+    {
+      "file": "E05_the_story_and_the_engine.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 633,
+      "arabicChars": 12602
+    },
+    {
+      "file": "E05_the_time_of_angels.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 556,
+      "arabicChars": 13910
+    },
+    {
+      "file": "E05_the_tsuranga_conundrum.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 956,
+      "arabicChars": 20366
+    },
+    {
+      "file": "E05_under_the_lake.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 677,
+      "arabicChars": 15695
+    },
+    {
+      "file": "E05_world_war_three.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 530,
+      "arabicChars": 14745
+    },
+    {
+      "file": "E06_before_the_flood.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 493,
+      "arabicChars": 11451
+    },
+    {
+      "file": "E06_dalek.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 564,
+      "arabicChars": 13951
+    },
+    {
+      "file": "E06_demons_of_the_punjab.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 953,
+      "arabicChars": 17034
+    },
+    {
+      "file": "E06_dot_and_bubble.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 872,
+      "arabicChars": 16488
+    },
+    {
+      "file": "E06_flesh_and_stone.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 763,
+      "arabicChars": 16828
+    },
+    {
+      "file": "E06_oxygen.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 757,
+      "arabicChars": 15238
+    },
+    {
+      "file": "E06_praxeus.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 878,
+      "arabicChars": 16874
+    },
+    {
+      "file": "E06_the_age_of_steel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 619,
+      "arabicChars": 14198
+    },
+    {
+      "file": "E06_the_curse_of_the_black_spot_prequel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 15,
+      "arabicChars": 448
+    },
+    {
+      "file": "E06_the_doctors_daughter.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 625,
+      "arabicChars": 14568
+    },
+    {
+      "file": "E06_the_interstellar_song_contest.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 691,
+      "arabicChars": 13543
+    },
+    {
+      "file": "E06_the_making_of_the_gunslinger_prequel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 16,
+      "arabicChars": 458
+    },
+    {
+      "file": "E06_the_vanquishers.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 982,
+      "arabicChars": 21997
+    },
+    {
+      "file": "E06_time_heist.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 659,
+      "arabicChars": 14835
+    },
+    {
+      "file": "E07_a_town_called_mercy.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 486,
+      "arabicChars": 12322
+    },
+    {
+      "file": "E07_can_you_hear_me.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 782,
+      "arabicChars": 13438
+    },
+    {
+      "file": "E07_eve_of_the_daleks_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 981,
+      "arabicChars": 22044
+    },
+    {
+      "file": "E07_extremis.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 733,
+      "arabicChars": 12808
+    },
+    {
+      "file": "E07_kerblam.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 989,
+      "arabicChars": 20677
+    },
+    {
+      "file": "E07_meanwhile_in_the_tardis_2_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 80,
+      "arabicChars": 1793
+    },
+    {
+      "file": "E07_rogue.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 648,
+      "arabicChars": 12118
+    },
+    {
+      "file": "E07_the_caretaker.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 699,
+      "arabicChars": 18552
+    },
+    {
+      "file": "E07_the_curse_of_the_black_spot.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 498,
+      "arabicChars": 12774
+    },
+    {
+      "file": "E07_the_girl_who_died.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 762,
+      "arabicChars": 14223
+    },
+    {
+      "file": "E07_the_idiots_lantern.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 530,
+      "arabicChars": 13736
+    },
+    {
+      "file": "E07_the_lazarus_experiment.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 523,
+      "arabicChars": 12803
+    },
+    {
+      "file": "E07_the_long_game.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 638,
+      "arabicChars": 15596
+    },
+    {
+      "file": "E07_the_unicorn_and_the_wasp.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 867,
+      "arabicChars": 17548
+    },
+    {
+      "file": "E07_wish_world.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 725,
+      "arabicChars": 12944
+    },
+    {
+      "file": "E08_42.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 588,
+      "arabicChars": 13933
+    },
+    {
+      "file": "E08_bad_night_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 58,
+      "arabicChars": 1276
+    },
+    {
+      "file": "E08_fathers_day.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 483,
+      "arabicChars": 11990
+    },
+    {
+      "file": "E08_kill_the_moon.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 739,
+      "arabicChars": 16165
+    },
+    {
+      "file": "E08_legend_of_the_sea_devils_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 759,
+      "arabicChars": 14169
+    },
+    {
+      "file": "E08_silence_in_the_library.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 685,
+      "arabicChars": 15326
+    },
+    {
+      "file": "E08_the_haunting_of_villa_diodati.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 818,
+      "arabicChars": 15586
+    },
+    {
+      "file": "E08_the_impossible_planet.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 626,
+      "arabicChars": 14915
+    },
+    {
+      "file": "E08_the_legend_of_ruby_sunday.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 768,
+      "arabicChars": 15529
+    },
+    {
+      "file": "E08_the_power_of_three.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 691,
+      "arabicChars": 16388
+    },
+    {
+      "file": "E08_the_pyramid_at_the_end_of_the_world.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 713,
+      "arabicChars": 13681
+    },
+    {
+      "file": "E08_the_reality_war.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 1011,
+      "arabicChars": 19811
+    },
+    {
+      "file": "E08_the_vampires_of_venice.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 640,
+      "arabicChars": 12411
+    },
+    {
+      "file": "E08_the_witchfinders.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 957,
+      "arabicChars": 18904
+    },
+    {
+      "file": "E08_the_woman_who_lived.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 730,
+      "arabicChars": 15196
+    },
+    {
+      "file": "E09_amys_choice.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 644,
+      "arabicChars": 15204
+    },
+    {
+      "file": "E09_ascension_of_the_cybermen.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 782,
+      "arabicChars": 13747
+    },
+    {
+      "file": "E09_empire_of_death.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 671,
+      "arabicChars": 11879
+    },
+    {
+      "file": "E09_forest_of_the_dead.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 654,
+      "arabicChars": 15431
+    },
+    {
+      "file": "E09_human_nature.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 598,
+      "arabicChars": 14150
+    },
+    {
+      "file": "E09_it_takes_you_away.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 809,
+      "arabicChars": 15992
+    },
+    {
+      "file": "E09_mummy_on_the_orient_express.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 869,
+      "arabicChars": 20568
+    },
+    {
+      "file": "E09_the_angels_take_manhattan.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 491,
+      "arabicChars": 12264
+    },
+    {
+      "file": "E09_the_doctors_wife.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 665,
+      "arabicChars": 16847
+    },
+    {
+      "file": "E09_the_empty_child.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 485,
+      "arabicChars": 12527
+    },
+    {
+      "file": "E09_the_lie_of_the_land.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 650,
+      "arabicChars": 13360
+    },
+    {
+      "file": "E09_the_power_of_the_doctor_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 1470,
+      "arabicChars": 28358
+    },
+    {
+      "file": "E09_the_satan_pit.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 684,
+      "arabicChars": 15991
+    },
+    {
+      "file": "E09_the_zygon_invasion.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 566,
+      "arabicChars": 11268
+    },
+    {
+      "file": "E10_empress_of_mars.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 583,
+      "arabicChars": 12076
+    },
+    {
+      "file": "E10_flatline.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 659,
+      "arabicChars": 16994
+    },
+    {
+      "file": "E10_good_night_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 80,
+      "arabicChars": 2035
+    },
+    {
+      "file": "E10_love_and_monsters.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 647,
+      "arabicChars": 15987
+    },
+    {
+      "file": "E10_midnight.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 788,
+      "arabicChars": 18397
+    },
+    {
+      "file": "E10_the_battle_of_ranskoor_av_kolos.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 885,
+      "arabicChars": 15707
+    },
+    {
+      "file": "E10_the_doctor_dances.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 628,
+      "arabicChars": 16258
+    },
+    {
+      "file": "E10_the_family_of_blood.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 571,
+      "arabicChars": 14149
+    },
+    {
+      "file": "E10_the_hungry_earth.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 650,
+      "arabicChars": 13974
+    },
+    {
+      "file": "E10_the_timeless_children.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 1003,
+      "arabicChars": 17003
+    },
+    {
+      "file": "E10_the_zygon_inversion.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 667,
+      "arabicChars": 12633
+    },
+    {
+      "file": "E11_blink.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 587,
+      "arabicChars": 13408
+    },
+    {
+      "file": "E11_boom_town.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 556,
+      "arabicChars": 16972
+    },
+    {
+      "file": "E11_cold_blood.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 632,
+      "arabicChars": 15619
+    },
+    {
+      "file": "E11_fear_her.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 580,
+      "arabicChars": 15409
+    },
+    {
+      "file": "E11_in_the_forest_of_the_night.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 711,
+      "arabicChars": 17474
+    },
+    {
+      "file": "E11_joy_to_the_world_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 866,
+      "arabicChars": 17454
+    },
+    {
+      "file": "E11_resolution_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 936,
+      "arabicChars": 17813
+    },
+    {
+      "file": "E11_revolution_of_the_daleks_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 1122,
+      "arabicChars": 21313
+    },
+    {
+      "file": "E11_sleep_no_more.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 755,
+      "arabicChars": 14250
+    },
+    {
+      "file": "E11_the_battle_of_demons_run_two_days_later_prequel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 43,
+      "arabicChars": 1141
+    },
+    {
+      "file": "E11_the_eaters_of_light.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 646,
+      "arabicChars": 14410
+    },
+    {
+      "file": "E11_the_rebel_flesh.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 539,
+      "arabicChars": 13279
+    },
+    {
+      "file": "E11_turn_left.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 723,
+      "arabicChars": 17331
+    },
+    {
+      "file": "E12_army_of_ghosts.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 565,
+      "arabicChars": 14780
+    },
+    {
+      "file": "E12_bad_wolf.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 634,
+      "arabicChars": 18049
+    },
+    {
+      "file": "E12_dark_water.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 681,
+      "arabicChars": 15449
+    },
+    {
+      "file": "E12_face_the_raven.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 676,
+      "arabicChars": 14603
+    },
+    {
+      "file": "E12_good_as_gold_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 38,
+      "arabicChars": 1011
+    },
+    {
+      "file": "E12_the_almost_people.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 561,
+      "arabicChars": 14496
+    },
+    {
+      "file": "E12_the_stolen_earth.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 651,
+      "arabicChars": 15106
+    },
+    {
+      "file": "E12_utopia.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 654,
+      "arabicChars": 15808
+    },
+    {
+      "file": "E12_world_enough_and_time.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 629,
+      "arabicChars": 12639
+    },
+    {
+      "file": "E13_a_good_man_goes_to_war_prequel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 16,
+      "arabicChars": 474
+    },
+    {
+      "file": "E13_death_in_heaven.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 854,
+      "arabicChars": 18193
+    },
+    {
+      "file": "E13_doomsday.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 690,
+      "arabicChars": 14316
+    },
+    {
+      "file": "E13_heaven_sent.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 484,
+      "arabicChars": 8919
+    },
+    {
+      "file": "E13_journeys_end.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 856,
+      "arabicChars": 19542
+    },
+    {
+      "file": "E13_the_doctor_falls.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 742,
+      "arabicChars": 14412
+    },
+    {
+      "file": "E13_the_parting_of_the_ways.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 535,
+      "arabicChars": 13071
+    },
+    {
+      "file": "E13_the_sound_of_drums.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 685,
+      "arabicChars": 16798
+    },
+    {
+      "file": "E13_vastra_investigates_prequel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 34,
+      "arabicChars": 875
+    },
+    {
+      "file": "E13_vincent_and_the_doctor.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 685,
+      "arabicChars": 13372
+    },
+    {
+      "file": "E14_a_good_man_goes_to_war.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 642,
+      "arabicChars": 15511
+    },
+    {
+      "file": "E14_hell_bent.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 897,
+      "arabicChars": 16164
+    },
+    {
+      "file": "E14_last_christmas_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 968,
+      "arabicChars": 21225
+    },
+    {
+      "file": "E14_last_of_the_time_lords.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 609,
+      "arabicChars": 14927
+    },
+    {
+      "file": "E14_the_lodger.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 685,
+      "arabicChars": 15121
+    },
+    {
+      "file": "E14_the_runaway_bride_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 806,
+      "arabicChars": 18028
+    },
+    {
+      "file": "E14_the_snowmen_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 994,
+      "arabicChars": 18765
+    },
+    {
+      "file": "E14_twice_upon_a_time_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 793,
+      "arabicChars": 15404
+    },
+    {
+      "file": "E15_lets_kill_hitler_prequel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 22,
+      "arabicChars": 587
+    },
+    {
+      "file": "E15_the_bells_of_saint_john_prequel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 42,
+      "arabicChars": 917
+    },
+    {
+      "file": "E15_the_christmas_invasion_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 745,
+      "arabicChars": 18757
+    },
+    {
+      "file": "E15_the_husbands_of_river_song_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 912,
+      "arabicChars": 19893
+    },
+    {
+      "file": "E15_the_next_doctor_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 778,
+      "arabicChars": 19267
+    },
+    {
+      "file": "E15_the_pandorica_opens.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 604,
+      "arabicChars": 13856
+    },
+    {
+      "file": "E15_time_crash_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 129,
+      "arabicChars": 3362
+    },
+    {
+      "file": "E16_lets_kill_hitler.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 698,
+      "arabicChars": 15022
+    },
+    {
+      "file": "E16_planet_of_the_dead_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 903,
+      "arabicChars": 21268
+    },
+    {
+      "file": "E16_the_bells_of_saint_john.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 590,
+      "arabicChars": 13585
+    },
+    {
+      "file": "E16_the_big_bang.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 742,
+      "arabicChars": 16051
+    },
+    {
+      "file": "E16_the_return_of_doctor_mysterio_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 965,
+      "arabicChars": 21125
+    },
+    {
+      "file": "E16_voyage_of_the_damned_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 938,
+      "arabicChars": 23441
+    },
+    {
+      "file": "E17_night_terrors.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 518,
+      "arabicChars": 12620
+    },
+    {
+      "file": "E17_the_rings_of_akhaten.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 503,
+      "arabicChars": 10640
+    },
+    {
+      "file": "E17_the_waters_of_mars_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 777,
+      "arabicChars": 16541
+    },
+    {
+      "file": "E18_a_christmas_carol_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 1081,
+      "arabicChars": 20290
+    },
+    {
+      "file": "E18_first_night_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 33,
+      "arabicChars": 947
+    },
+    {
+      "file": "E18_rain_gods_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 25,
+      "arabicChars": 776
+    },
+    {
+      "file": "E19_cold_war.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 574,
+      "arabicChars": 11739
+    },
+    {
+      "file": "E19_last_night_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 56,
+      "arabicChars": 1280
+    },
+    {
+      "file": "E19_the_end_of_time_part_one_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 689,
+      "arabicChars": 16855
+    },
+    {
+      "file": "E20_hide.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 822,
+      "arabicChars": 12539
+    },
+    {
+      "file": "E20_the_end_of_time_part_two_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 822,
+      "arabicChars": 15583
+    },
+    {
+      "file": "E20_the_girl_who_waited.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 598,
+      "arabicChars": 14411
+    },
+    {
+      "file": "E21_journey_to_the_centre_of_the_tardis.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 770,
+      "arabicChars": 13045
+    },
+    {
+      "file": "E21_the_god_complex.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 551,
+      "arabicChars": 13779
+    },
+    {
+      "file": "E22_clara_and_the_tardis_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 25,
+      "arabicChars": 698
+    },
+    {
+      "file": "E22_up_all_night_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 27,
+      "arabicChars": 642
+    },
+    {
+      "file": "E23_closing_time.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 654,
+      "arabicChars": 16828
+    },
+    {
+      "file": "E23_the_crimson_horror.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 530,
+      "arabicChars": 11031
+    },
+    {
+      "file": "E24_nightmare_in_silver.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 693,
+      "arabicChars": 17803
+    },
+    {
+      "file": "E25_the_wedding_of_river_song.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 674,
+      "arabicChars": 16951
+    },
+    {
+      "file": "E26_the_doctor_the_widow_and_the_wardrobe_prequel.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 20,
+      "arabicChars": 443
+    },
+    {
+      "file": "E27_the_doctor_the_widow_and_the_wardrobe_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 731,
+      "arabicChars": 17026
+    },
+    {
+      "file": "E27_the_name_of_the_doctor.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 619,
+      "arabicChars": 14619
+    },
+    {
+      "file": "E28_the_night_of_the_doctor_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 137,
+      "arabicChars": 2715
+    },
+    {
+      "file": "E29_the_last_day_minisode.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 56,
+      "arabicChars": 1399
+    },
+    {
+      "file": "E30_the_day_of_the_doctor_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 1224,
+      "arabicChars": 26240
+    },
+    {
+      "file": "E31_the_time_of_the_doctor_special.ar.srt",
+      "rewritten": true,
+      "problematic": false,
+      "cueCount": 888,
+      "arabicChars": 20364
+    }
+  ]
+}

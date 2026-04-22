@@ -1,0 +1,4552 @@
+{
+  "generatedAt": "2026-04-22T07:55:34.525Z",
+  "reviewManifest": [
+    {
+      "filename": "E14_born_again_minisode.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E14_born_again_minisode.ar.manual-review.srt",
+      "reason": "Post-fix audit still left this subtitle below the production confidence bar."
+    },
+    {
+      "filename": "E17_death_is_the_only_answer_minisode.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E17_death_is_the_only_answer_minisode.ar.manual-review.srt",
+      "reason": "Post-fix audit still left this subtitle below the production confidence bar."
+    },
+    {
+      "filename": "E24_the_wedding_of_river_song_prequel.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E24_the_wedding_of_river_song_prequel.ar.manual-review.srt",
+      "reason": "Post-fix audit still left this subtitle below the production confidence bar."
+    },
+    {
+      "filename": "E12_the_great_detective_prequel.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E12_the_great_detective_prequel.ar.manual-review.srt",
+      "reason": "Post-fix audit still left this subtitle below the production confidence bar."
+    },
+    {
+      "filename": "E14_the_snowmen_special.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E14_the_snowmen_special.ar.original-source.srt",
+      "reason": "Downloaded replacement candidate matched The Snowmen with strong timing alignment."
+    },
+    {
+      "filename": "E16_the_bells_of_saint_john.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E16_the_bells_of_saint_john.ar.original-source.srt",
+      "reason": "Original Snowmen file actually belongs to The Bells of Saint John."
+    },
+    {
+      "filename": "E17_the_rings_of_akhaten.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E17_the_rings_of_akhaten.ar.original-source.srt",
+      "reason": "Original Bells of Saint John file actually belongs to The Rings of Akhaten."
+    },
+    {
+      "filename": "E19_cold_war.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E19_cold_war.ar.original-source.srt",
+      "reason": "Original Rings of Akhaten file actually belongs to Cold War."
+    },
+    {
+      "filename": "E20_hide.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E20_hide.ar.original-source.srt",
+      "reason": "Original Cold War file actually belongs to Hide."
+    },
+    {
+      "filename": "E21_journey_to_the_centre_of_the_tardis.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E21_journey_to_the_centre_of_the_tardis.ar.original-source.srt",
+      "reason": "Original Hide file actually belongs to Journey to the Centre of the TARDIS."
+    },
+    {
+      "filename": "E23_the_crimson_horror.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E23_the_crimson_horror.ar.original-source.srt",
+      "reason": "Original Journey to the Centre of the TARDIS file actually belongs to The Crimson Horror."
+    },
+    {
+      "filename": "E24_nightmare_in_silver.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E24_nightmare_in_silver.ar.original-source.srt",
+      "reason": "Original The Crimson Horror file actually belongs to Nightmare in Silver."
+    },
+    {
+      "filename": "E31_the_time_of_the_doctor_special.ar.srt",
+      "path": "/mnt/d/whoniverse-main/review/arabic-subtitles/E31_the_time_of_the_doctor_special.ar.manual-review.srt",
+      "reason": "Post-fix audit still left this subtitle below the production confidence bar."
+    }
+  ],
+  "findings": [
+    {
+      "canonicalId": "S01E01",
+      "title": "Rose",
+      "filename": "E01_rose.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.89,
+      "fixedF1": 0.89,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 47.4
+    },
+    {
+      "canonicalId": "S01E02",
+      "title": "The End of the World",
+      "filename": "E02_the_end_of_the_world.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.928,
+      "fixedF1": 0.928,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 52.1
+    },
+    {
+      "canonicalId": "S01E03",
+      "title": "The Unquiet Dead",
+      "filename": "E03_the_unquiet_dead.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.938,
+      "fixedF1": 0.938,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 58.6
+    },
+    {
+      "canonicalId": "S01E04",
+      "title": "Aliens of London",
+      "filename": "E04_aliens_of_london.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.885,
+      "fixedF1": 0.885,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        1
+      ],
+      "linearSlope": 1.000501,
+      "linearOffsetSeconds": -0.381,
+      "coverageGapSeconds": 74.1
+    },
+    {
+      "canonicalId": "S01E05",
+      "title": "World War Three",
+      "filename": "E05_world_war_three.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.932,
+      "fixedF1": 0.932,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 60.2
+    },
+    {
+      "canonicalId": "S01E06",
+      "title": "Dalek",
+      "filename": "E06_dalek.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.921,
+      "fixedF1": 0.921,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 63.1
+    },
+    {
+      "canonicalId": "S01E07",
+      "title": "The Long Game",
+      "filename": "E07_the_long_game.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.938,
+      "fixedF1": 0.938,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 57.7
+    },
+    {
+      "canonicalId": "S01E08",
+      "title": "Father's Day",
+      "filename": "E08_fathers_day.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.942,
+      "fixedF1": 0.942,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 73.2
+    },
+    {
+      "canonicalId": "S01E09",
+      "title": "The Empty Child",
+      "filename": "E09_the_empty_child.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.943,
+      "fixedF1": 0.943,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 14.8
+    },
+    {
+      "canonicalId": "S01E10",
+      "title": "The Doctor Dances",
+      "filename": "E10_the_doctor_dances.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.939,
+      "fixedF1": 0.939,
+      "globalShiftSeconds": -1,
+      "windowShiftSeconds": [
+        -1,
+        -1,
+        -1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -1,
+      "coverageGapSeconds": 49.4
+    },
+    {
+      "canonicalId": "S01E11",
+      "title": "Boom Town",
+      "filename": "E11_boom_town.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.963,
+      "fixedF1": 0.963,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 55.5
+    },
+    {
+      "canonicalId": "S01E12",
+      "title": "Bad Wolf",
+      "filename": "E12_bad_wolf.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.963,
+      "fixedF1": 0.963,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 65.5
+    },
+    {
+      "canonicalId": "S01E13",
+      "title": "The Parting of the Ways",
+      "filename": "E13_the_parting_of_the_ways.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.941,
+      "fixedF1": 0.941,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        -1
+      ],
+      "linearSlope": 0.999503,
+      "linearOffsetSeconds": 0.381,
+      "coverageGapSeconds": 68.4
+    },
+    {
+      "canonicalId": "S01E14",
+      "title": "Born Again (Minisode)",
+      "filename": "E14_born_again_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "MANUAL_REVIEW",
+      "rawF1": 0.686,
+      "fixedF1": 0.686,
+      "globalShiftSeconds": 46,
+      "windowShiftSeconds": [
+        -199,
+        46,
+        46
+      ],
+      "linearSlope": 1.72314,
+      "linearOffsetSeconds": -210.667,
+      "coverageGapSeconds": 73.6
+    },
+    {
+      "canonicalId": "S01E15",
+      "title": "The Christmas Invasion (Special)",
+      "filename": "E15_the_christmas_invasion_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "drift",
+      "finalStatus": "FIXED_DRIFT",
+      "rawF1": 0.668,
+      "fixedF1": 0.835,
+      "globalShiftSeconds": 42,
+      "windowShiftSeconds": [
+        29,
+        63,
+        142
+      ],
+      "linearSlope": 1.04357,
+      "linearOffsetSeconds": -2.714,
+      "coverageGapSeconds": 60.5
+    },
+    {
+      "canonicalId": "S02E01",
+      "title": "New Earth",
+      "filename": "E01_new_earth.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.949,
+      "fixedF1": 0.949,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        1,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0.333,
+      "coverageGapSeconds": 73.6
+    },
+    {
+      "canonicalId": "S02E02",
+      "title": "Tooth and Claw",
+      "filename": "E02_tooth_and_claw.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.933,
+      "fixedF1": 0.933,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 66.2
+    },
+    {
+      "canonicalId": "S02E03",
+      "title": "School Reunion",
+      "filename": "E03_school_reunion.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.943,
+      "fixedF1": 0.943,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 69.2
+    },
+    {
+      "canonicalId": "S02E04",
+      "title": "The Girl in the Fireplace",
+      "filename": "E04_the_girl_in_the_fireplace.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.934,
+      "fixedF1": 0.934,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        -1,
+        -1,
+        0
+      ],
+      "linearSlope": 1.000507,
+      "linearOffsetSeconds": -1.381,
+      "coverageGapSeconds": 69.6
+    },
+    {
+      "canonicalId": "S02E05",
+      "title": "Rise of the Cybermen",
+      "filename": "E05_rise_of_the_cybermen.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.944,
+      "fixedF1": 0.944,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        -1,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -0.333,
+      "coverageGapSeconds": 73.3
+    },
+    {
+      "canonicalId": "S02E06",
+      "title": "The Age of Steel",
+      "filename": "E06_the_age_of_steel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.949,
+      "fixedF1": 0.949,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 71.3
+    },
+    {
+      "canonicalId": "S02E07",
+      "title": "The Idiot's Lantern",
+      "filename": "E07_the_idiots_lantern.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.926,
+      "fixedF1": 0.926,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        -1,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -0.333,
+      "coverageGapSeconds": 70.4
+    },
+    {
+      "canonicalId": "S02E08",
+      "title": "The Impossible Planet",
+      "filename": "E08_the_impossible_planet.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.952,
+      "fixedF1": 0.952,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 23.1
+    },
+    {
+      "canonicalId": "S02E09",
+      "title": "The Satan Pit",
+      "filename": "E09_the_satan_pit.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.954,
+      "fixedF1": 0.954,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        -1,
+        0,
+        0
+      ],
+      "linearSlope": 1.00048,
+      "linearOffsetSeconds": -1.048,
+      "coverageGapSeconds": 71.4
+    },
+    {
+      "canonicalId": "S02E10",
+      "title": "Love & Monsters",
+      "filename": "E10_love_and_monsters.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.947,
+      "fixedF1": 0.947,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 80.2
+    },
+    {
+      "canonicalId": "S02E11",
+      "title": "Fear Her",
+      "filename": "E11_fear_her.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.919,
+      "fixedF1": 0.919,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 70.2
+    },
+    {
+      "canonicalId": "S02E12",
+      "title": "Army of Ghosts",
+      "filename": "E12_army_of_ghosts.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.945,
+      "fixedF1": 0.945,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 20.3
+    },
+    {
+      "canonicalId": "S02E13",
+      "title": "Doomsday",
+      "filename": "E13_doomsday.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.936,
+      "fixedF1": 0.936,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        -1,
+        -1
+      ],
+      "linearSlope": 0.999512,
+      "linearOffsetSeconds": 0.048,
+      "coverageGapSeconds": 71.4
+    },
+    {
+      "canonicalId": "S02E14",
+      "title": "The Runaway Bride (Special)",
+      "filename": "E14_the_runaway_bride_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "drift",
+      "finalStatus": "FIXED_DRIFT",
+      "rawF1": 0.703,
+      "fixedF1": 0.805,
+      "globalShiftSeconds": 66,
+      "windowShiftSeconds": [
+        31,
+        62,
+        119
+      ],
+      "linearSlope": 1.03317,
+      "linearOffsetSeconds": 7.81,
+      "coverageGapSeconds": 88.6
+    },
+    {
+      "canonicalId": "S03E01",
+      "title": "Smith and Jones",
+      "filename": "E01_smith_and_jones.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.962,
+      "fixedF1": 0.962,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 108.8
+    },
+    {
+      "canonicalId": "S03E02",
+      "title": "The Shakespeare Code",
+      "filename": "E02_the_shakespeare_code.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.895,
+      "fixedF1": 0.895,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        -194
+      ],
+      "linearSlope": 0.908079,
+      "linearOffsetSeconds": 73.905,
+      "coverageGapSeconds": -135.5
+    },
+    {
+      "canonicalId": "S03E03",
+      "title": "Gridlock",
+      "filename": "E03_gridlock.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.949,
+      "fixedF1": 0.949,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 109.4
+    },
+    {
+      "canonicalId": "S03E04",
+      "title": "Daleks in Manhattan",
+      "filename": "E04_daleks_in_manhattan.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.92,
+      "fixedF1": 0.92,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        1,
+        0,
+        0
+      ],
+      "linearSlope": 0.999516,
+      "linearOffsetSeconds": 1.048,
+      "coverageGapSeconds": 95.4
+    },
+    {
+      "canonicalId": "S03E05",
+      "title": "Evolution of the Daleks",
+      "filename": "E05_evolution_of_the_daleks.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "drift",
+      "finalStatus": "FIXED_DRIFT",
+      "rawF1": 0.753,
+      "fixedF1": 0.843,
+      "globalShiftSeconds": 83,
+      "windowShiftSeconds": [
+        12,
+        70,
+        84
+      ],
+      "linearSlope": 1.035093,
+      "linearOffsetSeconds": 3.905,
+      "coverageGapSeconds": 128.2
+    },
+    {
+      "canonicalId": "S03E07",
+      "title": "The Lazarus Experiment",
+      "filename": "E07_the_lazarus_experiment.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.931,
+      "fixedF1": 0.931,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 109
+    },
+    {
+      "canonicalId": "S03E08",
+      "title": "42",
+      "filename": "E08_42.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.934,
+      "fixedF1": 0.934,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 77
+    },
+    {
+      "canonicalId": "S03E09",
+      "title": "Human Nature",
+      "filename": "E09_human_nature.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.942,
+      "fixedF1": 0.942,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 19.3
+    },
+    {
+      "canonicalId": "S03E10",
+      "title": "The Family of Blood",
+      "filename": "E10_the_family_of_blood.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.934,
+      "fixedF1": 0.934,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 76.1
+    },
+    {
+      "canonicalId": "S03E11",
+      "title": "Blink",
+      "filename": "E11_blink.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.947,
+      "fixedF1": 0.947,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 67.1
+    },
+    {
+      "canonicalId": "S03E12",
+      "title": "Utopia",
+      "filename": "E12_utopia.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.939,
+      "fixedF1": 0.939,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        0
+      ],
+      "linearSlope": 0.999506,
+      "linearOffsetSeconds": 1.381,
+      "coverageGapSeconds": 19.2
+    },
+    {
+      "canonicalId": "S03E13",
+      "title": "The Sound of Drums",
+      "filename": "E13_the_sound_of_drums.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.952,
+      "fixedF1": 0.952,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 18.7
+    },
+    {
+      "canonicalId": "S03E14",
+      "title": "Last of the Time Lords",
+      "filename": "E14_last_of_the_time_lords.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.941,
+      "fixedF1": 0.941,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 78.7
+    },
+    {
+      "canonicalId": "S03E15",
+      "title": "Time Crash (Minisode)",
+      "filename": "E15_time_crash_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.978,
+      "fixedF1": 0.978,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        46,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 15.333,
+      "coverageGapSeconds": 13.8
+    },
+    {
+      "canonicalId": "S03E16",
+      "title": "Voyage of the Damned (Special)",
+      "filename": "E16_voyage_of_the_damned_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.947,
+      "fixedF1": 0.947,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 41.6
+    },
+    {
+      "canonicalId": "S04E01",
+      "title": "Partners in Crime",
+      "filename": "E01_partners_in_crime.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.918,
+      "fixedF1": 0.918,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 52.6
+    },
+    {
+      "canonicalId": "S04E02",
+      "title": "The Fires of Pompeii",
+      "filename": "E02_the_fires_of_pompeii.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.953,
+      "fixedF1": 0.953,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 53.1
+    },
+    {
+      "canonicalId": "S04E03",
+      "title": "Planet of the Ood",
+      "filename": "E03_planet_of_the_ood.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.943,
+      "fixedF1": 0.943,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        1,
+        0,
+        0
+      ],
+      "linearSlope": 0.99948,
+      "linearOffsetSeconds": 1.048,
+      "coverageGapSeconds": 52
+    },
+    {
+      "canonicalId": "S04E04",
+      "title": "The Sontaran Stratagem",
+      "filename": "E04_the_sontaran_stratagem.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.951,
+      "fixedF1": 0.951,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 25.2
+    },
+    {
+      "canonicalId": "S04E05",
+      "title": "The Poison Sky",
+      "filename": "E05_the_poison_sky.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.948,
+      "fixedF1": 0.948,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        1,
+        0,
+        0
+      ],
+      "linearSlope": 0.999493,
+      "linearOffsetSeconds": 1.048,
+      "coverageGapSeconds": 53
+    },
+    {
+      "canonicalId": "S04E06",
+      "title": "The Doctor's Daughter",
+      "filename": "E06_the_doctors_daughter.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.931,
+      "fixedF1": 0.931,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 50.9
+    },
+    {
+      "canonicalId": "S04E07",
+      "title": "The Unicorn and the Wasp",
+      "filename": "E07_the_unicorn_and_the_wasp.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.955,
+      "fixedF1": 0.955,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 54
+    },
+    {
+      "canonicalId": "S04E08",
+      "title": "Silence in the Library",
+      "filename": "E08_silence_in_the_library.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.944,
+      "fixedF1": 0.944,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        -1,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -0.333,
+      "coverageGapSeconds": 25.1
+    },
+    {
+      "canonicalId": "S04E09",
+      "title": "Forest of the Dead",
+      "filename": "E09_forest_of_the_dead.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.954,
+      "fixedF1": 0.954,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 50.1
+    },
+    {
+      "canonicalId": "S04E10",
+      "title": "Midnight",
+      "filename": "E10_midnight.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.949,
+      "fixedF1": 0.949,
+      "globalShiftSeconds": -1,
+      "windowShiftSeconds": [
+        -1,
+        -1,
+        0
+      ],
+      "linearSlope": 1.000517,
+      "linearOffsetSeconds": -1.381,
+      "coverageGapSeconds": 55.2
+    },
+    {
+      "canonicalId": "S04E11",
+      "title": "Turn Left",
+      "filename": "E11_turn_left.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.946,
+      "fixedF1": 0.946,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 49.5
+    },
+    {
+      "canonicalId": "S04E12",
+      "title": "The Stolen Earth",
+      "filename": "E12_the_stolen_earth.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.951,
+      "fixedF1": 0.951,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 69.8
+    },
+    {
+      "canonicalId": "S04E13",
+      "title": "Journey's End",
+      "filename": "E13_journeys_end.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.939,
+      "fixedF1": 0.939,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 38
+    },
+    {
+      "canonicalId": "S04E15",
+      "title": "The Next Doctor (Special)",
+      "filename": "E15_the_next_doctor_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.94,
+      "fixedF1": 0.94,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 49.7
+    },
+    {
+      "canonicalId": "S04E16",
+      "title": "Planet of the Dead (Special)",
+      "filename": "E16_planet_of_the_dead_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.886,
+      "fixedF1": 0.886,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 8.9
+    },
+    {
+      "canonicalId": "S04E17",
+      "title": "The Waters of Mars (Special)",
+      "filename": "E17_the_waters_of_mars_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.889,
+      "fixedF1": 0.889,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 25.9
+    },
+    {
+      "canonicalId": "S04E19",
+      "title": "The End of Time, Part One (Special)",
+      "filename": "E19_the_end_of_time_part_one_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.882,
+      "fixedF1": 0.882,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 6.8
+    },
+    {
+      "canonicalId": "S04E20",
+      "title": "The End of Time, Part Two (Special)",
+      "filename": "E20_the_end_of_time_part_two_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.839,
+      "fixedF1": 0.839,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 3.6
+    },
+    {
+      "canonicalId": "S05E01",
+      "title": "The Eleventh Hour",
+      "filename": "E01_the_eleventh_hour.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.866,
+      "fixedF1": 0.866,
+      "globalShiftSeconds": -1,
+      "windowShiftSeconds": [
+        -1,
+        -1,
+        -1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -1,
+      "coverageGapSeconds": -104
+    },
+    {
+      "canonicalId": "S05E02",
+      "title": "Meanwhile in the TARDIS, Part 1 (Minisode)",
+      "filename": "E02_meanwhile_in_the_tardis_1_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.975,
+      "fixedF1": 0.975,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 12.5
+    },
+    {
+      "canonicalId": "S05E03",
+      "title": "The Beast Below",
+      "filename": "E03_the_beast_below.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.884,
+      "fixedF1": 0.884,
+      "globalShiftSeconds": -1,
+      "windowShiftSeconds": [
+        -1,
+        -1,
+        -1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -1,
+      "coverageGapSeconds": -25
+    },
+    {
+      "canonicalId": "S05E04",
+      "title": "Victory of the Daleks",
+      "filename": "E04_victory_of_the_daleks.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.938,
+      "fixedF1": 0.938,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": -15.4
+    },
+    {
+      "canonicalId": "S05E05",
+      "title": "The Time of Angels",
+      "filename": "E05_the_time_of_angels.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.936,
+      "fixedF1": 0.936,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": -36
+    },
+    {
+      "canonicalId": "S05E06",
+      "title": "Flesh and Stone",
+      "filename": "E06_flesh_and_stone.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.934,
+      "fixedF1": 0.934,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": -31
+    },
+    {
+      "canonicalId": "S05E07",
+      "title": "Meanwhile in the TARDIS, Part 2 (Minisode)",
+      "filename": "E07_meanwhile_in_the_tardis_2_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.966,
+      "fixedF1": 0.966,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 13.7
+    },
+    {
+      "canonicalId": "S05E08",
+      "title": "The Vampires of Venice",
+      "filename": "E08_the_vampires_of_venice.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.867,
+      "fixedF1": 0.867,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": -16.9
+    },
+    {
+      "canonicalId": "S05E09",
+      "title": "Amy's Choice",
+      "filename": "E09_amys_choice.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.921,
+      "fixedF1": 0.921,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": -15.8
+    },
+    {
+      "canonicalId": "S05E10",
+      "title": "The Hungry Earth",
+      "filename": "E10_the_hungry_earth.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.901,
+      "fixedF1": 0.901,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": -0.5
+    },
+    {
+      "canonicalId": "S05E11",
+      "title": "Cold Blood",
+      "filename": "E11_cold_blood.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.965,
+      "fixedF1": 0.965,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": -23.1
+    },
+    {
+      "canonicalId": "S05E12",
+      "title": "Good as Gold (Minisode)",
+      "filename": "E12_good_as_gold_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.859,
+      "fixedF1": 0.859,
+      "globalShiftSeconds": 3,
+      "windowShiftSeconds": [
+        3,
+        3,
+        0
+      ],
+      "linearSlope": 0.977082,
+      "linearOffsetSeconds": 4.143,
+      "coverageGapSeconds": 22.2
+    },
+    {
+      "canonicalId": "S05E13",
+      "title": "Vincent and the Doctor",
+      "filename": "E13_vincent_and_the_doctor.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.898,
+      "fixedF1": 0.898,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": -4.5
+    },
+    {
+      "canonicalId": "S05E14",
+      "title": "The Lodger",
+      "filename": "E14_the_lodger.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.898,
+      "fixedF1": 0.898,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": -44.5
+    },
+    {
+      "canonicalId": "S05E15",
+      "title": "The Pandorica Opens",
+      "filename": "E15_the_pandorica_opens.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.894,
+      "fixedF1": 0.894,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 60.4
+    },
+    {
+      "canonicalId": "S05E16",
+      "title": "The Big Bang",
+      "filename": "E16_the_big_bang.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.895,
+      "fixedF1": 0.895,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 44.3
+    },
+    {
+      "canonicalId": "S05E17",
+      "title": "Death is the Only Answer (Minisode)",
+      "filename": "E17_death_is_the_only_answer_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "MANUAL_REVIEW",
+      "rawF1": 0,
+      "fixedF1": 0,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 226.8
+    },
+    {
+      "canonicalId": "S05E18",
+      "title": "A Christmas Carol (Special)",
+      "filename": "E18_a_christmas_carol_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.907,
+      "fixedF1": 0.907,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 7.9
+    },
+    {
+      "canonicalId": "S06E03",
+      "title": "The Impossible Astronaut (Prequel)",
+      "filename": "E03_the_impossible_astronaut_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "drift",
+      "finalStatus": "FIXED_DRIFT",
+      "rawF1": 0.832,
+      "fixedF1": 0.922,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        2
+      ],
+      "linearSlope": 1.013736,
+      "linearOffsetSeconds": 0.619,
+      "coverageGapSeconds": 15.6
+    },
+    {
+      "canonicalId": "S06E04",
+      "title": "The Impossible Astronaut",
+      "filename": "E04_the_impossible_astronaut.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.94,
+      "fixedF1": 0.94,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 7.1
+    },
+    {
+      "canonicalId": "S06E05",
+      "title": "Day of the Moon",
+      "filename": "E05_day_of_the_moon.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.927,
+      "fixedF1": 0.927,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 34.1
+    },
+    {
+      "canonicalId": "S06E06",
+      "title": "The Curse of the Black Spot (Prequel)",
+      "filename": "E06_the_curse_of_the_black_spot_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.902,
+      "fixedF1": 0.902,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        1,
+        -17,
+        0
+      ],
+      "linearSlope": 0.98358,
+      "linearOffsetSeconds": -4.619,
+      "coverageGapSeconds": 13.9
+    },
+    {
+      "canonicalId": "S06E07",
+      "title": "The Curse of the Black Spot",
+      "filename": "E07_the_curse_of_the_black_spot.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.891,
+      "fixedF1": 0.891,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 35.7
+    },
+    {
+      "canonicalId": "S06E08",
+      "title": "Bad Night (Minisode)",
+      "filename": "E08_bad_night_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.971,
+      "fixedF1": 0.971,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 15.1
+    },
+    {
+      "canonicalId": "S06E09",
+      "title": "The Doctor's Wife",
+      "filename": "E09_the_doctors_wife.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.937,
+      "fixedF1": 0.937,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 35.9
+    },
+    {
+      "canonicalId": "S06E10",
+      "title": "Good Night (Minisode)",
+      "filename": "E10_good_night_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.978,
+      "fixedF1": 0.978,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 19.9
+    },
+    {
+      "canonicalId": "S06E11",
+      "title": "The Rebel Flesh",
+      "filename": "E11_the_rebel_flesh.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.897,
+      "fixedF1": 0.897,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        -1,
+        0,
+        -1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -0.667,
+      "coverageGapSeconds": 24.4
+    },
+    {
+      "canonicalId": "S06E12",
+      "title": "The Almost People",
+      "filename": "E12_the_almost_people.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.93,
+      "fixedF1": 0.93,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 33.4
+    },
+    {
+      "canonicalId": "S06E13",
+      "title": "A Good Man Goes to War (Prequel)",
+      "filename": "E13_a_good_man_goes_to_war_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "drift",
+      "finalStatus": "FIXED_DRIFT",
+      "rawF1": 0.76,
+      "fixedF1": 0.909,
+      "globalShiftSeconds": 7,
+      "windowShiftSeconds": [
+        7,
+        5,
+        7
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 6.333,
+      "coverageGapSeconds": 21.4
+    },
+    {
+      "canonicalId": "S06E14",
+      "title": "A Good Man Goes to War",
+      "filename": "E14_a_good_man_goes_to_war.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.93,
+      "fixedF1": 0.93,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 48
+    },
+    {
+      "canonicalId": "S06E15",
+      "title": "Let's Kill Hitler (Prequel)",
+      "filename": "E15_lets_kill_hitler_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "drift",
+      "finalStatus": "FIXED_DRIFT",
+      "rawF1": 0.805,
+      "fixedF1": 0.896,
+      "globalShiftSeconds": 5,
+      "windowShiftSeconds": [
+        5,
+        5,
+        9
+      ],
+      "linearSlope": 1.048426,
+      "linearOffsetSeconds": 3.476,
+      "coverageGapSeconds": 23.8
+    },
+    {
+      "canonicalId": "S06E16",
+      "title": "Let's Kill Hitler",
+      "filename": "E16_lets_kill_hitler.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.927,
+      "fixedF1": 0.927,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 36.9
+    },
+    {
+      "canonicalId": "S06E17",
+      "title": "Night Terrors",
+      "filename": "E17_night_terrors.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.876,
+      "fixedF1": 0.876,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 45.5
+    },
+    {
+      "canonicalId": "S06E18",
+      "title": "First Night (Minisode)",
+      "filename": "E18_first_night_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.931,
+      "fixedF1": 0.931,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 12.1
+    },
+    {
+      "canonicalId": "S06E19",
+      "title": "Last Night (Minisode)",
+      "filename": "E19_last_night_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.945,
+      "fixedF1": 0.945,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        1,
+        0,
+        0
+      ],
+      "linearSlope": 0.993355,
+      "linearOffsetSeconds": 1.048,
+      "coverageGapSeconds": 17.1
+    },
+    {
+      "canonicalId": "S06E20",
+      "title": "The Girl Who Waited",
+      "filename": "E20_the_girl_who_waited.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.933,
+      "fixedF1": 0.933,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 36.5
+    },
+    {
+      "canonicalId": "S06E21",
+      "title": "The God Complex",
+      "filename": "E21_the_god_complex.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.908,
+      "fixedF1": 0.908,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 39.7
+    },
+    {
+      "canonicalId": "S06E22",
+      "title": "Up All Night (Minisode)",
+      "filename": "E22_up_all_night_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.935,
+      "fixedF1": 0.935,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        4
+      ],
+      "linearSlope": 1.04884,
+      "linearOffsetSeconds": -1.524,
+      "coverageGapSeconds": 11.3
+    },
+    {
+      "canonicalId": "S06E23",
+      "title": "Closing Time",
+      "filename": "E23_closing_time.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.938,
+      "fixedF1": 0.938,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 38.5
+    },
+    {
+      "canonicalId": "S06E24",
+      "title": "The Wedding of River Song (Prequel)",
+      "filename": "E24_the_wedding_of_river_song_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "MANUAL_REVIEW",
+      "rawF1": 0.814,
+      "fixedF1": 0.814,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        -31,
+        0,
+        -6
+      ],
+      "linearSlope": 1.47619,
+      "linearOffsetSeconds": -30.19,
+      "coverageGapSeconds": 12
+    },
+    {
+      "canonicalId": "S06E25",
+      "title": "The Wedding of River Song",
+      "filename": "E25_the_wedding_of_river_song.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.938,
+      "fixedF1": 0.938,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 23.6
+    },
+    {
+      "canonicalId": "S06E26",
+      "title": "The Doctor, the Widow and the Wardrobe (Prequel)",
+      "filename": "E26_the_doctor_the_widow_and_the_wardrobe_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.907,
+      "fixedF1": 0.907,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        0,
+        10
+      ],
+      "linearSlope": 1.146104,
+      "linearOffsetSeconds": -2.762,
+      "coverageGapSeconds": 24.9
+    },
+    {
+      "canonicalId": "S06E27",
+      "title": "The Doctor, the Widow and the Wardrobe (Special)",
+      "filename": "E27_the_doctor_the_widow_and_the_wardrobe_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.881,
+      "fixedF1": 0.881,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 32.6
+    },
+    {
+      "canonicalId": "S07E02",
+      "title": "Asylum of the Daleks (Prequel)",
+      "filename": "E02_asylum_of_the_daleks_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.904,
+      "fixedF1": 0.904,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        1,
+        0,
+        7
+      ],
+      "linearSlope": 1.054945,
+      "linearOffsetSeconds": -1.619,
+      "coverageGapSeconds": 13.5
+    },
+    {
+      "canonicalId": "S07E03",
+      "title": "Asylum of the Daleks",
+      "filename": "E03_asylum_of_the_daleks.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.892,
+      "fixedF1": 0.892,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        -1
+      ],
+      "linearSlope": 0.999513,
+      "linearOffsetSeconds": 0.381,
+      "coverageGapSeconds": 24.8
+    },
+    {
+      "canonicalId": "S07E04",
+      "title": "The Inforarium (Minisode)",
+      "filename": "E04_the_inforarium_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.958,
+      "fixedF1": 0.958,
+      "globalShiftSeconds": -1,
+      "windowShiftSeconds": [
+        0,
+        0,
+        -1
+      ],
+      "linearSlope": 0.987578,
+      "linearOffsetSeconds": 0.381,
+      "coverageGapSeconds": 4.6
+    },
+    {
+      "canonicalId": "S07E05",
+      "title": "Dinosaurs on a Spaceship",
+      "filename": "E05_dinosaurs_on_a_spaceship.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.927,
+      "fixedF1": 0.927,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 58.6
+    },
+    {
+      "canonicalId": "S07E06",
+      "title": "The Making of the Gunslinger (Prequel)",
+      "filename": "E06_the_making_of_the_gunslinger_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.913,
+      "fixedF1": 0.913,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        25
+      ],
+      "linearSlope": 1.333778,
+      "linearOffsetSeconds": -9.524,
+      "coverageGapSeconds": 13.5
+    },
+    {
+      "canonicalId": "S07E07",
+      "title": "A Town Called Mercy",
+      "filename": "E07_a_town_called_mercy.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.905,
+      "fixedF1": 0.905,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 13.5
+    },
+    {
+      "canonicalId": "S07E08",
+      "title": "The Power of Three",
+      "filename": "E08_the_power_of_three.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.936,
+      "fixedF1": 0.936,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        1,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0.333,
+      "coverageGapSeconds": 23.1
+    },
+    {
+      "canonicalId": "S07E09",
+      "title": "The Angels Take Manhattan",
+      "filename": "E09_the_angels_take_manhattan.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.873,
+      "fixedF1": 0.873,
+      "globalShiftSeconds": -1,
+      "windowShiftSeconds": [
+        0,
+        -1,
+        -1
+      ],
+      "linearSlope": 0.999463,
+      "linearOffsetSeconds": 0.048,
+      "coverageGapSeconds": 19.5
+    },
+    {
+      "canonicalId": "S07E11",
+      "title": "The Battle of Demon's Run: Two Days Later (Prequel)",
+      "filename": "E11_the_battle_of_demons_run_two_days_later_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.947,
+      "fixedF1": 0.947,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -1,
+        -5,
+        -6
+      ],
+      "linearSlope": 0.958712,
+      "linearOffsetSeconds": -0.429,
+      "coverageGapSeconds": -0.9
+    },
+    {
+      "canonicalId": "S07E12",
+      "title": "The Great Detective (Prequel)",
+      "filename": "E12_the_great_detective_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "MANUAL_REVIEW",
+      "rawF1": 0.739,
+      "fixedF1": 0.739,
+      "globalShiftSeconds": -34,
+      "windowShiftSeconds": [
+        -33,
+        -54,
+        -34
+      ],
+      "linearSlope": 0.993565,
+      "linearOffsetSeconds": -39.619,
+      "coverageGapSeconds": -23.9
+    },
+    {
+      "canonicalId": "S07E13",
+      "title": "Vastra Investigates (Prequel)",
+      "filename": "E13_vastra_investigates_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.939,
+      "fixedF1": 0.939,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        1,
+        0,
+        0
+      ],
+      "linearSlope": 0.990476,
+      "linearOffsetSeconds": 1.048,
+      "coverageGapSeconds": 12.7
+    },
+    {
+      "canonicalId": "S07E14",
+      "title": "The Snowmen (Special)",
+      "filename": "E14_the_snowmen_special.ar.srt",
+      "manualReplacement": true,
+      "replacementReason": "Downloaded replacement candidate matched The Snowmen with strong timing alignment.",
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.98,
+      "fixedF1": 0.98,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 5
+    },
+    {
+      "canonicalId": "S07E15",
+      "title": "The Bells of Saint John (Prequel)",
+      "filename": "E15_the_bells_of_saint_john_prequel.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.904,
+      "fixedF1": 0.904,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 16.6
+    },
+    {
+      "canonicalId": "S07E16",
+      "title": "The Bells of Saint John",
+      "filename": "E16_the_bells_of_saint_john.ar.srt",
+      "manualReplacement": true,
+      "replacementReason": "Original Snowmen file actually belongs to The Bells of Saint John.",
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.898,
+      "fixedF1": 0.898,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 8.7
+    },
+    {
+      "canonicalId": "S07E17",
+      "title": "The Rings of Akhaten",
+      "filename": "E17_the_rings_of_akhaten.ar.srt",
+      "manualReplacement": true,
+      "replacementReason": "Original Bells of Saint John file actually belongs to The Rings of Akhaten.",
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.878,
+      "fixedF1": 0.878,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        -1
+      ],
+      "linearSlope": 0.999457,
+      "linearOffsetSeconds": 0.381,
+      "coverageGapSeconds": 30.9
+    },
+    {
+      "canonicalId": "S07E18",
+      "title": "Rain Gods (Minisode)",
+      "filename": "E18_rain_gods_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.955,
+      "fixedF1": 0.955,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        14,
+        28
+      ],
+      "linearSlope": 1.40404,
+      "linearOffsetSeconds": -6,
+      "coverageGapSeconds": 5
+    },
+    {
+      "canonicalId": "S07E19",
+      "title": "Cold War",
+      "filename": "E19_cold_war.ar.srt",
+      "manualReplacement": true,
+      "replacementReason": "Original Rings of Akhaten file actually belongs to Cold War.",
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.916,
+      "fixedF1": 0.916,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 34.8
+    },
+    {
+      "canonicalId": "S07E20",
+      "title": "Hide",
+      "filename": "E20_hide.ar.srt",
+      "manualReplacement": true,
+      "replacementReason": "Original Cold War file actually belongs to Hide.",
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.891,
+      "fixedF1": 0.891,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 34.7
+    },
+    {
+      "canonicalId": "S07E21",
+      "title": "Journey to the Centre of the TARDIS",
+      "filename": "E21_journey_to_the_centre_of_the_tardis.ar.srt",
+      "manualReplacement": true,
+      "replacementReason": "Original Hide file actually belongs to Journey to the Centre of the TARDIS.",
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.894,
+      "fixedF1": 0.894,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        -1,
+        0,
+        0
+      ],
+      "linearSlope": 1.000531,
+      "linearOffsetSeconds": -1.048,
+      "coverageGapSeconds": 33.1
+    },
+    {
+      "canonicalId": "S07E22",
+      "title": "Clara and the TARDIS (Minisode)",
+      "filename": "E22_clara_and_the_tardis_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.865,
+      "fixedF1": 0.865,
+      "globalShiftSeconds": -1,
+      "windowShiftSeconds": [
+        -1,
+        -17,
+        -1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -6.333,
+      "coverageGapSeconds": 14.8
+    },
+    {
+      "canonicalId": "S07E23",
+      "title": "The Crimson Horror",
+      "filename": "E23_the_crimson_horror.ar.srt",
+      "manualReplacement": true,
+      "replacementReason": "Original Journey to the Centre of the TARDIS file actually belongs to The Crimson Horror.",
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.903,
+      "fixedF1": 0.903,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 33.8
+    },
+    {
+      "canonicalId": "S07E24",
+      "title": "Nightmare in Silver",
+      "filename": "E24_nightmare_in_silver.ar.srt",
+      "manualReplacement": true,
+      "replacementReason": "Original The Crimson Horror file actually belongs to Nightmare in Silver.",
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.933,
+      "fixedF1": 0.933,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        1,
+        0,
+        0
+      ],
+      "linearSlope": 0.999467,
+      "linearOffsetSeconds": 1.048,
+      "coverageGapSeconds": 32.6
+    },
+    {
+      "canonicalId": "S07E27",
+      "title": "The Name of the Doctor",
+      "filename": "E27_the_name_of_the_doctor.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.854,
+      "fixedF1": 0.854,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 10.8
+    },
+    {
+      "canonicalId": "S07E28",
+      "title": "The Night of the Doctor (Minisode)",
+      "filename": "E28_the_night_of_the_doctor_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.831,
+      "fixedF1": 0.831,
+      "globalShiftSeconds": 7,
+      "windowShiftSeconds": [
+        -115,
+        8,
+        14
+      ],
+      "linearSlope": 1.428571,
+      "linearOffsetSeconds": -123.143,
+      "coverageGapSeconds": 27
+    },
+    {
+      "canonicalId": "S07E29",
+      "title": "The Last Day (Minisode)",
+      "filename": "E29_the_last_day_minisode.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.86,
+      "fixedF1": 0.86,
+      "globalShiftSeconds": 3,
+      "windowShiftSeconds": [
+        -1,
+        44,
+        10
+      ],
+      "linearSlope": 1.067443,
+      "linearOffsetSeconds": 9.81,
+      "coverageGapSeconds": 26.1
+    },
+    {
+      "canonicalId": "S07E30",
+      "title": "The Day of the Doctor (Special)",
+      "filename": "E30_the_day_of_the_doctor_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "drift",
+      "finalStatus": "FIXED_DRIFT",
+      "rawF1": 0.735,
+      "fixedF1": 0.836,
+      "globalShiftSeconds": 26,
+      "windowShiftSeconds": [
+        26,
+        107,
+        181
+      ],
+      "linearSlope": 1.046189,
+      "linearOffsetSeconds": -6.048,
+      "coverageGapSeconds": 73.1
+    },
+    {
+      "canonicalId": "S07E31",
+      "title": "The Time of the Doctor (Special)",
+      "filename": "E31_the_time_of_the_doctor_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "MANUAL_REVIEW",
+      "rawF1": 0.715,
+      "fixedF1": 0.715,
+      "globalShiftSeconds": 69,
+      "windowShiftSeconds": [
+        11,
+        68,
+        140
+      ],
+      "linearSlope": 1.048179,
+      "linearOffsetSeconds": -19.143,
+      "coverageGapSeconds": 164.8
+    },
+    {
+      "canonicalId": "S08E02",
+      "title": "Deep Breath",
+      "filename": "E02_deep_breath.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.934,
+      "fixedF1": 0.934,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 59.1
+    },
+    {
+      "canonicalId": "S08E03",
+      "title": "Into the Dalek",
+      "filename": "E03_into_the_dalek.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.956,
+      "fixedF1": 0.956,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 31.6
+    },
+    {
+      "canonicalId": "S08E04",
+      "title": "Robot of Sherwood",
+      "filename": "E04_robot_of_sherwood.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.939,
+      "fixedF1": 0.939,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 36.2
+    },
+    {
+      "canonicalId": "S08E05",
+      "title": "Listen",
+      "filename": "E05_listen.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.865,
+      "fixedF1": 0.865,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 31.7
+    },
+    {
+      "canonicalId": "S08E06",
+      "title": "Time Heist",
+      "filename": "E06_time_heist.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.918,
+      "fixedF1": 0.918,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 30.9
+    },
+    {
+      "canonicalId": "S08E07",
+      "title": "The Caretaker",
+      "filename": "E07_the_caretaker.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.943,
+      "fixedF1": 0.943,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 32.9
+    },
+    {
+      "canonicalId": "S08E08",
+      "title": "Kill the Moon",
+      "filename": "E08_kill_the_moon.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.936,
+      "fixedF1": 0.936,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 30.1
+    },
+    {
+      "canonicalId": "S08E09",
+      "title": "Mummy on the Orient Express",
+      "filename": "E09_mummy_on_the_orient_express.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.936,
+      "fixedF1": 0.936,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 30.8
+    },
+    {
+      "canonicalId": "S08E10",
+      "title": "Flatline",
+      "filename": "E10_flatline.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.924,
+      "fixedF1": 0.924,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 34.3
+    },
+    {
+      "canonicalId": "S08E11",
+      "title": "In the Forest of the Night",
+      "filename": "E11_in_the_forest_of_the_night.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.881,
+      "fixedF1": 0.881,
+      "globalShiftSeconds": 2,
+      "windowShiftSeconds": [
+        2,
+        2,
+        2
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 2,
+      "coverageGapSeconds": 32.2
+    },
+    {
+      "canonicalId": "S08E12",
+      "title": "Dark Water",
+      "filename": "E12_dark_water.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.935,
+      "fixedF1": 0.935,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 31.2
+    },
+    {
+      "canonicalId": "S08E13",
+      "title": "Death in Heaven",
+      "filename": "E13_death_in_heaven.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.921,
+      "fixedF1": 0.921,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 31.7
+    },
+    {
+      "canonicalId": "S08E14",
+      "title": "Last Christmas (Special)",
+      "filename": "E14_last_christmas_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.903,
+      "fixedF1": 0.903,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 29.6
+    },
+    {
+      "canonicalId": "S09E03",
+      "title": "The Magician's Apprentice",
+      "filename": "E03_the_magicians_apprentice.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.952,
+      "fixedF1": 0.952,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 1.7
+    },
+    {
+      "canonicalId": "S09E04",
+      "title": "The Witch's Familiar",
+      "filename": "E04_the_witchs_familiar.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.915,
+      "fixedF1": 0.915,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 31.1
+    },
+    {
+      "canonicalId": "S09E05",
+      "title": "Under the Lake",
+      "filename": "E05_under_the_lake.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.934,
+      "fixedF1": 0.934,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 55.5
+    },
+    {
+      "canonicalId": "S09E06",
+      "title": "Before the Flood",
+      "filename": "E06_before_the_flood.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.775,
+      "fixedF1": 0.891,
+      "globalShiftSeconds": 4,
+      "windowShiftSeconds": [
+        4,
+        4,
+        4
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 4,
+      "coverageGapSeconds": 66
+    },
+    {
+      "canonicalId": "S09E07",
+      "title": "The Girl Who Died",
+      "filename": "E07_the_girl_who_died.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.923,
+      "fixedF1": 0.923,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 115.5
+    },
+    {
+      "canonicalId": "S09E08",
+      "title": "The Woman Who Lived",
+      "filename": "E08_the_woman_who_lived.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.926,
+      "fixedF1": 0.926,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 30.5
+    },
+    {
+      "canonicalId": "S09E09",
+      "title": "The Zygon Invasion",
+      "filename": "E09_the_zygon_invasion.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.889,
+      "fixedF1": 0.889,
+      "globalShiftSeconds": -1,
+      "windowShiftSeconds": [
+        -1,
+        -1,
+        -1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -1,
+      "coverageGapSeconds": 32.7
+    },
+    {
+      "canonicalId": "S09E10",
+      "title": "The Zygon Inversion",
+      "filename": "E10_the_zygon_inversion.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.909,
+      "fixedF1": 0.909,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 31.4
+    },
+    {
+      "canonicalId": "S09E11",
+      "title": "Sleep No More",
+      "filename": "E11_sleep_no_more.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.917,
+      "fixedF1": 0.917,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 8.6
+    },
+    {
+      "canonicalId": "S09E12",
+      "title": "Face the Raven",
+      "filename": "E12_face_the_raven.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.917,
+      "fixedF1": 0.917,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 4.1
+    },
+    {
+      "canonicalId": "S09E13",
+      "title": "Heaven Sent",
+      "filename": "E13_heaven_sent.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.839,
+      "fixedF1": 0.839,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        1
+      ],
+      "linearSlope": 1.00044,
+      "linearOffsetSeconds": -0.381,
+      "coverageGapSeconds": 4.5
+    },
+    {
+      "canonicalId": "S09E14",
+      "title": "Hell Bent",
+      "filename": "E14_hell_bent.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.921,
+      "fixedF1": 0.921,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 4
+    },
+    {
+      "canonicalId": "S09E15",
+      "title": "The Husbands of River Song (Special)",
+      "filename": "E15_the_husbands_of_river_song_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.916,
+      "fixedF1": 0.916,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 5.8
+    },
+    {
+      "canonicalId": "S09E16",
+      "title": "The Return of Doctor Mysterio (Special)",
+      "filename": "E16_the_return_of_doctor_mysterio_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.91,
+      "fixedF1": 0.91,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        0,
+        0
+      ],
+      "linearSlope": 0.999606,
+      "linearOffsetSeconds": 1.048,
+      "coverageGapSeconds": 25.2
+    },
+    {
+      "canonicalId": "S10E02",
+      "title": "The Pilot",
+      "filename": "E02_the_pilot.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.914,
+      "fixedF1": 0.914,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": -15.2
+    },
+    {
+      "canonicalId": "S10E03",
+      "title": "Smile",
+      "filename": "E03_smile.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.938,
+      "fixedF1": 0.938,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 32.6
+    },
+    {
+      "canonicalId": "S10E04",
+      "title": "Thin Ice",
+      "filename": "E04_thin_ice.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.872,
+      "fixedF1": 0.872,
+      "globalShiftSeconds": -1,
+      "windowShiftSeconds": [
+        -1,
+        -1,
+        -1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -1,
+      "coverageGapSeconds": 31.7
+    },
+    {
+      "canonicalId": "S10E05",
+      "title": "Knock Knock",
+      "filename": "E05_knock_knock.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.869,
+      "fixedF1": 0.869,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 39
+    },
+    {
+      "canonicalId": "S10E06",
+      "title": "Oxygen",
+      "filename": "E06_oxygen.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.929,
+      "fixedF1": 0.929,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        -1,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -0.333,
+      "coverageGapSeconds": 6.3
+    },
+    {
+      "canonicalId": "S10E07",
+      "title": "Extremis",
+      "filename": "E07_extremis.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.91,
+      "fixedF1": 0.91,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 6.2
+    },
+    {
+      "canonicalId": "S10E08",
+      "title": "The Pyramid at the End of the World",
+      "filename": "E08_the_pyramid_at_the_end_of_the_world.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.921,
+      "fixedF1": 0.921,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 4.7
+    },
+    {
+      "canonicalId": "S10E09",
+      "title": "The Lie of the Land",
+      "filename": "E09_the_lie_of_the_land.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.921,
+      "fixedF1": 0.921,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 32.7
+    },
+    {
+      "canonicalId": "S10E10",
+      "title": "Empress of Mars",
+      "filename": "E10_empress_of_mars.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.916,
+      "fixedF1": 0.916,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 32.5
+    },
+    {
+      "canonicalId": "S10E11",
+      "title": "The Eaters of Light",
+      "filename": "E11_the_eaters_of_light.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.945,
+      "fixedF1": 0.945,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 33
+    },
+    {
+      "canonicalId": "S10E12",
+      "title": "World Enough and Time",
+      "filename": "E12_world_enough_and_time.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.927,
+      "fixedF1": 0.927,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 65.8
+    },
+    {
+      "canonicalId": "S10E13",
+      "title": "The Doctor Falls",
+      "filename": "E13_the_doctor_falls.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.916,
+      "fixedF1": 0.916,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 38.5
+    },
+    {
+      "canonicalId": "S10E14",
+      "title": "Twice Upon a Time (Special)",
+      "filename": "E14_twice_upon_a_time_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.798,
+      "fixedF1": 0.91,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 2.6
+    },
+    {
+      "canonicalId": "S11E01",
+      "title": "The Woman Who Fell to Earth",
+      "filename": "E01_the_woman_who_fell_to_earth.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.736,
+      "fixedF1": 0.898,
+      "globalShiftSeconds": -9,
+      "windowShiftSeconds": [
+        -9,
+        -9,
+        -9
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -9,
+      "coverageGapSeconds": 6.5
+    },
+    {
+      "canonicalId": "S11E02",
+      "title": "The Ghost Monument",
+      "filename": "E02_the_ghost_monument.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.826,
+      "fixedF1": 0.942,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 6.2
+    },
+    {
+      "canonicalId": "S11E03",
+      "title": "Rosa",
+      "filename": "E03_rosa.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.818,
+      "fixedF1": 0.933,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 46.5
+    },
+    {
+      "canonicalId": "S11E04",
+      "title": "Arachnids in the UK",
+      "filename": "E04_arachnids_in_the_uk.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.833,
+      "fixedF1": 0.833,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 41.7
+    },
+    {
+      "canonicalId": "S11E05",
+      "title": "The Tsuranga Conundrum",
+      "filename": "E05_the_tsuranga_conundrum.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.847,
+      "fixedF1": 0.951,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 5.6
+    },
+    {
+      "canonicalId": "S11E06",
+      "title": "Demons of the Punjab",
+      "filename": "E06_demons_of_the_punjab.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.829,
+      "fixedF1": 0.939,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 7.6
+    },
+    {
+      "canonicalId": "S11E07",
+      "title": "Kerblam!",
+      "filename": "E07_kerblam.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.878,
+      "fixedF1": 0.878,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": -0.3
+    },
+    {
+      "canonicalId": "S11E08",
+      "title": "The Witchfinders",
+      "filename": "E08_the_witchfinders.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.89,
+      "fixedF1": 0.89,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 31.4
+    },
+    {
+      "canonicalId": "S11E09",
+      "title": "It Takes You Away",
+      "filename": "E09_it_takes_you_away.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.82,
+      "fixedF1": 0.931,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 6.3
+    },
+    {
+      "canonicalId": "S11E10",
+      "title": "The Battle of Ranskoor Av Kolos",
+      "filename": "E10_the_battle_of_ranskoor_av_kolos.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.812,
+      "fixedF1": 0.919,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 5
+    },
+    {
+      "canonicalId": "S11E11",
+      "title": "Resolution (Special)",
+      "filename": "E11_resolution_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.874,
+      "fixedF1": 0.874,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 26.3
+    },
+    {
+      "canonicalId": "S12E01",
+      "title": "Spyfall, Part 1",
+      "filename": "E01_spyfall_part_1.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.85,
+      "fixedF1": 0.85,
+      "globalShiftSeconds": 2,
+      "windowShiftSeconds": [
+        2,
+        2,
+        2
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 2,
+      "coverageGapSeconds": 8.1
+    },
+    {
+      "canonicalId": "S12E02",
+      "title": "Spyfall, Part 2",
+      "filename": "E02_spyfall_part_2.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.885,
+      "fixedF1": 0.885,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 8.7
+    },
+    {
+      "canonicalId": "S12E03",
+      "title": "Orphan 55",
+      "filename": "E03_orphan_55.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.857,
+      "fixedF1": 0.857,
+      "globalShiftSeconds": 3,
+      "windowShiftSeconds": [
+        3,
+        3,
+        2
+      ],
+      "linearSlope": 0.99949,
+      "linearOffsetSeconds": 3.381,
+      "coverageGapSeconds": 25.9
+    },
+    {
+      "canonicalId": "S12E04",
+      "title": "Nikola Tesla's Night of Terror",
+      "filename": "E04_nikola_teslas_night_of_terror.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS_WITH_MINOR_OFFSET",
+      "rawF1": 0.879,
+      "fixedF1": 0.879,
+      "globalShiftSeconds": 2,
+      "windowShiftSeconds": [
+        2,
+        2,
+        2
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 2,
+      "coverageGapSeconds": 23.7
+    },
+    {
+      "canonicalId": "S12E05",
+      "title": "Fugitive of the Judoon",
+      "filename": "E05_fugitive_of_the_judoon.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.909,
+      "fixedF1": 0.909,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 7.3
+    },
+    {
+      "canonicalId": "S12E06",
+      "title": "Praxeus",
+      "filename": "E06_praxeus.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.83,
+      "fixedF1": 0.93,
+      "globalShiftSeconds": 2,
+      "windowShiftSeconds": [
+        2,
+        2,
+        2
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 2,
+      "coverageGapSeconds": 6.7
+    },
+    {
+      "canonicalId": "S12E07",
+      "title": "Can You Hear Me?",
+      "filename": "E07_can_you_hear_me.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.813,
+      "fixedF1": 0.894,
+      "globalShiftSeconds": 3,
+      "windowShiftSeconds": [
+        3,
+        3,
+        3
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 3,
+      "coverageGapSeconds": 5.5
+    },
+    {
+      "canonicalId": "S12E08",
+      "title": "The Haunting of Villa Diodati",
+      "filename": "E08_the_haunting_of_villa_diodati.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.834,
+      "fixedF1": 0.918,
+      "globalShiftSeconds": 2,
+      "windowShiftSeconds": [
+        2,
+        2,
+        2
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 2,
+      "coverageGapSeconds": 6.4
+    },
+    {
+      "canonicalId": "S12E09",
+      "title": "Ascension of the Cybermen",
+      "filename": "E09_ascension_of_the_cybermen.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.892,
+      "fixedF1": 0.892,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 6.7
+    },
+    {
+      "canonicalId": "S12E10",
+      "title": "The Timeless Children",
+      "filename": "E10_the_timeless_children.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.868,
+      "fixedF1": 0.868,
+      "globalShiftSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 1,
+      "coverageGapSeconds": 41.9
+    },
+    {
+      "canonicalId": "S12E11",
+      "title": "Revolution of the Daleks (Special)",
+      "filename": "E11_revolution_of_the_daleks_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.852,
+      "fixedF1": 0.978,
+      "globalShiftSeconds": -2,
+      "windowShiftSeconds": [
+        -2,
+        -2,
+        -2
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -2,
+      "coverageGapSeconds": 36
+    },
+    {
+      "canonicalId": "S13E01",
+      "title": "The Halloween Apocalypse",
+      "filename": "E01_the_halloween_apocalypse.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.772,
+      "fixedF1": 0.979,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 8.8
+    },
+    {
+      "canonicalId": "S13E02",
+      "title": "War of the Sontarans",
+      "filename": "E02_war_of_the_sontarans.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.794,
+      "fixedF1": 0.998,
+      "globalShiftSeconds": -5,
+      "windowShiftSeconds": [
+        -5,
+        -5,
+        -5
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -5,
+      "coverageGapSeconds": 8.3
+    },
+    {
+      "canonicalId": "S13E03",
+      "title": "Once, Upon Time",
+      "filename": "E03_once_upon_time.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 1,
+      "fixedF1": 1,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 8.4
+    },
+    {
+      "canonicalId": "S13E04",
+      "title": "Village of the Angels",
+      "filename": "E04_village_of_the_angels.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 1,
+      "fixedF1": 1,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.4
+    },
+    {
+      "canonicalId": "S13E05",
+      "title": "Survivors of the Flux",
+      "filename": "E05_survivors_of_the_flux.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 1,
+      "fixedF1": 1,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.7
+    },
+    {
+      "canonicalId": "S13E06",
+      "title": "The Vanquishers",
+      "filename": "E06_the_vanquishers.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 1,
+      "fixedF1": 1,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 8.1
+    },
+    {
+      "canonicalId": "S13E07",
+      "title": "Eve of the Daleks (Special)",
+      "filename": "E07_eve_of_the_daleks_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 1,
+      "fixedF1": 1,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 16.8
+    },
+    {
+      "canonicalId": "S13E08",
+      "title": "Legend of the Sea Devils (Special)",
+      "filename": "E08_legend_of_the_sea_devils_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 1,
+      "fixedF1": 1,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 43.3
+    },
+    {
+      "canonicalId": "S13E09",
+      "title": "The Power of the Doctor (Special)",
+      "filename": "E09_the_power_of_the_doctor_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 1,
+      "fixedF1": 1,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 43.8
+    },
+    {
+      "canonicalId": "S14E02",
+      "title": "The Star Beast (Special)",
+      "filename": "E02_the_star_beast_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": "constant_offset",
+      "finalStatus": "FIXED_CONSTANT_OFFSET",
+      "rawF1": 0.8,
+      "fixedF1": 0.933,
+      "globalShiftSeconds": -9,
+      "windowShiftSeconds": [
+        -9,
+        -9,
+        -9
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": -9,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S14E03",
+      "title": "Wild Blue Yonder (Special)",
+      "filename": "E03_wild_blue_yonder_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.982,
+      "fixedF1": 0.982,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S14E04",
+      "title": "The Giggle (Special)",
+      "filename": "E04_the_giggle_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.925,
+      "fixedF1": 0.925,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.2
+    },
+    {
+      "canonicalId": "S15E01",
+      "title": "The Church on Ruby Road (Special)",
+      "filename": "E01_the_church_on_ruby_road_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.91,
+      "fixedF1": 0.91,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S15E02",
+      "title": "Space Babies",
+      "filename": "E02_space_babies.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.975,
+      "fixedF1": 0.975,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S15E03",
+      "title": "The Devil's Chord",
+      "filename": "E03_the_devils_chord.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.961,
+      "fixedF1": 0.961,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S15E04",
+      "title": "Boom",
+      "filename": "E04_boom.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.985,
+      "fixedF1": 0.985,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S15E05",
+      "title": "73 Yards",
+      "filename": "E05_73_yards.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.975,
+      "fixedF1": 0.975,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S15E06",
+      "title": "Dot and Bubble",
+      "filename": "E06_dot_and_bubble.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.983,
+      "fixedF1": 0.983,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S15E07",
+      "title": "Rogue",
+      "filename": "E07_rogue.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.982,
+      "fixedF1": 0.982,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S15E08",
+      "title": "The Legend of Ruby Sunday",
+      "filename": "E08_the_legend_of_ruby_sunday.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.979,
+      "fixedF1": 0.979,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S15E09",
+      "title": "Empire of Death",
+      "filename": "E09_empire_of_death.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.977,
+      "fixedF1": 0.977,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S15E11",
+      "title": "Joy to the World (Special)",
+      "filename": "E11_joy_to_the_world_special.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.912,
+      "fixedF1": 0.912,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S16E01",
+      "title": "The Robot Revolution",
+      "filename": "E01_the_robot_revolution.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.935,
+      "fixedF1": 0.935,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S16E02",
+      "title": "Lux",
+      "filename": "E02_lux.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.956,
+      "fixedF1": 0.956,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S16E03",
+      "title": "The Well",
+      "filename": "E03_the_well.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.963,
+      "fixedF1": 0.963,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 10.9
+    },
+    {
+      "canonicalId": "S16E04",
+      "title": "Lucky Day",
+      "filename": "E04_lucky_day.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.92,
+      "fixedF1": 0.92,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S16E05",
+      "title": "The Story and the Engine",
+      "filename": "E05_the_story_and_the_engine.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.943,
+      "fixedF1": 0.943,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S16E06",
+      "title": "The Interstellar Song Contest",
+      "filename": "E06_the_interstellar_song_contest.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.919,
+      "fixedF1": 0.919,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S16E07",
+      "title": "Wish World",
+      "filename": "E07_wish_world.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.938,
+      "fixedF1": 0.938,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S16E08",
+      "title": "The Reality War",
+      "filename": "E08_the_reality_war.ar.srt",
+      "manualReplacement": false,
+      "replacementReason": null,
+      "syncFixType": null,
+      "finalStatus": "PASS",
+      "rawF1": 0.93,
+      "fixedF1": 0.93,
+      "globalShiftSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "linearSlope": 1,
+      "linearOffsetSeconds": 0,
+      "coverageGapSeconds": 9.1
+    }
+  ]
+}

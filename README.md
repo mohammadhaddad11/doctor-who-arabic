@@ -1,68 +1,43 @@
-# Whoniverse Arabic 1080p
+# Whoniverse Arabic for Stremio
 
-Production-ready Doctor Who Stremio addon with separate English and Arabic subtitle tracks.
+Whoniverse Arabic is a Doctor Who Stremio addon focused on New Who broadcast-order viewing with separate English and Arabic subtitle tracks.
 
-## Repo Layout
+## What's Included
 
-- `index.js`: addon entry point
-- `episodeData.js`: source of truth for episode coverage
-- `arabicSubtitles.json`: canonical Arabic subtitle availability index
-- `ar/`: production Arabic subtitle files
-- `render.yaml`: Render deployment config
+- Main episodes from 2005 to 2025
+- Specials kept inside their parent seasons
+- Separate selectable English and Arabic subtitle tracks in Stremio
+- 1080p stream presentation across the addon
+- Metadata, thumbnails, dates, and descriptions from the curated episode dataset
 
-## Subtitle Behavior
+## Arabic Subtitle Source
 
-- English subtitles are returned from the existing canonical English subtitle URLs in `episodeData.js`
-- Arabic subtitles are returned as a separate selectable `ara` track
-- Arabic availability is determined by `arabicSubtitles.json`
-- Arabic subtitle URLs are derived from the English canonical basename and served from jsDelivr:
+- Production Arabic subtitles are served from jsDelivr:
 - `https://cdn.jsdelivr.net/gh/mohammadhaddad11/doctor-who-arabic@main/ar/`
 
-Example:
+## Deployment
 
-- English: `E01_rose.srt`
-- Arabic: `E01_rose.ar.srt`
+### Render
 
-## Local Run
-
-```bash
-npm install
-npm start
-```
-
-Manifest:
-
-```text
-http://127.0.0.1:7000/manifest.json
-```
-
-## Render Deployment
-
-This repo is ready for Render free-tier style deployment.
-
-1. Push this repo to GitHub.
-2. Create a Render Web Service from the repo.
-3. Render will use `render.yaml`, or set:
+1. Push this addon code to a Git repository.
+2. Create a new Render Web Service from that repository.
+3. Render will pick up `render.yaml` automatically, or use:
 4. Build command: `npm install`
 5. Start command: `npm start`
 
-## Railway Fallback
+### Railway
 
-1. Create a Railway project from this same GitHub repo.
-2. Deploy as a Node service.
-3. Railway provides `PORT` automatically.
+1. Create a new Railway project from the addon repository.
+2. Use the default Node deployment flow.
+3. Railway will provide `PORT` automatically.
 
-## Production Notes
+No local subtitle directory is required in production. Arabic subtitles are resolved from the remote CDN by canonical filename.
 
-- No local subtitle folder is required in production.
-- No WSL path or local symlink is required.
-- Streams are presented as `1080p` in the addon output.
+## Notes
 
-## Stremio Result
+- English subtitles remain available through the existing canonical English subtitle URLs.
+- Arabic subtitles are exposed as a separate selectable `ara` track only when a canonical Arabic file exists remotely.
 
-- English and Arabic appear as two separate subtitle choices.
-- They are not merged.
-- They are not burned into video.
-- They do not appear on screen simultaneously unless the user explicitly changes tracks.
+---
 
 All rights to Doctor Who belong to the BBC. This project is fan-made and non-commercial.

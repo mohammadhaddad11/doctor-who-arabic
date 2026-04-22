@@ -1,0 +1,4909 @@
+﻿1
+00:00:01,721 --> 00:00:04,601
+(THEME MUSIC PLAYING)
+
+2
+00:00:45,321 --> 00:00:46,801
+RYAN: We're never gonna find one.
+
+3
+00:00:46,881 --> 00:00:48,041
+DOCTOR: Course we are!
+
+4
+00:00:48,121 --> 00:00:50,241
+I've programmed
+the detector specifically.
+
+5
+00:00:50,321 --> 00:00:52,001
+I found seven last time I was here.
+
+6
+00:00:52,081 --> 00:00:53,521
+GRAHAM: And how long did that take you?
+
+7
+00:00:53,601 --> 00:00:55,121
+DOCTOR: It couldn't have been
+more than a month.
+
+8
+00:00:56,041 --> 00:00:58,121
+Unless that was Seffilun 59.
+
+9
+00:00:58,801 --> 00:01:00,001
+Which one is this?
+
+10
+00:01:00,081 --> 00:01:01,321
+Seffilun 27.
+
+11
+00:01:01,761 --> 00:01:04,401
+Maybe 59's the one
+with the big pile of these.
+
+12
+00:01:04,641 --> 00:01:06,601
+That's the problem with junk galaxies,
+
+13
+00:01:06,681 --> 00:01:09,001
+all the planets look the same,
+it's hard to keep track.
+
+14
+00:01:09,081 --> 00:01:12,121
+If we've wasted the last four hours
+on the wrong planet...
+
+15
+00:01:12,201 --> 00:01:16,001
+Oi, who took you rain bathing
+in the upward tropics of Kinstarno?
+
+16
+00:01:16,081 --> 00:01:17,961
+Oh, no, no. Listen, that was amazing.
+
+17
+00:01:18,041 --> 00:01:21,361
+I was just saying,
+like needle, haystack.
+
+18
+00:01:21,761 --> 00:01:23,401
+Yeah, you might be right.
+
+19
+00:01:23,481 --> 00:01:24,641
+(BUZZING)
+
+20
+00:01:24,721 --> 00:01:26,761
+No, hold on. I've found something.
+
+21
+00:01:28,641 --> 00:01:29,801
+(WHIRRING)
+
+22
+00:01:29,881 --> 00:01:31,561
+(GASPS)
+
+23
+00:01:31,721 --> 00:01:32,801
+I'm sorry.
+
+24
+00:01:33,041 --> 00:01:34,201
+YASMIN: What's he found?
+
+25
+00:01:34,601 --> 00:01:35,721
+Nobody move.
+
+26
+00:01:38,841 --> 00:01:40,641
+If I can keep it in temporal lock.
+
+27
+00:01:40,921 --> 00:01:43,081
+No, there's too many sensors,
+it won't work.
+
+28
+00:01:43,281 --> 00:01:44,561
+It was camouflaged.
+
+29
+00:01:44,641 --> 00:01:46,681
+This is someone's idea of a nasty joke.
+
+30
+00:01:46,761 --> 00:01:48,361
+-What is it?
+-Sonic mine.
+
+31
+00:01:48,761 --> 00:01:49,841
+It's counting down.
+
+32
+00:01:49,921 --> 00:01:50,921
+(BEEPING FASTER)
+
+33
+00:01:51,001 --> 00:01:53,201
+-How long have we got?
+-Three, two...
+
+34
+00:01:59,241 --> 00:02:00,681
+WOMAN: I can't find their med tags.
+
+35
+00:02:00,761 --> 00:02:03,201
+This is how rubbish I am at this.
+You'd think it'd be simple enough.
+
+36
+00:02:03,281 --> 00:02:06,681
+MAN: Mabli, stop beating yourself up.
+I'm sure there's a simple explanation.
+
+37
+00:02:06,961 --> 00:02:07,961
+(GASPS)
+
+38
+00:02:08,761 --> 00:02:11,881
+It's all right. You're safe.
+Just don't make any sudden moves.
+
+39
+00:02:12,041 --> 00:02:13,881
+Your body will take
+a moment to catch up.
+
+40
+00:02:13,961 --> 00:02:16,921
+Can you point out your med tag for me,
+I can't find it anywhere.
+
+41
+00:02:17,001 --> 00:02:18,001
+Where are we?
+
+42
+00:02:18,081 --> 00:02:20,961
+We're in hospital. They've just brought
+us all round. You're the last one up.
+
+43
+00:02:21,041 --> 00:02:22,441
+YASMIN: We don't have med tags.
+
+44
+00:02:22,801 --> 00:02:24,801
+Oh, it wasn't my mistake.
+
+45
+00:02:25,401 --> 00:02:26,401
+Told you.
+
+46
+00:02:27,241 --> 00:02:28,641
+Except you must have.
+
+47
+00:02:28,721 --> 00:02:32,641
+We need your full bio. History,
+allergies, fluid levels, life-span data.
+
+48
+00:02:32,721 --> 00:02:36,601
+Basically, to help us avoid killing you.
+Take it slow.
+
+49
+00:02:36,921 --> 00:02:38,041
+There was...
+
+50
+00:02:38,121 --> 00:02:39,121
+A sonic mine.
+
+51
+00:02:39,201 --> 00:02:41,201
+Yeah, the robot dredgers notified us
+
+52
+00:02:41,281 --> 00:02:42,721
+as they were pulling you
+from the debris.
+
+53
+00:02:42,801 --> 00:02:45,321
+We've stabilised your vital organs.
+You're lucky they got to you first.
+
+54
+00:02:45,401 --> 00:02:47,161
+Stabilised my organs?
+What happened to them?
+
+55
+00:02:47,241 --> 00:02:49,041
+I've seen quite a few
+sonic mine injuries here.
+
+56
+00:02:49,241 --> 00:02:51,281
+They disrupt
+your internal organic stability
+
+57
+00:02:51,361 --> 00:02:53,321
+whilst churning up
+the exterior environment.
+
+58
+00:02:53,401 --> 00:02:54,641
+Tsuranga is actually agitating
+
+59
+00:02:54,721 --> 00:02:56,521
+for the territories
+to be swept more fully, but...
+
+60
+00:02:56,601 --> 00:02:58,561
+(BEEPING)
+
+61
+00:02:58,961 --> 00:03:00,561
+That doesn't make sense.
+
+62
+00:03:01,481 --> 00:03:03,561
+-Tsuranga.
+-GRAHAM: What have they done?
+
+63
+00:03:03,881 --> 00:03:05,241
+I know that name.
+
+64
+00:03:07,081 --> 00:03:08,161
+(GASPING)
+
+65
+00:03:09,641 --> 00:03:11,881
+Where have I heard the name "Tsuranga"?
+
+66
+00:03:12,881 --> 00:03:14,441
+Whatever. I'm very grateful.
+
+67
+00:03:14,721 --> 00:03:15,961
+Need to get back to our ship.
+
+68
+00:03:16,041 --> 00:03:17,841
+(GROANING) Come on, you lot.
+
+69
+00:03:18,441 --> 00:03:20,041
+-MAN: Hey, come back.
+-Which way is out?
+
+70
+00:03:20,281 --> 00:03:22,441
+Can you return
+to the assessment zone, please?
+
+71
+00:03:22,521 --> 00:03:24,561
+We're not discharging you.
+You need to rest.
+
+72
+00:03:24,641 --> 00:03:26,881
+Well, I appreciate
+how much you've looked after us,
+
+73
+00:03:27,561 --> 00:03:30,641
+but my ship is very valuable.
+
+74
+00:03:31,001 --> 00:03:33,081
+It's also my home. Our home.
+
+75
+00:03:33,961 --> 00:03:35,681
+And I'm worried about leaving it here,
+
+76
+00:03:36,001 --> 00:03:39,361
+on a junk planet
+where people come and scavenge.
+
+77
+00:03:39,961 --> 00:03:42,281
+I might never see it again.
+And I've only just got it back.
+
+78
+00:03:42,361 --> 00:03:43,361
+Wait here.
+
+79
+00:03:44,241 --> 00:03:45,321
+This way out.
+
+80
+00:03:45,401 --> 00:03:46,761
+Whether you agree or not,
+
+81
+00:03:46,841 --> 00:03:48,961
+it is my responsibility
+to protect the general.
+
+82
+00:03:49,041 --> 00:03:51,641
+I understand
+your responsibilities, Ronan.
+
+83
+00:03:51,721 --> 00:03:53,081
+Okay, I hear about them endlessly.
+
+84
+00:03:53,161 --> 00:03:54,761
+Says the man who never wants
+any of his own.
+
+85
+00:03:56,121 --> 00:03:57,121
+Sorry.
+
+86
+00:03:57,201 --> 00:03:59,241
+Looking for the exit. There's no signs.
+
+87
+00:03:59,321 --> 00:04:01,961
+General Cicero's privacy indicators
+are clearly on.
+
+88
+00:04:02,041 --> 00:04:04,601
+Sorry, we're not really up
+on privacy indicators.
+
+89
+00:04:04,681 --> 00:04:06,721
+General Cicero? Not Eve Cicero?
+
+90
+00:04:06,801 --> 00:04:09,001
+Keeba galaxy? Neuro Pilot?
+
+91
+00:04:09,161 --> 00:04:11,081
+You're mentioned
+in the Book of Celebrants.
+
+92
+00:04:11,161 --> 00:04:14,041
+You helped defeat the Army of the Aeons
+at the Battle of the Underkind.
+
+93
+00:04:14,361 --> 00:04:15,481
+I was one of many.
+
+94
+00:04:15,561 --> 00:04:16,961
+You're a bit of a legend though.
+
+95
+00:04:17,041 --> 00:04:19,361
+This is my brother, Durkas,
+and my consort, Ronan.
+
+96
+00:04:19,441 --> 00:04:23,041
+When she says consort,
+she really means clone drone. Android.
+
+97
+00:04:23,121 --> 00:04:24,641
+You can tell by the hair.
+
+98
+00:04:24,721 --> 00:04:25,721
+Durkas.
+
+99
+00:04:27,001 --> 00:04:29,081
+-And who are you?
+-I'm the Doctor.
+
+100
+00:04:29,801 --> 00:04:31,521
+Wait, I've heard that name.
+
+101
+00:04:31,601 --> 00:04:33,361
+Aren't you in the Book of Celebrants?
+
+102
+00:04:33,441 --> 00:04:34,681
+Isn't there a whole chapter about you?
+
+103
+00:04:34,761 --> 00:04:35,841
+Me? No.
+
+104
+00:04:35,921 --> 00:04:37,041
+Very common name.
+
+105
+00:04:37,121 --> 00:04:38,921
+Anyway, lovely chatting, must be off.
+
+106
+00:04:39,001 --> 00:04:40,441
+Hope you all get better soon.
+
+107
+00:04:42,841 --> 00:04:46,401
+I'd say it was more of a volume
+than a chapter.
+
+108
+00:04:46,601 --> 00:04:47,761
+Just so you know.
+
+109
+00:04:48,921 --> 00:04:50,241
+Oh, that bit hurts.
+
+110
+00:04:50,401 --> 00:04:52,721
+Oh, that bit really hurts.
+
+111
+00:04:52,961 --> 00:04:54,121
+Where is the exit?
+
+112
+00:04:54,201 --> 00:04:56,521
+Why are there no signs for the exit?
+
+113
+00:04:59,481 --> 00:05:01,881
+-Hi. Very sorry. Looking for the exit.
+-Hello.
+
+114
+00:05:01,961 --> 00:05:04,201
+Somebody needs to have a big rethink
+on the signage in this building.
+
+115
+00:05:04,281 --> 00:05:05,641
+I'd do it myself, but I need...
+
+116
+00:05:05,761 --> 00:05:07,161
+(GROANING)
+
+117
+00:05:08,201 --> 00:05:10,441
+My ectospleen hurts.
+
+118
+00:05:10,681 --> 00:05:12,281
+I can feel it resettling.
+
+119
+00:05:12,361 --> 00:05:14,121
+Oh, you're the sonic mine lot.
+
+120
+00:05:14,201 --> 00:05:15,601
+It sounded pretty serious.
+
+121
+00:05:15,681 --> 00:05:17,001
+-How're you feeling?
+-Rough.
+
+122
+00:05:17,441 --> 00:05:18,441
+What are you in for?
+
+123
+00:05:19,521 --> 00:05:20,521
+Pregnant.
+
+124
+00:05:21,401 --> 00:05:23,561
+Blimey, yes you are.
+
+125
+00:05:23,681 --> 00:05:24,681
+Almost ready to pop.
+
+126
+00:05:24,761 --> 00:05:26,041
+How did you get like that?
+
+127
+00:05:26,481 --> 00:05:31,001
+On holiday, got involved with someone,
+didn't take precautions. Like an idiot.
+
+128
+00:05:31,161 --> 00:05:32,721
+So, what's that? Nine months?
+
+129
+00:05:32,801 --> 00:05:33,801
+No, last week.
+
+130
+00:05:33,881 --> 00:05:35,721
+-Last week?
+-Oh, you're a Gifftan?
+
+131
+00:05:35,881 --> 00:05:38,161
+Male pregnancies last a week.
+Very intense.
+
+132
+00:05:38,241 --> 00:05:39,801
+Yeah, feels like forever.
+
+133
+00:05:39,881 --> 00:05:41,081
+I'm a day overdue.
+
+134
+00:05:41,161 --> 00:05:44,601
+They're thinking they might induce me
+at Resus One, otherwise...
+
+135
+00:05:45,401 --> 00:05:47,241
+Well, it wouldn't be good
+for either of us.
+
+136
+00:05:47,921 --> 00:05:50,641
+You're here. Look, you can't
+keep disturbing all the other patients.
+
+137
+00:05:50,721 --> 00:05:53,161
+Astos, found them.
+They're here in Pod Two.
+
+138
+00:05:53,241 --> 00:05:54,881
+We need to go now.
+I'm sure you'll be fine.
+
+139
+00:05:54,961 --> 00:05:55,961
+We'll be thinking of you.
+
+140
+00:05:56,601 --> 00:05:57,721
+What do you mean "go"?
+
+141
+00:05:57,801 --> 00:05:59,041
+How're you gonna do that?
+
+142
+00:05:59,401 --> 00:06:01,801
+-What do you mean?
+-We have been trying to tell you.
+
+143
+00:06:05,001 --> 00:06:06,001
+Yes.
+
+144
+00:06:07,361 --> 00:06:08,361
+You have.
+
+145
+00:06:11,041 --> 00:06:12,321
+Vibrations.
+
+146
+00:06:12,601 --> 00:06:14,201
+Too wrapped up in myself.
+
+147
+00:06:14,521 --> 00:06:16,841
+Missed the vibrations.
+
+148
+00:06:16,921 --> 00:06:18,601
+I was trying to break it to you gently.
+
+149
+00:06:18,681 --> 00:06:19,881
+Tsuranga.
+
+150
+00:06:20,681 --> 00:06:22,641
+This isn't a hospital,
+
+151
+00:06:23,241 --> 00:06:24,401
+it's a ship.
+
+152
+00:06:25,241 --> 00:06:26,881
+And we're already in flight.
+
+153
+00:06:26,961 --> 00:06:29,401
+ASTOS: Tsuranga operates
+emergency medical transport.
+
+154
+00:06:29,481 --> 00:06:31,081
+This is a quad zone rescue craft.
+
+155
+00:06:31,401 --> 00:06:32,761
+Like the Red Cross.
+
+156
+00:06:32,841 --> 00:06:34,921
+You'll be fine.
+We'll be at Resus One soon enough.
+
+157
+00:06:35,881 --> 00:06:37,641
+-How long were we out for?
+-ASTOS: Four days.
+
+158
+00:06:38,881 --> 00:06:40,561
+Four days flight from the TARDIS.
+
+159
+00:06:41,001 --> 00:06:42,321
+I'm walking.
+
+160
+00:06:42,721 --> 00:06:43,721
+(GROANING)
+
+161
+00:06:43,801 --> 00:06:44,921
+No need to walk with me.
+
+162
+00:06:45,241 --> 00:06:46,561
+I need to walk on my own.
+
+163
+00:06:46,921 --> 00:06:48,761
+Four days. Walking.
+
+164
+00:06:49,081 --> 00:06:50,201
+Come on, limbs.
+
+165
+00:06:50,281 --> 00:06:51,761
+Have you got onboard teleport?
+
+166
+00:06:51,841 --> 00:06:54,761
+No, but there's post-recuperation
+onward teleport at Resus One.
+
+167
+00:06:54,841 --> 00:06:57,241
+I don't wanna go to Resus One.
+Let me talk to the pilot.
+
+168
+00:06:57,321 --> 00:06:58,561
+Hey, it's not just you onboard.
+
+169
+00:06:59,121 --> 00:07:00,641
+What are you doing? Don't touch that.
+
+170
+00:07:00,721 --> 00:07:01,801
+Patients aren't allowed access
+
+171
+00:07:01,881 --> 00:07:04,001
+to any onboard systems
+or non-medical facilities.
+
+172
+00:07:04,081 --> 00:07:05,241
+What were you worried about?
+
+173
+00:07:06,041 --> 00:07:07,521
+Just as I was waking up you...
+
+174
+00:07:07,961 --> 00:07:09,801
+You saw something and you were worried.
+
+175
+00:07:09,881 --> 00:07:10,881
+No.
+
+176
+00:07:11,161 --> 00:07:13,601
+Ooh. Bad liar.
+Must be difficult in your job.
+
+177
+00:07:13,681 --> 00:07:15,121
+Hey, I'm an excellent liar.
+
+178
+00:07:15,201 --> 00:07:17,281
+-So, you were lying then?
+-I didn't say that.
+
+179
+00:07:17,361 --> 00:07:19,241
+See? Bad liar.
+
+180
+00:07:20,561 --> 00:07:22,161
+Nav chamber. This way.
+
+181
+00:07:22,441 --> 00:07:24,481
+(GROANING) Still hurts!
+
+182
+00:07:25,001 --> 00:07:27,481
+Running can disrupt
+the ongoing internal healing process.
+
+183
+00:07:30,521 --> 00:07:33,521
+Enough now. You can't be in here.
+I don't know what that device is,
+
+184
+00:07:33,601 --> 00:07:35,201
+but if you don't leave
+I have to restrain you.
+
+185
+00:07:35,361 --> 00:07:36,641
+Where is the crew?
+
+186
+00:07:36,721 --> 00:07:38,921
+Rescue crafts are automated.
+It's a two-medic crew,
+
+187
+00:07:39,001 --> 00:07:41,081
+just me and Mabli.
+Our course is remotely programmed
+
+188
+00:07:41,161 --> 00:07:42,761
+from the Tsuranga hub at Resus One.
+
+189
+00:07:42,841 --> 00:07:44,121
+How do we turn it around?
+
+190
+00:07:44,201 --> 00:07:47,001
+We can't.
+The course is remotely set and locked.
+
+191
+00:07:47,081 --> 00:07:48,921
+The onboard crew don't have privileges
+to unlock it.
+
+192
+00:07:49,001 --> 00:07:50,321
+We'll see about privileges.
+
+193
+00:07:50,401 --> 00:07:52,401
+Don't! If you interfere
+with the navi system
+
+194
+00:07:52,481 --> 00:07:54,521
+they'll take it
+as an active hostility or hijack.
+
+195
+00:07:54,601 --> 00:07:55,841
+They can detonate the craft.
+
+196
+00:07:55,921 --> 00:07:57,041
+I'm not being hostile!
+
+197
+00:07:57,121 --> 00:07:59,601
+Yes, you are!
+You are being hostile and selfish.
+
+198
+00:07:59,681 --> 00:08:01,561
+There are patients onboard
+who need to get to Resus One
+
+199
+00:08:01,641 --> 00:08:02,761
+as a matter of urgency.
+
+200
+00:08:02,841 --> 00:08:06,041
+My job is to keep all of you safe.
+You are stopping me from doing that.
+
+201
+00:08:11,481 --> 00:08:12,481
+You're right.
+
+202
+00:08:15,081 --> 00:08:16,281
+Of course, you're right.
+
+203
+00:08:18,401 --> 00:08:19,401
+Sorry.
+
+204
+00:08:20,721 --> 00:08:22,761
+That mine hit me harder than I thought.
+
+205
+00:08:22,841 --> 00:08:24,721
+I've done 37 tours.
+
+206
+00:08:25,321 --> 00:08:26,761
+We will get you back safe.
+
+207
+00:08:30,681 --> 00:08:31,921
+Where are we?
+
+208
+00:08:32,481 --> 00:08:34,001
+There's a lot of stuff out there.
+
+209
+00:08:34,081 --> 00:08:35,321
+Space junk, asteroids...
+
+210
+00:08:35,401 --> 00:08:36,921
+We're on the edges
+of the Constant Division,
+
+211
+00:08:37,001 --> 00:08:38,561
+that's what threw me back there.
+
+212
+00:08:38,641 --> 00:08:40,001
+The routine usually
+keeps us out of here.
+
+213
+00:08:40,281 --> 00:08:42,001
+-Why?
+-It's disputed territory.
+
+214
+00:08:42,081 --> 00:08:45,281
+We're only just over the boundary
+so nothing to worry about.
+
+215
+00:08:45,361 --> 00:08:46,401
+So, what's that?
+
+216
+00:08:46,481 --> 00:08:47,481
+What's what?
+
+217
+00:08:49,801 --> 00:08:51,321
+Not sure.
+
+218
+00:08:58,041 --> 00:08:59,281
+(CRASHING)
+
+219
+00:08:59,801 --> 00:09:00,961
+Probably an asteroid shower.
+
+220
+00:09:02,001 --> 00:09:03,761
+(RAPID BEEPING)
+
+221
+00:09:03,841 --> 00:09:04,841
+Shield breach.
+
+222
+00:09:05,081 --> 00:09:06,481
+No, wait. Reconfiguring.
+
+223
+00:09:06,841 --> 00:09:08,001
+Resealed and solid.
+
+224
+00:09:08,081 --> 00:09:09,561
+But something breached it for a second.
+
+225
+00:09:10,241 --> 00:09:11,601
+(THUDDING)
+
+226
+00:09:12,041 --> 00:09:14,521
+(THUDDING CONTINUES)
+
+227
+00:09:16,441 --> 00:09:17,961
+I'll check the system monitors.
+
+228
+00:09:22,601 --> 00:09:24,161
+(THUDDING)
+
+229
+00:09:26,721 --> 00:09:28,481
+Something is inside the shields.
+
+230
+00:09:29,281 --> 00:09:30,281
+I'm sure it's nothing.
+
+231
+00:09:30,361 --> 00:09:31,641
+Bad liar, Astos.
+
+232
+00:09:32,281 --> 00:09:33,481
+Go back to your patient pod.
+
+233
+00:09:34,521 --> 00:09:35,601
+I don't know your name.
+
+234
+00:09:35,681 --> 00:09:36,721
+I'm the Doctor.
+
+235
+00:09:37,081 --> 00:09:38,881
+-Are you kidding?
+-Sometimes.
+
+236
+00:09:39,561 --> 00:09:40,881
+But not right now.
+
+237
+00:09:41,001 --> 00:09:43,321
+Tell me the ship's structure, Astos,
+as quick as you can.
+
+238
+00:09:43,641 --> 00:09:45,201
+Central walkway goes all the way around.
+
+239
+00:09:45,281 --> 00:09:46,801
+We have an assessment area in the heart,
+
+240
+00:09:46,881 --> 00:09:48,961
+three patient pods,
+one emergency suite on the sides.
+
+241
+00:09:49,041 --> 00:09:50,681
+We can perform
+limited medical procedures,
+
+242
+00:09:50,761 --> 00:09:52,281
+but our job is basically,
+keep people alive
+
+243
+00:09:52,361 --> 00:09:53,561
+till we can get them to a facility.
+
+244
+00:09:53,641 --> 00:09:54,881
+Evacuation equipment?
+
+245
+00:09:54,961 --> 00:09:56,561
+Two LifePods, port side and starboard.
+
+246
+00:09:56,641 --> 00:09:59,121
+Maximum five per pod.
+We're just within our occupancy limit.
+
+247
+00:09:59,201 --> 00:10:00,201
+Oh, that's good.
+
+248
+00:10:00,401 --> 00:10:02,281
+This ship was designed
+for 100,000 tours.
+
+249
+00:10:02,361 --> 00:10:03,561
+It can withstand a hell of a lot.
+
+250
+00:10:03,641 --> 00:10:05,401
+Are you trying to reassure me
+or yourself?
+
+251
+00:10:05,521 --> 00:10:06,961
+(THUDDING AND BEEPING)
+
+252
+00:10:07,761 --> 00:10:10,681
+-That's a breach alert.
+-It's in the port side LifePod.
+
+253
+00:10:10,761 --> 00:10:12,761
+-It can't be.
+-Are there comms in the LifePod?
+
+254
+00:10:13,841 --> 00:10:15,121
+(STATIC)
+
+255
+00:10:15,201 --> 00:10:16,201
+(THUDDING)
+
+256
+00:10:19,481 --> 00:10:21,041
+It's using the LifePod
+as a way into the ship.
+
+257
+00:10:21,121 --> 00:10:23,801
+You know these territories.
+What can it be? Whoa!
+
+258
+00:10:23,881 --> 00:10:25,321
+That thing can really move.
+
+259
+00:10:25,401 --> 00:10:26,841
+It's heading from the port side
+to the starboard.
+
+260
+00:10:27,281 --> 00:10:29,561
+Area around the starboard pod's
+offline, I can't get a reading.
+
+261
+00:10:29,641 --> 00:10:30,681
+We have to take a look.
+
+262
+00:10:33,041 --> 00:10:35,401
+Okay. You take port,
+I'll check starboard.
+
+263
+00:10:35,481 --> 00:10:36,521
+No, no, no. Too dangerous.
+
+264
+00:10:36,601 --> 00:10:38,081
+You take port, I'll take starboard.
+
+265
+00:10:38,161 --> 00:10:39,161
+You're not in charge here.
+
+266
+00:10:39,241 --> 00:10:42,361
+This is my craft, you are my patient
+and my responsibility.
+
+267
+00:10:42,441 --> 00:10:44,121
+As is everyone else here.
+You're still recovering.
+
+268
+00:10:44,201 --> 00:10:45,401
+You're still in pain.
+
+269
+00:10:45,481 --> 00:10:47,881
+I'll check starboard,
+you check port side.
+
+270
+00:10:49,681 --> 00:10:51,081
+I don't like being told what to do.
+
+271
+00:10:51,161 --> 00:10:52,161
+Yeah.
+
+272
+00:10:52,281 --> 00:10:53,641
+I'm getting that impression.
+
+273
+00:10:54,321 --> 00:10:55,521
+Take a comm dock.
+
+274
+00:10:55,841 --> 00:10:56,841
+Mabli already has one.
+
+275
+00:10:56,921 --> 00:10:59,041
+Stay off her channel
+while we work out what this is.
+
+276
+00:10:59,121 --> 00:11:00,401
+She doesn't need to know about this yet.
+
+277
+00:11:00,481 --> 00:11:01,641
+It's only her second tour.
+
+278
+00:11:01,721 --> 00:11:02,961
+Neither do any of the other patients.
+
+279
+00:11:03,041 --> 00:11:04,281
+-Obviously.
+-Obviously.
+
+280
+00:11:04,361 --> 00:11:05,921
+Why am I trusting you, Doctor?
+
+281
+00:11:06,601 --> 00:11:08,161
+You might be a bad liar, Astos,
+
+282
+00:11:08,401 --> 00:11:09,921
+but you've got excellent instincts.
+
+283
+00:11:11,521 --> 00:11:12,721
+Did you just buzz me?
+
+284
+00:11:12,801 --> 00:11:14,441
+I'm requesting
+further adrenaline blockers.
+
+285
+00:11:14,521 --> 00:11:15,681
+-What, already?
+-Yes.
+
+286
+00:11:15,961 --> 00:11:17,081
+Let me check with Astos.
+
+287
+00:11:17,161 --> 00:11:19,601
+No, you must supply them without delay.
+
+288
+00:11:20,241 --> 00:11:22,561
+But we only carry a limited stock.
+I'm not sure I'm allowed to.
+
+289
+00:11:22,641 --> 00:11:23,961
+The panels are down this way.
+
+290
+00:11:24,041 --> 00:11:26,361
+You know our status
+and how Keeba Central regard us.
+
+291
+00:11:26,441 --> 00:11:28,281
+We would not
+ideally register a complaint
+
+292
+00:11:28,361 --> 00:11:30,121
+against someone
+so early in their career.
+
+293
+00:11:32,841 --> 00:11:34,281
+Let's get them, then.
+
+294
+00:11:39,281 --> 00:11:41,761
+I think that's staff only.
+
+295
+00:11:44,361 --> 00:11:45,601
+Yeah.
+
+296
+00:11:47,801 --> 00:11:50,641
+(SIGHING) I'm trying to figure out
+what to do next.
+
+297
+00:11:51,721 --> 00:11:53,401
+Deny everything or...
+
+298
+00:11:55,201 --> 00:11:56,601
+Ask you to turn a blind eye?
+
+299
+00:11:56,681 --> 00:11:58,801
+I see your problem. Yeah.
+
+300
+00:11:59,321 --> 00:12:01,801
+Generally, truth is always
+your best option.
+
+301
+00:12:03,921 --> 00:12:06,761
+I was trying to hack
+into my sister's medical records.
+
+302
+00:12:06,841 --> 00:12:10,361
+Well, we've all hacked
+into our loved ones confidential records
+
+303
+00:12:10,441 --> 00:12:12,121
+at one stage or another, haven't we?
+
+304
+00:12:12,561 --> 00:12:13,561
+(SCOFFING)
+
+305
+00:12:13,641 --> 00:12:14,881
+Can I ask why?
+
+306
+00:12:15,601 --> 00:12:17,201
+Well, she's lying to me.
+
+307
+00:12:17,401 --> 00:12:18,401
+About...
+
+308
+00:12:19,281 --> 00:12:20,601
+About what's wrong with her.
+
+309
+00:12:22,441 --> 00:12:24,241
+She might have good reason for that.
+
+310
+00:12:25,761 --> 00:12:28,121
+I know the reason.
+She's a control freak.
+
+311
+00:12:28,201 --> 00:12:29,641
+Even to her own little brother.
+
+312
+00:12:29,881 --> 00:12:32,441
+The most decorated General
+in Keeba history,
+
+313
+00:12:32,681 --> 00:12:36,841
+907 days in continual flight,
+on residual energy.
+
+314
+00:12:36,961 --> 00:12:40,201
+Fighting the Ayonians,
+saving our species.
+
+315
+00:12:41,841 --> 00:12:43,281
+So, what do you do then?
+
+316
+00:12:43,521 --> 00:12:44,521
+Me, I'm...
+
+317
+00:12:45,001 --> 00:12:46,001
+-Engineer.
+-Oh.
+
+318
+00:12:47,561 --> 00:12:48,561
+Yeah.
+
+319
+00:12:48,841 --> 00:12:51,961
+I have to fix the things
+pilots like my sister tend to wreck.
+
+320
+00:12:52,041 --> 00:12:53,521
+And she looks down on me for it.
+
+321
+00:12:54,121 --> 00:12:55,281
+And she always will.
+
+322
+00:12:56,961 --> 00:12:59,641
+(DOCTOR PANTING)
+
+323
+00:12:59,841 --> 00:13:01,801
+(CREAKING)
+
+324
+00:13:07,201 --> 00:13:08,521
+DOCTOR: See anything, Astos?
+
+325
+00:13:08,601 --> 00:13:09,841
+Nothing so far.
+
+326
+00:13:11,321 --> 00:13:12,321
+DOCTOR: Me neither.
+
+327
+00:13:12,401 --> 00:13:13,761
+ASYOS: The LifePod
+is just around the corner.
+
+328
+00:13:13,841 --> 00:13:14,881
+Me too.
+
+329
+00:13:14,961 --> 00:13:18,161
+DOCTOR: Go carefully. Whatever
+this thing is, it can move very fast.
+
+330
+00:13:18,241 --> 00:13:19,921
+The power has been shorted
+around the LifePod.
+
+331
+00:13:20,441 --> 00:13:22,241
+The power has gone out in this section.
+
+332
+00:13:23,521 --> 00:13:25,241
+ASTOS: You need to check
+if the pod is still secure.
+
+333
+00:13:26,401 --> 00:13:27,681
+DOCTOR: The system is all drained.
+
+334
+00:13:32,801 --> 00:13:35,641
+ASTOS: No sign of anything here, so far.
+How about you?
+
+335
+00:13:36,761 --> 00:13:37,761
+(GASPING)
+
+336
+00:13:38,761 --> 00:13:39,761
+Astos,
+
+337
+00:13:40,161 --> 00:13:42,801
+the port side LifePod, it's gone.
+
+338
+00:13:43,081 --> 00:13:45,281
+-Jettisoned.
+-Understood.
+
+339
+00:13:45,361 --> 00:13:47,361
+(RATTLING)
+
+340
+00:13:49,441 --> 00:13:51,241
+Doctor, it's here.
+
+341
+00:13:51,521 --> 00:13:52,841
+It's inside this pod.
+
+342
+00:13:52,921 --> 00:13:55,841
+Don't engage with it.
+Stay where you are. We need you safe.
+
+343
+00:13:59,441 --> 00:14:00,481
+Astos, what's happening there?
+
+344
+00:14:01,401 --> 00:14:04,401
+Astos? Are you listening to me?
+Do not engage.
+
+345
+00:14:10,081 --> 00:14:11,081
+No, no, don't!
+
+346
+00:14:11,481 --> 00:14:13,841
+COMPUTER: LifePod active,
+disengaging.
+
+347
+00:14:13,921 --> 00:14:15,721
+Use life-restraint straps, now.
+
+348
+00:14:16,081 --> 00:14:18,281
+Astos, what's happening?
+
+349
+00:14:18,361 --> 00:14:19,521
+Rookie mistake.
+
+350
+00:14:20,961 --> 00:14:22,241
+It's jettisoning the pod.
+
+351
+00:14:22,681 --> 00:14:24,321
+The internal controls are broken.
+
+352
+00:14:25,601 --> 00:14:26,681
+And I'm inside.
+
+353
+00:14:28,441 --> 00:14:30,281
+COMPUTER: Systems malfunction.
+
+354
+00:14:31,721 --> 00:14:32,841
+Currently unavailable.
+
+355
+00:14:32,921 --> 00:14:34,521
+Hold on. I'm coming.
+
+356
+00:14:35,881 --> 00:14:37,521
+COMPUTER: Evacuation, critical
+
+357
+00:14:37,601 --> 00:14:39,361
+Mabli. Mabli!
+
+358
+00:14:39,441 --> 00:14:41,961
+Astos, I'm just with a patient.
+Do you need something?
+
+359
+00:14:44,041 --> 00:14:45,681
+ASTOS: I'm sorry, Mabli.
+
+360
+00:14:46,281 --> 00:14:48,841
+It tricked me. I can't get back.
+
+361
+00:14:49,401 --> 00:14:51,121
+What are you talking about?
+Get back from where?
+
+362
+00:14:51,441 --> 00:14:55,041
+You can do this, Mabli.
+You're good enough.
+
+363
+00:14:55,441 --> 00:14:58,561
+You have to believe in yourself.
+I believe in you.
+
+364
+00:14:58,641 --> 00:15:00,081
+I always have.
+
+365
+00:15:11,881 --> 00:15:13,201
+Astos?
+
+366
+00:15:13,281 --> 00:15:14,401
+Astos!
+
+367
+00:15:16,641 --> 00:15:17,761
+Astos?
+
+368
+00:15:18,241 --> 00:15:20,801
+(PANTING)
+
+369
+00:15:29,641 --> 00:15:31,321
+(GROWLING)
+
+370
+00:15:31,401 --> 00:15:32,681
+(CLANKING)
+
+371
+00:15:42,641 --> 00:15:44,081
+(GROWLING)
+
+372
+00:15:44,161 --> 00:15:46,521
+-Where's Astos? Oh my saints!
+-Doc, that bloke's lab our...
+
+373
+00:15:46,601 --> 00:15:47,801
+What is that?
+
+374
+00:15:49,241 --> 00:15:50,601
+(ROARS)
+
+375
+00:15:52,681 --> 00:15:53,681
+I don't know.
+
+376
+00:15:53,801 --> 00:15:55,321
+But it's incredibly dangerous.
+
+377
+00:15:56,081 --> 00:15:57,601
+It jettisoned the LifePods.
+
+378
+00:15:59,521 --> 00:16:00,841
+And it killed Astos.
+
+379
+00:16:01,521 --> 00:16:02,601
+What?
+
+380
+00:16:02,681 --> 00:16:03,801
+I'm sorry, Mabli.
+
+381
+00:16:03,881 --> 00:16:06,281
+But it's down to us to get us
+safely back to Resus One now.
+
+382
+00:16:06,721 --> 00:16:08,761
+And you, off this ship!
+
+383
+00:16:08,841 --> 00:16:12,201
+Back into space, right now.
+Else you'll have me to deal with.
+
+384
+00:16:13,521 --> 00:16:14,521
+(GROWLS)
+
+385
+00:16:18,161 --> 00:16:19,841
+It just, sort of,
+ignored you there, Doc.
+
+386
+00:16:19,921 --> 00:16:21,081
+Got that, thanks, Graham.
+
+387
+00:16:21,761 --> 00:16:23,321
+How is it eating all that stuff?
+
+388
+00:16:23,521 --> 00:16:25,041
+What even is it?
+
+389
+00:16:26,681 --> 00:16:27,801
+No idea.
+
+390
+00:16:28,281 --> 00:16:30,561
+Hit the ship from the depths of space,
+
+391
+00:16:30,761 --> 00:16:32,521
+so it can survive a vacuum.
+
+392
+00:16:32,761 --> 00:16:34,241
+It doesn't need oxygen.
+
+393
+00:16:34,801 --> 00:16:38,921
+And can digest pretty much whatever
+it wants, by the looks of things.
+
+394
+00:16:40,721 --> 00:16:41,961
+(CHOMPING)
+
+395
+00:16:42,041 --> 00:16:43,121
+(GASPING)
+
+396
+00:16:43,201 --> 00:16:44,201
+And it's got nerve.
+
+397
+00:16:44,281 --> 00:16:46,761
+It's just ate my sonic!
+
+398
+00:16:51,401 --> 00:16:52,401
+(CLICKS)
+
+399
+00:16:52,481 --> 00:16:54,401
+-(SIGHS)
+-(RUNNING FOOTSTEPS)
+
+400
+00:17:03,921 --> 00:17:04,921
+Get them?
+
+401
+00:17:08,361 --> 00:17:09,841
+I think there may have been an incident.
+
+402
+00:17:11,721 --> 00:17:14,401
+The ship's data banks,
+I shouldn't let you in here,
+
+403
+00:17:14,481 --> 00:17:16,161
+but I am and that's fine.
+
+404
+00:17:16,241 --> 00:17:17,601
+I've already been in here with Astos.
+
+405
+00:17:17,681 --> 00:17:19,121
+Has he really gone?
+
+406
+00:17:19,241 --> 00:17:20,441
+I'm sorry, Mabli.
+
+407
+00:17:21,681 --> 00:17:25,561
+He was one of the only people
+who ever believed in me, including me.
+
+408
+00:17:25,641 --> 00:17:26,881
+He was so kind.
+
+409
+00:17:26,961 --> 00:17:28,481
+There aren't enough kind people.
+
+410
+00:17:28,561 --> 00:17:29,921
+What would he want you to do now?
+
+411
+00:17:31,281 --> 00:17:33,161
+Make sure everyone stays safe.
+
+412
+00:17:33,241 --> 00:17:34,241
+You can do this.
+
+413
+00:17:34,321 --> 00:17:35,521
+Right. Yeah.
+
+414
+00:17:35,881 --> 00:17:37,881
+-I can.
+-What did you want to show us?
+
+415
+00:17:37,961 --> 00:17:41,081
+Well, if I sync my ocular recorders
+with the data banks...
+
+416
+00:17:41,161 --> 00:17:43,801
+Oh, yeah, sync
+the old ocular recorders, it's obvious.
+
+417
+00:17:43,881 --> 00:17:46,961
+All Tsuranga medics
+are implanted with lenses,
+
+418
+00:17:47,041 --> 00:17:49,761
+so we can record
+all treatments for training purposes,
+
+419
+00:17:49,841 --> 00:17:51,281
+lawsuits, data records.
+
+420
+00:17:51,361 --> 00:17:53,041
+Like a posh version
+of my uniform camera.
+
+421
+00:17:53,121 --> 00:17:56,241
+Hang on. So, if this is the control deck
+where is the rest of the crew?
+
+422
+00:17:56,601 --> 00:17:59,001
+No crew. All automated.
+
+423
+00:17:59,201 --> 00:18:00,361
+-So, it's just us.
+-Yeah.
+
+424
+00:18:00,441 --> 00:18:01,921
+-Alone.
+-Yeah.
+
+425
+00:18:02,001 --> 00:18:03,161
+-In space.
+-Yeah.
+
+426
+00:18:03,241 --> 00:18:04,241
+With that creature.
+
+427
+00:18:04,321 --> 00:18:06,601
+-Yeah.
+-Right.
+
+428
+00:18:06,681 --> 00:18:08,001
+-I don't fancy its chances.
+-Yeah.
+
+429
+00:18:08,281 --> 00:18:09,761
+I back us every time.
+
+430
+00:18:10,601 --> 00:18:13,561
+COMPUTER: Thank you for choosing
+perils of the Constant Division.
+
+431
+00:18:13,641 --> 00:18:15,401
+We know you have a choice of
+
+432
+00:18:15,481 --> 00:18:17,081
+vid-briefings concerning
+the most threatening of...
+
+433
+00:18:17,161 --> 00:18:18,761
+Sorry. Here we go.
+
+434
+00:18:19,361 --> 00:18:22,201
+COMPUTER:
+Item Seven Alpha Cubed. Pting.
+
+435
+00:18:22,561 --> 00:18:23,681
+ALL: Pting?
+
+436
+00:18:24,041 --> 00:18:25,281
+COMPUTER: Pting.
+
+437
+00:18:25,801 --> 00:18:27,401
+Threat Level: Chalice.
+
+438
+00:18:27,481 --> 00:18:28,601
+Is that bad?
+
+439
+00:18:28,681 --> 00:18:29,721
+Worst one.
+
+440
+00:18:29,801 --> 00:18:31,361
+One up from Beetroot.
+
+441
+00:18:31,441 --> 00:18:34,321
+COMPUTER: ...the species,
+if it is a species, birth or creation,
+
+442
+00:18:34,921 --> 00:18:39,001
+many studies having failed, due to
+the fatally violent nature of the Pting.
+
+443
+00:18:39,361 --> 00:18:42,041
+No Pting has ever been kept
+in captivity,
+
+444
+00:18:42,121 --> 00:18:46,241
+due to their ability to eat through any
+material that would incarcerate them.
+
+445
+00:18:46,321 --> 00:18:50,521
+While strictly non-carnivorous,
+they devour all non-organic material.
+
+446
+00:18:50,601 --> 00:18:52,561
+Well, at least that's something.
+
+447
+00:18:52,721 --> 00:18:54,721
+Is it really? I mean, it won't eat us,
+
+448
+00:18:54,801 --> 00:18:56,881
+but it will eat the ship we're on.
+
+449
+00:18:56,961 --> 00:19:00,881
+...and while they may be momentarily
+stunned are impossible to wound or kill.
+
+450
+00:19:00,961 --> 00:19:04,481
+Pting's skin is understood to be toxic
+to most lifeforms.
+
+451
+00:19:04,561 --> 00:19:06,241
+Never touch a Pting directly.
+
+452
+00:19:06,321 --> 00:19:09,081
+Ptings should never be restricted
+to a confined space.
+
+453
+00:19:09,881 --> 00:19:12,921
+Condensed advice,
+never engage with Pting.
+
+454
+00:19:13,081 --> 00:19:14,881
+Risk to life, ultimate.
+
+455
+00:19:17,361 --> 00:19:20,201
+On the plus side,
+I now feel very well informed.
+
+456
+00:19:20,561 --> 00:19:23,201
+Seven minutes.
+Get everyone into the assessment area.
+
+457
+00:19:23,281 --> 00:19:24,481
+Why seven minutes?
+
+458
+00:19:24,561 --> 00:19:26,201
+I need a moment to think.
+
+459
+00:19:34,441 --> 00:19:35,841
+(PTING CHITTERS)
+
+460
+00:19:39,681 --> 00:19:40,681
+What are you doing?
+
+461
+00:19:45,841 --> 00:19:47,001
+Adrenaline blocker.
+
+462
+00:19:47,081 --> 00:19:49,361
+You can't take adrenaline blockers
+with corton fever.
+
+463
+00:19:49,441 --> 00:19:50,801
+It's fine.
+
+464
+00:19:51,321 --> 00:19:53,881
+You know, I knew
+you were up to something.
+
+465
+00:19:53,961 --> 00:19:54,961
+I knew you were lying.
+
+466
+00:19:55,041 --> 00:19:57,041
+-Durkas, I would respectfully...
+-No, I would respectfully ask
+
+467
+00:19:57,121 --> 00:19:58,121
+don't talk to me.
+
+468
+00:20:01,561 --> 00:20:04,041
+-Hi. We're gonna need you to...
+-Oh.
+
+469
+00:20:04,441 --> 00:20:05,441
+Oh.
+
+470
+00:20:05,801 --> 00:20:06,801
+Put your hand there.
+
+471
+00:20:06,881 --> 00:20:07,881
+No, you're all right.
+
+472
+00:20:07,961 --> 00:20:10,601
+Oh, go on, please.
+Both of you, quick. It's kicking.
+
+473
+00:20:10,681 --> 00:20:12,241
+Come on, it'll be nice to share it.
+
+474
+00:20:12,801 --> 00:20:14,121
+Oh, wait for it.
+
+475
+00:20:14,921 --> 00:20:16,001
+Wait for it.
+
+476
+00:20:16,721 --> 00:20:17,721
+Oh!
+
+477
+00:20:19,921 --> 00:20:20,921
+-Whoa.
+-Whoa.
+
+478
+00:20:21,041 --> 00:20:23,161
+See? He likes you guys.
+
+479
+00:20:23,321 --> 00:20:24,321
+Oh, and again.
+
+480
+00:20:25,081 --> 00:20:26,081
+You know it's a boy?
+
+481
+00:20:26,161 --> 00:20:27,161
+Of course, it is.
+
+482
+00:20:27,321 --> 00:20:30,001
+Boys give birth to boys,
+and girls give birth to girls.
+
+483
+00:20:30,081 --> 00:20:32,121
+-That's how it is.
+-Not where we come from.
+
+484
+00:20:32,201 --> 00:20:33,961
+Ugh, how does that work?
+
+485
+00:20:35,641 --> 00:20:37,281
+Do you wanna see my baby pics?
+
+486
+00:20:37,881 --> 00:20:40,281
+We all need to be in the assessment area
+in six minutes.
+
+487
+00:20:43,081 --> 00:20:44,081
+Ha!
+
+488
+00:20:44,441 --> 00:20:45,881
+One hour.
+
+489
+00:20:46,281 --> 00:20:47,881
+Three hours.
+
+490
+00:20:47,961 --> 00:20:49,521
+End of the first day.
+
+491
+00:20:49,961 --> 00:20:52,161
+Mid second day.
+
+492
+00:20:52,241 --> 00:20:54,001
+And, oh...
+
+493
+00:20:54,961 --> 00:20:56,241
+Three hours ago.
+
+494
+00:20:57,361 --> 00:20:58,361
+Mate...
+
+495
+00:21:00,561 --> 00:21:02,161
+You're growing a person.
+
+496
+00:21:02,521 --> 00:21:03,921
+Yeah.
+
+497
+00:21:04,321 --> 00:21:05,721
+I couldn't do that.
+
+498
+00:21:07,121 --> 00:21:08,641
+No, he really couldn't do that.
+
+499
+00:21:09,361 --> 00:21:10,361
+Yeah.
+
+500
+00:21:10,441 --> 00:21:12,961
+Almost seems a shame to give him away.
+
+501
+00:21:15,401 --> 00:21:16,601
+That's what you're gonna do?
+
+502
+00:21:17,881 --> 00:21:20,281
+Oh, I'm not fit to raise a kid.
+
+503
+00:21:20,361 --> 00:21:23,841
+Besides, dark times right now.
+Turbulent world.
+
+504
+00:21:23,921 --> 00:21:25,801
+I'm not sure I'm his best option.
+
+505
+00:21:26,401 --> 00:21:28,201
+I can't even operate my oven.
+
+506
+00:21:29,361 --> 00:21:30,361
+But...
+
+507
+00:21:31,481 --> 00:21:32,761
+Won't you miss him?
+
+508
+00:21:38,441 --> 00:21:41,241
+Six minutes you said? I'll be there.
+
+509
+00:21:41,881 --> 00:21:42,881
+Yeah.
+
+510
+00:21:45,681 --> 00:21:48,441
+RYAN: He's the same age as my dad
+must have been when he had me.
+
+511
+00:21:50,041 --> 00:21:51,641
+Same age as I am now.
+
+512
+00:21:53,041 --> 00:21:54,961
+Never really thought about it like that.
+
+513
+00:21:57,161 --> 00:21:59,121
+I wouldn't be able to cope
+having a kid now.
+
+514
+00:22:02,001 --> 00:22:03,721
+When was the last time you saw your dad?
+
+515
+00:22:04,121 --> 00:22:05,121
+A year ago.
+
+516
+00:22:06,161 --> 00:22:07,601
+Didn't go well.
+
+517
+00:22:08,001 --> 00:22:09,361
+Got angry with him.
+
+518
+00:22:11,041 --> 00:22:12,321
+Why?
+
+519
+00:22:13,201 --> 00:22:15,001
+He ducked out when I needed him.
+
+520
+00:22:16,361 --> 00:22:18,561
+He's like a gap in my life.
+
+521
+00:22:18,841 --> 00:22:20,481
+Even at Nan's funeral.
+
+522
+00:22:22,721 --> 00:22:24,201
+Do you mind me asking?
+
+523
+00:22:26,441 --> 00:22:28,121
+How did your mum die?
+
+524
+00:22:30,681 --> 00:22:32,001
+(SIGHING)
+
+525
+00:22:35,121 --> 00:22:36,681
+Washing up in the kitchen,
+
+526
+00:22:37,961 --> 00:22:39,841
+massive heart attack, just...
+
+527
+00:22:41,001 --> 00:22:42,601
+Just out on the floor.
+
+528
+00:22:42,961 --> 00:22:43,961
+God.
+
+529
+00:22:45,361 --> 00:22:46,681
+Who found her?
+
+530
+00:22:49,201 --> 00:22:50,201
+Me.
+
+531
+00:22:53,201 --> 00:22:54,601
+How old were you?
+
+532
+00:22:55,001 --> 00:22:56,081
+Thirteen.
+
+533
+00:23:00,121 --> 00:23:01,121
+Ryan,
+
+534
+00:23:02,761 --> 00:23:04,121
+I'm so sorry.
+
+535
+00:23:04,681 --> 00:23:05,721
+I never knew.
+
+536
+00:23:06,121 --> 00:23:08,601
+I never knew life
+threw that sort of stuff at you.
+
+537
+00:23:09,201 --> 00:23:13,321
+I never knew that when it does,
+sometimes adults don't cope either.
+
+538
+00:23:15,001 --> 00:23:16,001
+Your dad.
+
+539
+00:23:16,321 --> 00:23:17,321
+I get it.
+
+540
+00:23:18,801 --> 00:23:20,161
+He loved her too.
+
+541
+00:23:21,481 --> 00:23:23,721
+People always said
+that I looked like her.
+
+542
+00:23:25,881 --> 00:23:27,481
+He must have found that hard.
+
+543
+00:23:32,561 --> 00:23:34,961
+Why am I even talking
+about this? (SCOFFS)
+
+544
+00:23:37,081 --> 00:23:38,961
+Come on.
+Four minutes to the briefing.
+
+545
+00:23:39,841 --> 00:23:41,361
+DOCTOR: Too fast to chase and capture.
+
+546
+00:23:41,441 --> 00:23:43,881
+Too toxic to touch directly.
+
+547
+00:23:44,841 --> 00:23:46,041
+It's a bit of a puzzle.
+
+548
+00:23:46,121 --> 00:23:47,281
+It's gonna kill us all, isn't it?
+
+549
+00:23:47,361 --> 00:23:48,601
+Oh, Mabli,
+you went there way too quick.
+
+550
+00:23:48,681 --> 00:23:50,361
+I said a puzzle, not a death sentence.
+
+551
+00:23:50,601 --> 00:23:51,601
+I mean,
+
+552
+00:23:52,041 --> 00:23:55,761
+it's a bit of a challenge,
+and I can't quite see the solution yet,
+
+553
+00:23:55,841 --> 00:23:57,601
+but that's life. Or medicine.
+
+554
+00:23:58,361 --> 00:24:00,161
+Patients present problems,
+
+555
+00:24:00,241 --> 00:24:02,961
+you figure them out
+and come up with solutions.
+
+556
+00:24:03,041 --> 00:24:05,961
+That's what this is,
+a problem to be diagnosed.
+
+557
+00:24:06,161 --> 00:24:08,001
+Medicine to be administered.
+
+558
+00:24:08,121 --> 00:24:10,321
+You're a medic, I'm the Doctor.
+
+559
+00:24:10,401 --> 00:24:11,401
+A doctor of medicine?
+
+560
+00:24:11,481 --> 00:24:13,281
+Well, medicine, science,
+
+561
+00:24:13,361 --> 00:24:15,561
+engineering, candy floss,
+
+562
+00:24:16,121 --> 00:24:21,041
+Lego, philosophy, music,
+problems, people, hope.
+
+563
+00:24:21,121 --> 00:24:22,161
+Mostly hope.
+
+564
+00:24:22,241 --> 00:24:24,121
+I'm struggling to see much hope here.
+
+565
+00:24:24,801 --> 00:24:27,561
+It doesn't just offer itself up,
+you have to use your imagination.
+
+566
+00:24:27,641 --> 00:24:31,281
+Imagine the solution,
+and work to make it a reality.
+
+567
+00:24:31,521 --> 00:24:34,201
+Whole worlds pivot
+on acts of imagination.
+
+568
+00:24:34,281 --> 00:24:36,961
+So, what are you imagining now?
+
+569
+00:24:38,321 --> 00:24:40,841
+Broadly, I'm imagining
+that thing off this ship.
+
+570
+00:24:40,921 --> 00:24:45,361
+Specifically, I'm trying to imagine
+the answer to the question.
+
+571
+00:24:46,481 --> 00:24:47,481
+What does it want?
+
+572
+00:24:47,561 --> 00:24:48,761
+Does it have to want anything?
+
+573
+00:24:48,841 --> 00:24:51,121
+Every living thing,
+from the tiniest to the largest,
+
+574
+00:24:51,201 --> 00:24:54,041
+wants something. Food, survival, peace.
+
+575
+00:24:54,121 --> 00:24:55,881
+But, the first thing it did
+was kill Astos.
+
+576
+00:24:55,961 --> 00:24:57,641
+That must be what it wants to do
+to all of us.
+
+577
+00:24:57,721 --> 00:24:59,681
+You know there's a much faster way
+back to Resus One.
+
+578
+00:24:59,761 --> 00:25:01,521
+Why is it routing us this way?
+
+579
+00:25:01,601 --> 00:25:05,881
+Asteroid field. Fast moving asteroids
+all around, really unpredictable.
+
+580
+00:25:05,961 --> 00:25:08,161
+(ALARM BUZZING)
+
+581
+00:25:08,841 --> 00:25:09,841
+What are these?
+
+582
+00:25:09,921 --> 00:25:11,401
+They are bad.
+
+583
+00:25:11,481 --> 00:25:15,281
+This craft has over 5,000
+different scan sensors,
+
+584
+00:25:15,401 --> 00:25:17,121
+constantly feeding back to Resus One.
+
+585
+00:25:17,201 --> 00:25:20,401
+They monitor everything,
+both internally and externally.
+
+586
+00:25:20,481 --> 00:25:23,161
+Check the routing is stable,
+and there are no hostile forms,
+
+587
+00:25:23,241 --> 00:25:24,561
+however microbial, on board.
+
+588
+00:25:24,641 --> 00:25:26,721
+The systems have detected the Pting.
+
+589
+00:25:26,801 --> 00:25:29,441
+They are asking us to confirm or deny
+anything is wrong.
+
+590
+00:25:29,521 --> 00:25:31,641
+We can't take a creature like that
+back to Resus One.
+
+591
+00:25:31,721 --> 00:25:33,321
+There's thousands
+of vulnerable patients.
+
+592
+00:25:33,401 --> 00:25:34,521
+And if we confirm it's onboard?
+
+593
+00:25:34,601 --> 00:25:35,841
+They will recommend evacuation.
+
+594
+00:25:35,921 --> 00:25:36,961
+But we can't evacuate.
+
+595
+00:25:37,041 --> 00:25:39,881
+It goes straight to RST,
+remote structural termination.
+
+596
+00:25:40,801 --> 00:25:42,121
+They destroy the ship.
+
+597
+00:25:45,561 --> 00:25:46,561
+Right.
+
+598
+00:25:49,161 --> 00:25:51,241
+Nothing wrong. We're fine.
+
+599
+00:25:51,321 --> 00:25:52,801
+We can't keep doing that.
+
+600
+00:25:52,881 --> 00:25:54,481
+Three dismissals
+and they don't believe you.
+
+601
+00:25:54,561 --> 00:25:56,241
+Precautionary detonation.
+
+602
+00:25:56,361 --> 00:25:58,081
+Oh, great. Who designed that?
+
+603
+00:25:58,161 --> 00:26:00,441
+So, this ship either gets destroyed
+by that creature,
+
+604
+00:26:00,521 --> 00:26:02,201
+or by control from Resus One.
+
+605
+00:26:02,721 --> 00:26:03,721
+Yeah.
+
+606
+00:26:04,961 --> 00:26:05,961
+Sorry.
+
+607
+00:26:12,601 --> 00:26:13,841
+(GRUNTS)
+
+608
+00:26:17,521 --> 00:26:19,521
+You're probably wondering
+why I called you all here.
+
+609
+00:26:22,561 --> 00:26:23,561
+Sorry.
+
+610
+00:26:24,001 --> 00:26:25,161
+Bit Poirot!
+
+611
+00:26:25,281 --> 00:26:29,081
+I need to bring you all up to speed,
+very directly, very succinctly.
+
+612
+00:26:29,441 --> 00:26:30,681
+I can't sugarcoat this.
+
+613
+00:26:30,761 --> 00:26:33,001
+-Where's the chief medic?
+-Gone.
+
+614
+00:26:33,081 --> 00:26:36,041
+Killed by an alien organism
+called Piing that's come onboard.
+
+615
+00:26:36,121 --> 00:26:38,121
+Very fast moving, very deadly,
+
+616
+00:26:38,201 --> 00:26:40,001
+and it's eating its way
+through the structure of the ship.
+
+617
+00:26:40,081 --> 00:26:42,721
+Also, and this is the bit
+you need to work on not panicking.
+
+618
+00:26:43,401 --> 00:26:44,681
+It has jettisoned the LifePods.
+
+619
+00:26:44,761 --> 00:26:45,921
+Oh.
+
+620
+00:26:46,801 --> 00:26:48,601
+I'm the Doctor, these are my friends,
+
+621
+00:26:48,681 --> 00:26:51,321
+Ryan, Graham and Yaz.
+
+622
+00:26:51,401 --> 00:26:53,361
+You know Mabli, our very capable medic.
+
+623
+00:26:53,441 --> 00:26:56,921
+We will pool all our brilliance
+and get us all safely to Resus One.
+
+624
+00:27:04,761 --> 00:27:06,521
+I thought there'd be more questions.
+
+625
+00:27:08,081 --> 00:27:10,841
+I've encountered a Pting before,
+it massacred my fleet.
+
+626
+00:27:11,441 --> 00:27:12,441
+Okay.
+
+627
+00:27:12,681 --> 00:27:14,561
+What did you learn about them?
+What do they want?
+
+628
+00:27:14,641 --> 00:27:16,241
+They kill, relentlessly.
+
+629
+00:27:17,281 --> 00:27:18,721
+(RYAN GASPS)
+
+630
+00:27:20,201 --> 00:27:22,281
+MABLI: It must have got
+to the central systems.
+
+631
+00:27:22,961 --> 00:27:25,161
+That means we'll soon lose
+oxygen and heat.
+
+632
+00:27:25,241 --> 00:27:27,321
+EVE: It'll go for whatever
+is powering the craft next.
+
+633
+00:27:27,401 --> 00:27:29,001
+We're on an anti-matter drive.
+
+634
+00:27:29,081 --> 00:27:31,081
+We could use
+stazers to defend ourselves.
+
+635
+00:27:31,161 --> 00:27:32,761
+They can stun it briefly.
+Got any onboard?
+
+636
+00:27:32,841 --> 00:27:34,521
+A couple, I think, in here.
+
+637
+00:27:35,321 --> 00:27:36,681
+If we're gonna live through this
+
+638
+00:27:36,801 --> 00:27:39,281
+-protect the anti-matter drive.
+-Protect the anti-matter drive. Snap!
+
+639
+00:27:40,721 --> 00:27:43,121
+Can we get to Resus One
+any faster than currently routed?
+
+640
+00:27:43,281 --> 00:27:45,321
+Not without breaking
+the ship's auto routing,
+
+641
+00:27:45,401 --> 00:27:47,561
+which would send a signal back
+to Resus One.
+
+642
+00:27:47,641 --> 00:27:49,401
+And they go straight
+to Hostility Protocols.
+
+643
+00:27:49,481 --> 00:27:52,281
+I could create a false
+positive route signal to send back.
+
+644
+00:27:52,361 --> 00:27:54,401
+But there's no manual controls
+in the nav chamber.
+
+645
+00:27:54,481 --> 00:27:56,121
+-Show us.
+-General...
+
+646
+00:27:56,201 --> 00:27:57,201
+Shush now, Ronan. I know.
+
+647
+00:27:57,281 --> 00:27:58,881
+We could go past the drive chamber
+on the way.
+
+648
+00:27:58,961 --> 00:28:00,761
+Durkas with me. Please?
+
+649
+00:28:00,841 --> 00:28:03,721
+Um, is this a bad moment
+
+650
+00:28:03,801 --> 00:28:05,401
+to mention my internal fluids
+have broken?
+
+651
+00:28:05,801 --> 00:28:06,961
+I think the baby is coming.
+
+652
+00:28:08,001 --> 00:28:09,161
+Really sorry.
+
+653
+00:28:12,681 --> 00:28:14,761
+The BirthBud is set up
+in your PatientPod.
+
+654
+00:28:14,841 --> 00:28:17,241
+-Let's get you back there.
+-But it won't have any power.
+
+655
+00:28:17,321 --> 00:28:19,241
+It's got a backup generator,
+no need to panic.
+
+656
+00:28:20,881 --> 00:28:23,441
+Would you two be my Dhulas?
+I haven't got any Dhulas.
+
+657
+00:28:23,521 --> 00:28:25,401
+-Do what?
+-Dhulas, birth partners.
+
+658
+00:28:25,721 --> 00:28:27,681
+She's brilliant,
+but I need some men with me.
+
+659
+00:28:29,841 --> 00:28:32,201
+-Yeah, we're blokes, aren't we?
+-Yeah.
+
+660
+00:28:32,601 --> 00:28:34,881
+-Yeah, yeah. All over it. Yeah.
+-Come on.
+
+661
+00:28:35,161 --> 00:28:37,281
+Right, now I'm imagining
+you're sorting all this out?
+
+662
+00:28:37,361 --> 00:28:40,041
+Me too. Be cautious,
+it could be anywhere.
+
+663
+00:28:40,481 --> 00:28:41,481
+Come on.
+
+664
+00:28:41,561 --> 00:28:43,801
+-MABLI: You're fine.
+-I need another adrenaline blocker.
+
+665
+00:28:43,881 --> 00:28:45,881
+You used the last one, General.
+
+666
+00:28:46,641 --> 00:28:47,961
+Everything okay?
+
+667
+00:28:48,881 --> 00:28:50,761
+-Yeah.
+-With me, please.
+
+668
+00:28:54,721 --> 00:28:55,961
+Where do you think it is right now?
+
+669
+00:28:56,041 --> 00:28:57,041
+I don't know.
+
+670
+00:28:57,201 --> 00:28:59,721
+Can't trace it,
+since the diagnostic systems drained.
+
+671
+00:28:59,921 --> 00:29:01,761
+Doctor, quick word. Private.
+
+672
+00:29:02,641 --> 00:29:03,961
+Catch you up, go on.
+
+673
+00:29:06,281 --> 00:29:08,081
+Eve Cicero, her condition.
+
+674
+00:29:08,161 --> 00:29:10,161
+-What about it?
+-Patient confidentiality,
+
+675
+00:29:10,241 --> 00:29:11,481
+I can't discuss with you,
+
+676
+00:29:11,561 --> 00:29:13,561
+but if you're a doctor,
+maybe you should examine her.
+
+677
+00:29:15,201 --> 00:29:16,201
+I've got to go.
+
+678
+00:29:19,361 --> 00:29:20,881
+Sorry, where are we?
+
+679
+00:29:20,961 --> 00:29:22,481
+Oh, anti-matter drive.
+
+680
+00:29:22,601 --> 00:29:23,641
+What century is this?
+
+681
+00:29:23,841 --> 00:29:26,321
+-You're joking?
+-No, we travel in time.
+
+682
+00:29:26,401 --> 00:29:28,041
+-Are you joking now?
+-No.
+
+683
+00:29:28,321 --> 00:29:30,441
+-Sixty-seventh.
+-Oh, nice century.
+
+684
+00:29:30,521 --> 00:29:32,721
+Bit tricky in the middle.
+Turns out all right in the end.
+
+685
+00:29:32,881 --> 00:29:35,281
+See this, Yaz? Anti-matter drive.
+
+686
+00:29:36,441 --> 00:29:38,281
+Oh, I did a bit
+on anti-matter at school.
+
+687
+00:29:38,601 --> 00:29:40,441
+Never quite understood it.
+
+688
+00:29:40,601 --> 00:29:43,801
+The thing with anti-matter is you
+either have to find it or generate it.
+
+689
+00:29:43,881 --> 00:29:44,881
+That's what this bit does.
+
+690
+00:29:44,961 --> 00:29:46,561
+Particle accelerator.
+
+691
+00:29:46,641 --> 00:29:49,081
+Like at CERN. We did that in physics.
+
+692
+00:29:49,241 --> 00:29:51,121
+No, but the thing at CERN is massive.
+
+693
+00:29:51,201 --> 00:29:54,841
+In your time, generating anti-matter
+cost a massive amount of money.
+
+694
+00:29:54,921 --> 00:29:56,641
+This is progress.
+
+695
+00:29:56,721 --> 00:29:59,521
+Things get smaller, faster and cheaper.
+
+696
+00:29:59,601 --> 00:30:01,961
+This is like the iPhone version
+of CERN.
+
+697
+00:30:02,041 --> 00:30:05,841
+Accelerating enough particles
+to power this entire craft.
+
+698
+00:30:06,041 --> 00:30:07,041
+So, how does it work?
+
+699
+00:30:07,361 --> 00:30:10,121
+The particle accelerator
+smashes the atoms together,
+
+700
+00:30:10,281 --> 00:30:13,801
+like a little anti-matter factory
+to produce positrons.
+
+701
+00:30:13,881 --> 00:30:17,881
+Which are then stored very carefully
+inside electric and magnetic fields.
+
+702
+00:30:18,121 --> 00:30:20,601
+The positrons interact
+with the fuel materials
+
+703
+00:30:20,721 --> 00:30:23,241
+to produce heat, which produces thrust.
+
+704
+00:30:23,721 --> 00:30:25,321
+It's pretty old school, this one.
+
+705
+00:30:25,841 --> 00:30:26,961
+It's beautiful.
+
+706
+00:30:27,921 --> 00:30:30,761
+Anti-matter powering
+the movement of matter,
+
+707
+00:30:30,961 --> 00:30:33,721
+bringing positrons into existence
+
+708
+00:30:33,921 --> 00:30:36,201
+to move other forms of life
+across space.
+
+709
+00:30:36,441 --> 00:30:37,441
+I love it.
+
+710
+00:30:37,961 --> 00:30:39,361
+Conceptually,
+
+711
+00:30:40,281 --> 00:30:41,721
+and actually.
+
+712
+00:30:43,041 --> 00:30:45,561
+Yaz, you have to keep this safe
+from the Piing.
+
+713
+00:30:45,801 --> 00:30:47,241
+If this drive gets destroyed,
+
+714
+00:30:47,321 --> 00:30:50,601
+This ship will lose propulsion,
+will drift endlessly while the Piing...
+
+715
+00:30:50,681 --> 00:30:52,961
+I get it. It won't be good.
+
+716
+00:30:53,401 --> 00:30:54,481
+Ronan can stay with you.
+
+717
+00:30:54,921 --> 00:30:57,321
+No. General, my responsibility is to...
+
+718
+00:30:57,401 --> 00:30:59,721
+Ronan, you're able to touch it
+without it toxifying you.
+
+719
+00:30:59,801 --> 00:31:02,081
+That's useful to all of us,
+including me.
+
+720
+00:31:03,281 --> 00:31:04,281
+Of course, General.
+
+721
+00:31:06,481 --> 00:31:08,601
+You might need this, med blanket.
+
+722
+00:31:08,721 --> 00:31:11,441
+Sterilised barrier.
+67th century technology.
+
+723
+00:31:11,601 --> 00:31:13,161
+In case you need to pick anything up.
+
+724
+00:31:17,081 --> 00:31:18,361
+(THUDS)
+
+725
+00:31:22,001 --> 00:31:23,881
+(ALARM BUZZES)
+
+726
+00:31:24,041 --> 00:31:25,321
+(DOCTOR GASPING)
+
+727
+00:31:26,881 --> 00:31:28,281
+Piing presence denied.
+
+728
+00:31:28,361 --> 00:31:29,761
+Strike two, one left.
+
+729
+00:31:29,841 --> 00:31:32,121
+Now, you two, see? A more direct route.
+
+730
+00:31:32,201 --> 00:31:34,841
+Obviously, fast moving asteroids
+and debris to avoid on the way,
+
+731
+00:31:34,921 --> 00:31:37,201
+which is presumably
+why the systems wanted to avoid it.
+
+732
+00:31:37,281 --> 00:31:40,481
+Now, if I can rig up a cover signal
+back to Resus One...
+
+733
+00:31:40,561 --> 00:31:42,161
+Doctor, I'm a Neuro Pilot,
+
+734
+00:31:42,241 --> 00:31:44,681
+my expertise is
+in symbiotic neuro-piloting
+
+735
+00:31:44,761 --> 00:31:46,881
+pulse systems at a push, but not this.
+
+736
+00:31:46,961 --> 00:31:48,561
+Oh, I can make a rig
+out of this chamber.
+
+737
+00:31:48,641 --> 00:31:49,641
+No, you can't.
+
+738
+00:31:50,521 --> 00:31:53,641
+You would't be able to make your way
+through those asteroids even if I did.
+
+739
+00:31:54,041 --> 00:31:56,281
+Yeah? Says you.
+
+740
+00:31:57,801 --> 00:31:59,841
+-How long have I got?
+-Literally, no time at all.
+
+741
+00:32:00,161 --> 00:32:01,361
+Give me some space to work.
+
+742
+00:32:02,201 --> 00:32:04,001
+Siblings... Bless.
+
+743
+00:32:07,321 --> 00:32:08,881
+Why are you on this ship, General?
+
+744
+00:32:09,201 --> 00:32:11,761
+Corton fever.
+Contracted on my last duty.
+
+745
+00:32:11,841 --> 00:32:13,201
+Can't quite shake it.
+
+746
+00:32:13,521 --> 00:32:14,721
+What are you doing?
+
+747
+00:32:18,641 --> 00:32:22,641
+Why would you be using
+adrenaline blockers for Corton fever?
+
+748
+00:32:23,161 --> 00:32:24,361
+How'd you know about the blockers?
+
+749
+00:32:24,441 --> 00:32:25,801
+Your slow pulse, my really good hearing.
+
+750
+00:32:25,881 --> 00:32:27,241
+You asked Ronan for some.
+
+751
+00:32:27,321 --> 00:32:28,841
+It isn't Corton fever, is it?
+
+752
+00:32:30,481 --> 00:32:31,721
+Is it Pilot's Heart?
+
+753
+00:32:33,081 --> 00:32:35,161
+I'm sorry, Eve,
+but if we're gonna survive this,
+
+754
+00:32:35,521 --> 00:32:37,281
+you need to be honest with me.
+
+755
+00:32:44,441 --> 00:32:45,921
+I started as a Pulse Pilot.
+
+756
+00:32:46,081 --> 00:32:49,801
+I graduated to Neuro Fleet Commander
+faster than anyone in Keeban history.
+
+757
+00:32:49,881 --> 00:32:52,401
+I'm the most decorated general.
+
+758
+00:32:52,481 --> 00:32:53,841
+I'm the poster woman.
+
+759
+00:32:54,801 --> 00:32:57,121
+I cannot have Pilot's Heart.
+
+760
+00:32:57,681 --> 00:32:59,601
+I cannot be that example to others.
+
+761
+00:32:59,681 --> 00:33:03,521
+But you have, and you have been using
+more and more blocker shots
+
+762
+00:33:03,601 --> 00:33:04,681
+to get through the day.
+
+763
+00:33:04,761 --> 00:33:06,041
+Trying to control
+
+764
+00:33:06,281 --> 00:33:08,721
+the surges of adrenaline
+around the heart.
+
+765
+00:33:10,201 --> 00:33:11,881
+One big surge could kill me.
+
+766
+00:33:12,361 --> 00:33:13,521
+Does Durkas know?
+
+767
+00:33:14,041 --> 00:33:15,041
+I don't want him worrying.
+
+768
+00:33:15,321 --> 00:33:16,881
+He's gonna find out sooner or later.
+
+769
+00:33:16,961 --> 00:33:18,201
+DURKAS: He already has.
+
+770
+00:33:18,921 --> 00:33:20,561
+Not that he's surprised, just...
+
+771
+00:33:23,281 --> 00:33:24,521
+Disappointed.
+
+772
+00:33:25,401 --> 00:33:27,201
+-Durkas...
+-We don't have time now.
+
+773
+00:33:27,721 --> 00:33:29,841
+I've rigged a primitive piloting bypass,
+
+774
+00:33:29,921 --> 00:33:32,001
+-combining pulse and neuro...
+-I'll do it.
+
+775
+00:33:32,761 --> 00:33:33,961
+Ever flown that way?
+
+776
+00:33:34,081 --> 00:33:35,081
+No.
+
+777
+00:33:35,241 --> 00:33:36,241
+But you can talk me through it.
+
+778
+00:33:36,321 --> 00:33:37,841
+It takes people a dozen years to train.
+
+779
+00:33:38,161 --> 00:33:40,281
+I really need to spend more time
+in 67th century.
+
+780
+00:33:40,361 --> 00:33:41,921
+I know how to do this.
+
+781
+00:33:43,161 --> 00:33:44,201
+I'm not stopping now.
+
+782
+00:33:45,601 --> 00:33:48,241
+Everyone is going to live. Including me.
+
+783
+00:33:49,081 --> 00:33:50,401
+(GROANING)
+
+784
+00:33:51,041 --> 00:33:53,801
+-Breathe deep, cockle.
+-I am breathing.
+
+785
+00:33:53,881 --> 00:33:56,001
+Oh, this really hurts!
+
+786
+00:33:56,081 --> 00:33:57,081
+Yoss. Yoss.
+
+787
+00:33:57,441 --> 00:34:00,201
+I'm giving you some stronger
+pain management, it should help.
+
+788
+00:34:00,561 --> 00:34:02,081
+(YOSS SCREAMING)
+
+789
+00:34:02,441 --> 00:34:03,881
+Yeah. Yeah, that's better.
+
+790
+00:34:04,441 --> 00:34:06,401
+Where's the BirthBud? Is it running?
+
+791
+00:34:06,481 --> 00:34:08,081
+No, backup generator isn't working.
+
+792
+00:34:08,161 --> 00:34:09,521
+(SCREAMING) What?
+
+793
+00:34:09,681 --> 00:34:12,081
+I can't do this without a BirthBud!
+
+794
+00:34:12,161 --> 00:34:14,361
+-Yoss, don't panic, mate.
+-I am panicking.
+
+795
+00:34:14,441 --> 00:34:15,841
+Which is why I'm telling you not to.
+
+796
+00:34:16,601 --> 00:34:17,881
+Listen to your Dhulas.
+
+797
+00:34:17,961 --> 00:34:18,961
+We're here for you.
+
+798
+00:34:19,521 --> 00:34:22,321
+I don't even know you! Who are you?
+
+799
+00:34:22,401 --> 00:34:23,841
+You're not the one about to have a baby
+
+800
+00:34:23,921 --> 00:34:27,321
+you don't want, on a ship
+without a BirthBud.
+
+801
+00:34:27,401 --> 00:34:29,001
+-(GROANS)
+-The baby is ready to come out.
+
+802
+00:34:29,081 --> 00:34:30,201
+Oh, God.
+
+803
+00:34:30,281 --> 00:34:31,601
+Oh. (GRUNTING)
+
+804
+00:34:40,681 --> 00:34:42,041
+It's close.
+
+805
+00:34:42,121 --> 00:34:44,481
+Just focus on protecting
+the anti-matter drive.
+
+806
+00:34:48,921 --> 00:34:50,481
+(SCREAMING)
+
+807
+00:34:51,921 --> 00:34:53,161
+(YELPS)
+
+808
+00:34:53,241 --> 00:34:54,481
+Stazers ready.
+
+809
+00:34:57,521 --> 00:34:59,601
+-(SHIP CREAKING)
+-(THUDDING)
+
+810
+00:35:02,681 --> 00:35:04,441
+The creature is toying with us.
+
+811
+00:35:04,841 --> 00:35:06,281
+(RUMBLING)
+
+812
+00:35:06,361 --> 00:35:07,641
+(PTING GROWLING)
+
+813
+00:35:11,801 --> 00:35:13,641
+-(SCREAMS)
+-(GROWLING)
+
+814
+00:35:17,841 --> 00:35:19,921
+I'll get it as far away
+from the drive as I can.
+
+815
+00:35:20,001 --> 00:35:22,081
+Be fast, the stun power
+will only last a few seconds.
+
+816
+00:35:23,721 --> 00:35:26,121
+Siobhan Chamberlain
+with a goal kick for England.
+
+817
+00:35:29,401 --> 00:35:31,201
+(CHITTERING)
+
+818
+00:35:31,721 --> 00:35:33,241
+Okay, it's rigged.
+
+819
+00:35:33,321 --> 00:35:37,041
+I've leeched some system power
+off the anti-matter drive.
+
+820
+00:35:37,121 --> 00:35:39,601
+Now if they can keep that
+up and running,
+
+821
+00:35:40,081 --> 00:35:42,801
+we'll have enough power
+to keep basic systems going
+
+822
+00:35:42,881 --> 00:35:44,321
+and still get to Resus One.
+
+823
+00:35:44,401 --> 00:35:47,281
+That's if that thing
+doesn't get in there
+
+824
+00:35:47,641 --> 00:35:49,281
+and drain the energy.
+
+825
+00:35:49,641 --> 00:35:50,841
+This isn't gonna work.
+
+826
+00:35:50,921 --> 00:35:51,961
+Keep quiet, General.
+
+827
+00:35:52,281 --> 00:35:54,241
+Trust your engineer
+
+828
+00:35:54,321 --> 00:35:55,681
+and tell me you're well enough.
+
+829
+00:35:57,161 --> 00:35:58,521
+I'm well enough.
+
+830
+00:35:59,841 --> 00:36:01,401
+Now promise me that's true.
+
+831
+00:36:05,081 --> 00:36:08,201
+You're gonna need every scrap
+of energy you have.
+
+832
+00:36:09,921 --> 00:36:12,041
+Cover signal transmitting to Resus One.
+
+833
+00:36:12,121 --> 00:36:15,121
+Hopefully, bit of luck, they're still
+gonna think they're in control.
+
+834
+00:36:16,721 --> 00:36:18,041
+Durkas.
+
+835
+00:36:19,721 --> 00:36:21,001
+You're a genius.
+
+836
+00:36:21,441 --> 00:36:23,241
+The energy.
+
+837
+00:36:23,681 --> 00:36:26,201
+It doesn't wanna kill us,
+it doesn't care about us.
+
+838
+00:36:26,281 --> 00:36:28,961
+It wants the systems,
+it wants the power.
+
+839
+00:36:29,121 --> 00:36:32,881
+It didn't go for Astos,
+it went for the life-support systems
+
+840
+00:36:32,961 --> 00:36:34,321
+in the LifePod.
+
+841
+00:36:34,401 --> 00:36:37,201
+It drained the lights and the power
+and my sonic,
+
+842
+00:36:37,281 --> 00:36:41,561
+it drains everything it eats.
+That little creature seeks out
+
+843
+00:36:41,641 --> 00:36:44,281
+and feasts on energy.
+
+844
+00:36:44,521 --> 00:36:46,641
+That's why it homed-in on us here,
+
+845
+00:36:46,761 --> 00:36:49,441
+pulsing with it in the wilds of space.
+
+846
+00:36:49,761 --> 00:36:51,161
+Locked in, General.
+
+847
+00:36:51,561 --> 00:36:52,681
+Try it out.
+
+848
+00:36:59,161 --> 00:37:00,441
+I can see the course.
+
+849
+00:37:02,241 --> 00:37:03,801
+I need to increase speed.
+
+850
+00:37:06,321 --> 00:37:08,201
+Turning over control...
+
+851
+00:37:10,241 --> 00:37:11,401
+It's all yours.
+
+852
+00:37:11,801 --> 00:37:13,721
+-(RUMBLING)
+-(GRUNTING)
+
+853
+00:37:13,801 --> 00:37:15,081
+Eve.
+
+854
+00:37:24,681 --> 00:37:26,441
+Still got it, boy.
+
+855
+00:37:30,001 --> 00:37:32,041
+I've missed this so much.
+
+856
+00:37:32,361 --> 00:37:33,521
+(EXHALES)
+
+857
+00:37:34,961 --> 00:37:35,961
+How is it?
+
+858
+00:37:36,041 --> 00:37:37,241
+Rough.
+
+859
+00:37:38,081 --> 00:37:39,241
+But it'll work.
+
+860
+00:37:39,761 --> 00:37:41,601
+Take us in safely, General.
+
+861
+00:37:41,801 --> 00:37:42,961
+Nice and calm.
+
+862
+00:37:43,041 --> 00:37:45,041
+(ALARM BLARING)
+
+863
+00:37:48,361 --> 00:37:50,361
+Pting denial, strike three.
+
+864
+00:37:50,801 --> 00:37:52,641
+After which, tricky.
+
+865
+00:37:53,241 --> 00:37:55,761
+DURKAS: What will we do with the Piing
+when we gel to Resus One?
+
+866
+00:37:56,041 --> 00:37:58,281
+(ALARM BLARING)
+
+867
+00:37:58,361 --> 00:38:00,401
+Nothing to worry about,
+I'll deal with the Pting.
+
+868
+00:38:00,641 --> 00:38:01,921
+Well, how are you gonna do that?
+
+869
+00:38:03,721 --> 00:38:07,041
+Piing, bomb... No, can't get it.
+
+870
+00:38:07,121 --> 00:38:08,281
+(SCREAMS)
+
+871
+00:38:08,361 --> 00:38:10,161
+(GRUNTS) Still hurting.
+
+872
+00:38:10,961 --> 00:38:12,201
+Yes.
+
+873
+00:38:12,881 --> 00:38:15,521
+Maybe, maybe...
+
+874
+00:38:17,081 --> 00:38:19,081
+It's me, I'm not a Pting.
+
+875
+00:38:19,721 --> 00:38:20,881
+It was here.
+
+876
+00:38:21,481 --> 00:38:22,641
+I got rid of it.
+
+877
+00:38:22,881 --> 00:38:25,761
+-But it'll be coming back.
+-What is the situation elsewhere?
+
+878
+00:38:25,841 --> 00:38:27,041
+Eve's piloting the ship.
+
+879
+00:38:27,121 --> 00:38:28,881
+Durkas is maintaining
+controls and signals.
+
+880
+00:38:28,961 --> 00:38:31,081
+You're guarding
+the particle accelerator.
+
+881
+00:38:31,161 --> 00:38:32,441
+-(EXPLOSION)
+-(RUMBLING)
+
+882
+00:38:32,521 --> 00:38:35,561
+Mabli, Graham and Ryan
+are presumably delivering Yoss's baby.
+
+883
+00:38:35,641 --> 00:38:38,761
+And the bomb's going to detonate.
+I'm just going to move it away
+
+884
+00:38:38,841 --> 00:38:39,921
+from this room.
+
+885
+00:38:40,001 --> 00:38:41,481
+-Mind helping?
+-Yes! |
+
+886
+00:38:43,801 --> 00:38:45,361
+(GASPS) Clever sonic.
+
+887
+00:38:45,441 --> 00:38:46,721
+Self-rebooting.
+
+888
+00:38:47,241 --> 00:38:48,441
+There's a bomb in this room?
+
+889
+00:38:48,521 --> 00:38:49,761
+Right in here.
+
+890
+00:38:50,801 --> 00:38:53,001
+Mabli said that Resus One
+would terminate the ship
+
+891
+00:38:53,081 --> 00:38:54,321
+if they found the Pting on board.
+
+892
+00:38:54,401 --> 00:38:56,361
+How would they do that?
+We're too far for missiles.
+
+893
+00:38:56,881 --> 00:38:59,601
+Has to be the same
+for every Tsurangan rescue craft.
+
+894
+00:39:00,321 --> 00:39:01,761
+It's built in.
+
+895
+00:39:02,321 --> 00:39:03,321
+Self detonation.
+
+896
+00:39:03,401 --> 00:39:04,401
+Bingo.
+
+897
+00:39:04,481 --> 00:39:07,241
+Ten points for Yasmin Khan, and yes,
+I am keeping score for all of you.
+
+898
+00:39:07,321 --> 00:39:08,721
+Ronan, up your game.
+
+899
+00:39:09,361 --> 00:39:10,441
+Jokes.
+
+900
+00:39:12,201 --> 00:39:13,681
+So...
+
+901
+00:39:16,681 --> 00:39:18,241
+You're interfering with the bomb?
+
+902
+00:39:18,321 --> 00:39:20,561
+-Yes.
+-Is it going to detonate?
+
+903
+00:39:20,641 --> 00:39:21,721
+Yes.
+
+904
+00:39:21,801 --> 00:39:23,081
+What will you do?
+
+905
+00:39:24,161 --> 00:39:25,521
+Speed it up.
+
+906
+00:39:25,601 --> 00:39:27,121
+To save our lives.
+
+907
+00:39:28,761 --> 00:39:31,241
+Are you also experiencing
+comprehension deficiency?
+
+908
+00:39:31,641 --> 00:39:34,041
+Oh, every day right now, mate.
+
+909
+00:39:35,281 --> 00:39:36,761
+Need to be so careful,
+
+910
+00:39:36,841 --> 00:39:38,361
+tiny little device.
+
+911
+00:39:38,561 --> 00:39:40,401
+Could blow us all to pieces.
+
+912
+00:39:40,481 --> 00:39:42,561
+And I'm going to set it off.
+
+913
+00:39:44,041 --> 00:39:45,201
+Ronan.
+
+914
+00:39:45,841 --> 00:39:47,361
+Keep guard.
+
+915
+00:39:48,401 --> 00:39:51,721
+Yaz, come on.
+
+916
+00:39:56,121 --> 00:39:57,241
+Resus One in sight.
+
+917
+00:39:57,321 --> 00:39:59,081
+We join the route
+back in at this point,
+
+918
+00:39:59,161 --> 00:40:00,321
+they won't know we've deviated.
+
+919
+00:40:00,921 --> 00:40:02,161
+You okay?
+
+920
+00:40:02,641 --> 00:40:06,521
+All those times
+I thought I was going to die in battle,
+
+921
+00:40:06,801 --> 00:40:09,801
+that you'd get a dispatch
+and hear about it.
+
+922
+00:40:10,121 --> 00:40:11,601
+I always felt so bad.
+
+923
+00:40:12,281 --> 00:40:13,561
+But now...
+
+924
+00:40:14,401 --> 00:40:15,681
+I'm glad you're here.
+
+925
+00:40:18,521 --> 00:40:20,201
+(RUMBLING)
+
+926
+00:40:20,281 --> 00:40:21,721
+(GRUNTING)
+
+927
+00:40:26,441 --> 00:40:27,561
+Funny.
+
+928
+00:40:27,641 --> 00:40:29,121
+I'm normally the one defusing the bomb.
+
+929
+00:40:30,641 --> 00:40:31,961
+(GRUNTS)
+
+930
+00:40:35,841 --> 00:40:37,601
+(BEEPING)
+
+931
+00:40:38,841 --> 00:40:40,841
+Pick a number
+between one and a hundred.
+
+932
+00:40:40,921 --> 00:40:42,081
+Fifty one.
+
+933
+00:40:42,161 --> 00:40:44,161
+Pentagonal number! Interesting.
+
+934
+00:40:46,561 --> 00:40:47,681
+Get in that corner.
+
+935
+00:40:51,081 --> 00:40:52,321
+What was the number for?
+
+936
+00:40:52,401 --> 00:40:54,721
+Number of seconds before
+the bomb goes off.
+
+937
+00:40:54,801 --> 00:40:56,361
+I moved it forward a bit.
+
+938
+00:40:56,441 --> 00:40:57,561
+What?
+
+939
+00:40:57,641 --> 00:40:58,841
+I would've gone higher.
+
+940
+00:40:58,921 --> 00:41:01,641
+Good number 51,
+atomic number of antimony.
+
+941
+00:41:01,881 --> 00:41:04,361
+The number of federalist papers
+written by Alexander Hamilton.
+
+942
+00:41:04,441 --> 00:41:06,961
+I love that show,
+I've seen all 900 casts.
+
+943
+00:41:07,041 --> 00:41:08,081
+(BEEPING)
+
+944
+00:41:10,601 --> 00:41:13,121
+I'm giving you more gas, Yoss,
+this will relax you.
+
+945
+00:41:13,201 --> 00:41:15,241
+I've never been less relaxed
+in all my life.
+
+946
+00:41:15,321 --> 00:41:17,161
+I do not want to do this.
+
+947
+00:41:17,241 --> 00:41:19,041
+Hey, hey, we're all here for you,
+aren't we?
+
+948
+00:41:20,081 --> 00:41:21,321
+Too right.
+
+949
+00:41:21,681 --> 00:41:24,601
+Oh, yeah, I've seen every episode
+of Call the Midwife.
+
+950
+00:41:24,681 --> 00:41:26,841
+And he's descended from
+an old Earth nurse, it's in his blood.
+
+951
+00:41:26,921 --> 00:41:28,321
+-Every episode?
+-Yeah, it's bang on,
+
+952
+00:41:28,401 --> 00:41:30,241
+see whilst you've been mucking around
+on YouTube,
+
+953
+00:41:30,321 --> 00:41:32,321
+I've been learning useful life skills.
+
+954
+00:41:32,401 --> 00:41:33,881
+(ALL EXCLAIMING)
+
+955
+00:41:35,041 --> 00:41:36,601
+I'm really trusting you on this bomb,
+
+956
+00:41:36,681 --> 00:41:37,681
+but I don't know what you're doing.
+
+957
+00:41:37,761 --> 00:41:41,961
+Think of the Piing as a mouse
+and the bomb as a piece of cheese.
+
+958
+00:41:42,041 --> 00:41:43,361
+A very large piece of cheese
+
+959
+00:41:43,441 --> 00:41:45,201
+about to explode
+and take us all with it.
+
+960
+00:41:45,281 --> 00:41:46,561
+It's not the perfect analogy,
+I'll admit.
+
+961
+00:41:46,641 --> 00:41:48,041
+You could've picked a bigger number.
+
+962
+00:41:48,321 --> 00:41:50,041
+Where is it? Come on.
+
+963
+00:41:50,481 --> 00:41:51,881
+So how do we do this then?
+
+964
+00:41:51,961 --> 00:41:53,881
+Really straightforward,
+cut open his stomach sac,
+
+965
+00:41:53,961 --> 00:41:55,121
+reach in, remove the baby.
+
+966
+00:41:55,521 --> 00:41:56,721
+Done.
+
+967
+00:41:56,801 --> 00:41:58,761
+Cut him open?
+
+968
+00:41:58,841 --> 00:41:59,921
+Won't that, like, hurt him?
+
+969
+00:42:00,001 --> 00:42:03,041
+Oh, no, male Gifftan pregnancy sacs
+don't have any pain sensors
+
+970
+00:42:03,121 --> 00:42:04,481
+for precisely this reason.
+
+971
+00:42:04,561 --> 00:42:07,241
+Yeah, but all the same, I mean,
+cut open a bloke's stomach,
+
+972
+00:42:07,321 --> 00:42:08,801
+do we have to?
+
+973
+00:42:08,881 --> 00:42:10,361
+What, they didn't have that
+on Gall The Midwife?
+
+974
+00:42:10,441 --> 00:42:12,481
+I dunno, I always looked away
+at the squeamish bits.
+
+975
+00:42:15,121 --> 00:42:17,921
+As the bomb gets closer,
+the energy is building
+
+976
+00:42:18,001 --> 00:42:19,041
+getting ready to blow.
+
+977
+00:42:19,121 --> 00:42:21,681
+The Piing must be attracted to that.
+
+978
+00:42:21,761 --> 00:42:24,401
+Surely! That's what I've been working
+on this whole time.
+
+979
+00:42:24,521 --> 00:42:27,641
+Oh, please don't be wrong,
+I'll be so embarrassed.
+
+980
+00:42:27,801 --> 00:42:29,121
+And dead.
+
+981
+00:42:31,361 --> 00:42:32,721
+(FOOTSTEPS APPROACHING)
+
+982
+00:42:32,801 --> 00:42:33,961
+Doctor.
+
+983
+00:42:34,041 --> 00:42:36,881
+I'm not bad, admit it,
+I'm not bad, it's all in the timing.
+
+984
+00:42:40,281 --> 00:42:41,401
+(SNARLING)
+
+985
+00:42:41,481 --> 00:42:42,561
+When you're ready, mate.
+
+986
+00:42:46,681 --> 00:42:47,841
+(BEEPING RAPIDLY)
+
+987
+00:42:48,201 --> 00:42:49,481
+Making the incision.
+
+988
+00:42:49,561 --> 00:42:51,161
+(GRUNTING)
+
+989
+00:42:51,241 --> 00:42:52,961
+Oh, I am never getting pregnant.
+
+990
+00:42:53,041 --> 00:42:54,881
+All right now, opening up.
+
+991
+00:42:54,961 --> 00:42:57,401
+Oh, I do not want this baby.
+
+992
+00:42:57,481 --> 00:42:58,841
+I can't be a dad.
+
+993
+00:42:58,921 --> 00:43:00,681
+Hey, none of that now.
+
+994
+00:43:00,761 --> 00:43:03,641
+Listen to me, Yoss, you can do this.
+
+995
+00:43:03,961 --> 00:43:08,121
+You're a good man, your baby,
+your son will be lucky
+
+996
+00:43:08,201 --> 00:43:10,161
+to have a good man like you as his dad.
+
+997
+00:43:10,481 --> 00:43:13,401
+Starting now,
+you're going to give him life.
+
+998
+00:43:13,681 --> 00:43:15,721
+You're going to bring a person
+into being, mate,
+
+999
+00:43:15,801 --> 00:43:16,961
+that is epic.
+
+1000
+00:43:17,041 --> 00:43:18,321
+I'm not ready.
+
+1001
+00:43:24,681 --> 00:43:26,481
+Really? Get a shift on.
+
+1002
+00:43:32,721 --> 00:43:34,081
+It ate it.
+
+1003
+00:43:34,161 --> 00:43:35,401
+Wait for it.
+
+1004
+00:43:38,641 --> 00:43:39,841
+(GROWLING)
+
+1005
+00:43:42,201 --> 00:43:44,161
+(CHITTERING)
+
+1006
+00:43:46,481 --> 00:43:48,841
+Absorbed, every bit of energy.
+
+1007
+00:43:48,921 --> 00:43:51,361
+One massive, massive hit.
+
+1008
+00:43:51,441 --> 00:43:52,921
+Bye-bye, Piing.
+
+1009
+00:43:53,481 --> 00:43:55,121
+Intruder ejected.
+
+1010
+00:44:03,161 --> 00:44:05,361
+First problem gone.
+
+1011
+00:44:05,721 --> 00:44:07,881
+That should keep it fed
+for a very long time.
+
+1012
+00:44:08,201 --> 00:44:09,441
+We're still not home and dry though.
+
+1013
+00:44:09,521 --> 00:44:10,761
+(BOTH GASPING)
+
+1014
+00:44:14,041 --> 00:44:15,641
+I'm sorry.
+
+1015
+00:44:16,601 --> 00:44:18,001
+For what?
+
+1016
+00:44:18,681 --> 00:44:21,121
+I didn't tell you I was ill.
+
+1017
+00:44:22,441 --> 00:44:25,721
+There's... Plenty of things
+I've never told you.
+
+1018
+00:44:26,041 --> 00:44:28,841
+Yeah, like what?
+
+1019
+00:44:29,161 --> 00:44:30,641
+Like I love you.
+
+1020
+00:44:31,641 --> 00:44:33,681
+I'm proud of you, sis.
+
+1021
+00:44:35,201 --> 00:44:37,041
+I love you too, bro.
+
+1022
+00:44:38,001 --> 00:44:39,561
+I'm sorry.
+
+1023
+00:44:46,441 --> 00:44:47,761
+General.
+
+1024
+00:44:48,361 --> 00:44:49,801
+Sac open.
+
+1025
+00:44:49,881 --> 00:44:52,681
+Oh, shouldn't have looked,
+can't unsee that.
+
+1026
+00:44:53,121 --> 00:44:55,321
+-There's the baby.
+-What does he look like?
+
+1027
+00:44:55,401 --> 00:44:56,761
+Is he okay?
+
+1028
+00:44:56,841 --> 00:44:58,201
+He's fine.
+
+1029
+00:44:58,281 --> 00:45:00,521
+(PANTING)
+
+1030
+00:45:00,601 --> 00:45:02,441
+Yoss, you don't have to be perfect.
+
+1031
+00:45:03,481 --> 00:45:05,201
+You just have to be there.
+
+1032
+00:45:06,521 --> 00:45:07,921
+(BABY CRYING)
+
+1033
+00:45:08,001 --> 00:45:09,961
+It's okay, my darling.
+
+1034
+00:45:10,041 --> 00:45:11,801
+-(CRYING)
+-(SHUSHING)
+
+1035
+00:45:12,241 --> 00:45:14,601
+You have to cut the cord simultaneously.
+
+1036
+00:45:15,881 --> 00:45:17,201
+It's okay.
+
+1037
+00:45:18,121 --> 00:45:19,721
+Come on, Professor Squeamish.
+
+1038
+00:45:19,801 --> 00:45:21,001
+We're doing this.
+
+1039
+00:45:21,361 --> 00:45:23,121
+-(RUMBLING)
+-(GRUNTING)
+
+1040
+00:45:26,521 --> 00:45:28,561
+-Three...
+-Hang on.
+
+1041
+00:45:28,641 --> 00:45:31,001
+Two, one...
+
+1042
+00:45:31,161 --> 00:45:32,281
+Now.
+
+1043
+00:45:33,121 --> 00:45:34,481
+YASMIN: (PANTING) Eve.
+
+1044
+00:45:35,041 --> 00:45:36,361
+What happened?
+
+1045
+00:45:36,801 --> 00:45:38,521
+Her heart couldn't take it.
+
+1046
+00:45:39,481 --> 00:45:41,081
+She gave me control.
+
+1047
+00:45:41,801 --> 00:45:43,401
+Do you know how to do this?
+
+1048
+00:45:44,521 --> 00:45:45,961
+I'm a Cicero.
+
+1049
+00:45:46,481 --> 00:45:48,041
+I've studied for this.
+
+1050
+00:45:48,321 --> 00:45:50,001
+Coming into Resus One.
+
+1051
+00:45:50,281 --> 00:45:53,601
+Resus One,
+request emergency assistance landing.
+
+1052
+00:45:57,641 --> 00:45:59,161
+Bringing her in safe.
+
+1053
+00:45:59,481 --> 00:46:00,841
+Thank you.
+
+1054
+00:46:01,041 --> 00:46:02,401
+Both.
+
+1055
+00:46:03,481 --> 00:46:05,041
+Careful, dad.
+
+1056
+00:46:08,881 --> 00:46:10,361
+Oh, my saints.
+
+1057
+00:46:10,841 --> 00:46:12,161
+I did it.
+
+1058
+00:46:12,881 --> 00:46:14,281
+It's a baby.
+
+1059
+00:46:14,361 --> 00:46:16,281
+(BABY COOING)
+
+1060
+00:46:16,361 --> 00:46:17,721
+Hello, mate.
+
+1061
+00:46:19,281 --> 00:46:20,721
+I'm your dad.
+
+1062
+00:46:22,361 --> 00:46:23,721
+I'm his dad.
+
+1063
+00:46:24,001 --> 00:46:26,001
+-Yeah.
+-(RUMBLING)
+
+1064
+00:46:27,961 --> 00:46:29,321
+Nice one, Yoss.
+
+1065
+00:46:31,201 --> 00:46:32,641
+You all right?
+
+1066
+00:46:33,441 --> 00:46:34,961
+If your nan could see us now, eh?
+
+1067
+00:46:35,521 --> 00:46:38,281
+-She'd be laughing herself crazy.
+-Yeah!
+
+1068
+00:46:40,401 --> 00:46:41,721
+No.
+
+1069
+00:46:59,401 --> 00:47:00,641
+(SIGHS)
+
+1070
+00:47:01,721 --> 00:47:02,721
+Um...
+
+1071
+00:47:03,281 --> 00:47:07,281
+They say, quarantine scanning
+and craft detox
+
+1072
+00:47:07,361 --> 00:47:09,161
+should take no more
+than three hours, then...
+
+1073
+00:47:09,481 --> 00:47:11,281
+they'll admit us to the facility.
+
+1074
+00:47:11,881 --> 00:47:13,521
+They're booking
+your teleport to Seffilun,
+
+1075
+00:47:13,601 --> 00:47:15,601
+soon as you've spoken
+to the investigators.
+
+1076
+00:47:15,681 --> 00:47:17,121
+Thank you, Mabli.
+
+1077
+00:47:18,041 --> 00:47:19,761
+I'll be sure to tell them
+how brilliant you were.
+
+1078
+00:47:21,281 --> 00:47:23,401
+You all were.
+
+1079
+00:47:24,481 --> 00:47:26,201
+Light in dark times.
+
+1080
+00:47:26,681 --> 00:47:27,881
+People prevail.
+
+1081
+00:47:28,401 --> 00:47:30,121
+Hope prevails.
+
+1082
+00:47:30,201 --> 00:47:32,321
+(BABY CRYING)
+
+1083
+00:47:34,121 --> 00:47:36,721
+-Have you got a name for the baby?
+-Yeah.
+
+1084
+00:47:37,321 --> 00:47:38,881
+In honour of you both,
+
+1085
+00:47:39,481 --> 00:47:41,841
+I wanted to call him Avocado.
+
+1086
+00:47:41,921 --> 00:47:43,121
+(SNORTS)
+
+1087
+00:47:43,681 --> 00:47:45,041
+You what?
+
+1088
+00:47:45,121 --> 00:47:46,121
+Avocado?
+
+1089
+00:47:46,201 --> 00:47:48,881
+Yeah, after the ancient Earth hero.
+
+1090
+00:47:48,961 --> 00:47:50,281
+Avocado Pear.
+
+1091
+00:47:50,361 --> 00:47:51,561
+No, mate, that is a fruit.
+
+1092
+00:47:51,641 --> 00:47:53,281
+No, it's a vegetable.
+
+1093
+00:47:53,361 --> 00:47:56,281
+No, well, either way it's not a hero.
+
+1094
+00:47:56,721 --> 00:47:59,481
+But we did it in school, you mean,
+
+1095
+00:47:59,561 --> 00:48:01,241
+the Gifftan history logs are wrong?
+
+1096
+00:48:01,321 --> 00:48:02,681
+Well, just a bit, I thought
+he was gonna say,
+
+1097
+00:48:02,761 --> 00:48:03,961
+you'd call him after us.
+
+1098
+00:48:04,201 --> 00:48:05,281
+Graham-Ryan.
+
+1099
+00:48:05,721 --> 00:48:07,281
+Or Ryan-Graham.
+
+1100
+00:48:07,641 --> 00:48:09,481
+(LAUGHING) No.
+
+1101
+00:48:09,561 --> 00:48:11,361
+He'd be a laughingstock.
+
+1102
+00:48:12,641 --> 00:48:13,841
+Well, cheers.
+
+1103
+00:48:15,321 --> 00:48:17,041
+(BOTH CHUCKLING)
+
+1104
+00:48:19,121 --> 00:48:21,241
+If you're naming him,
+does that mean you're gonna keep him?
+
+1105
+00:48:23,281 --> 00:48:25,361
+I thought I'd give being a dad a try.
+
+1106
+00:48:28,321 --> 00:48:30,201
+I'm gonna make mistakes, aren't I?
+
+1107
+00:48:30,641 --> 00:48:33,081
+But I'll just keep going.
+
+1108
+00:48:39,801 --> 00:48:41,601
+What happens to you now?
+
+1109
+00:48:42,321 --> 00:48:43,641
+Without her?
+
+1110
+00:48:44,801 --> 00:48:46,281
+I've come to the end of my service,
+
+1111
+00:48:46,361 --> 00:48:48,001
+there is only shutdown.
+
+1112
+00:48:50,481 --> 00:48:51,841
+I'm sorry, Ronan.
+
+1113
+00:48:52,281 --> 00:48:54,281
+I wasn't always kind to you.
+
+1114
+00:48:55,201 --> 00:48:56,441
+No.
+
+1115
+00:49:01,881 --> 00:49:03,121
+(SIGHS)
+
+1116
+00:49:03,201 --> 00:49:04,641
+You gave her great service.
+
+1117
+00:49:06,041 --> 00:49:07,321
+As did you.
+
+1118
+00:49:10,481 --> 00:49:11,641
+Yeah.
+
+1119
+00:49:13,601 --> 00:49:15,081
+Will you in cant for her?
+
+1120
+00:49:17,001 --> 00:49:18,441
+It would be my honour.
+
+1121
+00:49:19,681 --> 00:49:21,041
+DOCTOR: Could we join you?
+
+1122
+00:49:21,641 --> 00:49:22,881
+Please.
+
+1123
+00:49:34,081 --> 00:49:37,761
+May the saints of all the stars
+and constellations...
+
+1124
+00:49:38,801 --> 00:49:40,481
+ALL: Bring you hope.
+
+1125
+00:49:41,361 --> 00:49:45,561
+ALL: As they guide you out
+of the dark and into the light.
+
+1126
+00:49:46,601 --> 00:49:49,241
+ALL: On this voyage and in the next.
+
+1127
+00:49:49,641 --> 00:49:52,601
+And all the journeys still to come.
+
+1128
+00:49:53,121 --> 00:49:55,561
+DOCTOR: For now and ever more.
+
+1129
+00:49:58,561 --> 00:50:00,241
+(THEME MUSIC PLAYING)
+
+1130
+00:50:28,361 --> 00:50:29,761
+I want you to have this.
+
+1131
+00:50:30,561 --> 00:50:32,241
+YASMIN: What's the point
+in having a mate with a time machine
+
+1132
+00:50:32,321 --> 00:50:33,601
+if you can't nip back
+and can see your gran
+
+1133
+00:50:33,681 --> 00:50:34,721
+when she were younger?
+
+1134
+00:50:34,801 --> 00:50:36,641
+GRAHAM: 7947.
+DOCTOR: We're in the middle of
+
+1135
+00:50:36,721 --> 00:50:38,161
+the Partition of India.
+

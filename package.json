@@ -1,10 +1,14 @@
 {
-  "name": "whoniverse-arabic",
+  "name": "nucabe-whoniverse",
   "version": "1.3.0",
   "description": "Doctor Who for Stremio with separate English and Arabic subtitle tracks.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "audit:subtitles": "node tools/subtitleAudit.js",
+    "build:arabic": "node tools/buildArabicProduction.js",
+    "normalize:arabic": "node tools/normalizeArabicProduction.js",
+    "build:stream-metadata": "node tools/buildStreamMetadata.js"
   },
   "dependencies": {
     "stremio-addon-sdk": "^1.6.10"
@@ -20,5 +24,5 @@
     "catalog",
     "nucabe"
   ],
-  "author": "MohammadHaddad11"
+  "author": "Nucabe"
 }
