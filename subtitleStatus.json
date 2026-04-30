@@ -1,0 +1,2212 @@
+{
+  "generatedAt": "2026-04-30T04:06:47.091Z",
+  "summary": {
+    "verified": 199,
+    "minor_offset": 20,
+    "warning": 0,
+    "manual_review": 1,
+    "unknown": 0
+  },
+  "entries": {
+    "E01_new_earth.ar.srt": {
+      "filename": "E01_new_earth.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "New Earth",
+      "canonicalId": "S02E01",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E01_partners_in_crime.ar.srt": {
+      "filename": "E01_partners_in_crime.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Partners in Crime",
+      "canonicalId": "S04E01",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E01_rose.ar.srt": {
+      "filename": "E01_rose.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Rose",
+      "canonicalId": "S01E01",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E01_smith_and_jones.ar.srt": {
+      "filename": "E01_smith_and_jones.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Smith and Jones",
+      "canonicalId": "S03E01",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E01_spyfall_part_1.ar.srt": {
+      "filename": "E01_spyfall_part_1.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Spyfall, Part 1",
+      "canonicalId": "S12E01",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E01_the_church_on_ruby_road_special.ar.srt": {
+      "filename": "E01_the_church_on_ruby_road_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Church on Ruby Road (Special)",
+      "canonicalId": "S15E01",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E01_the_eleventh_hour.ar.srt": {
+      "filename": "E01_the_eleventh_hour.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Eleventh Hour",
+      "canonicalId": "S05E01",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E01_the_halloween_apocalypse.ar.srt": {
+      "filename": "E01_the_halloween_apocalypse.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "The Halloween Apocalypse",
+      "canonicalId": "S13E01",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E01_the_robot_revolution.ar.srt": {
+      "filename": "E01_the_robot_revolution.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Robot Revolution",
+      "canonicalId": "S16E01",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E01_the_woman_who_fell_to_earth.ar.srt": {
+      "filename": "E01_the_woman_who_fell_to_earth.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "The Woman Who Fell to Earth",
+      "canonicalId": "S11E01",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E02_asylum_of_the_daleks_prequel.ar.srt": {
+      "filename": "E02_asylum_of_the_daleks_prequel.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Asylum of the Daleks (Prequel)",
+      "canonicalId": "S07E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_deep_breath.ar.srt": {
+      "filename": "E02_deep_breath.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Deep Breath",
+      "canonicalId": "S08E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_lux.ar.srt": {
+      "filename": "E02_lux.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Lux",
+      "canonicalId": "S16E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_meanwhile_in_the_tardis_1_minisode.ar.srt": {
+      "filename": "E02_meanwhile_in_the_tardis_1_minisode.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Meanwhile in the TARDIS, Part 1 (Minisode)",
+      "canonicalId": "S05E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_space_babies.ar.srt": {
+      "filename": "E02_space_babies.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Space Babies",
+      "canonicalId": "S15E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_spyfall_part_2.ar.srt": {
+      "filename": "E02_spyfall_part_2.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Spyfall, Part 2",
+      "canonicalId": "S12E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_the_end_of_the_world.ar.srt": {
+      "filename": "E02_the_end_of_the_world.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The End of the World",
+      "canonicalId": "S01E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_the_fires_of_pompeii.ar.srt": {
+      "filename": "E02_the_fires_of_pompeii.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Fires of Pompeii",
+      "canonicalId": "S04E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_the_ghost_monument.ar.srt": {
+      "filename": "E02_the_ghost_monument.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "The Ghost Monument",
+      "canonicalId": "S11E02",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E02_the_pilot.ar.srt": {
+      "filename": "E02_the_pilot.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Pilot",
+      "canonicalId": "S10E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_the_shakespeare_code.ar.srt": {
+      "filename": "E02_the_shakespeare_code.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "The Shakespeare Code",
+      "canonicalId": "S03E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_the_star_beast_special.ar.srt": {
+      "filename": "E02_the_star_beast_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "The Star Beast (Special)",
+      "canonicalId": "S14E02",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E02_tooth_and_claw.ar.srt": {
+      "filename": "E02_tooth_and_claw.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Tooth and Claw",
+      "canonicalId": "S02E02",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E02_war_of_the_sontarans.ar.srt": {
+      "filename": "E02_war_of_the_sontarans.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "War of the Sontarans",
+      "canonicalId": "S13E02",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E03_asylum_of_the_daleks.ar.srt": {
+      "filename": "E03_asylum_of_the_daleks.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Asylum of the Daleks",
+      "canonicalId": "S07E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_gridlock.ar.srt": {
+      "filename": "E03_gridlock.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Gridlock",
+      "canonicalId": "S03E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_into_the_dalek.ar.srt": {
+      "filename": "E03_into_the_dalek.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Into the Dalek",
+      "canonicalId": "S08E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_once_upon_time.ar.srt": {
+      "filename": "E03_once_upon_time.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Once, Upon Time",
+      "canonicalId": "S13E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_orphan_55.ar.srt": {
+      "filename": "E03_orphan_55.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Orphan 55",
+      "canonicalId": "S12E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_planet_of_the_ood.ar.srt": {
+      "filename": "E03_planet_of_the_ood.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Planet of the Ood",
+      "canonicalId": "S04E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_rosa.ar.srt": {
+      "filename": "E03_rosa.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "Rosa",
+      "canonicalId": "S11E03",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E03_school_reunion.ar.srt": {
+      "filename": "E03_school_reunion.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "School Reunion",
+      "canonicalId": "S02E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_smile.ar.srt": {
+      "filename": "E03_smile.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Smile",
+      "canonicalId": "S10E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_the_beast_below.ar.srt": {
+      "filename": "E03_the_beast_below.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Beast Below",
+      "canonicalId": "S05E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_the_devils_chord.ar.srt": {
+      "filename": "E03_the_devils_chord.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Devil's Chord",
+      "canonicalId": "S15E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_the_impossible_astronaut_prequel.ar.srt": {
+      "filename": "E03_the_impossible_astronaut_prequel.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_DRIFT",
+      "title": "The Impossible Astronaut (Prequel)",
+      "canonicalId": "S06E03",
+      "syncFixType": "drift",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a drift fix and remains visible."
+    },
+    "E03_the_magicians_apprentice.ar.srt": {
+      "filename": "E03_the_magicians_apprentice.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Magician's Apprentice",
+      "canonicalId": "S09E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_the_unquiet_dead.ar.srt": {
+      "filename": "E03_the_unquiet_dead.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Unquiet Dead",
+      "canonicalId": "S01E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_the_well.ar.srt": {
+      "filename": "E03_the_well.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Well",
+      "canonicalId": "S16E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E03_wild_blue_yonder_special.ar.srt": {
+      "filename": "E03_wild_blue_yonder_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Wild Blue Yonder (Special)",
+      "canonicalId": "S14E03",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_aliens_of_london.ar.srt": {
+      "filename": "E04_aliens_of_london.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Aliens of London",
+      "canonicalId": "S01E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_arachnids_in_the_uk.ar.srt": {
+      "filename": "E04_arachnids_in_the_uk.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Arachnids in the UK",
+      "canonicalId": "S11E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_boom.ar.srt": {
+      "filename": "E04_boom.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Boom",
+      "canonicalId": "S15E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_daleks_in_manhattan.ar.srt": {
+      "filename": "E04_daleks_in_manhattan.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Daleks in Manhattan",
+      "canonicalId": "S03E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_lucky_day.ar.srt": {
+      "filename": "E04_lucky_day.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Lucky Day",
+      "canonicalId": "S16E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_nikola_teslas_night_of_terror.ar.srt": {
+      "filename": "E04_nikola_teslas_night_of_terror.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Nikola Tesla's Night of Terror",
+      "canonicalId": "S12E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_robot_of_sherwood.ar.srt": {
+      "filename": "E04_robot_of_sherwood.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Robot of Sherwood",
+      "canonicalId": "S08E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_the_giggle_special.ar.srt": {
+      "filename": "E04_the_giggle_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Giggle (Special)",
+      "canonicalId": "S14E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_the_girl_in_the_fireplace.ar.srt": {
+      "filename": "E04_the_girl_in_the_fireplace.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Girl in the Fireplace",
+      "canonicalId": "S02E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_the_impossible_astronaut.ar.srt": {
+      "filename": "E04_the_impossible_astronaut.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Impossible Astronaut",
+      "canonicalId": "S06E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_the_inforarium_minisode.ar.srt": {
+      "filename": "E04_the_inforarium_minisode.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Inforarium (Minisode)",
+      "canonicalId": "S07E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_the_sontaran_stratagem.ar.srt": {
+      "filename": "E04_the_sontaran_stratagem.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Sontaran Stratagem",
+      "canonicalId": "S04E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_the_witchs_familiar.ar.srt": {
+      "filename": "E04_the_witchs_familiar.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Witch's Familiar",
+      "canonicalId": "S09E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_thin_ice.ar.srt": {
+      "filename": "E04_thin_ice.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Thin Ice",
+      "canonicalId": "S10E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_victory_of_the_daleks.ar.srt": {
+      "filename": "E04_victory_of_the_daleks.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Victory of the Daleks",
+      "canonicalId": "S05E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E04_village_of_the_angels.ar.srt": {
+      "filename": "E04_village_of_the_angels.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Village of the Angels",
+      "canonicalId": "S13E04",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_73_yards.ar.srt": {
+      "filename": "E05_73_yards.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "73 Yards",
+      "canonicalId": "S15E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_day_of_the_moon.ar.srt": {
+      "filename": "E05_day_of_the_moon.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Day of the Moon",
+      "canonicalId": "S06E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_dinosaurs_on_a_spaceship.ar.srt": {
+      "filename": "E05_dinosaurs_on_a_spaceship.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Dinosaurs on a Spaceship",
+      "canonicalId": "S07E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_evolution_of_the_daleks.ar.srt": {
+      "filename": "E05_evolution_of_the_daleks.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_DRIFT",
+      "title": "Evolution of the Daleks",
+      "canonicalId": "S03E05",
+      "syncFixType": "drift",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a drift fix and remains visible."
+    },
+    "E05_fugitive_of_the_judoon.ar.srt": {
+      "filename": "E05_fugitive_of_the_judoon.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Fugitive of the Judoon",
+      "canonicalId": "S12E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_knock_knock.ar.srt": {
+      "filename": "E05_knock_knock.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Knock Knock",
+      "canonicalId": "S10E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_listen.ar.srt": {
+      "filename": "E05_listen.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Listen",
+      "canonicalId": "S08E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_rise_of_the_cybermen.ar.srt": {
+      "filename": "E05_rise_of_the_cybermen.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Rise of the Cybermen",
+      "canonicalId": "S02E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_survivors_of_the_flux.ar.srt": {
+      "filename": "E05_survivors_of_the_flux.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Survivors of the Flux",
+      "canonicalId": "S13E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_the_poison_sky.ar.srt": {
+      "filename": "E05_the_poison_sky.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Poison Sky",
+      "canonicalId": "S04E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_the_story_and_the_engine.ar.srt": {
+      "filename": "E05_the_story_and_the_engine.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Story and the Engine",
+      "canonicalId": "S16E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_the_time_of_angels.ar.srt": {
+      "filename": "E05_the_time_of_angels.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Time of Angels",
+      "canonicalId": "S05E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_the_tsuranga_conundrum.ar.srt": {
+      "filename": "E05_the_tsuranga_conundrum.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "The Tsuranga Conundrum",
+      "canonicalId": "S11E05",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E05_under_the_lake.ar.srt": {
+      "filename": "E05_under_the_lake.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Under the Lake",
+      "canonicalId": "S09E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E05_world_war_three.ar.srt": {
+      "filename": "E05_world_war_three.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "World War Three",
+      "canonicalId": "S01E05",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_before_the_flood.ar.srt": {
+      "filename": "E06_before_the_flood.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "Before the Flood",
+      "canonicalId": "S09E06",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E06_dalek.ar.srt": {
+      "filename": "E06_dalek.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Dalek",
+      "canonicalId": "S01E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_demons_of_the_punjab.ar.srt": {
+      "filename": "E06_demons_of_the_punjab.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "Demons of the Punjab",
+      "canonicalId": "S11E06",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E06_dot_and_bubble.ar.srt": {
+      "filename": "E06_dot_and_bubble.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Dot and Bubble",
+      "canonicalId": "S15E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_flesh_and_stone.ar.srt": {
+      "filename": "E06_flesh_and_stone.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Flesh and Stone",
+      "canonicalId": "S05E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_oxygen.ar.srt": {
+      "filename": "E06_oxygen.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Oxygen",
+      "canonicalId": "S10E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_praxeus.ar.srt": {
+      "filename": "E06_praxeus.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "Praxeus",
+      "canonicalId": "S12E06",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E06_the_age_of_steel.ar.srt": {
+      "filename": "E06_the_age_of_steel.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Age of Steel",
+      "canonicalId": "S02E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_the_curse_of_the_black_spot_prequel.ar.srt": {
+      "filename": "E06_the_curse_of_the_black_spot_prequel.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "The Curse of the Black Spot (Prequel)",
+      "canonicalId": "S06E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_the_doctors_daughter.ar.srt": {
+      "filename": "E06_the_doctors_daughter.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Doctor's Daughter",
+      "canonicalId": "S04E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_the_interstellar_song_contest.ar.srt": {
+      "filename": "E06_the_interstellar_song_contest.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Interstellar Song Contest",
+      "canonicalId": "S16E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_the_making_of_the_gunslinger_prequel.ar.srt": {
+      "filename": "E06_the_making_of_the_gunslinger_prequel.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "The Making of the Gunslinger (Prequel)",
+      "canonicalId": "S07E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_the_vanquishers.ar.srt": {
+      "filename": "E06_the_vanquishers.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Vanquishers",
+      "canonicalId": "S13E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E06_time_heist.ar.srt": {
+      "filename": "E06_time_heist.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Time Heist",
+      "canonicalId": "S08E06",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_a_town_called_mercy.ar.srt": {
+      "filename": "E07_a_town_called_mercy.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "A Town Called Mercy",
+      "canonicalId": "S07E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_can_you_hear_me.ar.srt": {
+      "filename": "E07_can_you_hear_me.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "Can You Hear Me?",
+      "canonicalId": "S12E07",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E07_eve_of_the_daleks_special.ar.srt": {
+      "filename": "E07_eve_of_the_daleks_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Eve of the Daleks (Special)",
+      "canonicalId": "S13E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_extremis.ar.srt": {
+      "filename": "E07_extremis.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Extremis",
+      "canonicalId": "S10E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_kerblam.ar.srt": {
+      "filename": "E07_kerblam.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Kerblam!",
+      "canonicalId": "S11E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_meanwhile_in_the_tardis_2_minisode.ar.srt": {
+      "filename": "E07_meanwhile_in_the_tardis_2_minisode.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Meanwhile in the TARDIS, Part 2 (Minisode)",
+      "canonicalId": "S05E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_rogue.ar.srt": {
+      "filename": "E07_rogue.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Rogue",
+      "canonicalId": "S15E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_the_caretaker.ar.srt": {
+      "filename": "E07_the_caretaker.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Caretaker",
+      "canonicalId": "S08E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_the_curse_of_the_black_spot.ar.srt": {
+      "filename": "E07_the_curse_of_the_black_spot.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Curse of the Black Spot",
+      "canonicalId": "S06E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_the_girl_who_died.ar.srt": {
+      "filename": "E07_the_girl_who_died.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Girl Who Died",
+      "canonicalId": "S09E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_the_idiots_lantern.ar.srt": {
+      "filename": "E07_the_idiots_lantern.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Idiot's Lantern",
+      "canonicalId": "S02E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_the_lazarus_experiment.ar.srt": {
+      "filename": "E07_the_lazarus_experiment.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Lazarus Experiment",
+      "canonicalId": "S03E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_the_long_game.ar.srt": {
+      "filename": "E07_the_long_game.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Long Game",
+      "canonicalId": "S01E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_the_unicorn_and_the_wasp.ar.srt": {
+      "filename": "E07_the_unicorn_and_the_wasp.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Unicorn and the Wasp",
+      "canonicalId": "S04E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E07_wish_world.ar.srt": {
+      "filename": "E07_wish_world.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Wish World",
+      "canonicalId": "S16E07",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_42.ar.srt": {
+      "filename": "E08_42.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "42",
+      "canonicalId": "S03E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_bad_night_minisode.ar.srt": {
+      "filename": "E08_bad_night_minisode.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Bad Night (Minisode)",
+      "canonicalId": "S06E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_fathers_day.ar.srt": {
+      "filename": "E08_fathers_day.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Father's Day",
+      "canonicalId": "S01E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_kill_the_moon.ar.srt": {
+      "filename": "E08_kill_the_moon.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Kill the Moon",
+      "canonicalId": "S08E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_legend_of_the_sea_devils_special.ar.srt": {
+      "filename": "E08_legend_of_the_sea_devils_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Legend of the Sea Devils (Special)",
+      "canonicalId": "S13E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_silence_in_the_library.ar.srt": {
+      "filename": "E08_silence_in_the_library.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Silence in the Library",
+      "canonicalId": "S04E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_the_haunting_of_villa_diodati.ar.srt": {
+      "filename": "E08_the_haunting_of_villa_diodati.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "The Haunting of Villa Diodati",
+      "canonicalId": "S12E08",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E08_the_impossible_planet.ar.srt": {
+      "filename": "E08_the_impossible_planet.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Impossible Planet",
+      "canonicalId": "S02E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_the_legend_of_ruby_sunday.ar.srt": {
+      "filename": "E08_the_legend_of_ruby_sunday.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Legend of Ruby Sunday",
+      "canonicalId": "S15E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_the_power_of_three.ar.srt": {
+      "filename": "E08_the_power_of_three.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Power of Three",
+      "canonicalId": "S07E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_the_pyramid_at_the_end_of_the_world.ar.srt": {
+      "filename": "E08_the_pyramid_at_the_end_of_the_world.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Pyramid at the End of the World",
+      "canonicalId": "S10E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_the_reality_war.ar.srt": {
+      "filename": "E08_the_reality_war.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Reality War",
+      "canonicalId": "S16E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_the_vampires_of_venice.ar.srt": {
+      "filename": "E08_the_vampires_of_venice.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Vampires of Venice",
+      "canonicalId": "S05E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_the_witchfinders.ar.srt": {
+      "filename": "E08_the_witchfinders.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "The Witchfinders",
+      "canonicalId": "S11E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E08_the_woman_who_lived.ar.srt": {
+      "filename": "E08_the_woman_who_lived.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Woman Who Lived",
+      "canonicalId": "S09E08",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_amys_choice.ar.srt": {
+      "filename": "E09_amys_choice.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Amy's Choice",
+      "canonicalId": "S05E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_ascension_of_the_cybermen.ar.srt": {
+      "filename": "E09_ascension_of_the_cybermen.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Ascension of the Cybermen",
+      "canonicalId": "S12E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_empire_of_death.ar.srt": {
+      "filename": "E09_empire_of_death.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Empire of Death",
+      "canonicalId": "S15E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_forest_of_the_dead.ar.srt": {
+      "filename": "E09_forest_of_the_dead.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Forest of the Dead",
+      "canonicalId": "S04E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_human_nature.ar.srt": {
+      "filename": "E09_human_nature.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Human Nature",
+      "canonicalId": "S03E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_it_takes_you_away.ar.srt": {
+      "filename": "E09_it_takes_you_away.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "It Takes You Away",
+      "canonicalId": "S11E09",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E09_mummy_on_the_orient_express.ar.srt": {
+      "filename": "E09_mummy_on_the_orient_express.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Mummy on the Orient Express",
+      "canonicalId": "S08E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_the_angels_take_manhattan.ar.srt": {
+      "filename": "E09_the_angels_take_manhattan.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Angels Take Manhattan",
+      "canonicalId": "S07E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_the_doctors_wife.ar.srt": {
+      "filename": "E09_the_doctors_wife.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Doctor's Wife",
+      "canonicalId": "S06E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_the_empty_child.ar.srt": {
+      "filename": "E09_the_empty_child.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Empty Child",
+      "canonicalId": "S01E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_the_lie_of_the_land.ar.srt": {
+      "filename": "E09_the_lie_of_the_land.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Lie of the Land",
+      "canonicalId": "S10E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_the_power_of_the_doctor_special.ar.srt": {
+      "filename": "E09_the_power_of_the_doctor_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Power of the Doctor (Special)",
+      "canonicalId": "S13E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_the_satan_pit.ar.srt": {
+      "filename": "E09_the_satan_pit.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Satan Pit",
+      "canonicalId": "S02E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E09_the_zygon_invasion.ar.srt": {
+      "filename": "E09_the_zygon_invasion.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Zygon Invasion",
+      "canonicalId": "S09E09",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E10_empress_of_mars.ar.srt": {
+      "filename": "E10_empress_of_mars.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Empress of Mars",
+      "canonicalId": "S10E10",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E10_flatline.ar.srt": {
+      "filename": "E10_flatline.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Flatline",
+      "canonicalId": "S08E10",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E10_good_night_minisode.ar.srt": {
+      "filename": "E10_good_night_minisode.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Good Night (Minisode)",
+      "canonicalId": "S06E10",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E10_love_and_monsters.ar.srt": {
+      "filename": "E10_love_and_monsters.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Love & Monsters",
+      "canonicalId": "S02E10",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E10_midnight.ar.srt": {
+      "filename": "E10_midnight.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Midnight",
+      "canonicalId": "S04E10",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E10_the_battle_of_ranskoor_av_kolos.ar.srt": {
+      "filename": "E10_the_battle_of_ranskoor_av_kolos.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "The Battle of Ranskoor Av Kolos",
+      "canonicalId": "S11E10",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E10_the_doctor_dances.ar.srt": {
+      "filename": "E10_the_doctor_dances.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Doctor Dances",
+      "canonicalId": "S01E10",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E10_the_family_of_blood.ar.srt": {
+      "filename": "E10_the_family_of_blood.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Family of Blood",
+      "canonicalId": "S03E10",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E10_the_hungry_earth.ar.srt": {
+      "filename": "E10_the_hungry_earth.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Hungry Earth",
+      "canonicalId": "S05E10",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E10_the_timeless_children.ar.srt": {
+      "filename": "E10_the_timeless_children.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Timeless Children",
+      "canonicalId": "S12E10",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E10_the_zygon_inversion.ar.srt": {
+      "filename": "E10_the_zygon_inversion.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Zygon Inversion",
+      "canonicalId": "S09E10",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_blink.ar.srt": {
+      "filename": "E11_blink.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Blink",
+      "canonicalId": "S03E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_boom_town.ar.srt": {
+      "filename": "E11_boom_town.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Boom Town",
+      "canonicalId": "S01E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_cold_blood.ar.srt": {
+      "filename": "E11_cold_blood.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Cold Blood",
+      "canonicalId": "S05E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_fear_her.ar.srt": {
+      "filename": "E11_fear_her.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Fear Her",
+      "canonicalId": "S02E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_in_the_forest_of_the_night.ar.srt": {
+      "filename": "E11_in_the_forest_of_the_night.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "In the Forest of the Night",
+      "canonicalId": "S08E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_joy_to_the_world_special.ar.srt": {
+      "filename": "E11_joy_to_the_world_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Joy to the World (Special)",
+      "canonicalId": "S15E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_resolution_special.ar.srt": {
+      "filename": "E11_resolution_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Resolution (Special)",
+      "canonicalId": "S11E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_revolution_of_the_daleks_special.ar.srt": {
+      "filename": "E11_revolution_of_the_daleks_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "Revolution of the Daleks (Special)",
+      "canonicalId": "S12E11",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E11_sleep_no_more.ar.srt": {
+      "filename": "E11_sleep_no_more.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Sleep No More",
+      "canonicalId": "S09E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_the_battle_of_demons_run_two_days_later_prequel.ar.srt": {
+      "filename": "E11_the_battle_of_demons_run_two_days_later_prequel.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "The Battle of Demon's Run: Two Days Later (Prequel)",
+      "canonicalId": "S07E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_the_eaters_of_light.ar.srt": {
+      "filename": "E11_the_eaters_of_light.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Eaters of Light",
+      "canonicalId": "S10E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_the_rebel_flesh.ar.srt": {
+      "filename": "E11_the_rebel_flesh.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Rebel Flesh",
+      "canonicalId": "S06E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E11_turn_left.ar.srt": {
+      "filename": "E11_turn_left.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Turn Left",
+      "canonicalId": "S04E11",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E12_army_of_ghosts.ar.srt": {
+      "filename": "E12_army_of_ghosts.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Army of Ghosts",
+      "canonicalId": "S02E12",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E12_bad_wolf.ar.srt": {
+      "filename": "E12_bad_wolf.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Bad Wolf",
+      "canonicalId": "S01E12",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E12_dark_water.ar.srt": {
+      "filename": "E12_dark_water.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Dark Water",
+      "canonicalId": "S08E12",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E12_face_the_raven.ar.srt": {
+      "filename": "E12_face_the_raven.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Face the Raven",
+      "canonicalId": "S09E12",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E12_good_as_gold_minisode.ar.srt": {
+      "filename": "E12_good_as_gold_minisode.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Good as Gold (Minisode)",
+      "canonicalId": "S05E12",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E12_the_almost_people.ar.srt": {
+      "filename": "E12_the_almost_people.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Almost People",
+      "canonicalId": "S06E12",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E12_the_stolen_earth.ar.srt": {
+      "filename": "E12_the_stolen_earth.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Stolen Earth",
+      "canonicalId": "S04E12",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E12_utopia.ar.srt": {
+      "filename": "E12_utopia.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Utopia",
+      "canonicalId": "S03E12",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E12_world_enough_and_time.ar.srt": {
+      "filename": "E12_world_enough_and_time.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "World Enough and Time",
+      "canonicalId": "S10E12",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E13_a_good_man_goes_to_war_prequel.ar.srt": {
+      "filename": "E13_a_good_man_goes_to_war_prequel.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_DRIFT",
+      "title": "A Good Man Goes to War (Prequel)",
+      "canonicalId": "S06E13",
+      "syncFixType": "drift",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a drift fix and remains visible."
+    },
+    "E13_death_in_heaven.ar.srt": {
+      "filename": "E13_death_in_heaven.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Death in Heaven",
+      "canonicalId": "S08E13",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E13_doomsday.ar.srt": {
+      "filename": "E13_doomsday.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Doomsday",
+      "canonicalId": "S02E13",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E13_heaven_sent.ar.srt": {
+      "filename": "E13_heaven_sent.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Heaven Sent",
+      "canonicalId": "S09E13",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E13_journeys_end.ar.srt": {
+      "filename": "E13_journeys_end.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Journey's End",
+      "canonicalId": "S04E13",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E13_the_doctor_falls.ar.srt": {
+      "filename": "E13_the_doctor_falls.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Doctor Falls",
+      "canonicalId": "S10E13",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E13_the_parting_of_the_ways.ar.srt": {
+      "filename": "E13_the_parting_of_the_ways.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Parting of the Ways",
+      "canonicalId": "S01E13",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E13_the_sound_of_drums.ar.srt": {
+      "filename": "E13_the_sound_of_drums.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Sound of Drums",
+      "canonicalId": "S03E13",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E13_vastra_investigates_prequel.ar.srt": {
+      "filename": "E13_vastra_investigates_prequel.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Vastra Investigates (Prequel)",
+      "canonicalId": "S07E13",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E13_vincent_and_the_doctor.ar.srt": {
+      "filename": "E13_vincent_and_the_doctor.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Vincent and the Doctor",
+      "canonicalId": "S05E13",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E14_a_good_man_goes_to_war.ar.srt": {
+      "filename": "E14_a_good_man_goes_to_war.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "A Good Man Goes to War",
+      "canonicalId": "S06E14",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E14_hell_bent.ar.srt": {
+      "filename": "E14_hell_bent.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Hell Bent",
+      "canonicalId": "S09E14",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E14_last_christmas_special.ar.srt": {
+      "filename": "E14_last_christmas_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Last Christmas (Special)",
+      "canonicalId": "S08E14",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E14_last_of_the_time_lords.ar.srt": {
+      "filename": "E14_last_of_the_time_lords.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Last of the Time Lords",
+      "canonicalId": "S03E14",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E14_the_lodger.ar.srt": {
+      "filename": "E14_the_lodger.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Lodger",
+      "canonicalId": "S05E14",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E14_the_runaway_bride_special.ar.srt": {
+      "filename": "E14_the_runaway_bride_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_DRIFT",
+      "title": "The Runaway Bride (Special)",
+      "canonicalId": "S02E14",
+      "syncFixType": "drift",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a drift fix and remains visible."
+    },
+    "E14_the_snowmen_special.ar.srt": {
+      "filename": "E14_the_snowmen_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Snowmen (Special)",
+      "canonicalId": "S07E14",
+      "syncFixType": null,
+      "manualReplacement": true,
+      "note": "Production subtitle uses a manually selected replacement source."
+    },
+    "E14_twice_upon_a_time_special.ar.srt": {
+      "filename": "E14_twice_upon_a_time_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "title": "Twice Upon a Time (Special)",
+      "canonicalId": "S10E14",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a constant offset fix and remains visible."
+    },
+    "E15_lets_kill_hitler_prequel.ar.srt": {
+      "filename": "E15_lets_kill_hitler_prequel.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_DRIFT",
+      "title": "Let's Kill Hitler (Prequel)",
+      "canonicalId": "S06E15",
+      "syncFixType": "drift",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a drift fix and remains visible."
+    },
+    "E15_the_bells_of_saint_john_prequel.ar.srt": {
+      "filename": "E15_the_bells_of_saint_john_prequel.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Bells of Saint John (Prequel)",
+      "canonicalId": "S07E15",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E15_the_christmas_invasion_special.ar.srt": {
+      "filename": "E15_the_christmas_invasion_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_DRIFT",
+      "title": "The Christmas Invasion (Special)",
+      "canonicalId": "S01E15",
+      "syncFixType": "drift",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a drift fix and remains visible."
+    },
+    "E15_the_husbands_of_river_song_special.ar.srt": {
+      "filename": "E15_the_husbands_of_river_song_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Husbands of River Song (Special)",
+      "canonicalId": "S09E15",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E15_the_next_doctor_special.ar.srt": {
+      "filename": "E15_the_next_doctor_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Next Doctor (Special)",
+      "canonicalId": "S04E15",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E15_the_pandorica_opens.ar.srt": {
+      "filename": "E15_the_pandorica_opens.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Pandorica Opens",
+      "canonicalId": "S05E15",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E15_time_crash_minisode.ar.srt": {
+      "filename": "E15_time_crash_minisode.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Time Crash (Minisode)",
+      "canonicalId": "S03E15",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E16_lets_kill_hitler.ar.srt": {
+      "filename": "E16_lets_kill_hitler.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Let's Kill Hitler",
+      "canonicalId": "S06E16",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E16_planet_of_the_dead_special.ar.srt": {
+      "filename": "E16_planet_of_the_dead_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Planet of the Dead (Special)",
+      "canonicalId": "S04E16",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E16_the_bells_of_saint_john.ar.srt": {
+      "filename": "E16_the_bells_of_saint_john.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Bells of Saint John",
+      "canonicalId": "S07E16",
+      "syncFixType": null,
+      "manualReplacement": true,
+      "note": "Production subtitle uses a manually selected replacement source."
+    },
+    "E16_the_big_bang.ar.srt": {
+      "filename": "E16_the_big_bang.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Big Bang",
+      "canonicalId": "S05E16",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E16_the_return_of_doctor_mysterio_special.ar.srt": {
+      "filename": "E16_the_return_of_doctor_mysterio_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Return of Doctor Mysterio (Special)",
+      "canonicalId": "S09E16",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E16_voyage_of_the_damned_special.ar.srt": {
+      "filename": "E16_voyage_of_the_damned_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Voyage of the Damned (Special)",
+      "canonicalId": "S03E16",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E17_night_terrors.ar.srt": {
+      "filename": "E17_night_terrors.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Night Terrors",
+      "canonicalId": "S06E17",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E17_the_rings_of_akhaten.ar.srt": {
+      "filename": "E17_the_rings_of_akhaten.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Rings of Akhaten",
+      "canonicalId": "S07E17",
+      "syncFixType": null,
+      "manualReplacement": true,
+      "note": "Production subtitle uses a manually selected replacement source."
+    },
+    "E17_the_waters_of_mars_special.ar.srt": {
+      "filename": "E17_the_waters_of_mars_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Waters of Mars (Special)",
+      "canonicalId": "S04E17",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E18_a_christmas_carol_special.ar.srt": {
+      "filename": "E18_a_christmas_carol_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "A Christmas Carol (Special)",
+      "canonicalId": "S05E18",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E18_first_night_minisode.ar.srt": {
+      "filename": "E18_first_night_minisode.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "First Night (Minisode)",
+      "canonicalId": "S06E18",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E18_rain_gods_minisode.ar.srt": {
+      "filename": "E18_rain_gods_minisode.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Rain Gods (Minisode)",
+      "canonicalId": "S07E18",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E19_cold_war.ar.srt": {
+      "filename": "E19_cold_war.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Cold War",
+      "canonicalId": "S07E19",
+      "syncFixType": null,
+      "manualReplacement": true,
+      "note": "Production subtitle uses a manually selected replacement source."
+    },
+    "E19_last_night_minisode.ar.srt": {
+      "filename": "E19_last_night_minisode.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Last Night (Minisode)",
+      "canonicalId": "S06E19",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E19_the_end_of_time_part_one_special.ar.srt": {
+      "filename": "E19_the_end_of_time_part_one_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The End of Time, Part One (Special)",
+      "canonicalId": "S04E19",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E20_hide.ar.srt": {
+      "filename": "E20_hide.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Hide",
+      "canonicalId": "S07E20",
+      "syncFixType": null,
+      "manualReplacement": true,
+      "note": "Production subtitle uses a manually selected replacement source."
+    },
+    "E20_the_end_of_time_part_two_special.ar.srt": {
+      "filename": "E20_the_end_of_time_part_two_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The End of Time, Part Two (Special)",
+      "canonicalId": "S04E20",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E20_the_girl_who_waited.ar.srt": {
+      "filename": "E20_the_girl_who_waited.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Girl Who Waited",
+      "canonicalId": "S06E20",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E21_journey_to_the_centre_of_the_tardis.ar.srt": {
+      "filename": "E21_journey_to_the_centre_of_the_tardis.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Journey to the Centre of the TARDIS",
+      "canonicalId": "S07E21",
+      "syncFixType": null,
+      "manualReplacement": true,
+      "note": "Production subtitle uses a manually selected replacement source."
+    },
+    "E21_the_god_complex.ar.srt": {
+      "filename": "E21_the_god_complex.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The God Complex",
+      "canonicalId": "S06E21",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E22_clara_and_the_tardis_minisode.ar.srt": {
+      "filename": "E22_clara_and_the_tardis_minisode.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Clara and the TARDIS (Minisode)",
+      "canonicalId": "S07E22",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E22_up_all_night_minisode.ar.srt": {
+      "filename": "E22_up_all_night_minisode.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "Up All Night (Minisode)",
+      "canonicalId": "S06E22",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E23_closing_time.ar.srt": {
+      "filename": "E23_closing_time.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Closing Time",
+      "canonicalId": "S06E23",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E23_the_crimson_horror.ar.srt": {
+      "filename": "E23_the_crimson_horror.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Crimson Horror",
+      "canonicalId": "S07E23",
+      "syncFixType": null,
+      "manualReplacement": true,
+      "note": "Production subtitle uses a manually selected replacement source."
+    },
+    "E24_nightmare_in_silver.ar.srt": {
+      "filename": "E24_nightmare_in_silver.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "Nightmare in Silver",
+      "canonicalId": "S07E24",
+      "syncFixType": null,
+      "manualReplacement": true,
+      "note": "Production subtitle uses a manually selected replacement source."
+    },
+    "E25_the_wedding_of_river_song.ar.srt": {
+      "filename": "E25_the_wedding_of_river_song.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Wedding of River Song",
+      "canonicalId": "S06E25",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E26_the_doctor_the_widow_and_the_wardrobe_prequel.ar.srt": {
+      "filename": "E26_the_doctor_the_widow_and_the_wardrobe_prequel.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "The Doctor, the Widow and the Wardrobe (Prequel)",
+      "canonicalId": "S06E26",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E27_the_doctor_the_widow_and_the_wardrobe_special.ar.srt": {
+      "filename": "E27_the_doctor_the_widow_and_the_wardrobe_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Doctor, the Widow and the Wardrobe (Special)",
+      "canonicalId": "S06E27",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E27_the_name_of_the_doctor.ar.srt": {
+      "filename": "E27_the_name_of_the_doctor.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "title": "The Name of the Doctor",
+      "canonicalId": "S07E27",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E28_the_night_of_the_doctor_minisode.ar.srt": {
+      "filename": "E28_the_night_of_the_doctor_minisode.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "The Night of the Doctor (Minisode)",
+      "canonicalId": "S07E28",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E29_the_last_day_minisode.ar.srt": {
+      "filename": "E29_the_last_day_minisode.ar.srt",
+      "status": "minor_offset",
+      "auditStatus": "PASS_WITH_MINOR_OFFSET",
+      "title": "The Last Day (Minisode)",
+      "canonicalId": "S07E29",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    },
+    "E30_the_day_of_the_doctor_special.ar.srt": {
+      "filename": "E30_the_day_of_the_doctor_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_DRIFT",
+      "title": "The Day of the Doctor (Special)",
+      "canonicalId": "S07E30",
+      "syncFixType": "drift",
+      "manualReplacement": false,
+      "note": "Production subtitle was previously repaired with a drift fix and remains visible."
+    },
+    "E31_the_time_of_the_doctor_special.ar.srt": {
+      "filename": "E31_the_time_of_the_doctor_special.ar.srt",
+      "status": "manual_review",
+      "auditStatus": "MANUAL_REVIEW",
+      "title": "The Time of the Doctor (Special)",
+      "canonicalId": "S07E31",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "note": "Production subtitle passed the stored audit."
+    }
+  }
+}

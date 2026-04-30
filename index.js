@@ -5,10 +5,14 @@ const { addonBuilder, getRouter } = require('stremio-addon-sdk');
 const allNewWhoEpisodesPreSorted = require('./episodeData');
 const arabicSubtitleFiles = require('./arabicSubtitles.json');
 const streamMetadata = require('./streamMetadata.json');
+const subtitleStatus = require('./subtitleStatus.json');
 
 const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
 const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
 const STREAM_METADATA_EPISODES = streamMetadata.episodes || {};
+const STREAM_SUMMARY = streamMetadata.summary || {};
+const SUBTITLE_STATUS_ENTRIES = subtitleStatus.entries || {};
+const SUBTITLE_STATUS_SUMMARY = subtitleStatus.summary || {};
 
 const ADDON_LOGO_URL = 'https://www.stremio.com/website/stremio-logo-small.png';
 const NEW_WHO_SERIES_POSTER_URL = 'https://www.stremio.com/website/stremio-logo-small.png';
@@ -17,6 +21,9 @@ const ARABIC_SUBTITLE_DIR = path.join(__dirname, 'ar');
 const ARABIC_SUBTITLE_ROUTE = '/subtitles/ar';
 const port = Number(process.env.PORT) || 7000;
 const host = process.env.HOST || '0.0.0.0';
+const REPORT_PATH = '/report';
+const REVIEW_SUBTITLE_DIR = path.join(__dirname, 'review', 'arabic-subtitles');
+const GITHUB_ISSUE_TEMPLATE_URL = 'https://github.com/mohammadhaddad11/doctor-who-arabic/issues/new?template=subtitle-issue.md';
 
 function trimTrailingSlash(value) {
   return value.replace(/\/+$/, '');
@@ -37,8 +44,8 @@ const PUBLIC_ADDON_BASE_URL = resolvePublicBaseUrl();
 const manifest = {
   id: 'community.mhaddad.whoniverse.arabic',
   version: '1.4.0',
-  name: 'Whoniverse Arabic',
-  description: 'Doctor Who for Stremio with separate English and Arabic subtitle tracks plus audited multi-quality direct stream options.',
+  name: 'Whoniverse Arabic 1080p',
+  description: 'Doctor Who for Stremio with separate English and Arabic subtitle tracks plus simple 1080p quality and 480p speed stream options.',
   logo: ADDON_LOGO_URL,
   types: ['series'],
   resources: ['catalog', 'meta', 'stream', 'subtitles'],
@@ -91,6 +98,10 @@ function getEpisodeKey(episode) {
   }
 
   return `S${String(episode.season).padStart(2, '0')}E${String(episode.episode).padStart(2, '0')}`;
+}
+
+function isSpecialEpisode(episode) {
+  return /\(Special\)$/i.test(episode?.title || '');
 }
 
 function getEnglishSubtitleFilename(episode) {
@@ -171,30 +182,22 @@ function getMetadataBackedStreams(episode) {
     return [];
   }
 
-  const alternatives = [...(metadata.alternatives || [])];
-  const order = {
-    'Fast Start': 0,
-    '720p': 1,
-    '480p': 2
-  };
+  const speedAlternative = (metadata.alternatives || [])
+    .filter((entry) => entry.label === '480p')
+    .sort((a, b) => {
+      if ((b.healthScore || 0) !== (a.healthScore || 0)) {
+        return (b.healthScore || 0) - (a.healthScore || 0);
+      }
 
-  alternatives.sort((a, b) => {
-    const aOrder = order[a.label] ?? 9;
-    const bOrder = order[b.label] ?? 9;
-    if (aOrder !== bOrder) {
-      return aOrder - bOrder;
-    }
+      return (a.responseTimeMs || 0) - (b.responseTimeMs || 0);
+    })[0];
 
-    return (a.sizeBytes || 0) - (b.sizeBytes || 0);
-  });
-
-  return [metadata.primary, ...alternatives];
+  return speedAlternative ? [metadata.primary, speedAlternative] : [metadata.primary];
 }
 
 function buildStreamLabel(streamEntry) {
-  const prefix = streamEntry.label === 'Fast Start'
-    ? 'Whoniverse Fast Start'
-    : `Whoniverse ${streamEntry.label}`;
+  const mode = streamEntry.label === '480p' ? 'Speed' : 'Quality';
+  const prefix = `Whoniverse ${streamEntry.label} • ${mode}`;
 
   if (!streamEntry.sizeLabel) {
     return prefix;
@@ -203,24 +206,15 @@ function buildStreamLabel(streamEntry) {
   return `${prefix} • ${streamEntry.sizeLabel}`;
 }
 
-function buildStreamDescription(streamEntry) {
+function buildStreamDescription(streamEntry, episode) {
   const parts = [];
 
-  if (streamEntry.sourceType === 'direct-fast-start') {
-    parts.push('Fast Start direct');
-  } else if (streamEntry.sourceType === 'direct-derivative') {
-    parts.push('Direct alternative');
-  } else {
-    parts.push('Direct');
+  if (isSpecialEpisode(episode)) {
+    parts.push('Special episode');
   }
 
-  if (streamEntry.label !== 'Fast Start') {
-    parts.push(streamEntry.label);
-  }
-
-  if (streamEntry.speedCategory) {
-    parts.push(`${streamEntry.speedCategory.toLowerCase()} startup`);
-  }
+  parts.push(streamEntry.label === '480p' ? 'Speed' : 'Quality');
+  parts.push(`Source health ${streamEntry.healthScore || 0}/100`);
 
   return parts.join(' • ');
 }
@@ -237,7 +231,7 @@ function buildStreamsForEpisode(episode) {
     return metadataBackedStreams.map((streamEntry) => ({
       url: streamEntry.url,
       name: buildStreamLabel(streamEntry),
-      description: buildStreamDescription(streamEntry),
+      description: buildStreamDescription(streamEntry, episode),
       subtitles
     }));
   }
@@ -245,11 +239,132 @@ function buildStreamsForEpisode(episode) {
   return [
     {
       url: episode.streamUrl,
-      name: 'Whoniverse 1080p',
-      description: 'Direct 1080p stream',
+      name: 'Whoniverse 1080p • Quality',
+      description: isSpecialEpisode(episode) ? 'Special episode • Quality' : 'Quality',
       subtitles
     }
   ];
+}
+
+function getManifestUrl() {
+  return `${PUBLIC_ADDON_BASE_URL}/manifest.json`;
+}
+
+function getReviewSubtitleCount() {
+  if (!fs.existsSync(REVIEW_SUBTITLE_DIR)) {
+    return 0;
+  }
+
+  return fs.readdirSync(REVIEW_SUBTITLE_DIR).filter((name) => /\.srt$/i.test(name)).length;
+}
+
+function getStreamCounts() {
+  return {
+    episodes: Object.keys(STREAM_METADATA_EPISODES).length,
+    stream1080p: STREAM_SUMMARY.episodesWith1080p || 0,
+    stream480p: STREAM_SUMMARY.episodesWith480pAdded || 0,
+    stream720p: STREAM_SUMMARY.episodesWith720pAdded || 0,
+    fastStartBackups: STREAM_SUMMARY.episodesWithFastStartBackup || 0
+  };
+}
+
+function jsonResponse(res, statusCode, payload) {
+  sendCorsHeaders(res);
+  res.statusCode = statusCode;
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.end(JSON.stringify(payload));
+}
+
+function htmlEscape(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function renderHtmlPage(title, body) {
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${htmlEscape(title)}</title>
+  <style>
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:32px;line-height:1.5}
+    main{max-width:900px;margin:0 auto}
+    a{color:#93c5fd}
+    .card{background:#111827;border:1px solid #334155;border-radius:16px;padding:24px;margin-bottom:20px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+    .button{display:inline-block;padding:12px 16px;border-radius:12px;background:#2563eb;color:white;text-decoration:none;font-weight:600}
+    code,textarea{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    textarea{width:100%;min-height:320px;background:#020617;color:#e2e8f0;border:1px solid #334155;border-radius:12px;padding:12px}
+    .muted{color:#94a3b8}
+    ul{padding-left:20px}
+  </style>
+</head>
+<body>
+  <main>${body}</main>
+</body>
+</html>`;
+}
+
+function renderHomePage() {
+  const streamCounts = getStreamCounts();
+  const manifestUrl = getManifestUrl();
+  return renderHtmlPage(
+    manifest.name,
+    `<div class="card">
+      <h1>Whoniverse Arabic 1080p</h1>
+      <p><strong>Status:</strong> online</p>
+      <div class="actions">
+        <a class="button" href="${htmlEscape(manifestUrl)}">Install in Stremio</a>
+        <a class="button" href="${htmlEscape(REPORT_PATH)}">Report Subtitle Issue</a>
+      </div>
+      <p><strong>Manifest URL:</strong> <a href="${htmlEscape(manifestUrl)}">${htmlEscape(manifestUrl)}</a></p>
+      <p>English and Arabic subtitles are separate selectable tracks.</p>
+      <p>Use 1080p for quality or 480p for speed.</p>
+    </div>
+    <div class="card">
+      <h2>Current Production Counts</h2>
+      <ul>
+        <li>Episode entries: ${allNewWhoEpisodes.length}</li>
+        <li>Arabic subtitles: ${ARABIC_SUBTITLE_FILES.size}</li>
+        <li>1080p stream entries: ${streamCounts.stream1080p}</li>
+        <li>480p speed entries: ${streamCounts.stream480p}</li>
+        <li>Manual review subtitles still visible: ${SUBTITLE_STATUS_SUMMARY.manual_review || 0}</li>
+      </ul>
+      <p class="muted">If Arabic looks delayed or wrong, keep it selected and report the exact episode and timestamp from the report page.</p>
+    </div>`
+  );
+}
+
+function renderReportPage() {
+  const issueTemplate = `Season:\nEpisode:\nEpisode title:\nSubtitle language: Arabic / English\nProblem type:\n- Arabic text garbled\n- Arabic delay\n- Wrong episode subtitle\n- Missing Arabic\n- Other\nApproximate timestamp:\nDevice:\nStream quality used: 1080p or 480p\nNotes:`;
+  return renderHtmlPage(
+    'Report Subtitle Issue',
+    `<div class="card">
+      <h1>Report a Subtitle Issue</h1>
+      <p>Arabic subtitles stay visible even when they are under review. If you see a problem, open a GitHub issue and include the fields below.</p>
+      <div class="actions">
+        <a class="button" href="${htmlEscape(GITHUB_ISSUE_TEMPLATE_URL)}">Open GitHub Issue</a>
+      </div>
+      <ul>
+        <li>Season</li>
+        <li>Episode</li>
+        <li>Episode title</li>
+        <li>Subtitle language</li>
+        <li>Problem type</li>
+        <li>Approximate timestamp</li>
+        <li>Device</li>
+        <li>Stream quality used: 1080p or 480p</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Copy-Paste Template</h2>
+      <textarea readonly>${htmlEscape(issueTemplate)}</textarea>
+    </div>`
+  );
 }
 
 builder.defineCatalogHandler(async (args) => {
@@ -261,7 +376,7 @@ builder.defineCatalogHandler(async (args) => {
           type: 'series',
           name: 'New Who 1080p',
           poster: NEW_WHO_SERIES_POSTER_URL,
-          description: 'Doctor Who from 2005 onward with separate English and Arabic subtitle tracks, multi-quality direct streams, and conservative fast-start backups.',
+          description: 'Doctor Who from 2005 onward with separate English and Arabic subtitle tracks plus simple 1080p quality and 480p speed stream choices.',
           logo: ADDON_LOGO_URL,
           genres: ['Sci-Fi', 'Adventure', 'Drama'],
           releaseInfo: '2005-Present'
@@ -283,7 +398,7 @@ builder.defineMetaHandler(async (args) => {
         poster: NEW_WHO_SERIES_POSTER_URL,
         background: NEW_WHO_SERIES_BACKGROUND_URL,
         logo: ADDON_LOGO_URL,
-        description: 'Doctor Who from 2005 onward in broadcast order, with separate English and Arabic subtitle options plus audited 1080p, 720p, 480p, and fast-start direct streams where available.',
+        description: 'Doctor Who from 2005 onward in broadcast order, with separate English and Arabic subtitle options plus audited 1080p quality and 480p speed streams.',
         releaseInfo: '2005-Present',
         genres: ['Sci-Fi', 'Adventure', 'Drama'],
         videos: allNewWhoEpisodes.map((ep) => ({
@@ -366,6 +481,55 @@ function serveArabicSubtitle(req, res, filename) {
 const server = http.createServer((req, res) => {
   const requestUrl = new URL(req.url, `http://${req.headers.host || `127.0.0.1:${port}`}`);
 
+  if (requestUrl.pathname === '/') {
+    sendCorsHeaders(res);
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.end(renderHomePage());
+    return;
+  }
+
+  if (requestUrl.pathname === REPORT_PATH) {
+    sendCorsHeaders(res);
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.end(renderReportPage());
+    return;
+  }
+
+  if (requestUrl.pathname === '/healthz') {
+    const streamCounts = getStreamCounts();
+    jsonResponse(res, 200, {
+      status: 'ok',
+      name: manifest.name,
+      version: manifest.version,
+      manifest: getManifestUrl(),
+      episodes: allNewWhoEpisodes.length,
+      arabicSubtitles: ARABIC_SUBTITLE_FILES.size,
+      streams: streamCounts.episodes
+    });
+    return;
+  }
+
+  if (requestUrl.pathname === '/status') {
+    const streamCounts = getStreamCounts();
+    jsonResponse(res, 200, {
+      name: manifest.name,
+      version: manifest.version,
+      episodeCount: allNewWhoEpisodes.length,
+      arabicSubtitleCount: ARABIC_SUBTITLE_FILES.size,
+      stream1080pCount: streamCounts.stream1080p,
+      stream480pCount: streamCounts.stream480p,
+      manualReviewSubtitleCount: SUBTITLE_STATUS_SUMMARY.manual_review || 0,
+      reviewFolderCount: getReviewSubtitleCount(),
+      subtitleStatusSummary: SUBTITLE_STATUS_SUMMARY,
+      streamHealthSummary: STREAM_SUMMARY.primary || {},
+      deploymentBaseUrl: PUBLIC_ADDON_BASE_URL,
+      manifest: getManifestUrl()
+    });
+    return;
+  }
+
   if (requestUrl.pathname.startsWith(`${ARABIC_SUBTITLE_ROUTE}/`)) {
     if (req.method === 'OPTIONS') {
       sendCorsHeaders(res);
@@ -389,6 +553,6 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, host, () => {
   console.log(`Whoniverse Addon active on http://${host}:${port}`);
-  console.log(`Install by copying this URL to Stremio's Addon search bar: http://127.0.0.1:${port}/manifest.json`);
+  console.log(`Install URL: ${getManifestUrl()}`);
   console.log(`Arabic subtitles served from: ${PUBLIC_ADDON_BASE_URL}${ARABIC_SUBTITLE_ROUTE}/<filename>`);
 });

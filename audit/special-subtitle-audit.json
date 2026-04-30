@@ -1,0 +1,318 @@
+{
+  "generatedAt": "2026-04-30T04:06:47.095Z",
+  "summary": {
+    "total": 17,
+    "verified": 16,
+    "minor_offset": 0,
+    "warning": 0,
+    "manual_review": 1
+  },
+  "entries": [
+    {
+      "canonicalId": "S01E15",
+      "title": "The Christmas Invasion (Special)",
+      "filename": "E15_the_christmas_invasion_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_DRIFT",
+      "syncFixType": "drift",
+      "manualReplacement": false,
+      "linearOffsetSeconds": -2.714,
+      "windowShiftSeconds": [
+        29,
+        63,
+        142
+      ],
+      "rawF1": 0.668,
+      "fixedF1": 0.835,
+      "coverageGapSeconds": 60.5
+    },
+    {
+      "canonicalId": "S02E14",
+      "title": "The Runaway Bride (Special)",
+      "filename": "E14_the_runaway_bride_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_DRIFT",
+      "syncFixType": "drift",
+      "manualReplacement": false,
+      "linearOffsetSeconds": 7.81,
+      "windowShiftSeconds": [
+        31,
+        62,
+        119
+      ],
+      "rawF1": 0.703,
+      "fixedF1": 0.805,
+      "coverageGapSeconds": 88.6
+    },
+    {
+      "canonicalId": "S03E07",
+      "title": "The Lazarus Experiment",
+      "filename": "E07_the_lazarus_experiment.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "rawF1": 0.931,
+      "fixedF1": 0.931,
+      "coverageGapSeconds": 109
+    },
+    {
+      "canonicalId": "S03E16",
+      "title": "Voyage of the Damned (Special)",
+      "filename": "E16_voyage_of_the_damned_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "rawF1": 0.947,
+      "fixedF1": 0.947,
+      "coverageGapSeconds": 41.6
+    },
+    {
+      "canonicalId": "S04E19",
+      "title": "The End of Time, Part One (Special)",
+      "filename": "E19_the_end_of_time_part_one_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "rawF1": 0.882,
+      "fixedF1": 0.882,
+      "coverageGapSeconds": 6.8
+    },
+    {
+      "canonicalId": "S04E20",
+      "title": "The End of Time, Part Two (Special)",
+      "filename": "E20_the_end_of_time_part_two_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "rawF1": 0.839,
+      "fixedF1": 0.839,
+      "coverageGapSeconds": 3.6
+    },
+    {
+      "canonicalId": "S05E18",
+      "title": "A Christmas Carol (Special)",
+      "filename": "E18_a_christmas_carol_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 1,
+      "windowShiftSeconds": [
+        1,
+        1,
+        1
+      ],
+      "rawF1": 0.907,
+      "fixedF1": 0.907,
+      "coverageGapSeconds": 7.9
+    },
+    {
+      "canonicalId": "S07E14",
+      "title": "The Snowmen (Special)",
+      "filename": "E14_the_snowmen_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": true,
+      "linearOffsetSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "rawF1": 0.98,
+      "fixedF1": 0.98,
+      "coverageGapSeconds": 5
+    },
+    {
+      "canonicalId": "S07E30",
+      "title": "The Day of the Doctor (Special)",
+      "filename": "E30_the_day_of_the_doctor_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_DRIFT",
+      "syncFixType": "drift",
+      "manualReplacement": false,
+      "linearOffsetSeconds": -6.048,
+      "windowShiftSeconds": [
+        26,
+        107,
+        181
+      ],
+      "rawF1": 0.735,
+      "fixedF1": 0.836,
+      "coverageGapSeconds": 73.1
+    },
+    {
+      "canonicalId": "S07E31",
+      "title": "The Time of the Doctor (Special)",
+      "filename": "E31_the_time_of_the_doctor_special.ar.srt",
+      "status": "manual_review",
+      "auditStatus": "MANUAL_REVIEW",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": -19.143,
+      "windowShiftSeconds": [
+        11,
+        68,
+        140
+      ],
+      "rawF1": 0.715,
+      "fixedF1": 0.715,
+      "coverageGapSeconds": 164.8
+    },
+    {
+      "canonicalId": "S13E07",
+      "title": "Eve of the Daleks (Special)",
+      "filename": "E07_eve_of_the_daleks_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "rawF1": 1,
+      "fixedF1": 1,
+      "coverageGapSeconds": 16.8
+    },
+    {
+      "canonicalId": "S13E08",
+      "title": "Legend of the Sea Devils (Special)",
+      "filename": "E08_legend_of_the_sea_devils_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "rawF1": 1,
+      "fixedF1": 1,
+      "coverageGapSeconds": 43.3
+    },
+    {
+      "canonicalId": "S13E09",
+      "title": "The Power of the Doctor (Special)",
+      "filename": "E09_the_power_of_the_doctor_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "rawF1": 1,
+      "fixedF1": 1,
+      "coverageGapSeconds": 43.8
+    },
+    {
+      "canonicalId": "S14E02",
+      "title": "The Star Beast (Special)",
+      "filename": "E02_the_star_beast_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "FIXED_CONSTANT_OFFSET",
+      "syncFixType": "constant_offset",
+      "manualReplacement": false,
+      "linearOffsetSeconds": -9,
+      "windowShiftSeconds": [
+        -9,
+        -9,
+        -9
+      ],
+      "rawF1": 0.8,
+      "fixedF1": 0.933,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S14E03",
+      "title": "Wild Blue Yonder (Special)",
+      "filename": "E03_wild_blue_yonder_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "rawF1": 0.982,
+      "fixedF1": 0.982,
+      "coverageGapSeconds": 9.1
+    },
+    {
+      "canonicalId": "S14E04",
+      "title": "The Giggle (Special)",
+      "filename": "E04_the_giggle_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "rawF1": 0.925,
+      "fixedF1": 0.925,
+      "coverageGapSeconds": 9.2
+    },
+    {
+      "canonicalId": "S15E01",
+      "title": "The Church on Ruby Road (Special)",
+      "filename": "E01_the_church_on_ruby_road_special.ar.srt",
+      "status": "verified",
+      "auditStatus": "PASS",
+      "syncFixType": null,
+      "manualReplacement": false,
+      "linearOffsetSeconds": 0,
+      "windowShiftSeconds": [
+        0,
+        0,
+        0
+      ],
+      "rawF1": 0.91,
+      "fixedF1": 0.91,
+      "coverageGapSeconds": 9.1
+    }
+  ]
+}

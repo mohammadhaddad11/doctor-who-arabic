@@ -2,13 +2,25 @@
 
 Whoniverse Arabic is a Doctor Who Stremio addon focused on New Who broadcast-order viewing with separate English and Arabic subtitle tracks.
 
+Current public manifest:
+
+- `https://whoniverse-arabic.onrender.com/manifest.json`
+
 ## What's Included
 
 - Main episodes from 2005 to 2025
 - Specials kept inside their parent seasons
 - Separate selectable English and Arabic subtitle tracks in Stremio
-- 1080p primary streams with 720p, 480p, and fast-start direct alternatives where confidently available
+- 1080p primary streams with 480p speed options and internal fast-start host selection where helpful
 - Metadata, thumbnails, dates, and descriptions from the curated episode dataset
+
+## Recently Fixed
+
+- Arabic subtitle encoding normalized to UTF-8 with BOM where needed
+- Time of the Doctor subtitle sync work documented and kept visible with manual-review status
+- Series 7 subtitle displacement chain fixed and remapped
+- 480p speed options added across most episodes and specials
+- Render deployment available at `https://whoniverse-arabic.onrender.com/manifest.json`
 
 ## Repo Layout
 
@@ -52,6 +64,13 @@ The addon uses that base URL to build absolute Arabic subtitle URLs.
 4. Start command: `npm start`
 5. Set `ADDON_BASE_URL` to the Render service URL.
 
+## Health and Reporting
+
+- `/` homepage with install and report links
+- `/healthz` basic health JSON
+- `/status` detailed production counters
+- `/report` copy-paste subtitle issue flow
+
 ## Local Run
 
 ```bash
@@ -71,6 +90,7 @@ http://127.0.0.1:7000/manifest.json
 - Arabic subtitles are exposed as a separate selectable `ara` track only when a canonical Arabic file exists in `ar/` and in `arabicSubtitles.json`.
 - Direct Archive.org streams remain the primary strategy.
 - Torrent fallback is intentionally not the default architecture and is only appropriate for proven bad direct cases.
+- The visible stream model is intentionally simple: `1080p • Quality` and `480p • Speed`.
 
 ---
 

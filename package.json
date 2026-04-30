@@ -8,7 +8,9 @@
     "audit:subtitles": "node tools/subtitleAudit.js",
     "build:arabic": "node tools/buildArabicProduction.js",
     "normalize:arabic": "node tools/normalizeArabicProduction.js",
-    "build:stream-metadata": "node tools/buildStreamMetadata.js"
+    "build:stream-metadata": "node tools/buildStreamMetadata.js",
+    "build:subtitle-status": "node tools/buildSubtitleStatus.js",
+    "check": "node tools/checkProduction.js"
   },
   "dependencies": {
     "stremio-addon-sdk": "^1.6.10"

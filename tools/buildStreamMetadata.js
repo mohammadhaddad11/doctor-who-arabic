@@ -165,6 +165,28 @@ async function probeUrl(url) {
   return bestResult;
 }
 
+async function chooseBestProbe(urls) {
+  const probes = [];
+
+  for (const url of urls) {
+    const probe = await probeUrl(url);
+    probes.push({ url, probe, healthScore: calculateHealthScore(probe) });
+  }
+
+  probes.sort((a, b) => {
+    if (b.healthScore !== a.healthScore) {
+      return b.healthScore - a.healthScore;
+    }
+
+    return a.probe.responseTimeMs - b.probe.responseTimeMs;
+  });
+
+  return {
+    selected: probes[0] || null,
+    all: probes
+  };
+}
+
 async function mapWithConcurrency(items, iteratee) {
   const results = new Array(items.length);
   let index = 0;
@@ -215,10 +237,46 @@ function shouldExposeAlternative(primaryEntry, alternativeEntry) {
   return alternativeSize < primarySize;
 }
 
+function candidateUrlsForFile(itemMetadata, publicUrl, filename) {
+  const urls = new Set();
+  if (publicUrl) {
+    urls.add(publicUrl);
+  }
+
+  const raw = itemMetadata?.raw;
+  if (!raw || !filename) {
+    return [...urls];
+  }
+
+  for (const location of raw.alternate_locations?.workable || raw.alternate_locations?.servers || []) {
+    if (location.server && location.dir) {
+      urls.add(`https://${location.server}${location.dir}/${filename}`);
+    }
+  }
+
+  for (const host of [raw.d1, raw.d2]) {
+    if (host && raw.dir) {
+      urls.add(`https://${host}${raw.dir}/${filename}`);
+    }
+  }
+
+  return [...urls];
+}
+
 function makeAlternativeLabel(primaryEntry, alternativeEntry) {
   const altQuality = qualityFromEntry(alternativeEntry);
   const primaryQuality = qualityFromEntry(primaryEntry, { primary: true });
   return altQuality === primaryQuality ? 'Fast Start' : altQuality;
+}
+
+function calculateHealthScore(probe) {
+  if (!probe || ![200, 206].includes(probe.responseStatus)) {
+    return 0;
+  }
+
+  const responsePenalty = Math.min(70, Math.round(Math.min(probe.responseTimeMs, 10000) / 160));
+  const redirectPenalty = Math.min(10, (probe.redirects || 0) * 3);
+  return Math.max(1, 100 - responsePenalty - redirectPenalty);
 }
 
 function buildStreamEntry({ role, label, sourceType, url, probe, archiveEntry }) {
@@ -237,10 +295,23 @@ function buildStreamEntry({ role, label, sourceType, url, probe, archiveEntry })
     host: probe.finalUrl ? new URL(probe.finalUrl).host : null,
     contentType: probe.contentType,
     speedCategory: classifySpeed(probe),
+    healthScore: calculateHealthScore(probe),
     width: Number(archiveEntry.width || 0) || null,
     height: Number(archiveEntry.height || 0) || null,
     lengthSeconds: Number(archiveEntry.length || 0) || null
   };
+}
+
+function preferSameQualityAlternative(primary, alternative) {
+  if (alternative.healthScore > primary.healthScore + 3) {
+    return true;
+  }
+
+  if (alternative.healthScore >= primary.healthScore && alternative.responseTimeMs + 250 < primary.responseTimeMs) {
+    return true;
+  }
+
+  return false;
 }
 
 function primarySummarySpeed(summary, entry) {
@@ -271,6 +342,7 @@ async function main() {
       episode,
       canonicalId: canonicalId(episode),
       itemId,
+      itemMetadata,
       filename,
       primaryArchiveEntry,
       alternativeFilename,
@@ -279,17 +351,20 @@ async function main() {
   }
 
   const probed = await mapWithConcurrency(episodeRecords, async (record) => {
-    const primaryProbe = await probeUrl(record.episode.streamUrl);
-    const altUrl = record.alternativeFilename
+    const primarySelection = await chooseBestProbe(
+      candidateUrlsForFile(record.itemMetadata, record.episode.streamUrl, record.filename)
+    );
+    const altPublicUrl = record.alternativeFilename
       ? record.episode.streamUrl.replace(/\.mp4$/i, '.ia.mp4')
       : null;
-    const altProbe = altUrl && record.alternativeArchiveEntry ? await probeUrl(altUrl) : null;
+    const altSelection = record.alternativeArchiveEntry
+      ? await chooseBestProbe(candidateUrlsForFile(record.itemMetadata, altPublicUrl, record.alternativeFilename))
+      : null;
 
     return {
       ...record,
-      primaryProbe,
-      altUrl,
-      altProbe
+      primarySelection,
+      altSelection
     };
   });
 
@@ -313,7 +388,16 @@ async function main() {
   };
 
   for (const record of probed) {
-    const { episode, canonicalId: id, primaryArchiveEntry, primaryProbe, alternativeArchiveEntry, altProbe, altUrl, itemId } = record;
+    const { episode, canonicalId: id, primaryArchiveEntry, primarySelection, alternativeArchiveEntry, altSelection, itemId } = record;
+    const primaryProbe = primarySelection?.selected?.probe || {
+      responseStatus: 0,
+      responseTimeMs: 0,
+      redirects: 0,
+      finalUrl: episode.streamUrl,
+      contentLength: null,
+      contentType: null
+    };
+    const primaryUrl = primarySelection?.selected?.url || episode.streamUrl;
 
     if (!primaryArchiveEntry) {
       output.episodes[id] = {
@@ -325,7 +409,7 @@ async function main() {
           role: 'primary',
           label: '1080p',
           sourceType: 'direct',
-          url: episode.streamUrl,
+          url: primaryUrl,
           sizeBytes: null,
           sizeLabel: null,
           responseStatus: primaryProbe.responseStatus,
@@ -335,23 +419,25 @@ async function main() {
           host: primaryProbe.finalUrl ? new URL(primaryProbe.finalUrl).host : null,
           contentType: primaryProbe.contentType,
           speedCategory: classifySpeed(primaryProbe),
+          healthScore: calculateHealthScore(primaryProbe),
           width: null,
           height: null,
           lengthSeconds: null
         },
         alternatives: [],
-        backupCandidates: []
+        backupCandidates: [],
+        primaryCandidates: primarySelection ? primarySelection.all : []
       };
       primarySummarySpeed(output.summary, output.episodes[id].primary);
       output.summary.episodesWith1080p += 1;
       continue;
     }
 
-    const primary = buildStreamEntry({
+    let primary = buildStreamEntry({
       role: 'primary',
       label: '1080p',
       sourceType: 'direct',
-      url: episode.streamUrl,
+      url: primaryUrl,
       probe: primaryProbe,
       archiveEntry: primaryArchiveEntry
     });
@@ -359,7 +445,9 @@ async function main() {
     const alternatives = [];
     const backupCandidates = [];
 
-    if (alternativeArchiveEntry && altProbe) {
+    if (alternativeArchiveEntry && altSelection?.selected) {
+      const altProbe = altSelection.selected.probe;
+      const altUrl = altSelection.selected.url;
       const label = makeAlternativeLabel(primaryArchiveEntry, alternativeArchiveEntry);
       const sourceType = label === 'Fast Start' ? 'direct-fast-start' : 'direct-derivative';
       const alternative = buildStreamEntry({
@@ -371,9 +459,25 @@ async function main() {
         archiveEntry: alternativeArchiveEntry
       });
 
-      backupCandidates.push(alternative);
       if (shouldExposeAlternative(primaryArchiveEntry, alternativeArchiveEntry) && [200, 206].includes(alternative.responseStatus)) {
-        alternatives.push(alternative);
+        if (label === 'Fast Start') {
+          if (preferSameQualityAlternative(primary, alternative)) {
+            backupCandidates.push(primary);
+            primary = {
+              ...alternative,
+              role: 'primary',
+              label: '1080p'
+            };
+          } else {
+            backupCandidates.push(alternative);
+          }
+          output.summary.episodesWithFastStartBackup += 1;
+        } else {
+          backupCandidates.push(alternative);
+          alternatives.push(alternative);
+        }
+      } else {
+        backupCandidates.push(alternative);
       }
     }
 
@@ -384,7 +488,8 @@ async function main() {
       archiveItem: itemId,
       primary,
       alternatives,
-      backupCandidates
+      backupCandidates,
+      primaryCandidates: primarySelection ? primarySelection.all : []
     };
 
     primarySummarySpeed(output.summary, primary);
@@ -398,9 +503,6 @@ async function main() {
       output.summary.episodesWith480pAdded += 1;
     }
 
-    if (alternatives.some((entry) => entry.label === 'Fast Start')) {
-      output.summary.episodesWithFastStartBackup += 1;
-    }
   }
 
   await fsp.writeFile(OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`);
