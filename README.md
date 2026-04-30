@@ -7,36 +7,70 @@ Whoniverse Arabic is a Doctor Who Stremio addon focused on New Who broadcast-ord
 - Main episodes from 2005 to 2025
 - Specials kept inside their parent seasons
 - Separate selectable English and Arabic subtitle tracks in Stremio
-- 1080p stream presentation across the addon
+- 1080p primary streams with 720p, 480p, and fast-start direct alternatives where confidently available
 - Metadata, thumbnails, dates, and descriptions from the curated episode dataset
 
-## Arabic Subtitle Source
+## Repo Layout
 
-- Production Arabic subtitles are served from jsDelivr:
-- `https://cdn.jsdelivr.net/gh/mohammadhaddad11/doctor-who-arabic@main/ar/`
+- `index.js`: addon entry point
+- `episodeData.js`: source-of-truth episode list
+- `ar/`: production Arabic subtitle files
+- `arabicSubtitles.json`: Arabic subtitle availability index
+- `streamMetadata.json`: audited stream sizes, speed categories, and quality alternatives
+- `render.yaml`: Render fallback deployment config
+- `Dockerfile`: provider-neutral container deployment for Koyeb and Northflank
+
+## Required Environment Variable
+
+Set this on every public host:
+
+- `ADDON_BASE_URL=https://your-public-app-domain`
+
+The addon uses that base URL to build absolute Arabic subtitle URLs.
 
 ## Deployment
 
-### Render
+### Koyeb
 
-1. Push this addon code to a Git repository.
-2. Create a new Render Web Service from that repository.
-3. Render will pick up `render.yaml` automatically, or use:
-4. Build command: `npm install`
-5. Start command: `npm start`
+1. Create a Koyeb Web Service from this GitHub repo.
+2. Use the included `Dockerfile`.
+3. Set `ADDON_BASE_URL` to your Koyeb app URL.
+4. Koyeb will provide `PORT` automatically.
 
-### Railway
+### Northflank
 
-1. Create a new Railway project from the addon repository.
-2. Use the default Node deployment flow.
-3. Railway will provide `PORT` automatically.
+1. Create a Northflank service from this GitHub repo.
+2. Use the included `Dockerfile`.
+3. Set `ADDON_BASE_URL` to your Northflank service URL.
+4. Keep the service port dynamic through `PORT`.
 
-No local subtitle directory is required in production. Arabic subtitles are resolved from the remote CDN by canonical filename.
+### Render Fallback
+
+1. Create a new Render Web Service from this repo.
+2. Render can use `render.yaml`, or set:
+3. Build command: `npm install`
+4. Start command: `npm start`
+5. Set `ADDON_BASE_URL` to the Render service URL.
+
+## Local Run
+
+```bash
+npm install
+npm start
+```
+
+Local manifest:
+
+```text
+http://127.0.0.1:7000/manifest.json
+```
 
 ## Notes
 
 - English subtitles remain available through the existing canonical English subtitle URLs.
-- Arabic subtitles are exposed as a separate selectable `ara` track only when a canonical Arabic file exists remotely.
+- Arabic subtitles are exposed as a separate selectable `ara` track only when a canonical Arabic file exists in `ar/` and in `arabicSubtitles.json`.
+- Direct Archive.org streams remain the primary strategy.
+- Torrent fallback is intentionally not the default architecture and is only appropriate for proven bad direct cases.
 
 ---
 

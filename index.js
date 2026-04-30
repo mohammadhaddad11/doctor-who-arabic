@@ -8,6 +8,7 @@ const streamMetadata = require('./streamMetadata.json');
 
 const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
 const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
+const STREAM_METADATA_EPISODES = streamMetadata.episodes || {};
 
 const ADDON_LOGO_URL = 'https://www.stremio.com/website/stremio-logo-small.png';
 const NEW_WHO_SERIES_POSTER_URL = 'https://www.stremio.com/website/stremio-logo-small.png';
@@ -15,28 +16,17 @@ const NEW_WHO_SERIES_BACKGROUND_URL = 'https://www.stremio.com/website/stremio-l
 const ARABIC_SUBTITLE_DIR = path.join(__dirname, 'ar');
 const ARABIC_SUBTITLE_ROUTE = '/subtitles/ar';
 const port = Number(process.env.PORT) || 7000;
+const host = process.env.HOST || '0.0.0.0';
 
 function trimTrailingSlash(value) {
   return value.replace(/\/+$/, '');
 }
 
 function resolvePublicBaseUrl() {
-  const directBaseUrl =
-    process.env.ADDON_BASE_URL ||
-    process.env.PUBLIC_URL ||
-    process.env.RENDER_EXTERNAL_URL;
+  const directBaseUrl = process.env.ADDON_BASE_URL || process.env.PUBLIC_URL;
 
   if (directBaseUrl) {
     return trimTrailingSlash(directBaseUrl);
-  }
-
-  const hostOnlyBaseUrl =
-    process.env.RAILWAY_PUBLIC_DOMAIN ||
-    process.env.RAILWAY_STATIC_URL ||
-    process.env.VERCEL_URL;
-
-  if (hostOnlyBaseUrl) {
-    return `https://${trimTrailingSlash(hostOnlyBaseUrl.replace(/^https?:\/\//, ''))}`;
   }
 
   return `http://127.0.0.1:${port}`;
@@ -46,9 +36,9 @@ const PUBLIC_ADDON_BASE_URL = resolvePublicBaseUrl();
 
 const manifest = {
   id: 'community.mhaddad.whoniverse.arabic',
-  version: '1.3.0',
+  version: '1.4.0',
   name: 'Whoniverse Arabic',
-  description: 'Doctor Who for Stremio with separate English and Arabic subtitle tracks, size-aware streams, and direct fallback streams for selected slow specials.',
+  description: 'Doctor Who for Stremio with separate English and Arabic subtitle tracks plus audited multi-quality direct stream options.',
   logo: ADDON_LOGO_URL,
   types: ['series'],
   resources: ['catalog', 'meta', 'stream', 'subtitles'],
@@ -93,6 +83,14 @@ function getEpisodeFromArgs(id) {
   const episodeNum = Number.parseInt(episodeStr, 10);
 
   return allNewWhoEpisodes.find((ep) => ep.season === season && ep.episode === episodeNum) || null;
+}
+
+function getEpisodeKey(episode) {
+  if (!episode) {
+    return null;
+  }
+
+  return `S${String(episode.season).padStart(2, '0')}E${String(episode.episode).padStart(2, '0')}`;
 }
 
 function getEnglishSubtitleFilename(episode) {
@@ -161,33 +159,70 @@ function getSubtitleTracks(episode) {
   return subtitles;
 }
 
-function getStreamFilename(episode) {
-  if (!episode || !episode.streamUrl) {
-    return null;
-  }
-
-  return episode.streamUrl.split('/').pop() || null;
-}
-
 function getEpisodeStreamMetadata(episode) {
-  const filename = getStreamFilename(episode);
-  return filename ? streamMetadata[filename] || null : null;
+  const key = getEpisodeKey(episode);
+  return key ? STREAM_METADATA_EPISODES[key] || null : null;
 }
 
-function buildPrimaryStreamLabel(metadata) {
-  if (!metadata || !metadata.sizeLabel) {
-    return 'Whoniverse 1080p';
+function getMetadataBackedStreams(episode) {
+  const metadata = getEpisodeStreamMetadata(episode);
+
+  if (!metadata || !metadata.primary) {
+    return [];
   }
 
-  return `Whoniverse 1080p • ${metadata.sizeLabel}`;
+  const alternatives = [...(metadata.alternatives || [])];
+  const order = {
+    'Fast Start': 0,
+    '720p': 1,
+    '480p': 2
+  };
+
+  alternatives.sort((a, b) => {
+    const aOrder = order[a.label] ?? 9;
+    const bOrder = order[b.label] ?? 9;
+    if (aOrder !== bOrder) {
+      return aOrder - bOrder;
+    }
+
+    return (a.sizeBytes || 0) - (b.sizeBytes || 0);
+  });
+
+  return [metadata.primary, ...alternatives];
 }
 
-function buildPrimaryStreamDescription(metadata) {
-  if (!metadata || !metadata.sizeLabel) {
-    return '1080p direct stream';
+function buildStreamLabel(streamEntry) {
+  const prefix = streamEntry.label === 'Fast Start'
+    ? 'Whoniverse Fast Start'
+    : `Whoniverse ${streamEntry.label}`;
+
+  if (!streamEntry.sizeLabel) {
+    return prefix;
   }
 
-  return `1080p direct stream • ${metadata.sizeLabel}`;
+  return `${prefix} • ${streamEntry.sizeLabel}`;
+}
+
+function buildStreamDescription(streamEntry) {
+  const parts = [];
+
+  if (streamEntry.sourceType === 'direct-fast-start') {
+    parts.push('Fast Start direct');
+  } else if (streamEntry.sourceType === 'direct-derivative') {
+    parts.push('Direct alternative');
+  } else {
+    parts.push('Direct');
+  }
+
+  if (streamEntry.label !== 'Fast Start') {
+    parts.push(streamEntry.label);
+  }
+
+  if (streamEntry.speedCategory) {
+    parts.push(`${streamEntry.speedCategory.toLowerCase()} startup`);
+  }
+
+  return parts.join(' • ');
 }
 
 function buildStreamsForEpisode(episode) {
@@ -195,27 +230,26 @@ function buildStreamsForEpisode(episode) {
     return [];
   }
 
-  const metadata = getEpisodeStreamMetadata(episode);
   const subtitles = getSubtitleTracks(episode);
-  const streams = [
+  const metadataBackedStreams = getMetadataBackedStreams(episode);
+
+  if (metadataBackedStreams.length > 0) {
+    return metadataBackedStreams.map((streamEntry) => ({
+      url: streamEntry.url,
+      name: buildStreamLabel(streamEntry),
+      description: buildStreamDescription(streamEntry),
+      subtitles
+    }));
+  }
+
+  return [
     {
       url: episode.streamUrl,
-      name: buildPrimaryStreamLabel(metadata),
-      description: buildPrimaryStreamDescription(metadata),
+      name: 'Whoniverse 1080p',
+      description: 'Direct 1080p stream',
       subtitles
     }
   ];
-
-  if (metadata && metadata.backup) {
-    streams.push({
-      url: metadata.backup.url,
-      name: `Whoniverse Fast Start • ${metadata.backup.sizeLabel}`,
-      description: `Direct backup ${metadata.backup.qualityLabel} • ${metadata.backup.sizeLabel}`,
-      subtitles
-    });
-  }
-
-  return streams;
 }
 
 builder.defineCatalogHandler(async (args) => {
@@ -227,7 +261,7 @@ builder.defineCatalogHandler(async (args) => {
           type: 'series',
           name: 'New Who 1080p',
           poster: NEW_WHO_SERIES_POSTER_URL,
-          description: 'Doctor Who from 2005 onward with separate English and Arabic subtitle tracks, size-aware stream labels, and conservative direct fallback streams for selected specials.',
+          description: 'Doctor Who from 2005 onward with separate English and Arabic subtitle tracks, multi-quality direct streams, and conservative fast-start backups.',
           logo: ADDON_LOGO_URL,
           genres: ['Sci-Fi', 'Adventure', 'Drama'],
           releaseInfo: '2005-Present'
@@ -249,7 +283,7 @@ builder.defineMetaHandler(async (args) => {
         poster: NEW_WHO_SERIES_POSTER_URL,
         background: NEW_WHO_SERIES_BACKGROUND_URL,
         logo: ADDON_LOGO_URL,
-        description: 'Doctor Who from 2005 onward in broadcast order, with separate English and Arabic subtitle options, file size labels, and carefully targeted direct fallback streams.',
+        description: 'Doctor Who from 2005 onward in broadcast order, with separate English and Arabic subtitle options plus audited 1080p, 720p, 480p, and fast-start direct streams where available.',
         releaseInfo: '2005-Present',
         genres: ['Sci-Fi', 'Adventure', 'Drama'],
         videos: allNewWhoEpisodes.map((ep) => ({
@@ -353,8 +387,8 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(port, () => {
-  console.log(`Whoniverse Addon active on http://localhost:${port}`);
+server.listen(port, host, () => {
+  console.log(`Whoniverse Addon active on http://${host}:${port}`);
   console.log(`Install by copying this URL to Stremio's Addon search bar: http://127.0.0.1:${port}/manifest.json`);
   console.log(`Arabic subtitles served from: ${PUBLIC_ADDON_BASE_URL}${ARABIC_SUBTITLE_ROUTE}/<filename>`);
 });
