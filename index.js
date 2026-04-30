@@ -4,26 +4,53 @@ const path = require('path');
 const { addonBuilder, getRouter } = require('stremio-addon-sdk');
 const allNewWhoEpisodesPreSorted = require('./episodeData');
 const arabicSubtitleFiles = require('./arabicSubtitles.json');
+const arabicSubtitleAlternatives = require('./arabicSubtitleAlternatives.json');
 const streamMetadata = require('./streamMetadata.json');
 const subtitleStatus = require('./subtitleStatus.json');
 
 const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
 const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
+const ARABIC_ALT_INDEX = arabicSubtitleAlternatives || {};
 const STREAM_METADATA_EPISODES = streamMetadata.episodes || {};
 const STREAM_SUMMARY = streamMetadata.summary || {};
 const SUBTITLE_STATUS_ENTRIES = subtitleStatus.entries || {};
 const SUBTITLE_STATUS_SUMMARY = subtitleStatus.summary || {};
 
-const ADDON_LOGO_URL = 'https://www.stremio.com/website/stremio-logo-small.png';
-const NEW_WHO_SERIES_POSTER_URL = 'https://www.stremio.com/website/stremio-logo-small.png';
-const NEW_WHO_SERIES_BACKGROUND_URL = 'https://www.stremio.com/website/stremio-logo-small.png';
 const ARABIC_SUBTITLE_DIR = path.join(__dirname, 'ar');
 const ARABIC_SUBTITLE_ROUTE = '/subtitles/ar';
+const ARABIC_ALT_SUBTITLE_DIR = path.join(__dirname, 'ar-alt');
+const ARABIC_ALT_SUBTITLE_ROUTE = '/subtitles/ar-alt';
+const ASSET_DIR = path.join(__dirname, 'assets');
+const ASSET_ROUTE = '/assets';
+const VIDEO_ROUTE = '/video';
 const port = Number(process.env.PORT) || 7000;
 const host = process.env.HOST || '0.0.0.0';
 const REPORT_PATH = '/report';
 const REVIEW_SUBTITLE_DIR = path.join(__dirname, 'review', 'arabic-subtitles');
 const GITHUB_ISSUE_TEMPLATE_URL = 'https://github.com/mohammadhaddad11/doctor-who-arabic/issues/new?template=subtitle-issue.md';
+const MIRROR_CACHE_TTL_MS = 15 * 60 * 1000;
+
+const DYNAMIC_REDIRECT_EPISODE_IDS = new Set([
+  'S01E15',
+  'S02E14',
+  'S03E07',
+  'S03E16',
+  'S04E19',
+  'S04E20',
+  'S05E18',
+  'S07E14',
+  'S07E30',
+  'S07E31',
+  'S13E07',
+  'S13E08',
+  'S14E03',
+  'S14E04',
+  'S15E01',
+  'S08E14'
+]);
+
+const archiveMetadataCache = new Map();
+const mirrorSelectionCache = new Map();
 
 function trimTrailingSlash(value) {
   return value.replace(/\/+$/, '');
@@ -40,10 +67,13 @@ function resolvePublicBaseUrl() {
 }
 
 const PUBLIC_ADDON_BASE_URL = resolvePublicBaseUrl();
+const ADDON_LOGO_URL = `${PUBLIC_ADDON_BASE_URL}${ASSET_ROUTE}/whoniverse-arabic-logo.svg`;
+const NEW_WHO_SERIES_POSTER_URL = ADDON_LOGO_URL;
+const NEW_WHO_SERIES_BACKGROUND_URL = ADDON_LOGO_URL;
 
 const manifest = {
   id: 'community.mhaddad.whoniverse.arabic',
-  version: '1.4.0',
+  version: '1.5.0',
   name: 'Whoniverse Arabic 1080p',
   description: 'Doctor Who for Stremio with separate English and Arabic subtitle tracks plus simple 1080p quality and 480p speed stream options.',
   logo: ADDON_LOGO_URL,
@@ -92,6 +122,10 @@ function getEpisodeFromArgs(id) {
   return allNewWhoEpisodes.find((ep) => ep.season === season && ep.episode === episodeNum) || null;
 }
 
+function getEpisodeFromCanonicalId(canonicalId) {
+  return allNewWhoEpisodes.find((episode) => getEpisodeKey(episode) === canonicalId) || null;
+}
+
 function getEpisodeKey(episode) {
   if (!episode) {
     return null;
@@ -125,8 +159,20 @@ function getArabicSubtitleFilePath(arabicName) {
   return path.join(ARABIC_SUBTITLE_DIR, arabicName);
 }
 
+function getArabicAltSubtitleFilePath(arabicName) {
+  return path.join(ARABIC_ALT_SUBTITLE_DIR, arabicName);
+}
+
 function buildArabicSubtitleUrl(arabicName) {
   return `${PUBLIC_ADDON_BASE_URL}${ARABIC_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
+}
+
+function buildArabicAltSubtitleUrl(arabicName) {
+  return `${PUBLIC_ADDON_BASE_URL}${ARABIC_ALT_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
+}
+
+function getAssetFilePath(assetName) {
+  return path.join(ASSET_DIR, path.basename(assetName));
 }
 
 function getArabicSubtitleUrl(episode) {
@@ -143,6 +189,23 @@ function getArabicSubtitleUrl(episode) {
   return buildArabicSubtitleUrl(arabicName);
 }
 
+function getArabicAlternativeTracks(episode) {
+  const primaryArabicName = getArabicSubtitleFilename(episode);
+  if (!primaryArabicName) {
+    return [];
+  }
+
+  const alternatives = ARABIC_ALT_INDEX[primaryArabicName] || [];
+  return alternatives
+    .filter((entry) => entry && entry.filename)
+    .filter((entry) => fs.existsSync(getArabicAltSubtitleFilePath(entry.filename)))
+    .map((entry, index) => ({
+      id: `arabic_alt_${index + 1}`,
+      url: buildArabicAltSubtitleUrl(entry.filename),
+      lang: entry.label || `Arabic Alt${index > 0 ? ` ${index + 1}` : ''}`
+    }));
+}
+
 function getSubtitleTracks(episode) {
   if (!episode) {
     return [];
@@ -154,7 +217,7 @@ function getSubtitleTracks(episode) {
     subtitles.push({
       id: 'archive_en_sub',
       url: episode.subtitleUrl,
-      lang: 'eng'
+      lang: 'English'
     });
   }
 
@@ -163,9 +226,11 @@ function getSubtitleTracks(episode) {
     subtitles.push({
       id: 'local_ar_sub',
       url: arabicUrl,
-      lang: 'ara'
+      lang: 'Arabic'
     });
   }
+
+  subtitles.push(...getArabicAlternativeTracks(episode));
 
   return subtitles;
 }
@@ -173,6 +238,218 @@ function getSubtitleTracks(episode) {
 function getEpisodeStreamMetadata(episode) {
   const key = getEpisodeKey(episode);
   return key ? STREAM_METADATA_EPISODES[key] || null : null;
+}
+
+function isArchiveUrl(url) {
+  try {
+    const parsed = new URL(url);
+    return /archive\.org$/i.test(parsed.hostname) || /\.archive\.org$/i.test(parsed.hostname);
+  } catch {
+    return false;
+  }
+}
+
+function buildVideoRedirectUrl(episode, quality) {
+  return `${PUBLIC_ADDON_BASE_URL}${VIDEO_ROUTE}/${encodeURIComponent(getEpisodeKey(episode))}/${encodeURIComponent(quality)}`;
+}
+
+function shouldUseDynamicRedirect(episode, streamEntry) {
+  if (!episode || !streamEntry || !streamEntry.url) {
+    return false;
+  }
+
+  return DYNAMIC_REDIRECT_EPISODE_IDS.has(getEpisodeKey(episode)) && isArchiveUrl(streamEntry.url);
+}
+
+function parseArchiveItemId(url) {
+  const match = url.match(/archive\.org\/(?:download|metadata)\/([^/]+)/i);
+  return match ? match[1] : null;
+}
+
+function getArchiveMetadata(itemId) {
+  if (!itemId) {
+    return null;
+  }
+
+  if (archiveMetadataCache.has(itemId)) {
+    return archiveMetadataCache.get(itemId);
+  }
+
+  const filePath = path.join(__dirname, '.subtitle-audit-cache', 'metadata', `${itemId}.json`);
+  if (!fs.existsSync(filePath)) {
+    archiveMetadataCache.set(itemId, null);
+    return null;
+  }
+
+  const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  archiveMetadataCache.set(itemId, parsed);
+  return parsed;
+}
+
+function getStreamEntryCandidatesForQuality(metadata, quality) {
+  if (!metadata) {
+    return [];
+  }
+
+  if (quality === '1080p') {
+    return metadata.primaryCandidates || [];
+  }
+
+  const alternative = (metadata.alternatives || []).find((entry) => entry.label === quality);
+  if (!alternative) {
+    return [];
+  }
+
+  const archiveItem = metadata.archiveItem || parseArchiveItemId(alternative.url);
+  const archiveMetadata = getArchiveMetadata(archiveItem);
+  if (!archiveMetadata) {
+    return [{ url: alternative.url, healthScore: alternative.healthScore || 0, probe: { startupScore: alternative.startupScore || alternative.responseTimeMs || Infinity } }];
+  }
+
+  const filename = alternative.finalUrl ? path.basename(new URL(alternative.finalUrl).pathname) : path.basename(new URL(alternative.url).pathname);
+  const urls = new Map();
+  const addCandidate = (url) => {
+    if (!url || urls.has(url)) {
+      return;
+    }
+
+    urls.set(url, {
+      url,
+      healthScore: url === alternative.url ? (alternative.healthScore || 0) : 0,
+      probe: {
+        startupScore: url === alternative.url ? (alternative.startupScore || alternative.responseTimeMs || Infinity) : Infinity
+      }
+    });
+  };
+
+  addCandidate(alternative.url);
+  for (const location of archiveMetadata.alternate_locations?.workable || archiveMetadata.alternate_locations?.servers || []) {
+    if (location.server && location.dir) {
+      addCandidate(`https://${location.server}${location.dir}/${filename}`);
+    }
+  }
+  for (const hostName of [archiveMetadata.d1, archiveMetadata.d2]) {
+    if (hostName && archiveMetadata.dir) {
+      addCandidate(`https://${hostName}${archiveMetadata.dir}/${filename}`);
+    }
+  }
+  addCandidate(`https://archive.org/download/${archiveItem}/${filename}`);
+  return [...urls.values()];
+}
+
+async function probeMirrorCandidate(url) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 6000);
+  const startedAt = Date.now();
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      redirect: 'manual',
+      signal: controller.signal,
+      headers: {
+        'user-agent': 'WhoniverseMirrorRedirect/1.0',
+        Range: 'bytes=0-65535'
+      }
+    });
+
+    const sample = Buffer.from(await response.arrayBuffer());
+    clearTimeout(timer);
+    const startupScore = Date.now() - startedAt;
+    return {
+      url,
+      responseStatus: response.status,
+      startupScore,
+      healthScore: [200, 206].includes(response.status) ? Math.max(1, 100 - Math.min(70, Math.round(startupScore / 160))) : 0,
+      sampleBytes: sample.length,
+      finalUrl: response.url || url
+    };
+  } catch (error) {
+    clearTimeout(timer);
+    return {
+      url,
+      responseStatus: 0,
+      startupScore: Date.now() - startedAt,
+      healthScore: 0,
+      sampleBytes: 0,
+      error: error.name === 'AbortError' ? 'timeout' : error.message,
+      finalUrl: url
+    };
+  }
+}
+
+async function chooseMirrorRedirectTarget(episode, quality) {
+  const key = `${getEpisodeKey(episode)}:${quality}`;
+  const now = Date.now();
+  const cached = mirrorSelectionCache.get(key);
+  if (cached && cached.expiresAt > now) {
+    return cached.url;
+  }
+
+  const metadata = getEpisodeStreamMetadata(episode);
+  const candidates = getStreamEntryCandidatesForQuality(metadata, quality)
+    .filter((candidate) => candidate && candidate.url)
+    .sort((a, b) => {
+      if ((b.healthScore || 0) !== (a.healthScore || 0)) {
+        return (b.healthScore || 0) - (a.healthScore || 0);
+      }
+
+      return (a.probe?.startupScore || Infinity) - (b.probe?.startupScore || Infinity);
+    });
+
+  if (!candidates.length) {
+    return null;
+  }
+
+  let selectedUrl = candidates[0].url;
+  if (candidates.length > 1) {
+    const topCandidates = candidates.slice(0, 2);
+    const liveResults = await Promise.all(topCandidates.map((candidate) => probeMirrorCandidate(candidate.url)));
+    const successful = liveResults
+      .filter((candidate) => [200, 206].includes(candidate.responseStatus))
+      .sort((a, b) => {
+        if ((b.healthScore || 0) !== (a.healthScore || 0)) {
+          return (b.healthScore || 0) - (a.healthScore || 0);
+        }
+
+        return (a.startupScore || Infinity) - (b.startupScore || Infinity);
+      });
+
+    if (successful.length) {
+      selectedUrl = successful[0].url;
+    }
+  }
+
+  mirrorSelectionCache.set(key, {
+    url: selectedUrl,
+    expiresAt: now + MIRROR_CACHE_TTL_MS
+  });
+  return selectedUrl;
+}
+
+async function redirectDynamicStream(req, res, canonicalId, quality) {
+  const episode = getEpisodeFromCanonicalId(canonicalId);
+  if (!episode) {
+    sendCorsHeaders(res);
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.end(JSON.stringify({ err: 'episode not found' }));
+    return;
+  }
+
+  const targetUrl = await chooseMirrorRedirectTarget(episode, quality);
+  if (!targetUrl) {
+    sendCorsHeaders(res);
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.end(JSON.stringify({ err: 'stream quality not available' }));
+    return;
+  }
+
+  sendCorsHeaders(res);
+  res.statusCode = 302;
+  res.setHeader('Cache-Control', 'no-store');
+  res.setHeader('Location', targetUrl);
+  res.end();
 }
 
 function getMetadataBackedStreams(episode) {
@@ -229,7 +506,9 @@ function buildStreamsForEpisode(episode) {
 
   if (metadataBackedStreams.length > 0) {
     return metadataBackedStreams.map((streamEntry) => ({
-      url: streamEntry.url,
+      url: shouldUseDynamicRedirect(episode, streamEntry)
+        ? buildVideoRedirectUrl(episode, streamEntry.label)
+        : streamEntry.url,
       name: buildStreamLabel(streamEntry),
       description: buildStreamDescription(streamEntry, episode),
       subtitles
@@ -258,13 +537,23 @@ function getReviewSubtitleCount() {
   return fs.readdirSync(REVIEW_SUBTITLE_DIR).filter((name) => /\.srt$/i.test(name)).length;
 }
 
+function getArabicAlternativeEpisodeCount() {
+  return Object.keys(ARABIC_ALT_INDEX).length;
+}
+
 function getStreamCounts() {
+  const dynamicRedirectStreamCount = allNewWhoEpisodes.reduce((count, episode) => {
+    const metadataBackedStreams = getMetadataBackedStreams(episode);
+    return count + metadataBackedStreams.filter((entry) => shouldUseDynamicRedirect(episode, entry)).length;
+  }, 0);
+
   return {
     episodes: Object.keys(STREAM_METADATA_EPISODES).length,
     stream1080p: STREAM_SUMMARY.episodesWith1080p || 0,
     stream480p: STREAM_SUMMARY.episodesWith480pAdded || 0,
     stream720p: STREAM_SUMMARY.episodesWith720pAdded || 0,
-    fastStartBackups: STREAM_SUMMARY.episodesWithFastStartBackup || 0
+    fastStartBackups: STREAM_SUMMARY.episodesWithFastStartBackup || 0,
+    dynamicRedirectStreamCount
   };
 }
 
@@ -339,6 +628,7 @@ function renderHomePage() {
   const streamCounts = getStreamCounts();
   const manifestUrl = getManifestUrl();
   const installUrl = getStremioInstallUrl();
+  const altCount = getArabicAlternativeEpisodeCount();
   return renderHtmlPage(
     manifest.name,
     `<div class="card">
@@ -359,8 +649,10 @@ function renderHomePage() {
       <ul>
         <li>Episode entries: ${allNewWhoEpisodes.length}</li>
         <li>Arabic subtitles: ${ARABIC_SUBTITLE_FILES.size}</li>
+        <li>Arabic Alt coverage: ${altCount}</li>
         <li>1080p stream entries: ${streamCounts.stream1080p}</li>
         <li>480p speed entries: ${streamCounts.stream480p}</li>
+        <li>Dynamic mirror redirect streams: ${streamCounts.dynamicRedirectStreamCount}</li>
         <li>Manual review subtitles still visible: ${SUBTITLE_STATUS_SUMMARY.manual_review || 0}</li>
       </ul>
       <p class="muted">If Arabic looks delayed or wrong, keep it selected and report the exact episode and timestamp from the report page.</p>
@@ -441,6 +733,7 @@ function renderReportPage() {
               <option>Arabic text garbled</option>
               <option>Wrong episode subtitle</option>
               <option>Missing Arabic</option>
+              <option>Arabic Alt issue</option>
               <option>Stream too slow</option>
               <option>Stream won’t start</option>
               <option>Other</option>
@@ -585,6 +878,36 @@ function renderReportPage() {
   );
 }
 
+function serveStaticAsset(req, res, filename) {
+  const assetPath = getAssetFilePath(filename);
+  if (!fs.existsSync(assetPath)) {
+    sendCorsHeaders(res);
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.end('Asset not found');
+    return;
+  }
+
+  const extension = path.extname(assetPath).toLowerCase();
+  const contentType = extension === '.svg'
+    ? 'image/svg+xml; charset=utf-8'
+    : extension === '.png'
+      ? 'image/png'
+      : extension === '.jpg' || extension === '.jpeg'
+        ? 'image/jpeg'
+        : 'application/octet-stream';
+
+  sendCorsHeaders(res);
+  res.statusCode = 200;
+  res.setHeader('Content-Type', contentType);
+  res.setHeader('Cache-Control', 'public, max-age=3600');
+  if (req.method === 'HEAD') {
+    res.end();
+    return;
+  }
+  fs.createReadStream(assetPath).pipe(res);
+}
+
 builder.defineCatalogHandler(async (args) => {
   if (args.type === 'series' && args.id === manifest.catalogs[0].id) {
     return {
@@ -696,6 +1019,29 @@ function serveArabicSubtitle(req, res, filename) {
   fs.createReadStream(subtitlePath).pipe(res);
 }
 
+function serveArabicAltSubtitle(req, res, filename) {
+  const safeName = path.basename(filename);
+  const filePath = getArabicAltSubtitleFilePath(safeName);
+  if (!safeName || !fs.existsSync(filePath)) {
+    sendCorsHeaders(res);
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.end('Subtitle alternative not found');
+    return;
+  }
+
+  sendCorsHeaders(res);
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/x-subrip; charset=utf-8');
+  res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
+  res.setHeader('Cache-Control', 'public, max-age=3600');
+  if (req.method === 'HEAD') {
+    res.end();
+    return;
+  }
+  fs.createReadStream(filePath).pipe(res);
+}
+
 const server = http.createServer((req, res) => {
   const requestUrl = new URL(req.url, `http://${req.headers.host || `127.0.0.1:${port}`}`);
 
@@ -731,13 +1077,18 @@ const server = http.createServer((req, res) => {
 
   if (requestUrl.pathname === '/status') {
     const streamCounts = getStreamCounts();
+    const arabicAltCount = getArabicAlternativeEpisodeCount();
     jsonResponse(res, 200, {
       name: manifest.name,
       version: manifest.version,
       episodeCount: allNewWhoEpisodes.length,
       arabicSubtitleCount: ARABIC_SUBTITLE_FILES.size,
+      arabicPrimaryCount: ARABIC_SUBTITLE_FILES.size,
+      arabicAlternativeCount: arabicAltCount,
+      episodesMissingArabicAlternatives: ARABIC_SUBTITLE_FILES.size - arabicAltCount,
       stream1080pCount: streamCounts.stream1080p,
       stream480pCount: streamCounts.stream480p,
+      dynamicRedirectStreamCount: streamCounts.dynamicRedirectStreamCount,
       manualReviewSubtitleCount: SUBTITLE_STATUS_SUMMARY.manual_review || 0,
       reviewFolderCount: getReviewSubtitleCount(),
       subtitleStatusSummary: SUBTITLE_STATUS_SUMMARY,
@@ -745,6 +1096,47 @@ const server = http.createServer((req, res) => {
       deploymentBaseUrl: PUBLIC_ADDON_BASE_URL,
       manifest: getManifestUrl()
     });
+    return;
+  }
+
+  if (requestUrl.pathname.startsWith(`${ASSET_ROUTE}/`)) {
+    if (req.method === 'OPTIONS') {
+      sendCorsHeaders(res);
+      res.statusCode = 204;
+      res.end();
+      return;
+    }
+
+    const encodedName = requestUrl.pathname.slice(`${ASSET_ROUTE}/`.length);
+    serveStaticAsset(req, res, decodeURIComponent(encodedName));
+    return;
+  }
+
+  if (requestUrl.pathname.startsWith(`${VIDEO_ROUTE}/`)) {
+    if (req.method === 'OPTIONS') {
+      sendCorsHeaders(res);
+      res.statusCode = 204;
+      res.end();
+      return;
+    }
+
+    const segments = requestUrl.pathname.slice(`${VIDEO_ROUTE}/`.length).split('/').filter(Boolean);
+    if (segments.length >= 2) {
+      void redirectDynamicStream(req, res, decodeURIComponent(segments[0]), decodeURIComponent(segments[1]));
+      return;
+    }
+  }
+
+  if (requestUrl.pathname.startsWith(`${ARABIC_ALT_SUBTITLE_ROUTE}/`)) {
+    if (req.method === 'OPTIONS') {
+      sendCorsHeaders(res);
+      res.statusCode = 204;
+      res.end();
+      return;
+    }
+
+    const encodedName = requestUrl.pathname.slice(`${ARABIC_ALT_SUBTITLE_ROUTE}/`.length);
+    serveArabicAltSubtitle(req, res, decodeURIComponent(encodedName));
     return;
   }
 
