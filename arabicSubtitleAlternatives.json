@@ -1,0 +1,182 @@
+{
+  "E10_the_doctor_dances.ar.srt": [
+    {
+      "filename": "E10_the_doctor_dances.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s01_bluray",
+      "episode": "The Doctor Dances",
+      "canonicalId": "S01E10",
+      "verification": {
+        "slope": 1.004300409432532,
+        "interceptMs": -16987.184954441153,
+        "residualMedianMs": 7347.88195052254
+      }
+    }
+  ],
+  "E07_the_long_game.ar.srt": [
+    {
+      "filename": "E07_the_long_game.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s01_bluray",
+      "episode": "The Long Game",
+      "canonicalId": "S01E07",
+      "verification": {
+        "slope": 0.995871771984049,
+        "interceptMs": 17043.91983442381,
+        "residualMedianMs": 8377.8047684232
+      }
+    }
+  ],
+  "E05_world_war_three.ar.srt": [
+    {
+      "filename": "E05_world_war_three.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s01_bluray",
+      "episode": "World War Three",
+      "canonicalId": "S01E05",
+      "verification": {
+        "slope": 0.9970609140586564,
+        "interceptMs": 10151.410793783609,
+        "residualMedianMs": 5832.876956795226
+      }
+    }
+  ],
+  "E07_the_caretaker.ar.srt": [
+    {
+      "filename": "E07_the_caretaker.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s08_full",
+      "episode": "The Caretaker",
+      "canonicalId": "S08E07",
+      "verification": {
+        "slope": 0.9915970315521967,
+        "interceptMs": 11345.484486295376,
+        "residualMedianMs": 4270.658878412185
+      }
+    }
+  ],
+  "E04_robot_of_sherwood.ar.srt": [
+    {
+      "filename": "E04_robot_of_sherwood.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s08_full",
+      "episode": "Robot of Sherwood",
+      "canonicalId": "S08E04",
+      "verification": {
+        "slope": 1.0019417462358666,
+        "interceptMs": -6108.533742808504,
+        "residualMedianMs": 6933.622555335984
+      }
+    }
+  ],
+  "E06_time_heist.ar.srt": [
+    {
+      "filename": "E06_time_heist.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s08_full",
+      "episode": "Time Heist",
+      "canonicalId": "S08E06",
+      "verification": {
+        "slope": 0.9965472907544846,
+        "interceptMs": 17801.385993343778,
+        "residualMedianMs": 6211.699148664717
+      }
+    }
+  ],
+  "E09_mummy_on_the_orient_express.ar.srt": [
+    {
+      "filename": "E09_mummy_on_the_orient_express.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s08_full",
+      "episode": "Mummy on the Orient Express",
+      "canonicalId": "S08E09",
+      "verification": {
+        "slope": 0.9963712136114504,
+        "interceptMs": 9599.866584866773,
+        "residualMedianMs": 5927.062184725888
+      }
+    }
+  ],
+  "E08_kill_the_moon.ar.srt": [
+    {
+      "filename": "E08_kill_the_moon.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s08_full",
+      "episode": "Kill the Moon",
+      "canonicalId": "S08E08",
+      "verification": {
+        "slope": 0.9962350010632622,
+        "interceptMs": 15756.327792259399,
+        "residualMedianMs": 5728.334497658187
+      }
+    }
+  ],
+  "E03_into_the_dalek.ar.srt": [
+    {
+      "filename": "E03_into_the_dalek.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s08_full",
+      "episode": "Into the Dalek",
+      "canonicalId": "S08E03",
+      "verification": {
+        "slope": 1.0009460569460504,
+        "interceptMs": -6438.283945898525,
+        "residualMedianMs": 4329.544036185878
+      }
+    }
+  ],
+  "E10_the_battle_of_ranskoor_av_kolos.ar.srt": [
+    {
+      "filename": "E10_the_battle_of_ranskoor_av_kolos.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s11_amzn",
+      "episode": "The Battle of Ranskoor Av Kolos",
+      "canonicalId": "S11E10",
+      "verification": {
+        "slope": 0.994043865022553,
+        "interceptMs": 5268.188574521104,
+        "residualMedianMs": 5989.876787067973
+      }
+    }
+  ],
+  "E05_the_tsuranga_conundrum.ar.srt": [
+    {
+      "filename": "E05_the_tsuranga_conundrum.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s11_amzn",
+      "episode": "The Tsuranga Conundrum",
+      "canonicalId": "S11E05",
+      "verification": {
+        "slope": 0.9947379476991793,
+        "interceptMs": 6375.973275484052,
+        "residualMedianMs": 4786.841249152552
+      }
+    }
+  ],
+  "E06_demons_of_the_punjab.ar.srt": [
+    {
+      "filename": "E06_demons_of_the_punjab.alt1.ar.srt",
+      "label": "Arabic Alt",
+      "status": "verified",
+      "source": "s11_amzn",
+      "episode": "Demons of the Punjab",
+      "canonicalId": "S11E06",
+      "verification": {
+        "slope": 1.0056774191460542,
+        "interceptMs": -24054.05134090362,
+        "residualMedianMs": 5831.968697112752
+      }
+    }
+  ]
+}

@@ -4,9 +4,24 @@ const path = require('path');
 const { addonBuilder, getRouter } = require('stremio-addon-sdk');
 const allNewWhoEpisodesPreSorted = require('./episodeData');
 const arabicSubtitleFiles = require('./arabicSubtitles.json');
-const arabicSubtitleAlternatives = require('./arabicSubtitleAlternatives.json');
-const streamMetadata = require('./streamMetadata.json');
-const subtitleStatus = require('./subtitleStatus.json');
+
+function loadJsonFile(relativePath, fallbackValue) {
+  const filePath = path.join(__dirname, relativePath);
+  if (!fs.existsSync(filePath)) {
+    return fallbackValue;
+  }
+
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch (error) {
+    console.warn(`Failed to load ${relativePath}:`, error.message);
+    return fallbackValue;
+  }
+}
+
+const arabicSubtitleAlternatives = loadJsonFile('arabicSubtitleAlternatives.json', {});
+const streamMetadata = loadJsonFile('streamMetadata.json', { episodes: {}, summary: {} });
+const subtitleStatus = loadJsonFile('subtitleStatus.json', { entries: {}, summary: {} });
 
 const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
 const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
@@ -29,6 +44,8 @@ const REPORT_PATH = '/report';
 const REVIEW_SUBTITLE_DIR = path.join(__dirname, 'review', 'arabic-subtitles');
 const GITHUB_ISSUE_TEMPLATE_URL = 'https://github.com/mohammadhaddad11/doctor-who-arabic/issues/new?template=subtitle-issue.md';
 const MIRROR_CACHE_TTL_MS = 15 * 60 * 1000;
+const DEFAULT_ADDON_LOGO_URL = 'https://www.stremio.com/website/stremio-logo-small.png';
+const LOCAL_ADDON_LOGO_FILE = path.join(ASSET_DIR, 'whoniverse-arabic-logo.svg');
 
 const DYNAMIC_REDIRECT_EPISODE_IDS = new Set([
   'S01E15',
@@ -67,7 +84,9 @@ function resolvePublicBaseUrl() {
 }
 
 const PUBLIC_ADDON_BASE_URL = resolvePublicBaseUrl();
-const ADDON_LOGO_URL = `${PUBLIC_ADDON_BASE_URL}${ASSET_ROUTE}/whoniverse-arabic-logo.svg`;
+const ADDON_LOGO_URL = fs.existsSync(LOCAL_ADDON_LOGO_FILE)
+  ? `${PUBLIC_ADDON_BASE_URL}${ASSET_ROUTE}/whoniverse-arabic-logo.svg`
+  : DEFAULT_ADDON_LOGO_URL;
 const NEW_WHO_SERIES_POSTER_URL = ADDON_LOGO_URL;
 const NEW_WHO_SERIES_BACKGROUND_URL = ADDON_LOGO_URL;
 
