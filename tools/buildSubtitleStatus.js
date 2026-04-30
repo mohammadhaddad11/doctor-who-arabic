@@ -5,9 +5,11 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const arabicSubtitleFiles = require('../arabicSubtitles.json');
 const finalAudit = require('../audit/final-production-audit.json');
+const streamMetadata = require('../streamMetadata.json');
 
 const OUTPUT_PATH = path.join(ROOT, 'subtitleStatus.json');
 const SPECIAL_AUDIT_PATH = path.join(ROOT, 'audit', 'special-subtitle-audit.json');
+const streamEpisodes = streamMetadata.episodes || {};
 
 const SPECIAL_TITLES = new Set([
   'The Christmas Invasion (Special)',
@@ -100,6 +102,8 @@ const summary = summaryCounts(entries);
 const specialAuditEntries = (finalAudit.findings || [])
   .filter((finding) => SPECIAL_TITLES.has(finding.title))
   .map((finding) => ({
+    selectedStreamUrl: streamEpisodes[finding.canonicalId]?.primary?.url || null,
+    selected480pUrl: (streamEpisodes[finding.canonicalId]?.alternatives || []).find((entry) => entry.label === '480p')?.url || null,
     canonicalId: finding.canonicalId,
     title: finding.title,
     filename: finding.filename,

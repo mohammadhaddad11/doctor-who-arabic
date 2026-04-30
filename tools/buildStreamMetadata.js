@@ -13,6 +13,7 @@ const OUTPUT_PATH = path.join(ROOT, 'streamMetadata.json');
 const MAX_CONCURRENCY = 8;
 const REQUEST_TIMEOUT_MS = 15000;
 const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
+const RANGE_HEADER_VALUE = 'bytes=0-262143';
 
 function canonicalId(episode) {
   return `S${String(episode.season).padStart(2, '0')}E${String(episode.episode).padStart(2, '0')}`;
@@ -73,15 +74,15 @@ function classifySpeed(probe) {
     return 'BAD';
   }
 
-  if (probe.responseTimeMs <= 900) {
+  if (probe.startupScore <= 700) {
     return 'FAST';
   }
 
-  if (probe.responseTimeMs <= 1800) {
+  if (probe.startupScore <= 1500) {
     return 'OK';
   }
 
-  if (probe.responseTimeMs <= 8000) {
+  if (probe.startupScore <= 4000) {
     return 'SLOW';
   }
 
@@ -104,7 +105,7 @@ async function fetchWithRedirects(url, method = 'GET', redirects = 0, startedAt 
       signal,
       headers: {
         'user-agent': 'WhoniverseArabicStreamAudit/1.0',
-        Range: 'bytes=0-0'
+        Range: RANGE_HEADER_VALUE
       }
     });
 
@@ -115,9 +116,25 @@ async function fetchWithRedirects(url, method = 'GET', redirects = 0, startedAt 
     }
 
     clear();
+    const responseTimeMs = Math.round(performance.now() - startedAt);
+    let sampleBytes = 0;
+    let sampleDownloadTimeMs = responseTimeMs;
+
+    try {
+      const buffer = Buffer.from(await response.arrayBuffer());
+      sampleBytes = buffer.length;
+      sampleDownloadTimeMs = Math.round(performance.now() - startedAt);
+    } catch {
+      sampleBytes = 0;
+      sampleDownloadTimeMs = Math.round(performance.now() - startedAt);
+    }
+
     return {
       responseStatus: response.status,
-      responseTimeMs: Math.round(performance.now() - startedAt),
+      responseTimeMs,
+      sampleDownloadTimeMs,
+      sampleBytes,
+      startupScore: sampleDownloadTimeMs,
       redirects,
       finalUrl: response.url || url,
       contentLength: Number(response.headers.get('content-length') || 0) || null,
@@ -128,6 +145,9 @@ async function fetchWithRedirects(url, method = 'GET', redirects = 0, startedAt 
     return {
       responseStatus: 0,
       responseTimeMs: Math.round(performance.now() - startedAt),
+      sampleDownloadTimeMs: Math.round(performance.now() - startedAt),
+      sampleBytes: 0,
+      startupScore: Math.round(performance.now() - startedAt),
       redirects,
       finalUrl: url,
       contentLength: null,
@@ -274,9 +294,23 @@ function calculateHealthScore(probe) {
     return 0;
   }
 
-  const responsePenalty = Math.min(70, Math.round(Math.min(probe.responseTimeMs, 10000) / 160));
+  const responsePenalty = Math.min(70, Math.round(Math.min(probe.startupScore || probe.responseTimeMs, 10000) / 160));
   const redirectPenalty = Math.min(10, (probe.redirects || 0) * 3);
   return Math.max(1, 100 - responsePenalty - redirectPenalty);
+}
+
+function isSpeedAlternative(primary, alternative) {
+  if (alternative.label !== '480p') {
+    return false;
+  }
+
+  const primaryStartup = primary.startupScore || primary.responseTimeMs || Infinity;
+  const alternativeStartup = alternative.startupScore || alternative.responseTimeMs || Infinity;
+
+  return (
+    alternativeStartup + 120 < primaryStartup &&
+    alternativeStartup <= primaryStartup * 0.9
+  );
 }
 
 function buildStreamEntry({ role, label, sourceType, url, probe, archiveEntry }) {
@@ -296,6 +330,9 @@ function buildStreamEntry({ role, label, sourceType, url, probe, archiveEntry })
     contentType: probe.contentType,
     speedCategory: classifySpeed(probe),
     healthScore: calculateHealthScore(probe),
+    startupScore: probe.startupScore,
+    sampleDownloadTimeMs: probe.sampleDownloadTimeMs,
+    sampleBytes: probe.sampleBytes,
     width: Number(archiveEntry.width || 0) || null,
     height: Number(archiveEntry.height || 0) || null,
     lengthSeconds: Number(archiveEntry.length || 0) || null
@@ -472,9 +509,11 @@ async function main() {
             backupCandidates.push(alternative);
           }
           output.summary.episodesWithFastStartBackup += 1;
-        } else {
+        } else if (isSpeedAlternative(primary, alternative)) {
           backupCandidates.push(alternative);
           alternatives.push(alternative);
+        } else {
+          backupCandidates.push(alternative);
         }
       } else {
         backupCandidates.push(alternative);

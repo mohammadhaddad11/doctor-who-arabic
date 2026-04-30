@@ -283,6 +283,15 @@ function htmlEscape(value) {
     .replace(/"/g, '&quot;');
 }
 
+function serializeForScript(value) {
+  return JSON.stringify(value).replace(/</g, '\\u003c');
+}
+
+function getStremioInstallUrl() {
+  const manifestUrl = new URL(getManifestUrl());
+  return `stremio://${manifestUrl.host}${manifestUrl.pathname}${manifestUrl.search}`;
+}
+
 function renderHtmlPage(title, body) {
   return `<!doctype html>
 <html lang="en">
@@ -291,16 +300,33 @@ function renderHtmlPage(title, body) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${htmlEscape(title)}</title>
   <style>
-    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:32px;line-height:1.5}
-    main{max-width:900px;margin:0 auto}
+    :root{color-scheme:dark}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:24px;line-height:1.5}
+    main{max-width:960px;margin:0 auto}
     a{color:#93c5fd}
-    .card{background:#111827;border:1px solid #334155;border-radius:16px;padding:24px;margin-bottom:20px}
+    h1,h2,h3{margin:0 0 12px}
+    p{margin:0 0 12px}
+    .card{background:#111827;border:1px solid #334155;border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
-    .button{display:inline-block;padding:12px 16px;border-radius:12px;background:#2563eb;color:white;text-decoration:none;font-weight:600}
-    code,textarea{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-    textarea{width:100%;min-height:320px;background:#020617;color:#e2e8f0;border:1px solid #334155;border-radius:12px;padding:12px}
+    .button,.ghost-button,button{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;font-weight:600;border:1px solid transparent;cursor:pointer;text-decoration:none;font-size:14px}
+    .button{background:#2563eb;color:white}
+    .ghost-button{background:#1f2937;color:#e2e8f0;border-color:#334155}
+    .button:hover,.ghost-button:hover,button:hover{filter:brightness(1.06)}
+    code,textarea,input,select{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    textarea,input,select{width:100%;background:#020617;color:#e2e8f0;border:1px solid #334155;border-radius:12px;padding:12px;box-sizing:border-box}
+    textarea{min-height:160px;resize:vertical}
     .muted{color:#94a3b8}
-    ul{padding-left:20px}
+    .small{font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .field{display:flex;flex-direction:column;gap:8px}
+    .field label{font-size:13px;font-weight:600;color:#cbd5e1}
+    .stack{display:flex;flex-direction:column;gap:14px}
+    .manifest-box{background:#020617;border:1px solid #334155;border-radius:12px;padding:12px;word-break:break-all}
+    .pill{display:inline-flex;align-items:center;background:#0b1220;border:1px solid #334155;color:#cbd5e1;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600}
+    details{background:#0b1220;border:1px solid #334155;border-radius:12px;padding:12px}
+    details summary{cursor:pointer;font-weight:600}
+    .status-note{min-height:20px;color:#93c5fd;font-size:13px}
+    @media (max-width: 720px){body{padding:16px}.card{padding:18px}.grid{grid-template-columns:1fr}.actions{flex-direction:column}.button,.ghost-button,button{width:100%}}
   </style>
 </head>
 <body>
@@ -312,18 +338,21 @@ function renderHtmlPage(title, body) {
 function renderHomePage() {
   const streamCounts = getStreamCounts();
   const manifestUrl = getManifestUrl();
+  const installUrl = getStremioInstallUrl();
   return renderHtmlPage(
     manifest.name,
     `<div class="card">
       <h1>Whoniverse Arabic 1080p</h1>
       <p><strong>Status:</strong> online</p>
+      <p class="small muted">English and Arabic subtitles are separate selectable tracks.</p>
+      <p class="small muted">Use 1080p for quality or 480p for speed.</p>
       <div class="actions">
-        <a class="button" href="${htmlEscape(manifestUrl)}">Install in Stremio</a>
-        <a class="button" href="${htmlEscape(REPORT_PATH)}">Report Subtitle Issue</a>
+        <a id="installButton" class="button" href="${htmlEscape(installUrl)}">Install in Stremio</a>
+        <button id="copyManifestButton" class="ghost-button" type="button">Copy Manifest URL</button>
+        <a class="ghost-button" href="${htmlEscape(REPORT_PATH)}">Report Subtitle Issue</a>
       </div>
-      <p><strong>Manifest URL:</strong> <a href="${htmlEscape(manifestUrl)}">${htmlEscape(manifestUrl)}</a></p>
-      <p>English and Arabic subtitles are separate selectable tracks.</p>
-      <p>Use 1080p for quality or 480p for speed.</p>
+      <p class="status-note" id="installStatus"></p>
+      <div class="manifest-box"><strong>Manifest URL:</strong><br>${htmlEscape(manifestUrl)}</div>
     </div>
     <div class="card">
       <h2>Current Production Counts</h2>
@@ -335,35 +364,224 @@ function renderHomePage() {
         <li>Manual review subtitles still visible: ${SUBTITLE_STATUS_SUMMARY.manual_review || 0}</li>
       </ul>
       <p class="muted">If Arabic looks delayed or wrong, keep it selected and report the exact episode and timestamp from the report page.</p>
-    </div>`
+    </div>
+    <script>
+      (() => {
+        const manifestUrl = ${serializeForScript(manifestUrl)};
+        const installUrl = ${serializeForScript(installUrl)};
+        const installButton = document.getElementById('installButton');
+        const copyButton = document.getElementById('copyManifestButton');
+        const status = document.getElementById('installStatus');
+
+        function setStatus(message) {
+          status.textContent = message;
+        }
+
+        installButton.addEventListener('click', (event) => {
+          event.preventDefault();
+          setStatus('Trying to open Stremio...');
+          window.location.href = installUrl;
+          window.setTimeout(() => {
+            setStatus('If Stremio did not open, use Copy Manifest URL and paste it into Stremio.');
+          }, 1200);
+        });
+
+        copyButton.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(manifestUrl);
+            setStatus('Manifest URL copied. Paste it into Stremio if direct install does not open.');
+          } catch {
+            setStatus('Copy failed. Use the visible manifest URL below.');
+          }
+        });
+      })();
+    </script>`
   );
 }
 
 function renderReportPage() {
-  const issueTemplate = `Season:\nEpisode:\nEpisode title:\nSubtitle language: Arabic / English\nProblem type:\n- Arabic text garbled\n- Arabic delay\n- Wrong episode subtitle\n- Missing Arabic\n- Other\nApproximate timestamp:\nDevice:\nStream quality used: 1080p or 480p\nNotes:`;
+  const reportEpisodes = allNewWhoEpisodes.map((episode) => ({
+    season: episode.season,
+    episode: episode.episode,
+    title: episode.title,
+    canonicalId: getEpisodeKey(episode)
+  }));
   return renderHtmlPage(
     'Report Subtitle Issue',
     `<div class="card">
       <h1>Report a Subtitle Issue</h1>
-      <p>Arabic subtitles stay visible even when they are under review. If you see a problem, open a GitHub issue and include the fields below.</p>
-      <div class="actions">
-        <a class="button" href="${htmlEscape(GITHUB_ISSUE_TEMPLATE_URL)}">Open GitHub Issue</a>
-      </div>
-      <ul>
-        <li>Season</li>
-        <li>Episode</li>
-        <li>Episode title</li>
-        <li>Subtitle language</li>
-        <li>Problem type</li>
-        <li>Approximate timestamp</li>
-        <li>Device</li>
-        <li>Stream quality used: 1080p or 480p</li>
-      </ul>
+      <p class="muted">Arabic subtitles stay visible even when they are under review. Fill the form and we will open a prefilled GitHub issue for you.</p>
+      <form id="reportForm" class="stack">
+        <div class="grid">
+          <div class="field">
+            <label for="seasonSelect">Season</label>
+            <select id="seasonSelect" required></select>
+          </div>
+          <div class="field">
+            <label for="episodeSelect">Episode</label>
+            <select id="episodeSelect" required></select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="episodeTitle">Episode title</label>
+          <input id="episodeTitle" type="text" readonly>
+        </div>
+        <div class="grid">
+          <div class="field">
+            <label for="subtitleLanguage">Subtitle language</label>
+            <select id="subtitleLanguage">
+              <option>Arabic</option>
+              <option>English</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="problemType">Problem type</label>
+            <select id="problemType">
+              <option>Arabic delay</option>
+              <option>Arabic text garbled</option>
+              <option>Wrong episode subtitle</option>
+              <option>Missing Arabic</option>
+              <option>Stream too slow</option>
+              <option>Stream won’t start</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="field">
+            <label for="timestampInput">Approximate timestamp</label>
+            <input id="timestampInput" type="text" placeholder="e.g. 00:14:22">
+          </div>
+          <div class="field">
+            <label for="deviceSelect">Device</label>
+            <select id="deviceSelect">
+              <option>Windows</option>
+              <option>Android phone</option>
+              <option>Android TV / TV box</option>
+              <option>Web</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="field">
+            <label for="qualitySelect">Stream quality used</label>
+            <select id="qualitySelect">
+              <option>1080p</option>
+              <option>480p</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="notesInput">Notes</label>
+            <input id="notesInput" type="text" placeholder="Short summary or symptom">
+          </div>
+        </div>
+        <div class="field">
+          <label for="detailsInput">Extra details</label>
+          <textarea id="detailsInput" placeholder="Anything else that helps reproduce the issue"></textarea>
+        </div>
+        <div class="actions">
+          <button class="button" type="submit">Open Prefilled GitHub Issue</button>
+        </div>
+        <p class="status-note" id="reportStatus"></p>
+      </form>
     </div>
     <div class="card">
-      <h2>Copy-Paste Template</h2>
-      <textarea readonly>${htmlEscape(issueTemplate)}</textarea>
-    </div>`
+      <details>
+        <summary>Advanced / Manual</summary>
+        <p class="small muted">If the GitHub page does not open correctly, copy this template manually.</p>
+        <textarea id="manualTemplate" readonly></textarea>
+      </details>
+    </div>
+    <script>
+      (() => {
+        const episodes = ${serializeForScript(reportEpisodes)};
+        const seasonSelect = document.getElementById('seasonSelect');
+        const episodeSelect = document.getElementById('episodeSelect');
+        const episodeTitle = document.getElementById('episodeTitle');
+        const subtitleLanguage = document.getElementById('subtitleLanguage');
+        const problemType = document.getElementById('problemType');
+        const timestampInput = document.getElementById('timestampInput');
+        const deviceSelect = document.getElementById('deviceSelect');
+        const qualitySelect = document.getElementById('qualitySelect');
+        const notesInput = document.getElementById('notesInput');
+        const detailsInput = document.getElementById('detailsInput');
+        const manualTemplate = document.getElementById('manualTemplate');
+        const reportStatus = document.getElementById('reportStatus');
+        const form = document.getElementById('reportForm');
+        const issueBase = ${serializeForScript(GITHUB_ISSUE_TEMPLATE_URL)};
+
+        const seasons = [...new Set(episodes.map((entry) => entry.season))].sort((a, b) => a - b);
+        for (const season of seasons) {
+          const option = document.createElement('option');
+          option.value = season;
+          option.textContent = 'Season ' + season;
+          seasonSelect.appendChild(option);
+        }
+
+        function getSelectedEpisode() {
+          return episodes.find((entry) => entry.canonicalId === episodeSelect.value) || null;
+        }
+
+        function buildIssueBody() {
+          const selected = getSelectedEpisode();
+          return [
+            'Season: ' + (selected ? selected.season : ''),
+            'Episode: ' + (selected ? selected.episode : ''),
+            'Episode title: ' + (selected ? selected.title : ''),
+            'Subtitle language: ' + subtitleLanguage.value,
+            'Problem type: ' + problemType.value,
+            'Approximate timestamp: ' + timestampInput.value,
+            'Device: ' + deviceSelect.value,
+            'Stream quality used: ' + qualitySelect.value,
+            'Notes: ' + notesInput.value,
+            '',
+            detailsInput.value.trim()
+          ].join('\n');
+        }
+
+        function updateEpisodeOptions() {
+          const season = Number(seasonSelect.value);
+          const relevant = episodes.filter((entry) => entry.season === season);
+          episodeSelect.innerHTML = '';
+          for (const entry of relevant) {
+            const option = document.createElement('option');
+            option.value = entry.canonicalId;
+            option.textContent = 'E' + String(entry.episode).padStart(2, '0') + ' • ' + entry.title;
+            episodeSelect.appendChild(option);
+          }
+          updateSelectedEpisode();
+        }
+
+        function updateSelectedEpisode() {
+          const selected = getSelectedEpisode();
+          episodeTitle.value = selected ? selected.title : '';
+          manualTemplate.value = buildIssueBody();
+        }
+
+        seasonSelect.addEventListener('change', updateEpisodeOptions);
+        episodeSelect.addEventListener('change', updateSelectedEpisode);
+        [subtitleLanguage, problemType, timestampInput, deviceSelect, qualitySelect, notesInput, detailsInput].forEach((element) => {
+          element.addEventListener('input', updateSelectedEpisode);
+          element.addEventListener('change', updateSelectedEpisode);
+        });
+
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const selected = getSelectedEpisode();
+          const issueTitle = selected
+            ? 'Subtitle issue: ' + selected.canonicalId + ' - ' + selected.title
+            : 'Subtitle issue';
+          const issueBody = buildIssueBody();
+          const target = issueBase + '&title=' + encodeURIComponent(issueTitle) + '&body=' + encodeURIComponent(issueBody);
+          reportStatus.textContent = 'Opening GitHub issue page...';
+          window.open(target, '_blank', 'noopener');
+        });
+
+        seasonSelect.value = String(seasons[0] || '1');
+        updateEpisodeOptions();
+      })();
+    </script>`
   );
 }
 

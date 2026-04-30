@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T04:06:47.095Z",
+  "generatedAt": "2026-04-30T05:14:11.425Z",
   "summary": {
     "total": 17,
     "verified": 16,
@@ -9,6 +9,8 @@
   },
   "entries": [
     {
+      "selectedStreamUrl": "https://ia800302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S01E15",
       "title": "The Christmas Invasion (Special)",
       "filename": "E15_the_christmas_invasion_special.ar.srt",
@@ -27,6 +29,8 @@
       "coverageGapSeconds": 60.5
     },
     {
+      "selectedStreamUrl": "https://ia600909.us.archive.org/11/items/nw_S02/E14_the_runaway_bride_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S02E14",
       "title": "The Runaway Bride (Special)",
       "filename": "E14_the_runaway_bride_special.ar.srt",
@@ -45,6 +49,8 @@
       "coverageGapSeconds": 88.6
     },
     {
+      "selectedStreamUrl": "https://dn711500.ca.archive.org/0/items/nw_S03/E07_the_lazarus_experiment.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S03E07",
       "title": "The Lazarus Experiment",
       "filename": "E07_the_lazarus_experiment.ar.srt",
@@ -63,6 +69,8 @@
       "coverageGapSeconds": 109
     },
     {
+      "selectedStreamUrl": "https://dn711500.ca.archive.org/0/items/nw_S03/E16_voyage_of_the_damned_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S03E16",
       "title": "Voyage of the Damned (Special)",
       "filename": "E16_voyage_of_the_damned_special.ar.srt",
@@ -81,6 +89,8 @@
       "coverageGapSeconds": 41.6
     },
     {
+      "selectedStreamUrl": "https://ia800908.us.archive.org/7/items/nw_S04/E19_the_end_of_time_part_one_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S04E19",
       "title": "The End of Time, Part One (Special)",
       "filename": "E19_the_end_of_time_part_one_special.ar.srt",
@@ -99,6 +109,8 @@
       "coverageGapSeconds": 6.8
     },
     {
+      "selectedStreamUrl": "https://ia800908.us.archive.org/7/items/nw_S04/E20_the_end_of_time_part_two_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S04E20",
       "title": "The End of Time, Part Two (Special)",
       "filename": "E20_the_end_of_time_part_two_special.ar.srt",
@@ -117,6 +129,8 @@
       "coverageGapSeconds": 3.6
     },
     {
+      "selectedStreamUrl": "https://ia800708.us.archive.org/17/items/nw_S05/E18_a_christmas_carol_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S05E18",
       "title": "A Christmas Carol (Special)",
       "filename": "E18_a_christmas_carol_special.ar.srt",
@@ -135,6 +149,8 @@
       "coverageGapSeconds": 7.9
     },
     {
+      "selectedStreamUrl": "https://ia600706.us.archive.org/7/items/nw_S07/E14_the_snowmen_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S07E14",
       "title": "The Snowmen (Special)",
       "filename": "E14_the_snowmen_special.ar.srt",
@@ -153,6 +169,8 @@
       "coverageGapSeconds": 5
     },
     {
+      "selectedStreamUrl": "https://ia600706.us.archive.org/7/items/nw_S07/E30_the_day_of_the_doctor_special.mp4",
+      "selected480pUrl": "https://ia800706.us.archive.org/7/items/nw_S07/E30_the_day_of_the_doctor_special.ia.mp4",
       "canonicalId": "S07E30",
       "title": "The Day of the Doctor (Special)",
       "filename": "E30_the_day_of_the_doctor_special.ar.srt",
@@ -171,6 +189,8 @@
       "coverageGapSeconds": 73.1
     },
     {
+      "selectedStreamUrl": "https://ia600706.us.archive.org/7/items/nw_S07/E31_the_time_of_the_doctor_special.mp4",
+      "selected480pUrl": "https://ia600706.us.archive.org/7/items/nw_S07/E31_the_time_of_the_doctor_special.ia.mp4",
       "canonicalId": "S07E31",
       "title": "The Time of the Doctor (Special)",
       "filename": "E31_the_time_of_the_doctor_special.ar.srt",
@@ -189,6 +209,8 @@
       "coverageGapSeconds": 164.8
     },
     {
+      "selectedStreamUrl": "https://dn711500.ca.archive.org/0/items/nw_S13/E07_eve_of_the_daleks_special.mp4",
+      "selected480pUrl": "https://ia600705.us.archive.org/27/items/nw_S13/E07_eve_of_the_daleks_special.ia.mp4",
       "canonicalId": "S13E07",
       "title": "Eve of the Daleks (Special)",
       "filename": "E07_eve_of_the_daleks_special.ar.srt",
@@ -207,6 +229,8 @@
       "coverageGapSeconds": 16.8
     },
     {
+      "selectedStreamUrl": "https://ia600705.us.archive.org/27/items/nw_S13/E08_legend_of_the_sea_devils_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S13E08",
       "title": "Legend of the Sea Devils (Special)",
       "filename": "E08_legend_of_the_sea_devils_special.ar.srt",
@@ -225,6 +249,8 @@
       "coverageGapSeconds": 43.3
     },
     {
+      "selectedStreamUrl": "https://ia600705.us.archive.org/27/items/nw_S13/E09_the_power_of_the_doctor_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S13E09",
       "title": "The Power of the Doctor (Special)",
       "filename": "E09_the_power_of_the_doctor_special.ar.srt",
@@ -243,6 +269,8 @@
       "coverageGapSeconds": 43.8
     },
     {
+      "selectedStreamUrl": "https://dn711505.ca.archive.org/0/items/nw_S14/E02_the_star_beast_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S14E02",
       "title": "The Star Beast (Special)",
       "filename": "E02_the_star_beast_special.ar.srt",
@@ -261,6 +289,8 @@
       "coverageGapSeconds": 9.1
     },
     {
+      "selectedStreamUrl": "https://dn711505.ca.archive.org/0/items/nw_S14/E03_wild_blue_yonder_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S14E03",
       "title": "Wild Blue Yonder (Special)",
       "filename": "E03_wild_blue_yonder_special.ar.srt",
@@ -279,6 +309,8 @@
       "coverageGapSeconds": 9.1
     },
     {
+      "selectedStreamUrl": "https://ia600909.us.archive.org/11/items/nw_S14/E04_the_giggle_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S14E04",
       "title": "The Giggle (Special)",
       "filename": "E04_the_giggle_special.ar.srt",
@@ -297,6 +329,8 @@
       "coverageGapSeconds": 9.2
     },
     {
+      "selectedStreamUrl": "https://ia800704.us.archive.org/4/items/nw_S15/E01_the_church_on_ruby_road_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S15E01",
       "title": "The Church on Ruby Road (Special)",
       "filename": "E01_the_church_on_ruby_road_special.ar.srt",
