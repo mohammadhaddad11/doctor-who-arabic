@@ -1,6 +1,6 @@
 {
   "name": "whoniverse-arabic",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Doctor Who for Stremio with separate English and Arabic subtitle tracks.",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "normalize:arabic": "node tools/normalizeArabicProduction.js",
     "build:stream-metadata": "node tools/buildStreamMetadata.js",
     "build:subtitle-status": "node tools/buildSubtitleStatus.js",
+    "build:arabic-alternatives": "python3 tools/buildArabicAlternatives.py",
     "check": "node tools/checkProduction.js"
   },
   "dependencies": {
