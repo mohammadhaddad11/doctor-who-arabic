@@ -1,0 +1,193 @@
+{
+  "generatedAt": "2026-04-30T07:58:56.674Z",
+  "appliedFixes": true,
+  "entries": [
+    {
+      "canonicalId": "S01E15",
+      "title": "The Christmas Invasion (Special)",
+      "selectedStreamUrl": "https://ia600302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
+      "selected480pUrl": null,
+      "englishSubtitle": "E15_the_christmas_invasion_special.srt",
+      "arabicSubtitle": "E15_the_christmas_invasion_special.ar.srt",
+      "before": {
+        "fittedF1": 0.6499689505278411,
+        "rawF1": 0.8085282550196646,
+        "residualMedianMs": 19431.87879892811,
+        "earlyOffsetSeconds": -53.018,
+        "middleOffsetSeconds": -71.712,
+        "lateOffsetSeconds": -88.621,
+        "offsetSpreadSeconds": -35.603
+      },
+      "appliedFix": {
+        "type": "drift",
+        "source": "manual-anchor-check",
+        "anchors": [
+          {
+            "source": 61.732,
+            "target": 65.732
+          },
+          {
+            "source": 98.593,
+            "target": 102.769
+          },
+          {
+            "source": 1257.65,
+            "target": 1261.051
+          },
+          {
+            "source": 2536.748,
+            "target": 2538.578
+          }
+        ]
+      },
+      "after": {
+        "fittedF1": 0.6494312306101345,
+        "rawF1": 0.7739400206825232,
+        "residualMedianMs": 19386.652727458393,
+        "earlyOffsetSeconds": -57.046,
+        "middleOffsetSeconds": -74.176,
+        "lateOffsetSeconds": -89.666,
+        "offsetSpreadSeconds": -32.62
+      },
+      "finalStatus": "verified",
+      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
+    },
+    {
+      "canonicalId": "S02E14",
+      "title": "The Runaway Bride (Special)",
+      "selectedStreamUrl": "https://ia800909.us.archive.org/11/items/nw_S02/E14_the_runaway_bride_special.mp4",
+      "selected480pUrl": null,
+      "englishSubtitle": "E14_the_runaway_bride_special.srt",
+      "arabicSubtitle": "E14_the_runaway_bride_special.ar.srt",
+      "before": {
+        "fittedF1": 0.7249266862170088,
+        "rawF1": 0.7652003910068425,
+        "residualMedianMs": 21769.707774312585,
+        "earlyOffsetSeconds": 60.517,
+        "middleOffsetSeconds": 21.332,
+        "lateOffsetSeconds": -9.278,
+        "offsetSpreadSeconds": -69.795
+      },
+      "appliedFix": {
+        "type": "drift",
+        "source": "manual-anchor-check",
+        "anchors": [
+          {
+            "source": 30.064,
+            "target": 22.523
+          },
+          {
+            "source": 147.149,
+            "target": 141.016
+          },
+          {
+            "source": 1786.005,
+            "target": 1794.71
+          },
+          {
+            "source": 2201.793,
+            "target": 2215.13
+          }
+        ]
+      },
+      "after": {
+        "fittedF1": 0.7335532699398408,
+        "rawF1": 0.7580050456045021,
+        "residualMedianMs": 22014.093172417954,
+        "earlyOffsetSeconds": 65.056,
+        "middleOffsetSeconds": 9.57,
+        "lateOffsetSeconds": -33.853,
+        "offsetSpreadSeconds": -98.909
+      },
+      "finalStatus": "verified",
+      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
+    },
+    {
+      "canonicalId": "S07E31",
+      "title": "The Time of the Doctor (Special)",
+      "selectedStreamUrl": "https://ia800706.us.archive.org/7/items/nw_S07/E31_the_time_of_the_doctor_special.mp4",
+      "selected480pUrl": null,
+      "englishSubtitle": "E31_the_time_of_the_doctor_special.srt",
+      "arabicSubtitle": "E31_the_time_of_the_doctor_special.ar.srt",
+      "before": {
+        "fittedF1": 0.7692307692307694,
+        "rawF1": 0.9726331360946745,
+        "residualMedianMs": 6887.664322310011,
+        "earlyOffsetSeconds": 11.423,
+        "middleOffsetSeconds": 12.574,
+        "lateOffsetSeconds": 13.772,
+        "offsetSpreadSeconds": 2.349
+      },
+      "appliedFix": null,
+      "after": {
+        "fittedF1": 0.7692307692307694,
+        "rawF1": 0.9726331360946745,
+        "residualMedianMs": 6887.664322310011,
+        "earlyOffsetSeconds": 11.423,
+        "middleOffsetSeconds": 12.574,
+        "lateOffsetSeconds": 13.772,
+        "offsetSpreadSeconds": 2.349
+      },
+      "finalStatus": "manual_review",
+      "note": "Left unchanged in this pass because the user requested no further work unless a clear regression is found."
+    },
+    {
+      "canonicalId": "S08E14",
+      "title": "Last Christmas (Special)",
+      "selectedStreamUrl": "https://ia600707.us.archive.org/33/items/nw_S08/E14_last_christmas_special.mp4",
+      "selected480pUrl": null,
+      "englishSubtitle": "E14_last_christmas_special.srt",
+      "arabicSubtitle": "E14_last_christmas_special.ar.srt",
+      "before": {
+        "fittedF1": 0.736196319018405,
+        "rawF1": 0.9033742331288344,
+        "residualMedianMs": 12865.034948224144,
+        "earlyOffsetSeconds": 37.633,
+        "middleOffsetSeconds": 43.918,
+        "lateOffsetSeconds": 49.202,
+        "offsetSpreadSeconds": 11.569
+      },
+      "appliedFix": null,
+      "after": {
+        "fittedF1": 0.736196319018405,
+        "rawF1": 0.9033742331288344,
+        "residualMedianMs": 12865.034948224144,
+        "earlyOffsetSeconds": 37.633,
+        "middleOffsetSeconds": 43.918,
+        "lateOffsetSeconds": 49.202,
+        "offsetSpreadSeconds": 11.569
+      },
+      "finalStatus": "verified",
+      "note": "No subtitle timing change applied; this pass treated the issue as stream reliability rather than subtitle mapping."
+    },
+    {
+      "canonicalId": "S03E07",
+      "title": "The Lazarus Experiment",
+      "selectedStreamUrl": "https://dn711500.ca.archive.org/0/items/nw_S03/E07_the_lazarus_experiment.mp4",
+      "selected480pUrl": "https://ia800600.us.archive.org/35/items/nw_S03/E07_the_lazarus_experiment.ia.mp4",
+      "englishSubtitle": "E07_the_lazarus_experiment.srt",
+      "arabicSubtitle": "E07_the_lazarus_experiment.ar.srt",
+      "before": {
+        "fittedF1": 0.7090187180941576,
+        "rawF1": 0.9307997731140103,
+        "residualMedianMs": 16387.63618572909,
+        "earlyOffsetSeconds": 17.504,
+        "middleOffsetSeconds": 37.093,
+        "lateOffsetSeconds": 59.576,
+        "offsetSpreadSeconds": 42.072
+      },
+      "appliedFix": null,
+      "after": {
+        "fittedF1": 0.7090187180941576,
+        "rawF1": 0.9307997731140103,
+        "residualMedianMs": 16387.63618572909,
+        "earlyOffsetSeconds": 17.504,
+        "middleOffsetSeconds": 37.093,
+        "lateOffsetSeconds": 59.576,
+        "offsetSpreadSeconds": 42.072
+      },
+      "finalStatus": "verified",
+      "note": "No subtitle timing change applied; this pass treated the issue as stream reliability rather than subtitle mapping."
+    }
+  ]
+}

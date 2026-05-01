@@ -6,6 +6,13 @@ const ROOT = path.resolve(__dirname, '..');
 const arabicSubtitleFiles = require('../arabicSubtitles.json');
 const finalAudit = require('../audit/final-production-audit.json');
 const streamMetadata = require('../streamMetadata.json');
+let playbackRecheck = null;
+
+try {
+  playbackRecheck = require('../audit/playback-special-recheck.json');
+} catch {
+  playbackRecheck = null;
+}
 
 const OUTPUT_PATH = path.join(ROOT, 'subtitleStatus.json');
 const SPECIAL_AUDIT_PATH = path.join(ROOT, 'audit', 'special-subtitle-audit.json');
@@ -98,25 +105,74 @@ for (const finding of finalAudit.findings || []) {
       : 'Production subtitle passed the stored audit.';
 }
 
+const recheckByFilename = new Map((playbackRecheck?.entries || []).map((entry) => [entry.arabicSubtitle, entry]));
+
+for (const entry of Object.values(entries)) {
+  const recheck = recheckByFilename.get(entry.filename);
+  if (!recheck) {
+    continue;
+  }
+
+  entry.playbackRecheck = {
+    selectedStreamUrl: recheck.selectedStreamUrl,
+    selected480pUrl: recheck.selected480pUrl,
+    finalStatus: recheck.finalStatus,
+    note: recheck.note
+  };
+
+  if (recheck.appliedFix) {
+    entry.status = 'verified';
+    entry.auditStatus = 'VERIFIED_RECHECKED';
+    entry.syncFixType = recheck.appliedFix.type;
+    entry.note = recheck.note;
+  } else if (entry.status === 'manual_review') {
+    entry.note = recheck.note;
+  }
+}
+
 const summary = summaryCounts(entries);
 const specialAuditEntries = (finalAudit.findings || [])
   .filter((finding) => SPECIAL_TITLES.has(finding.title))
-  .map((finding) => ({
-    selectedStreamUrl: streamEpisodes[finding.canonicalId]?.primary?.url || null,
-    selected480pUrl: (streamEpisodes[finding.canonicalId]?.alternatives || []).find((entry) => entry.label === '480p')?.url || null,
-    canonicalId: finding.canonicalId,
-    title: finding.title,
-    filename: finding.filename,
-    status: statusFromAudit(finding.finalStatus),
-    auditStatus: finding.finalStatus,
-    syncFixType: finding.syncFixType,
-    manualReplacement: Boolean(finding.manualReplacement),
-    linearOffsetSeconds: finding.linearOffsetSeconds,
-    windowShiftSeconds: finding.windowShiftSeconds,
-    rawF1: finding.rawF1,
-    fixedF1: finding.fixedF1,
-    coverageGapSeconds: finding.coverageGapSeconds
-  }));
+  .map((finding) => {
+    const recheck = (playbackRecheck?.entries || []).find((entry) => entry.canonicalId === finding.canonicalId);
+    if (recheck) {
+      const keepStoredStatus = !recheck.appliedFix && finding.finalStatus === 'PASS';
+      return {
+        selectedStreamUrl: recheck.selectedStreamUrl,
+        selected480pUrl: recheck.selected480pUrl,
+        canonicalId: finding.canonicalId,
+        title: finding.title,
+        filename: finding.filename,
+        status: recheck.appliedFix ? 'verified' : keepStoredStatus ? statusFromAudit(finding.finalStatus) : recheck.finalStatus,
+        auditStatus: recheck.appliedFix ? 'VERIFIED_RECHECKED' : keepStoredStatus ? finding.finalStatus : finding.finalStatus,
+        syncFixType: recheck.appliedFix?.type || finding.syncFixType,
+        manualReplacement: Boolean(finding.manualReplacement),
+        linearOffsetSeconds: finding.linearOffsetSeconds,
+        windowShiftSeconds: finding.windowShiftSeconds,
+        rawF1: recheck.before?.rawF1 ?? finding.rawF1,
+        fixedF1: recheck.after?.rawF1 ?? finding.fixedF1,
+        coverageGapSeconds: finding.coverageGapSeconds,
+        note: recheck.note
+      };
+    }
+
+    return {
+      selectedStreamUrl: streamEpisodes[finding.canonicalId]?.primary?.url || null,
+      selected480pUrl: (streamEpisodes[finding.canonicalId]?.alternatives || []).find((entry) => entry.label === '480p')?.url || null,
+      canonicalId: finding.canonicalId,
+      title: finding.title,
+      filename: finding.filename,
+      status: statusFromAudit(finding.finalStatus),
+      auditStatus: finding.finalStatus,
+      syncFixType: finding.syncFixType,
+      manualReplacement: Boolean(finding.manualReplacement),
+      linearOffsetSeconds: finding.linearOffsetSeconds,
+      windowShiftSeconds: finding.windowShiftSeconds,
+      rawF1: finding.rawF1,
+      fixedF1: finding.fixedF1,
+      coverageGapSeconds: finding.coverageGapSeconds
+    };
+  });
 
 const specialSummary = {
   total: specialAuditEntries.length,

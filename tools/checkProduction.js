@@ -5,7 +5,9 @@ const { spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const arDir = path.join(ROOT, 'ar');
+const arAltDir = path.join(ROOT, 'ar-alt');
 const arabicSubtitles = require('../arabicSubtitles.json');
+const arabicSubtitleAlternatives = require('../arabicSubtitleAlternatives.json');
 const episodeData = require('../episodeData');
 const streamMetadata = require('../streamMetadata.json');
 const subtitleStatus = require('../subtitleStatus.json');
@@ -66,6 +68,33 @@ function checkArabicFiles() {
   }
 }
 
+function checkArabicAlternativeFiles() {
+  if (!fs.existsSync(arAltDir)) {
+    warn('Missing ar-alt/ directory, no Arabic alternatives will be available');
+    return;
+  }
+
+  for (const [primaryName, alternatives] of Object.entries(arabicSubtitleAlternatives)) {
+    if (!arabicSubtitles.includes(primaryName)) {
+      fail(`Arabic alternative index references non-primary subtitle: ${primaryName}`);
+      continue;
+    }
+
+    for (const entry of alternatives || []) {
+      const filePath = path.join(arAltDir, entry.filename || '');
+      if (!entry.filename || !fs.existsSync(filePath)) {
+        fail(`Missing Arabic alternative subtitle file: ${entry.filename || '(empty filename)'}`);
+        continue;
+      }
+
+      const text = fs.readFileSync(filePath, 'utf8');
+      if (!/-->/.test(text)) {
+        fail(`Arabic alternative file does not look like SRT: ${entry.filename}`);
+      }
+    }
+  }
+}
+
 function checkStreamMetadata() {
   const episodes = streamMetadata.episodes || {};
   const episodeEntries = Object.values(episodes);
@@ -116,12 +145,14 @@ function main() {
   checkNodeSyntax();
   checkConsistency();
   checkArabicFiles();
+  checkArabicAlternativeFiles();
   checkStreamMetadata();
 
   const result = {
     status: failures.length ? 'failed' : 'ok',
     episodes: episodeData.length,
     arabicSubtitles: arabicSubtitles.length,
+    arabicAlternatives: Object.keys(arabicSubtitleAlternatives).length,
     streamEpisodes: Object.keys(streamMetadata.episodes || {}).length,
     manualReviewSubtitles: subtitleStatus.summary?.manual_review || 0,
     failures,

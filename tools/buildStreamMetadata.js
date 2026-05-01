@@ -3,6 +3,7 @@ const fs = require('fs');
 const fsp = require('fs/promises');
 const path = require('path');
 const { performance } = require('perf_hooks');
+const { execSync } = require('child_process');
 
 const episodes = require('../episodeData');
 
@@ -14,6 +15,9 @@ const MAX_CONCURRENCY = 8;
 const REQUEST_TIMEOUT_MS = 15000;
 const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
 const RANGE_HEADER_VALUE = 'bytes=0-262143';
+const PRIMARY_URL_OVERRIDES = {
+  S08E14: 'https://ia600707.us.archive.org/33/items/nw_S08/E14_last_christmas_special.mp4'
+};
 
 function canonicalId(episode) {
   return `S${String(episode.season).padStart(2, '0')}E${String(episode.episode).padStart(2, '0')}`;
@@ -207,6 +211,70 @@ async function chooseBestProbe(urls) {
   };
 }
 
+function applyPrimaryOverride(canonicalId, selection) {
+  const preferredUrl = PRIMARY_URL_OVERRIDES[canonicalId];
+  if (!preferredUrl || !selection?.all?.length) {
+    return selection;
+  }
+
+  const preferred = selection.all.find((entry) => entry.url === preferredUrl);
+  if (!preferred) {
+    return selection;
+  }
+
+  return {
+    selected: preferred,
+    all: [preferred, ...selection.all.filter((entry) => entry.url !== preferredUrl)]
+  };
+}
+
+function loadBaselineMetadata() {
+  try {
+    return JSON.parse(execSync('git show HEAD:streamMetadata.json', {
+      cwd: ROOT,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore']
+    }));
+  } catch {
+    try {
+      return JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf8'));
+    } catch {
+      return { episodes: {} };
+    }
+  }
+}
+
+function preferBaselinePrimary(canonicalId, selection, baselineMetadata) {
+  if (PRIMARY_URL_OVERRIDES[canonicalId]) {
+    return selection;
+  }
+
+  const baselineEntry = baselineMetadata?.episodes?.[canonicalId]?.primary;
+  if (!baselineEntry || !selection?.all?.length) {
+    return selection;
+  }
+
+  const baselineCandidate = selection.all.find((entry) => entry.url === baselineEntry.url);
+  if (!baselineCandidate || !selection.selected) {
+    return selection;
+  }
+
+  const baselineHealth = baselineEntry.healthScore || 0;
+  const selectedHealth = selection.selected.healthScore || 0;
+  const baselineStartup = baselineEntry.startupScore || baselineEntry.responseTimeMs || Infinity;
+  const selectedStartup = selection.selected.probe.startupScore || selection.selected.probe.responseTimeMs || Infinity;
+  const clearlyBetter = selectedHealth >= baselineHealth + 2 || (selectedHealth === baselineHealth && selectedStartup + 150 < baselineStartup);
+
+  if (clearlyBetter) {
+    return selection;
+  }
+
+  return {
+    selected: baselineCandidate,
+    all: [baselineCandidate, ...selection.all.filter((entry) => entry.url !== baselineCandidate.url)]
+  };
+}
+
 async function mapWithConcurrency(items, iteratee) {
   const results = new Array(items.length);
   let index = 0;
@@ -361,6 +429,7 @@ function primarySummarySpeed(summary, entry) {
 
 async function main() {
   const metadataByItem = await loadArchiveMetadata();
+  const baselineMetadata = loadBaselineMetadata();
   const episodeRecords = [];
 
   for (const episode of episodes) {
@@ -388,8 +457,13 @@ async function main() {
   }
 
   const probed = await mapWithConcurrency(episodeRecords, async (record) => {
-    const primarySelection = await chooseBestProbe(
+    const rawPrimarySelection = await chooseBestProbe(
       candidateUrlsForFile(record.itemMetadata, record.episode.streamUrl, record.filename)
+    );
+    const primarySelection = preferBaselinePrimary(
+      record.canonicalId,
+      applyPrimaryOverride(record.canonicalId, rawPrimarySelection),
+      baselineMetadata
     );
     const altPublicUrl = record.alternativeFilename
       ? record.episode.streamUrl.replace(/\.mp4$/i, '.ia.mp4')

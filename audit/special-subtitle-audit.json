@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T05:14:11.425Z",
+  "generatedAt": "2026-04-30T08:55:01.215Z",
   "summary": {
     "total": 17,
     "verified": 16,
@@ -9,13 +9,13 @@
   },
   "entries": [
     {
-      "selectedStreamUrl": "https://ia800302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
+      "selectedStreamUrl": "https://ia600302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
       "selected480pUrl": null,
       "canonicalId": "S01E15",
       "title": "The Christmas Invasion (Special)",
       "filename": "E15_the_christmas_invasion_special.ar.srt",
       "status": "verified",
-      "auditStatus": "FIXED_DRIFT",
+      "auditStatus": "VERIFIED_RECHECKED",
       "syncFixType": "drift",
       "manualReplacement": false,
       "linearOffsetSeconds": -2.714,
@@ -24,18 +24,19 @@
         63,
         142
       ],
-      "rawF1": 0.668,
-      "fixedF1": 0.835,
-      "coverageGapSeconds": 60.5
+      "rawF1": 0.8085282550196646,
+      "fixedF1": 0.7739400206825232,
+      "coverageGapSeconds": 60.5,
+      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
     },
     {
-      "selectedStreamUrl": "https://ia600909.us.archive.org/11/items/nw_S02/E14_the_runaway_bride_special.mp4",
+      "selectedStreamUrl": "https://ia800909.us.archive.org/11/items/nw_S02/E14_the_runaway_bride_special.mp4",
       "selected480pUrl": null,
       "canonicalId": "S02E14",
       "title": "The Runaway Bride (Special)",
       "filename": "E14_the_runaway_bride_special.ar.srt",
       "status": "verified",
-      "auditStatus": "FIXED_DRIFT",
+      "auditStatus": "VERIFIED_RECHECKED",
       "syncFixType": "drift",
       "manualReplacement": false,
       "linearOffsetSeconds": 7.81,
@@ -44,13 +45,14 @@
         62,
         119
       ],
-      "rawF1": 0.703,
-      "fixedF1": 0.805,
-      "coverageGapSeconds": 88.6
+      "rawF1": 0.7652003910068425,
+      "fixedF1": 0.7580050456045021,
+      "coverageGapSeconds": 88.6,
+      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
     },
     {
       "selectedStreamUrl": "https://dn711500.ca.archive.org/0/items/nw_S03/E07_the_lazarus_experiment.mp4",
-      "selected480pUrl": null,
+      "selected480pUrl": "https://ia800600.us.archive.org/35/items/nw_S03/E07_the_lazarus_experiment.ia.mp4",
       "canonicalId": "S03E07",
       "title": "The Lazarus Experiment",
       "filename": "E07_the_lazarus_experiment.ar.srt",
@@ -64,9 +66,10 @@
         0,
         0
       ],
-      "rawF1": 0.931,
-      "fixedF1": 0.931,
-      "coverageGapSeconds": 109
+      "rawF1": 0.9307997731140103,
+      "fixedF1": 0.9307997731140103,
+      "coverageGapSeconds": 109,
+      "note": "No subtitle timing change applied; this pass treated the issue as stream reliability rather than subtitle mapping."
     },
     {
       "selectedStreamUrl": "https://dn711500.ca.archive.org/0/items/nw_S03/E16_voyage_of_the_damned_special.mp4",
@@ -189,8 +192,8 @@
       "coverageGapSeconds": 73.1
     },
     {
-      "selectedStreamUrl": "https://ia600706.us.archive.org/7/items/nw_S07/E31_the_time_of_the_doctor_special.mp4",
-      "selected480pUrl": "https://ia600706.us.archive.org/7/items/nw_S07/E31_the_time_of_the_doctor_special.ia.mp4",
+      "selectedStreamUrl": "https://ia800706.us.archive.org/7/items/nw_S07/E31_the_time_of_the_doctor_special.mp4",
+      "selected480pUrl": null,
       "canonicalId": "S07E31",
       "title": "The Time of the Doctor (Special)",
       "filename": "E31_the_time_of_the_doctor_special.ar.srt",
@@ -204,9 +207,10 @@
         68,
         140
       ],
-      "rawF1": 0.715,
-      "fixedF1": 0.715,
-      "coverageGapSeconds": 164.8
+      "rawF1": 0.9726331360946745,
+      "fixedF1": 0.9726331360946745,
+      "coverageGapSeconds": 164.8,
+      "note": "Left unchanged in this pass because the user requested no further work unless a clear regression is found."
     },
     {
       "selectedStreamUrl": "https://dn711500.ca.archive.org/0/items/nw_S13/E07_eve_of_the_daleks_special.mp4",

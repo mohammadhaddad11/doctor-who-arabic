@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T05:14:11.421Z",
+  "generatedAt": "2026-04-30T08:55:01.211Z",
   "summary": {
     "verified": 199,
     "minor_offset": 20,
@@ -976,7 +976,13 @@
       "canonicalId": "S03E07",
       "syncFixType": null,
       "manualReplacement": false,
-      "note": "Production subtitle passed the stored audit."
+      "note": "Production subtitle passed the stored audit.",
+      "playbackRecheck": {
+        "selectedStreamUrl": "https://dn711500.ca.archive.org/0/items/nw_S03/E07_the_lazarus_experiment.mp4",
+        "selected480pUrl": "https://ia800600.us.archive.org/35/items/nw_S03/E07_the_lazarus_experiment.ia.mp4",
+        "finalStatus": "verified",
+        "note": "No subtitle timing change applied; this pass treated the issue as stream reliability rather than subtitle mapping."
+      }
     },
     "E07_the_long_game.ar.srt": {
       "filename": "E07_the_long_game.ar.srt",
@@ -1756,7 +1762,13 @@
       "canonicalId": "S08E14",
       "syncFixType": null,
       "manualReplacement": false,
-      "note": "Production subtitle passed the stored audit."
+      "note": "Production subtitle passed the stored audit.",
+      "playbackRecheck": {
+        "selectedStreamUrl": "https://ia600707.us.archive.org/33/items/nw_S08/E14_last_christmas_special.mp4",
+        "selected480pUrl": null,
+        "finalStatus": "verified",
+        "note": "No subtitle timing change applied; this pass treated the issue as stream reliability rather than subtitle mapping."
+      }
     },
     "E14_last_of_the_time_lords.ar.srt": {
       "filename": "E14_last_of_the_time_lords.ar.srt",
@@ -1781,12 +1793,18 @@
     "E14_the_runaway_bride_special.ar.srt": {
       "filename": "E14_the_runaway_bride_special.ar.srt",
       "status": "verified",
-      "auditStatus": "FIXED_DRIFT",
+      "auditStatus": "VERIFIED_RECHECKED",
       "title": "The Runaway Bride (Special)",
       "canonicalId": "S02E14",
       "syncFixType": "drift",
       "manualReplacement": false,
-      "note": "Production subtitle was previously repaired with a drift fix and remains visible."
+      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream.",
+      "playbackRecheck": {
+        "selectedStreamUrl": "https://ia800909.us.archive.org/11/items/nw_S02/E14_the_runaway_bride_special.mp4",
+        "selected480pUrl": null,
+        "finalStatus": "verified",
+        "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
+      }
     },
     "E14_the_snowmen_special.ar.srt": {
       "filename": "E14_the_snowmen_special.ar.srt",
@@ -1831,12 +1849,18 @@
     "E15_the_christmas_invasion_special.ar.srt": {
       "filename": "E15_the_christmas_invasion_special.ar.srt",
       "status": "verified",
-      "auditStatus": "FIXED_DRIFT",
+      "auditStatus": "VERIFIED_RECHECKED",
       "title": "The Christmas Invasion (Special)",
       "canonicalId": "S01E15",
       "syncFixType": "drift",
       "manualReplacement": false,
-      "note": "Production subtitle was previously repaired with a drift fix and remains visible."
+      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream.",
+      "playbackRecheck": {
+        "selectedStreamUrl": "https://ia600302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
+        "selected480pUrl": null,
+        "finalStatus": "verified",
+        "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
+      }
     },
     "E15_the_husbands_of_river_song_special.ar.srt": {
       "filename": "E15_the_husbands_of_river_song_special.ar.srt",
@@ -2206,7 +2230,13 @@
       "canonicalId": "S07E31",
       "syncFixType": null,
       "manualReplacement": false,
-      "note": "Production subtitle passed the stored audit."
+      "note": "Left unchanged in this pass because the user requested no further work unless a clear regression is found.",
+      "playbackRecheck": {
+        "selectedStreamUrl": "https://ia800706.us.archive.org/7/items/nw_S07/E31_the_time_of_the_doctor_special.mp4",
+        "selected480pUrl": null,
+        "finalStatus": "manual_review",
+        "note": "Left unchanged in this pass because the user requested no further work unless a clear regression is found."
+      }
     }
   }
 }

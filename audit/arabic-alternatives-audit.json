@@ -1,0 +1,758 @@
+{
+  "generatedAt": "2026-05-01T13:58:09.604169Z",
+  "accepted": 12,
+  "rejected": 107,
+  "packs": [
+    "s01_bluray",
+    "s01_oldpack",
+    "s01_born_again_single",
+    "s01_christmas_invasion_single",
+    "s02_bluray",
+    "s03_bluray",
+    "s04_bluray",
+    "s05_bluray",
+    "s08_full",
+    "s10_bluray",
+    "s11_amzn"
+  ],
+  "rows": [
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e11.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e09.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e10.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "accepted",
+      "episode": "The Doctor Dances",
+      "canonicalId": "S01E10",
+      "alt": "E10_the_doctor_dances.alt1.ar.srt"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e13.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e04.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e06.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e07.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "accepted",
+      "episode": "The Long Game",
+      "canonicalId": "S01E07",
+      "alt": "E07_the_long_game.alt1.ar.srt"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e08.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e12.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e01.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e03.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e02.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s01_bluray",
+      "source": "doctor.who.2005.s01e05.720p.bluray.x264-shortbrehd.ar.srt",
+      "status": "accepted",
+      "episode": "World War Three",
+      "canonicalId": "S01E05",
+      "alt": "E05_world_war_three.alt1.ar.srt"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "Doctor_Who_2005_-_1x08_-_Father's_Day_(pdtv.[TOKO]).srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "Doctor_Who_Mini-Episode_for_Children_in_Need_2005.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "doctor_who_2005.1x06.dalek.ws_pdtv_xvid-fov.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "Doctor_Who_2005_-_1x01_-_Rose_(ws_pdtv_xvid-fov).srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "Doctor_Who_2005_-_1x12_-_Bad_Wolf_(Part_1)_(ws_pdtv_xvid.[MM])_.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "doctor_who_2005.1x02.the_end_of_the_world.ws_pdtv_xvid-fov.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "doctor_who_2005.1x04.aliens_of_london.ws_pdtv_xvid-fov.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "doctor_who_2005.1x07._The_Long_Game_ws_pdtv_xvid-fov.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "doctor_who_2005.1x10.the_doctor_dances.ws_pdtv_xvid-fov.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "Doctor_Who_2005_-_1x09_-_The_Empty_Child_(part_1)_(ws.pdtv.xvid-gothic.[VTV]).srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "doctor_who_2005.1x03.the_unquiet_dead.ws_pdtv_xvid-fov.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "doctor_who_2005.1x05.world_war_three.ws_pdtv_xvid-fov.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "doctor_who_2005.1x13.the_parting_of_the_ways.ws_pdtv_xvid-fov.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_oldpack",
+      "source": "Doctor_Who_2005_-_1x11_-_Boom_Town_(ws_pdtv_xvid.[MM]).srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_born_again_single",
+      "source": "Doctor.Who.2005.Children.In.Need.Special.2005.The.New.Doctor.WS.PDTV.XviD-Gothic.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s01_christmas_invasion_single",
+      "source": "Doctor_Who_2005-2006_-_Christmas_Invasion_(xmas_special,_2005,_(ws.pdtv.xvid-river.[VTV]).srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e04.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e06.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e07.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e11.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e12.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e01.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e05.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e10.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e02.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e09.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e13.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e03.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s02_bluray",
+      "source": "doctor.who.2005.s02e08.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e02.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e03.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e10.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e13.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e06.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e09.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e11.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e04.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e05.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e08.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e01.720p.bluray.x264-shortbrehd.SRT",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e07.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s03_bluray",
+      "source": "doctor.who.2005.s03e12.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e07.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e06.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e08.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e01.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e04.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e09.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e12.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e13.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e02.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e03.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e11.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e05.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s04_bluray",
+      "source": "doctor.who.2005.s04e10.720p.bluray.x264-shortbrehd.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E02.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E05.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E12.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E11.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E03.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E04.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E06.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E09.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E01.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E10.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E07.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E07.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E08.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s05_bluray",
+      "source": "Doctor.Who.2005.S05E13.720p.BluRay.DTS5.1.x264_CtrlHD.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E06_-_The_Caretaker.srt",
+      "status": "accepted",
+      "episode": "The Caretaker",
+      "canonicalId": "S08E07",
+      "alt": "E07_the_caretaker.alt1.ar.srt"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E09_-_Flatline.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s08_full",
+      "source": "doctor.who.2005.s08e04.hdtv.x264-tla.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E03_-_Robot_of_Sherwood.srt",
+      "status": "accepted",
+      "episode": "Robot of Sherwood",
+      "canonicalId": "S08E04",
+      "alt": "E04_robot_of_sherwood.alt1.ar.srt"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E05_-_Time_Heist.srt",
+      "status": "accepted",
+      "episode": "Time Heist",
+      "canonicalId": "S08E06",
+      "alt": "E06_time_heist.alt1.ar.srt"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E08_-_Mummy_on_the_Orient_Express.srt",
+      "status": "accepted",
+      "episode": "Mummy on the Orient Express",
+      "canonicalId": "S08E09",
+      "alt": "E09_mummy_on_the_orient_express.alt1.ar.srt"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E12_-_Death_In_Heaven.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E01_-_Deep_Breath.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E07_-_Kill_the_Moon.srt",
+      "status": "accepted",
+      "episode": "Kill the Moon",
+      "canonicalId": "S08E08",
+      "alt": "E08_kill_the_moon.alt1.ar.srt"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E02_-_Into_the_Dalek.srt",
+      "status": "accepted",
+      "episode": "Into the Dalek",
+      "canonicalId": "S08E03",
+      "alt": "E03_into_the_dalek.alt1.ar.srt"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E04_-_Listen.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E10_-_In_the_Forest_of_the_Night.srt",
+      "status": "rejected",
+      "reason": "duplicate_text"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor_Who_S8E11_-_Dark_Water.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s08_full",
+      "source": "Doctor.Who.2005.S08E04.Listen.1080p.WEB-DL.DD5.1.H.264-ECI.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E12_-_The_Doctor_Falls_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E03_-_Thin_Ice_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E04_-_Knock_Knock_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E05_-_Oxygen_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E07_-_The_Pyramid_at_the_End_of_the_World_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E09_-_The_Empress_of_Mars_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E11_-_World_Enough_and_Time_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E01_-_The_Pilot_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E02_-_Smile_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E06_-_Extremis_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E08_-_The_Lie_of_the_Land_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s10_bluray",
+      "source": "D._W._(2005)_S10_E10_-_The_Eaters_of_Light_-_1080p.BluRay.ar.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11E01.The.Woman.Who.Fell.to.Earth.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11E02.The.Ghost.Monument.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11E10.The.Battle.of.Ranskoor.Av.Kolos.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "accepted",
+      "episode": "The Battle of Ranskoor Av Kolos",
+      "canonicalId": "S11E10",
+      "alt": "E10_the_battle_of_ranskoor_av_kolos.alt1.ar.srt"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11E07.Kerblam.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11E08.The.Witchfinders.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11E09.It.Takes.You.Away.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11.E00.Twice.Upon.A.Time.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "rejected",
+      "reason": "title_match_0"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11E03.Rosa.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11E04.Arachnids.in.the.UK.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "rejected",
+      "reason": "timing_verification_failed"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11E05.The.Tsuranga.Conundrum.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "accepted",
+      "episode": "The Tsuranga Conundrum",
+      "canonicalId": "S11E05",
+      "alt": "E05_the_tsuranga_conundrum.alt1.ar.srt"
+    },
+    {
+      "pack": "s11_amzn",
+      "source": "Doctor.Who.2005.S11E06.Demons.of.the.Punjab.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTb.srt",
+      "status": "accepted",
+      "episode": "Demons of the Punjab",
+      "canonicalId": "S11E06",
+      "alt": "E06_demons_of_the_punjab.alt1.ar.srt"
+    }
+  ]
+}
