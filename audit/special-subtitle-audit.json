@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-01T15:08:37.695Z",
+  "generatedAt": "2026-05-01T17:04:31.959Z",
   "summary": {
     "total": 17,
     "verified": 16,
@@ -9,26 +9,25 @@
   },
   "entries": [
     {
-      "selectedStreamUrl": "https://ia800302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
+      "selectedStreamUrl": "https://ia600302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
       "selected480pUrl": null,
       "canonicalId": "S01E15",
       "title": "The Christmas Invasion (Special)",
       "filename": "E15_the_christmas_invasion_special.ar.srt",
       "status": "verified",
       "auditStatus": "VERIFIED_RECHECKED",
-      "syncFixType": "manual_piecewise",
+      "syncFixType": "drift",
       "manualReplacement": false,
       "linearOffsetSeconds": -2.714,
       "windowShiftSeconds": [
-        -12.115,
-        -12.317,
-        -10.178,
-        -5.477
+        29,
+        63,
+        142
       ],
-      "rawF1": 0.668,
-      "fixedF1": 0.835,
+      "rawF1": 0.8085282550196646,
+      "fixedF1": 0.7739400206825232,
       "coverageGapSeconds": 60.5,
-      "note": "Production subtitle was manually recalibrated against current selected-stream anchor pairs."
+      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
     },
     {
       "selectedStreamUrl": "https://ia800909.us.archive.org/11/items/nw_S02/E14_the_runaway_bride_special.mp4",
@@ -42,10 +41,9 @@
       "manualReplacement": false,
       "linearOffsetSeconds": 7.81,
       "windowShiftSeconds": [
-        22.523,
-        18.845,
-        -26.701,
-        -40.91
+        -1,
+        -1,
+        -1
       ],
       "rawF1": 0.703,
       "fixedF1": 0.805,
@@ -185,11 +183,12 @@
       "manualReplacement": false,
       "linearOffsetSeconds": -6.048,
       "windowShiftSeconds": [
-        6.281,
-        6.012,
-        3.343,
-        -0.557,
-        0.858
+        -3,
+        -3,
+        -3,
+        -25,
+        -25,
+        -25
       ],
       "rawF1": 0.735,
       "fixedF1": 0.836,

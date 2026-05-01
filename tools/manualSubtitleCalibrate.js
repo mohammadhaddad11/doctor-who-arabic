@@ -96,6 +96,11 @@ function stringifySrt(cues) {
 }
 
 function transformTime(value, anchors) {
+  if (anchors.length === 1) {
+    const delta = anchors[0].targetMs - anchors[0].sourceMs;
+    return value + delta;
+  }
+
   if (value <= anchors[0].sourceMs) {
     const [first, second] = anchors;
     const slope = (second.targetMs - first.targetMs) / (second.sourceMs - first.sourceMs);
@@ -128,6 +133,19 @@ function transformCues(cues, anchors) {
   });
 }
 
+function applySegmentTransform(cues, anchors, segmentStartMs, segmentEndMs) {
+  const transformedSegment = transformCues(cues, anchors);
+  return cues.map((cue, index) => {
+    if (segmentStartMs != null && cue.start < segmentStartMs) {
+      return cue;
+    }
+    if (segmentEndMs != null && cue.start >= segmentEndMs) {
+      return cue;
+    }
+    return transformedSegment[index];
+  });
+}
+
 function anchorsAreNoop(anchors) {
   return anchors.every((anchor) => anchor.sourceMs === anchor.targetMs);
 }
@@ -141,18 +159,25 @@ function main() {
   const rows = parseCsv(fs.readFileSync(CSV_PATH, 'utf8'));
   const grouped = new Map();
   for (const row of rows) {
-    const list = grouped.get(row.canonicalId) || [];
+    const groupKey = [row.canonicalId, row.segmentStart || '', row.segmentEnd || ''].join('|');
+    const list = grouped.get(groupKey) || [];
     list.push({
       ...row,
       sourceMs: parseTimecode(row.oldArabicTime),
-      targetMs: parseTimecode(row.targetTime)
+      targetMs: parseTimecode(row.targetTime),
+      segmentStartMs: row.segmentStart ? parseTimecode(row.segmentStart) : null,
+      segmentEndMs: row.segmentEnd ? parseTimecode(row.segmentEnd) : null
     });
-    grouped.set(row.canonicalId, list);
+    grouped.set(groupKey, list);
   }
 
   const reports = [];
   const summaries = [];
-  for (const [canonicalId, anchors] of grouped.entries()) {
+  const summariesByEpisode = new Map();
+  const cuesByEpisode = new Map();
+
+  for (const [groupKey, anchors] of grouped.entries()) {
+    const [canonicalId] = groupKey.split('|');
     anchors.sort((a, b) => a.sourceMs - b.sourceMs);
     const episode = episodes.find((entry) => `S${String(entry.season).padStart(2, '0')}E${String(entry.episode).padStart(2, '0')}` === canonicalId);
     if (!episode) {
@@ -160,34 +185,47 @@ function main() {
     }
 
     const subtitlePath = path.join(AR_DIR, anchors[0].subtitleFile);
-    const beforeText = fs.readFileSync(subtitlePath, 'utf8');
-    const beforeCues = parseSrt(beforeText);
-    const afterCues = anchorsAreNoop(anchors) ? beforeCues : transformCues(beforeCues, anchors);
-
-    if (WRITE) {
-      fs.writeFileSync(subtitlePath, stringifySrt(afterCues), 'utf8');
+    if (!cuesByEpisode.has(canonicalId)) {
+      const beforeText = fs.readFileSync(subtitlePath, 'utf8');
+      cuesByEpisode.set(canonicalId, parseSrt(beforeText));
     }
+
+    const beforeCues = cuesByEpisode.get(canonicalId);
+    const segmentStartMs = anchors[0].segmentStartMs;
+    const segmentEndMs = anchors[0].segmentEndMs;
+    const afterCues = anchorsAreNoop(anchors)
+      ? beforeCues
+      : applySegmentTransform(beforeCues, anchors, segmentStartMs, segmentEndMs);
+    cuesByEpisode.set(canonicalId, afterCues);
 
     const absoluteShifts = anchors.map((anchor) => Math.abs(anchor.targetMs - anchor.sourceMs));
     const streamEntry = streamMetadata.episodes?.[canonicalId];
-    summaries.push({
+    const summary = summariesByEpisode.get(canonicalId) || {
       canonicalId,
       title: episode.title,
       subtitleFile: anchors[0].subtitleFile,
       selectedStreamUrl: streamEntry?.primary?.url || episode.streamUrl,
       selected480pUrl: (streamEntry?.alternatives || []).find((entry) => entry.label === '480p')?.url || null,
       quality: anchors[0].quality,
-      fixApplied: absoluteShifts.some((value) => value > 0),
-      fixType: absoluteShifts.some((value) => value > 0) ? 'manual_piecewise' : null,
-      finalStatus: canonicalId === 'S07E30' || !absoluteShifts.some((value) => value > 0) ? 'verified' : 'verified',
-      anchors: anchors.map((anchor) => ({
-        label: anchor.anchorLabel,
-        oldArabicTime: anchor.oldArabicTime,
-        targetTime: anchor.targetTime,
-        appliedShiftSeconds: Number(((anchor.targetMs - anchor.sourceMs) / 1000).toFixed(3)),
-        confidence: anchor.confidence
-      }))
-    });
+      fixApplied: false,
+      fixType: null,
+      finalStatus: 'verified',
+      anchors: []
+    };
+    if (absoluteShifts.some((value) => value > 0)) {
+      summary.fixApplied = true;
+      summary.fixType = 'manual_piecewise';
+    }
+    summary.anchors.push(...anchors.map((anchor) => ({
+      label: anchor.anchorLabel,
+      oldArabicTime: anchor.oldArabicTime,
+      targetTime: anchor.targetTime,
+      appliedShiftSeconds: Number(((anchor.targetMs - anchor.sourceMs) / 1000).toFixed(3)),
+      confidence: anchor.confidence,
+      segmentStart: anchor.segmentStart || '',
+      segmentEnd: anchor.segmentEnd || ''
+    })));
+    summariesByEpisode.set(canonicalId, summary);
 
     for (const anchor of anchors) {
       reports.push({
@@ -195,6 +233,8 @@ function main() {
         title: episode.title,
         subtitleFile: anchor.subtitleFile,
         quality: anchor.quality,
+        segmentStart: anchor.segmentStart || '',
+        segmentEnd: anchor.segmentEnd || '',
         anchorLabel: anchor.anchorLabel,
         oldArabicTime: anchor.oldArabicTime,
         targetTime: anchor.targetTime,
@@ -204,7 +244,16 @@ function main() {
     }
   }
 
-  const csvHeaders = ['canonicalId', 'title', 'subtitleFile', 'quality', 'anchorLabel', 'oldArabicTime', 'targetTime', 'appliedShiftSeconds', 'confidence'];
+  if (WRITE) {
+    for (const summary of summariesByEpisode.values()) {
+      const subtitlePath = path.join(AR_DIR, summary.subtitleFile);
+      fs.writeFileSync(subtitlePath, stringifySrt(cuesByEpisode.get(summary.canonicalId)), 'utf8');
+    }
+  }
+
+  summaries.push(...summariesByEpisode.values());
+
+  const csvHeaders = ['canonicalId', 'title', 'subtitleFile', 'quality', 'segmentStart', 'segmentEnd', 'anchorLabel', 'oldArabicTime', 'targetTime', 'appliedShiftSeconds', 'confidence'];
   const csvOutput = [csvHeaders.join(',')]
     .concat(reports.map((row) => csvHeaders.map((header) => csvEscape(row[header])).join(',')))
     .join('\n') + '\n';

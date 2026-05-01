@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-01T15:08:37.689Z",
+  "generatedAt": "2026-05-01T17:04:31.955Z",
   "summary": {
     "verified": 199,
     "minor_offset": 20,
@@ -1852,14 +1852,14 @@
       "auditStatus": "VERIFIED_RECHECKED",
       "title": "The Christmas Invasion (Special)",
       "canonicalId": "S01E15",
-      "syncFixType": "manual_piecewise",
+      "syncFixType": "drift",
       "manualReplacement": false,
-      "note": "Production subtitle was manually recalibrated against anchor pairs from the current selected stream.",
+      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream.",
       "playbackRecheck": {
-        "selectedStreamUrl": "https://ia800302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
+        "selectedStreamUrl": "https://ia600302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
         "selected480pUrl": null,
         "finalStatus": "verified",
-        "note": "Production subtitle was manually recalibrated against anchor pairs from the current selected stream."
+        "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
       }
     },
     "E15_the_husbands_of_river_song_special.ar.srt": {

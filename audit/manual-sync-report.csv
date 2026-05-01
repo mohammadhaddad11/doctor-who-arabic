@@ -1,14 +1,10 @@
-canonicalId,title,subtitleFile,quality,anchorLabel,oldArabicTime,targetTime,appliedShiftSeconds,confidence
-S01E15,The Christmas Invasion (Special),E15_the_christmas_invasion_special.ar.srt,1080p,Rose arrives,"00:01:17,847","00:01:05,732",-12.115,high
-S01E15,The Christmas Invasion (Special),E15_the_christmas_invasion_special.ar.srt,1080p,Harriet Jones on TV,"00:05:36,641","00:05:24,324",-12.317,high
-S01E15,The Christmas Invasion (Special),E15_the_christmas_invasion_special.ar.srt,1080p,Torchwood mention,"00:21:11,229","00:21:01,051",-10.178,high
-S01E15,The Christmas Invasion (Special),E15_the_christmas_invasion_special.ar.srt,1080p,I'm the Doctor,"00:42:24,055","00:42:18,578",-5.477,high
-S02E14,The Runaway Bride (Special),E14_the_runaway_bride_special.ar.srt,1080p,Opening sorry,"00:00:00,000","00:00:22,523",22.523,high
-S02E14,The Runaway Bride (Special),E14_the_runaway_bride_special.ar.srt,1080p,Inside the Tardis,"00:02:02,171","00:02:21,016",18.845,high
-S02E14,The Runaway Bride (Special),E14_the_runaway_bride_special.ar.srt,1080p,HC Clements,"00:30:21,411","00:29:54,710",-26.701,high
-S02E14,The Runaway Bride (Special),E14_the_runaway_bride_special.ar.srt,1080p,Racnoss reveal,"00:37:36,040","00:36:55,130",-40.910,high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,Kate Stewart phone,"00:02:29,625","00:02:35,906",6.281,high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,Doctor hello Tardis in a field,"00:02:47,787","00:02:53,799",6.012,high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,Bad Wolf,"00:15:45,063","00:15:48,406",3.343,high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,Zygons lost their own world,"00:46:46,777","00:46:46,220",-0.557,high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,Bad copy accusation,"00:48:15,619","00:48:16,477",0.858,high
+canonicalId,title,subtitleFile,quality,segmentStart,segmentEnd,anchorLabel,oldArabicTime,targetTime,appliedShiftSeconds,confidence
+S02E14,The Runaway Bride (Special),E14_the_runaway_bride_special.ar.srt,1080p,00:40:00,,Late segment start,"00:40:22,397","00:40:21,397",-1.000,high
+S02E14,The Runaway Bride (Special),E14_the_runaway_bride_special.ar.srt,1080p,00:40:00,,Late segment middle,"00:53:07,390","00:53:06,390",-1.000,high
+S02E14,The Runaway Bride (Special),E14_the_runaway_bride_special.ar.srt,1080p,00:40:00,,Late segment ending,"00:57:24,047","00:57:23,047",-1.000,high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,00:56:30,Post-46 drift anchor 1,"00:46:46,220","00:46:43,220",-3.000,high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,00:56:30,Post-46 drift anchor 2,"00:48:16,477","00:48:13,477",-3.000,high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:56:30,00:57:40,Transition anchor 1,"00:56:39,164","00:56:36,164",-3.000,high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:56:30,00:57:40,Transition anchor 2,"00:57:35,920","00:57:10,920",-25.000,high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:57:40,,Late segment 25s anchor 1,"00:57:41,234","00:57:16,234",-25.000,high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:57:40,,Late segment 25s anchor 2,"01:00:32,354","01:00:07,354",-25.000,high

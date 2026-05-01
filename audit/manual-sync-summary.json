@@ -1,48 +1,7 @@
 {
-  "generatedAt": "2026-05-01T14:22:35.878Z",
+  "generatedAt": "2026-05-01T16:26:03.892Z",
   "writeApplied": true,
   "entries": [
-    {
-      "canonicalId": "S01E15",
-      "title": "The Christmas Invasion (Special)",
-      "subtitleFile": "E15_the_christmas_invasion_special.ar.srt",
-      "selectedStreamUrl": "https://ia800302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
-      "selected480pUrl": null,
-      "quality": "1080p",
-      "fixApplied": true,
-      "fixType": "manual_piecewise",
-      "finalStatus": "verified",
-      "anchors": [
-        {
-          "label": "Rose arrives",
-          "oldArabicTime": "00:01:17,847",
-          "targetTime": "00:01:05,732",
-          "appliedShiftSeconds": -12.115,
-          "confidence": "high"
-        },
-        {
-          "label": "Harriet Jones on TV",
-          "oldArabicTime": "00:05:36,641",
-          "targetTime": "00:05:24,324",
-          "appliedShiftSeconds": -12.317,
-          "confidence": "high"
-        },
-        {
-          "label": "Torchwood mention",
-          "oldArabicTime": "00:21:11,229",
-          "targetTime": "00:21:01,051",
-          "appliedShiftSeconds": -10.178,
-          "confidence": "high"
-        },
-        {
-          "label": "I'm the Doctor",
-          "oldArabicTime": "00:42:24,055",
-          "targetTime": "00:42:18,578",
-          "appliedShiftSeconds": -5.477,
-          "confidence": "high"
-        }
-      ]
-    },
     {
       "canonicalId": "S02E14",
       "title": "The Runaway Bride (Special)",
@@ -55,32 +14,31 @@
       "finalStatus": "verified",
       "anchors": [
         {
-          "label": "Opening sorry",
-          "oldArabicTime": "00:00:00,000",
-          "targetTime": "00:00:22,523",
-          "appliedShiftSeconds": 22.523,
-          "confidence": "high"
+          "label": "Late segment start",
+          "oldArabicTime": "00:40:22,397",
+          "targetTime": "00:40:21,397",
+          "appliedShiftSeconds": -1,
+          "confidence": "high",
+          "segmentStart": "00:40:00",
+          "segmentEnd": ""
         },
         {
-          "label": "Inside the Tardis",
-          "oldArabicTime": "00:02:02,171",
-          "targetTime": "00:02:21,016",
-          "appliedShiftSeconds": 18.845,
-          "confidence": "high"
+          "label": "Late segment middle",
+          "oldArabicTime": "00:53:07,390",
+          "targetTime": "00:53:06,390",
+          "appliedShiftSeconds": -1,
+          "confidence": "high",
+          "segmentStart": "00:40:00",
+          "segmentEnd": ""
         },
         {
-          "label": "HC Clements",
-          "oldArabicTime": "00:30:21,411",
-          "targetTime": "00:29:54,710",
-          "appliedShiftSeconds": -26.701,
-          "confidence": "high"
-        },
-        {
-          "label": "Racnoss reveal",
-          "oldArabicTime": "00:37:36,040",
-          "targetTime": "00:36:55,130",
-          "appliedShiftSeconds": -40.91,
-          "confidence": "high"
+          "label": "Late segment ending",
+          "oldArabicTime": "00:57:24,047",
+          "targetTime": "00:57:23,047",
+          "appliedShiftSeconds": -1,
+          "confidence": "high",
+          "segmentStart": "00:40:00",
+          "segmentEnd": ""
         }
       ]
     },
@@ -96,39 +54,58 @@
       "finalStatus": "verified",
       "anchors": [
         {
-          "label": "Kate Stewart phone",
-          "oldArabicTime": "00:02:29,625",
-          "targetTime": "00:02:35,906",
-          "appliedShiftSeconds": 6.281,
-          "confidence": "high"
+          "label": "Post-46 drift anchor 1",
+          "oldArabicTime": "00:46:46,220",
+          "targetTime": "00:46:43,220",
+          "appliedShiftSeconds": -3,
+          "confidence": "high",
+          "segmentStart": "00:46:00",
+          "segmentEnd": "00:56:30"
         },
         {
-          "label": "Doctor hello Tardis in a field",
-          "oldArabicTime": "00:02:47,787",
-          "targetTime": "00:02:53,799",
-          "appliedShiftSeconds": 6.012,
-          "confidence": "high"
+          "label": "Post-46 drift anchor 2",
+          "oldArabicTime": "00:48:16,477",
+          "targetTime": "00:48:13,477",
+          "appliedShiftSeconds": -3,
+          "confidence": "high",
+          "segmentStart": "00:46:00",
+          "segmentEnd": "00:56:30"
         },
         {
-          "label": "Bad Wolf",
-          "oldArabicTime": "00:15:45,063",
-          "targetTime": "00:15:48,406",
-          "appliedShiftSeconds": 3.343,
-          "confidence": "high"
+          "label": "Transition anchor 1",
+          "oldArabicTime": "00:56:39,164",
+          "targetTime": "00:56:36,164",
+          "appliedShiftSeconds": -3,
+          "confidence": "high",
+          "segmentStart": "00:56:30",
+          "segmentEnd": "00:57:40"
         },
         {
-          "label": "Zygons lost their own world",
-          "oldArabicTime": "00:46:46,777",
-          "targetTime": "00:46:46,220",
-          "appliedShiftSeconds": -0.557,
-          "confidence": "high"
+          "label": "Transition anchor 2",
+          "oldArabicTime": "00:57:35,920",
+          "targetTime": "00:57:10,920",
+          "appliedShiftSeconds": -25,
+          "confidence": "high",
+          "segmentStart": "00:56:30",
+          "segmentEnd": "00:57:40"
         },
         {
-          "label": "Bad copy accusation",
-          "oldArabicTime": "00:48:15,619",
-          "targetTime": "00:48:16,477",
-          "appliedShiftSeconds": 0.858,
-          "confidence": "high"
+          "label": "Late segment 25s anchor 1",
+          "oldArabicTime": "00:57:41,234",
+          "targetTime": "00:57:16,234",
+          "appliedShiftSeconds": -25,
+          "confidence": "high",
+          "segmentStart": "00:57:40",
+          "segmentEnd": ""
+        },
+        {
+          "label": "Late segment 25s anchor 2",
+          "oldArabicTime": "01:00:32,354",
+          "targetTime": "01:00:07,354",
+          "appliedShiftSeconds": -25,
+          "confidence": "high",
+          "segmentStart": "00:57:40",
+          "segmentEnd": ""
         }
       ]
     }
