@@ -15,12 +15,12 @@ const SUMMARY_JSON_PATH = path.join(ROOT, 'audit', 'manual-sync-summary.json');
 const WRITE = process.argv.includes('--write');
 
 function parseTimecode(value) {
-  const match = value.trim().match(/(\d+):(\d+):(\d+),(\d+)/);
+  const match = value.trim().match(/(\d+):(\d+):(\d+)(?:,(\d+))?/);
   if (!match) {
     return null;
   }
   const [, hh, mm, ss, ms] = match;
-  return Number(hh) * 3600000 + Number(mm) * 60000 + Number(ss) * 1000 + Number(ms);
+  return Number(hh) * 3600000 + Number(mm) * 60000 + Number(ss) * 1000 + Number(ms || 0);
 }
 
 function formatTimecode(ms) {
