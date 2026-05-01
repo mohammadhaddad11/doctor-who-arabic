@@ -7,11 +7,18 @@ const arabicSubtitleFiles = require('../arabicSubtitles.json');
 const finalAudit = require('../audit/final-production-audit.json');
 const streamMetadata = require('../streamMetadata.json');
 let playbackRecheck = null;
+let manualSyncSummary = null;
 
 try {
   playbackRecheck = require('../audit/playback-special-recheck.json');
 } catch {
   playbackRecheck = null;
+}
+
+try {
+  manualSyncSummary = require('../audit/manual-sync-summary.json');
+} catch {
+  manualSyncSummary = null;
 }
 
 const OUTPUT_PATH = path.join(ROOT, 'subtitleStatus.json');
@@ -106,8 +113,26 @@ for (const finding of finalAudit.findings || []) {
 }
 
 const recheckByFilename = new Map((playbackRecheck?.entries || []).map((entry) => [entry.arabicSubtitle, entry]));
+const manualByFilename = new Map((manualSyncSummary?.entries || []).map((entry) => [entry.subtitleFile, entry]));
 
 for (const entry of Object.values(entries)) {
+  const manual = manualByFilename.get(entry.filename);
+  if (manual) {
+    entry.status = manual.finalStatus;
+    entry.auditStatus = manual.fixApplied ? 'VERIFIED_RECHECKED' : 'VERIFIED_MANUAL_CHECK';
+    entry.syncFixType = manual.fixType;
+    entry.note = manual.fixApplied
+      ? 'Production subtitle was manually recalibrated against anchor pairs from the current selected stream.'
+      : 'Production subtitle was manually checked against current selected-stream anchors and left unchanged.';
+    entry.playbackRecheck = {
+      selectedStreamUrl: manual.selectedStreamUrl,
+      selected480pUrl: manual.selected480pUrl,
+      finalStatus: manual.finalStatus,
+      note: entry.note
+    };
+    continue;
+  }
+
   const recheck = recheckByFilename.get(entry.filename);
   if (!recheck) {
     continue;
@@ -134,6 +159,29 @@ const summary = summaryCounts(entries);
 const specialAuditEntries = (finalAudit.findings || [])
   .filter((finding) => SPECIAL_TITLES.has(finding.title))
   .map((finding) => {
+    const manual = (manualSyncSummary?.entries || []).find((entry) => entry.canonicalId === finding.canonicalId);
+    if (manual) {
+      return {
+        selectedStreamUrl: manual.selectedStreamUrl,
+        selected480pUrl: manual.selected480pUrl,
+        canonicalId: finding.canonicalId,
+        title: finding.title,
+        filename: finding.filename,
+        status: manual.finalStatus,
+        auditStatus: manual.fixApplied ? 'VERIFIED_RECHECKED' : 'VERIFIED_MANUAL_CHECK',
+        syncFixType: manual.fixType,
+        manualReplacement: Boolean(finding.manualReplacement),
+        linearOffsetSeconds: finding.linearOffsetSeconds,
+        windowShiftSeconds: manual.anchors.map((anchor) => anchor.appliedShiftSeconds),
+        rawF1: finding.rawF1,
+        fixedF1: finding.fixedF1,
+        coverageGapSeconds: finding.coverageGapSeconds,
+        note: manual.fixApplied
+          ? 'Production subtitle was manually recalibrated against current selected-stream anchor pairs.'
+          : 'Production subtitle was manually checked against current selected-stream anchor pairs and left unchanged.'
+      };
+    }
+
     const recheck = (playbackRecheck?.entries || []).find((entry) => entry.canonicalId === finding.canonicalId);
     if (recheck) {
       const keepStoredStatus = !recheck.appliedFix && finding.finalStatus === 'PASS';

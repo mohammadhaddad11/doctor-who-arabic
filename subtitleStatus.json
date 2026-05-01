@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T08:55:01.211Z",
+  "generatedAt": "2026-05-01T14:26:56.129Z",
   "summary": {
     "verified": 199,
     "minor_offset": 20,
@@ -1796,14 +1796,14 @@
       "auditStatus": "VERIFIED_RECHECKED",
       "title": "The Runaway Bride (Special)",
       "canonicalId": "S02E14",
-      "syncFixType": "drift",
+      "syncFixType": "manual_piecewise",
       "manualReplacement": false,
-      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream.",
+      "note": "Production subtitle was manually recalibrated against anchor pairs from the current selected stream.",
       "playbackRecheck": {
         "selectedStreamUrl": "https://ia800909.us.archive.org/11/items/nw_S02/E14_the_runaway_bride_special.mp4",
         "selected480pUrl": null,
         "finalStatus": "verified",
-        "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
+        "note": "Production subtitle was manually recalibrated against anchor pairs from the current selected stream."
       }
     },
     "E14_the_snowmen_special.ar.srt": {
@@ -1852,14 +1852,14 @@
       "auditStatus": "VERIFIED_RECHECKED",
       "title": "The Christmas Invasion (Special)",
       "canonicalId": "S01E15",
-      "syncFixType": "drift",
+      "syncFixType": "manual_piecewise",
       "manualReplacement": false,
-      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream.",
+      "note": "Production subtitle was manually recalibrated against anchor pairs from the current selected stream.",
       "playbackRecheck": {
-        "selectedStreamUrl": "https://ia600302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
+        "selectedStreamUrl": "https://ia800302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
         "selected480pUrl": null,
         "finalStatus": "verified",
-        "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
+        "note": "Production subtitle was manually recalibrated against anchor pairs from the current selected stream."
       }
     },
     "E15_the_husbands_of_river_song_special.ar.srt": {
@@ -2215,12 +2215,18 @@
     "E30_the_day_of_the_doctor_special.ar.srt": {
       "filename": "E30_the_day_of_the_doctor_special.ar.srt",
       "status": "verified",
-      "auditStatus": "FIXED_DRIFT",
+      "auditStatus": "VERIFIED_RECHECKED",
       "title": "The Day of the Doctor (Special)",
       "canonicalId": "S07E30",
-      "syncFixType": "drift",
+      "syncFixType": "manual_piecewise",
       "manualReplacement": false,
-      "note": "Production subtitle was previously repaired with a drift fix and remains visible."
+      "note": "Production subtitle was manually recalibrated against anchor pairs from the current selected stream.",
+      "playbackRecheck": {
+        "selectedStreamUrl": "https://ia600706.us.archive.org/7/items/nw_S07/E30_the_day_of_the_doctor_special.mp4",
+        "selected480pUrl": "https://ia800706.us.archive.org/7/items/nw_S07/E30_the_day_of_the_doctor_special.ia.mp4",
+        "finalStatus": "verified",
+        "note": "Production subtitle was manually recalibrated against anchor pairs from the current selected stream."
+      }
     },
     "E31_the_time_of_the_doctor_special.ar.srt": {
       "filename": "E31_the_time_of_the_doctor_special.ar.srt",

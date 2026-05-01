@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-05-01T14:22:35.875Z",
+  "writeApplied": true,
+  "entries": [
+    {
+      "canonicalId": "S01E15",
+      "title": "The Christmas Invasion (Special)",
+      "subtitleFile": "E15_the_christmas_invasion_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Rose arrives",
+      "oldArabicTime": "00:01:17,847",
+      "targetTime": "00:01:05,732",
+      "appliedShiftSeconds": "-12.115",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S01E15",
+      "title": "The Christmas Invasion (Special)",
+      "subtitleFile": "E15_the_christmas_invasion_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Harriet Jones on TV",
+      "oldArabicTime": "00:05:36,641",
+      "targetTime": "00:05:24,324",
+      "appliedShiftSeconds": "-12.317",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S01E15",
+      "title": "The Christmas Invasion (Special)",
+      "subtitleFile": "E15_the_christmas_invasion_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Torchwood mention",
+      "oldArabicTime": "00:21:11,229",
+      "targetTime": "00:21:01,051",
+      "appliedShiftSeconds": "-10.178",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S01E15",
+      "title": "The Christmas Invasion (Special)",
+      "subtitleFile": "E15_the_christmas_invasion_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "I'm the Doctor",
+      "oldArabicTime": "00:42:24,055",
+      "targetTime": "00:42:18,578",
+      "appliedShiftSeconds": "-5.477",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S02E14",
+      "title": "The Runaway Bride (Special)",
+      "subtitleFile": "E14_the_runaway_bride_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Opening sorry",
+      "oldArabicTime": "00:00:00,000",
+      "targetTime": "00:00:22,523",
+      "appliedShiftSeconds": "22.523",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S02E14",
+      "title": "The Runaway Bride (Special)",
+      "subtitleFile": "E14_the_runaway_bride_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Inside the Tardis",
+      "oldArabicTime": "00:02:02,171",
+      "targetTime": "00:02:21,016",
+      "appliedShiftSeconds": "18.845",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S02E14",
+      "title": "The Runaway Bride (Special)",
+      "subtitleFile": "E14_the_runaway_bride_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "HC Clements",
+      "oldArabicTime": "00:30:21,411",
+      "targetTime": "00:29:54,710",
+      "appliedShiftSeconds": "-26.701",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S02E14",
+      "title": "The Runaway Bride (Special)",
+      "subtitleFile": "E14_the_runaway_bride_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Racnoss reveal",
+      "oldArabicTime": "00:37:36,040",
+      "targetTime": "00:36:55,130",
+      "appliedShiftSeconds": "-40.910",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S07E30",
+      "title": "The Day of the Doctor (Special)",
+      "subtitleFile": "E30_the_day_of_the_doctor_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Kate Stewart phone",
+      "oldArabicTime": "00:02:29,625",
+      "targetTime": "00:02:35,906",
+      "appliedShiftSeconds": "6.281",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S07E30",
+      "title": "The Day of the Doctor (Special)",
+      "subtitleFile": "E30_the_day_of_the_doctor_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Doctor hello Tardis in a field",
+      "oldArabicTime": "00:02:47,787",
+      "targetTime": "00:02:53,799",
+      "appliedShiftSeconds": "6.012",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S07E30",
+      "title": "The Day of the Doctor (Special)",
+      "subtitleFile": "E30_the_day_of_the_doctor_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Bad Wolf",
+      "oldArabicTime": "00:15:45,063",
+      "targetTime": "00:15:48,406",
+      "appliedShiftSeconds": "3.343",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S07E30",
+      "title": "The Day of the Doctor (Special)",
+      "subtitleFile": "E30_the_day_of_the_doctor_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Zygons lost their own world",
+      "oldArabicTime": "00:46:46,777",
+      "targetTime": "00:46:46,220",
+      "appliedShiftSeconds": "-0.557",
+      "confidence": "high"
+    },
+    {
+      "canonicalId": "S07E30",
+      "title": "The Day of the Doctor (Special)",
+      "subtitleFile": "E30_the_day_of_the_doctor_special.ar.srt",
+      "quality": "1080p",
+      "anchorLabel": "Bad copy accusation",
+      "oldArabicTime": "00:48:15,619",
+      "targetTime": "00:48:16,477",
+      "appliedShiftSeconds": "0.858",
+      "confidence": "high"
+    }
+  ]
+}

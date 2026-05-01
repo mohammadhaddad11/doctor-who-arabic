@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T08:55:01.215Z",
+  "generatedAt": "2026-05-01T14:26:56.133Z",
   "summary": {
     "total": 17,
     "verified": 16,
@@ -9,25 +9,26 @@
   },
   "entries": [
     {
-      "selectedStreamUrl": "https://ia600302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
+      "selectedStreamUrl": "https://ia800302.us.archive.org/24/items/nw_S01/E15_the_christmas_invasion_special.mp4",
       "selected480pUrl": null,
       "canonicalId": "S01E15",
       "title": "The Christmas Invasion (Special)",
       "filename": "E15_the_christmas_invasion_special.ar.srt",
       "status": "verified",
       "auditStatus": "VERIFIED_RECHECKED",
-      "syncFixType": "drift",
+      "syncFixType": "manual_piecewise",
       "manualReplacement": false,
       "linearOffsetSeconds": -2.714,
       "windowShiftSeconds": [
-        29,
-        63,
-        142
+        -12.115,
+        -12.317,
+        -10.178,
+        -5.477
       ],
-      "rawF1": 0.8085282550196646,
-      "fixedF1": 0.7739400206825232,
+      "rawF1": 0.668,
+      "fixedF1": 0.835,
       "coverageGapSeconds": 60.5,
-      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
+      "note": "Production subtitle was manually recalibrated against current selected-stream anchor pairs."
     },
     {
       "selectedStreamUrl": "https://ia800909.us.archive.org/11/items/nw_S02/E14_the_runaway_bride_special.mp4",
@@ -37,18 +38,19 @@
       "filename": "E14_the_runaway_bride_special.ar.srt",
       "status": "verified",
       "auditStatus": "VERIFIED_RECHECKED",
-      "syncFixType": "drift",
+      "syncFixType": "manual_piecewise",
       "manualReplacement": false,
       "linearOffsetSeconds": 7.81,
       "windowShiftSeconds": [
-        31,
-        62,
-        119
+        22.523,
+        18.845,
+        -26.701,
+        -40.91
       ],
-      "rawF1": 0.7652003910068425,
-      "fixedF1": 0.7580050456045021,
+      "rawF1": 0.703,
+      "fixedF1": 0.805,
       "coverageGapSeconds": 88.6,
-      "note": "Applied drift repair using manual dialogue anchor checks against the current selected stream."
+      "note": "Production subtitle was manually recalibrated against current selected-stream anchor pairs."
     },
     {
       "selectedStreamUrl": "https://dn711500.ca.archive.org/0/items/nw_S03/E07_the_lazarus_experiment.mp4",
@@ -178,18 +180,21 @@
       "title": "The Day of the Doctor (Special)",
       "filename": "E30_the_day_of_the_doctor_special.ar.srt",
       "status": "verified",
-      "auditStatus": "FIXED_DRIFT",
-      "syncFixType": "drift",
+      "auditStatus": "VERIFIED_RECHECKED",
+      "syncFixType": "manual_piecewise",
       "manualReplacement": false,
       "linearOffsetSeconds": -6.048,
       "windowShiftSeconds": [
-        26,
-        107,
-        181
+        6.281,
+        6.012,
+        3.343,
+        -0.557,
+        0.858
       ],
       "rawF1": 0.735,
       "fixedF1": 0.836,
-      "coverageGapSeconds": 73.1
+      "coverageGapSeconds": 73.1,
+      "note": "Production subtitle was manually recalibrated against current selected-stream anchor pairs."
     },
     {
       "selectedStreamUrl": "https://ia800706.us.archive.org/7/items/nw_S07/E31_the_time_of_the_doctor_special.mp4",
