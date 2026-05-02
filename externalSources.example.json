@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "notes": "Copy to externalSources.json and edit with your own direct media candidates.",
+  "sources": [
+    {
+      "canonicalId": "S01E01",
+      "title": "Rose",
+      "url": "https://example.com/doctor-who/S01E01_rose.mp4",
+      "subtitleCompatibility": "matches-current-archive-timing",
+      "notes": "User-provided direct media URL candidate"
+    }
+  ]
+}

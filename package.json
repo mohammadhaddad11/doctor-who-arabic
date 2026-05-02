@@ -12,8 +12,10 @@
     "build:subtitle-status": "node tools/buildSubtitleStatus.js",
     "build:all": "npm run build:stream-metadata && npm run build:subtitle-status && npm run validate:torrents && npm run check",
     "build:arabic-alternatives": "python3 tools/buildArabicAlternatives.py",
+    "speed:audit:archive": "node tools/auditArchiveDerivatives.js",
     "check": "node tools/checkProduction.js",
-    "validate:torrents": "node tools/validateTorrentSources.js"
+    "validate:torrents": "node tools/validateTorrentSources.js",
+    "validate:external": "node tools/validateExternalSources.js"
   },
   "dependencies": {
     "stremio-addon-sdk": "^1.6.10"
