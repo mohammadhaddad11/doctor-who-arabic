@@ -1,5 +1,6 @@
 const fs = require('fs');
 const http = require('http');
+const crypto = require('crypto');
 const path = require('path');
 const { addonBuilder, getRouter } = require('stremio-addon-sdk');
 const allNewWhoEpisodesPreSorted = require('./episodeData');
@@ -54,14 +55,19 @@ const LOCAL_ADDON_LOGO_FILE = path.join(ASSET_DIR, 'whoniverse-arabic-logo.svg')
 const DYNAMIC_REDIRECT_EPISODE_IDS = new Set([
   'S01E15',
   'S02E14',
+  'S03E01',
   'S03E07',
+  'S03E12',
   'S03E16',
   'S04E19',
   'S04E20',
+  'S05E06',
   'S05E18',
   'S07E14',
   'S07E30',
   'S07E31',
+  'S08E05',
+  'S10E03',
   'S13E07',
   'S13E08',
   'S14E03',
@@ -72,6 +78,14 @@ const DYNAMIC_REDIRECT_EPISODE_IDS = new Set([
 
 const archiveMetadataCache = new Map();
 const mirrorSelectionCache = new Map();
+const subtitleVersionCache = new Map();
+const SHOW_TORRENT_FALLBACK = String(process.env.SHOW_TORRENT_FALLBACK || '').toLowerCase() === 'true';
+const FORCE_SPEED_480_EPISODE_IDS = new Set(['S04E01']);
+const SLOW_DYNAMIC_REDIRECT_EPISODE_IDS = new Set(
+  Object.entries(STREAM_METADATA_EPISODES)
+    .filter(([, entry]) => entry?.primary?.speedCategory === 'SLOW')
+    .map(([canonicalId]) => canonicalId)
+);
 
 const TORRENT_QUALITY_RANK = {
   '1080p': 3,
@@ -198,12 +212,44 @@ function getArabicAltSubtitleFilePath(arabicName) {
   return path.join(ARABIC_ALT_SUBTITLE_DIR, arabicName);
 }
 
+function getSubtitleContentVersion(filePath) {
+  if (!filePath || !fs.existsSync(filePath)) {
+    return null;
+  }
+
+  try {
+    const stats = fs.statSync(filePath);
+    const cached = subtitleVersionCache.get(filePath);
+    if (cached && cached.mtimeMs === stats.mtimeMs && cached.size === stats.size) {
+      return cached.version;
+    }
+
+    const fileBuffer = fs.readFileSync(filePath);
+    const version = crypto.createHash('sha1').update(fileBuffer).digest('hex').slice(0, 12);
+    subtitleVersionCache.set(filePath, {
+      mtimeMs: stats.mtimeMs,
+      size: stats.size,
+      version
+    });
+    return version;
+  } catch (error) {
+    console.warn(`Unable to hash subtitle for cache busting (${filePath}):`, error.message);
+    return null;
+  }
+}
+
 function buildArabicSubtitleUrl(arabicName) {
-  return `${PUBLIC_ADDON_BASE_URL}${ARABIC_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
+  const subtitlePath = getArabicSubtitleFilePath(arabicName);
+  const version = getSubtitleContentVersion(subtitlePath);
+  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${ARABIC_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
+  return version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl;
 }
 
 function buildArabicAltSubtitleUrl(arabicName) {
-  return `${PUBLIC_ADDON_BASE_URL}${ARABIC_ALT_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
+  const subtitlePath = getArabicAltSubtitleFilePath(arabicName);
+  const version = getSubtitleContentVersion(subtitlePath);
+  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${ARABIC_ALT_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
+  return version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl;
 }
 
 function getAssetFilePath(assetName) {
@@ -293,7 +339,16 @@ function shouldUseDynamicRedirect(episode, streamEntry) {
     return false;
   }
 
-  return DYNAMIC_REDIRECT_EPISODE_IDS.has(getEpisodeKey(episode)) && isArchiveUrl(streamEntry.url);
+  if (!isArchiveUrl(streamEntry.url)) {
+    return false;
+  }
+
+  const canonicalId = getEpisodeKey(episode);
+  if (!canonicalId) {
+    return false;
+  }
+
+  return DYNAMIC_REDIRECT_EPISODE_IDS.has(canonicalId) || SLOW_DYNAMIC_REDIRECT_EPISODE_IDS.has(canonicalId);
 }
 
 function parseArchiveItemId(url) {
@@ -494,6 +549,8 @@ function getMetadataBackedStreams(episode) {
     return [];
   }
 
+  const canonicalId = getEpisodeKey(episode);
+
   const speedAlternative = (metadata.alternatives || [])
     .filter((entry) => entry.label === '480p')
     .sort((a, b) => {
@@ -504,7 +561,33 @@ function getMetadataBackedStreams(episode) {
       return (a.responseTimeMs || 0) - (b.responseTimeMs || 0);
     })[0];
 
-  return speedAlternative ? [metadata.primary, speedAlternative] : [metadata.primary];
+  if (speedAlternative) {
+    return [metadata.primary, speedAlternative];
+  }
+
+  if (FORCE_SPEED_480_EPISODE_IDS.has(canonicalId)) {
+    const backupSpeedAlternative = (metadata.backupCandidates || [])
+      .filter((entry) => entry.label === '480p')
+      .filter((entry) => [200, 206].includes(entry.responseStatus))
+      .filter((entry) => Number(entry.height || 0) > 0 && Number(entry.height || 0) <= 576)
+      .sort((a, b) => {
+        if ((b.healthScore || 0) !== (a.healthScore || 0)) {
+          return (b.healthScore || 0) - (a.healthScore || 0);
+        }
+
+        return (a.responseTimeMs || 0) - (b.responseTimeMs || 0);
+      })[0];
+
+    if (backupSpeedAlternative) {
+      const primaryStartupScore = metadata.primary.startupScore || metadata.primary.responseTimeMs || Infinity;
+      const speedStartupScore = backupSpeedAlternative.startupScore || backupSpeedAlternative.responseTimeMs || Infinity;
+      if (speedStartupScore < primaryStartupScore) {
+        return [metadata.primary, backupSpeedAlternative];
+      }
+    }
+  }
+
+  return [metadata.primary];
 }
 
 function getTorrentSourceEntriesFromConfig(config) {
@@ -717,7 +800,7 @@ function buildStreamsForEpisode(episode) {
       subtitles
     }));
 
-    const torrentFallback = getTorrentFallbackForEpisode(episode);
+    const torrentFallback = SHOW_TORRENT_FALLBACK ? getTorrentFallbackForEpisode(episode) : null;
     if (torrentFallback) {
       streams.push(buildTorrentFallbackStream(torrentFallback, subtitles));
     }
@@ -752,26 +835,33 @@ function getArabicAlternativeEpisodeCount() {
 }
 
 function getStreamCounts() {
+  const stream480p = allNewWhoEpisodes.reduce((count, episode) => {
+    const metadataBackedStreams = getMetadataBackedStreams(episode);
+    return count + (metadataBackedStreams.some((entry) => entry.label === '480p') ? 1 : 0);
+  }, 0);
+
   const dynamicRedirectStreamCount = allNewWhoEpisodes.reduce((count, episode) => {
     const metadataBackedStreams = getMetadataBackedStreams(episode);
     return count + metadataBackedStreams.filter((entry) => shouldUseDynamicRedirect(episode, entry)).length;
   }, 0);
 
   const torrentFallbackEpisodes = new Set();
-  const torrentFallbackCount = allNewWhoEpisodes.reduce((count, episode) => {
-    const fallback = getTorrentFallbackForEpisode(episode);
-    if (!fallback) {
-      return count;
-    }
+  const torrentFallbackCount = SHOW_TORRENT_FALLBACK
+    ? allNewWhoEpisodes.reduce((count, episode) => {
+      const fallback = getTorrentFallbackForEpisode(episode);
+      if (!fallback) {
+        return count;
+      }
 
-    torrentFallbackEpisodes.add(getEpisodeKey(episode));
-    return count + 1;
-  }, 0);
+      torrentFallbackEpisodes.add(getEpisodeKey(episode));
+      return count + 1;
+    }, 0)
+    : 0;
 
   return {
     episodes: Object.keys(STREAM_METADATA_EPISODES).length,
     stream1080p: STREAM_SUMMARY.episodesWith1080p || 0,
-    stream480p: STREAM_SUMMARY.episodesWith480pAdded || 0,
+    stream480p,
     stream720p: STREAM_SUMMARY.episodesWith720pAdded || 0,
     fastStartBackups: STREAM_SUMMARY.episodesWithFastStartBackup || 0,
     dynamicRedirectStreamCount,
@@ -1316,6 +1406,7 @@ const server = http.createServer((req, res) => {
       torrentFallbackCount: streamCounts.torrentFallbackCount,
       episodesWithTorrentFallback: streamCounts.episodesWithTorrentFallback,
       torrentFallbackRejectedCount: streamCounts.torrentFallbackRejectedCount,
+      subtitleCacheBusting: true,
       manualReviewSubtitleCount: SUBTITLE_STATUS_SUMMARY.manual_review || 0,
       reviewFolderCount: getReviewSubtitleCount(),
       subtitleStatusSummary: SUBTITLE_STATUS_SUMMARY,
