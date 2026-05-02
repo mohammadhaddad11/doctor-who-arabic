@@ -22,6 +22,9 @@ function loadJsonFile(relativePath, fallbackValue) {
 const arabicSubtitleAlternatives = loadJsonFile('arabicSubtitleAlternatives.json', {});
 const streamMetadata = loadJsonFile('streamMetadata.json', { episodes: {}, summary: {} });
 const subtitleStatus = loadJsonFile('subtitleStatus.json', { entries: {}, summary: {} });
+const torrentSources = loadJsonFile('torrentSources.json', { sources: [] });
+const torrentSourcesLocal = loadJsonFile('torrentSources.local.json', { sources: [] });
+const torrentFallbackAudit = loadJsonFile('audit/torrent-fallback-audit.json', { summary: {} });
 
 const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
 const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
@@ -30,6 +33,7 @@ const STREAM_METADATA_EPISODES = streamMetadata.episodes || {};
 const STREAM_SUMMARY = streamMetadata.summary || {};
 const SUBTITLE_STATUS_ENTRIES = subtitleStatus.entries || {};
 const SUBTITLE_STATUS_SUMMARY = subtitleStatus.summary || {};
+const TORRENT_FALLBACK_AUDIT_SUMMARY = torrentFallbackAudit.summary || {};
 
 const ARABIC_SUBTITLE_DIR = path.join(__dirname, 'ar');
 const ARABIC_SUBTITLE_ROUTE = '/subtitles/ar';
@@ -68,6 +72,18 @@ const DYNAMIC_REDIRECT_EPISODE_IDS = new Set([
 
 const archiveMetadataCache = new Map();
 const mirrorSelectionCache = new Map();
+
+const TORRENT_QUALITY_RANK = {
+  '1080p': 3,
+  '720p': 2,
+  '480p': 1
+};
+
+const TORRENT_CONFIDENCE_RANK = {
+  high: 3,
+  medium: 2,
+  low: 1
+};
 
 function trimTrailingSlash(value) {
   return value.replace(/\/+$/, '');
@@ -491,19 +507,186 @@ function getMetadataBackedStreams(episode) {
   return speedAlternative ? [metadata.primary, speedAlternative] : [metadata.primary];
 }
 
-function buildStreamLabel(streamEntry) {
-  const mode = streamEntry.label === '480p' ? 'Speed' : 'Quality';
-  const prefix = `Whoniverse ${streamEntry.label} • ${mode}`;
+function getTorrentSourceEntriesFromConfig(config) {
+  if (!config) {
+    return [];
+  }
 
+  if (Array.isArray(config)) {
+    return config;
+  }
+
+  if (Array.isArray(config.sources)) {
+    return config.sources;
+  }
+
+  return [];
+}
+
+function normalizeTorrentSourceEntry(entry) {
+  if (!entry || typeof entry !== 'object') {
+    return null;
+  }
+
+  const fileIdx = Number.isInteger(entry.fileIdx) ? entry.fileIdx : Number(entry.fileIdx);
+  const normalized = {
+    canonicalId: entry.canonicalId,
+    title: entry.title,
+    type: entry.type,
+    quality: entry.quality,
+    infoHash: typeof entry.infoHash === 'string' ? entry.infoHash.toLowerCase() : null,
+    fileIdx,
+    name: entry.name,
+    seeders: entry.seeders,
+    trackers: Array.isArray(entry.trackers) ? entry.trackers : [],
+    sources: Array.isArray(entry.sources) ? entry.sources : [],
+    confidence: entry.confidence,
+    subtitleCompatibility: entry.subtitleCompatibility,
+    subtitleFile: entry.subtitleFile,
+    subtitleUrl: entry.subtitleUrl
+  };
+
+  if (!normalized.canonicalId || !/^S\d{2}E\d{2}$/.test(normalized.canonicalId)) {
+    return null;
+  }
+
+  if (normalized.type !== 'torrent') {
+    return null;
+  }
+
+  if (!/^[a-f0-9]{40}$/.test(normalized.infoHash || '')) {
+    return null;
+  }
+
+  if (!Number.isInteger(normalized.fileIdx) || normalized.fileIdx < 0) {
+    return null;
+  }
+
+  if (!TORRENT_QUALITY_RANK[normalized.quality]) {
+    return null;
+  }
+
+  if (!TORRENT_CONFIDENCE_RANK[normalized.confidence] || normalized.confidence === 'low') {
+    return null;
+  }
+
+  if (
+    normalized.subtitleCompatibility !== 'matches-current-archive-timing'
+    && !(normalized.subtitleCompatibility === 'needs-different-subtitle' && (normalized.subtitleFile || normalized.subtitleUrl))
+  ) {
+    return null;
+  }
+
+  return normalized;
+}
+
+function buildTorrentSourceMap() {
+  const mergedEntries = [
+    ...getTorrentSourceEntriesFromConfig(torrentSources),
+    ...getTorrentSourceEntriesFromConfig(torrentSourcesLocal)
+  ];
+
+  const deduped = new Map();
+  for (const entry of mergedEntries) {
+    const normalized = normalizeTorrentSourceEntry(entry);
+    if (!normalized) {
+      continue;
+    }
+
+    const key = [normalized.canonicalId, normalized.quality, normalized.infoHash, normalized.fileIdx].join('|');
+    deduped.set(key, normalized);
+  }
+
+  const grouped = new Map();
+  for (const entry of deduped.values()) {
+    const list = grouped.get(entry.canonicalId) || [];
+    list.push(entry);
+    grouped.set(entry.canonicalId, list);
+  }
+
+  for (const [canonicalId, list] of grouped.entries()) {
+    list.sort((a, b) => {
+      const qualityDiff = (TORRENT_QUALITY_RANK[b.quality] || 0) - (TORRENT_QUALITY_RANK[a.quality] || 0);
+      if (qualityDiff !== 0) {
+        return qualityDiff;
+      }
+
+      return (TORRENT_CONFIDENCE_RANK[b.confidence] || 0) - (TORRENT_CONFIDENCE_RANK[a.confidence] || 0);
+    });
+    grouped.set(canonicalId, list);
+  }
+
+  return grouped;
+}
+
+const TORRENT_SOURCE_MAP = buildTorrentSourceMap();
+
+function isEpisodeSlowOrProblematic(episode) {
+  const metadata = getEpisodeStreamMetadata(episode);
+  const primary = metadata?.primary;
+  if (!primary) {
+    return false;
+  }
+
+  return primary.speedCategory === 'SLOW'
+    || (primary.healthScore || 0) <= 90
+    || (primary.startupScore || Infinity) >= 1500;
+}
+
+function getTorrentFallbackForEpisode(episode) {
+  const canonicalId = getEpisodeKey(episode);
+  if (!canonicalId || !isEpisodeSlowOrProblematic(episode)) {
+    return null;
+  }
+
+  const options = TORRENT_SOURCE_MAP.get(canonicalId) || [];
+  return options[0] || null;
+}
+
+function buildTrackerSources(entry) {
+  return [...new Set(
+    (Array.isArray(entry?.trackers) ? entry.trackers : [])
+      .filter((tracker) => typeof tracker === 'string' && tracker.trim())
+      .map((tracker) => {
+        const value = tracker.trim();
+        if (value.startsWith('tracker:') || value.startsWith('dht:')) {
+          return value;
+        }
+        return `tracker:${value}`;
+      })
+  )];
+}
+
+function buildTorrentFallbackStream(entry, subtitles) {
+  const stream = {
+    name: 'Torrent Fallback',
+    description: `Whoniverse Arabic • fallback only • ${entry.quality} • subtitles: English + Arabic`,
+    infoHash: entry.infoHash,
+    fileIdx: entry.fileIdx,
+    behaviorHints: {
+      notWebReady: true
+    },
+    subtitles
+  };
+
+  const trackerSources = buildTrackerSources(entry);
+  if (trackerSources.length > 0) {
+    stream.sources = trackerSources;
+  }
+
+  return stream;
+}
+
+function buildStreamLabel(streamEntry) {
+  const prefix = streamEntry.label === '480p' ? '480p Speed' : '1080p Quality';
   if (!streamEntry.sizeLabel) {
     return prefix;
   }
-
   return `${prefix} • ${streamEntry.sizeLabel}`;
 }
 
 function buildStreamDescription(streamEntry, episode) {
-  const parts = [];
+  const parts = ['Whoniverse Arabic'];
 
   if (isSpecialEpisode(episode)) {
     parts.push('Special episode');
@@ -511,6 +694,7 @@ function buildStreamDescription(streamEntry, episode) {
 
   parts.push(streamEntry.label === '480p' ? 'Speed' : 'Quality');
   parts.push(`Source health ${streamEntry.healthScore || 0}/100`);
+  parts.push('Subtitles: English + Arabic');
 
   return parts.join(' • ');
 }
@@ -524,7 +708,7 @@ function buildStreamsForEpisode(episode) {
   const metadataBackedStreams = getMetadataBackedStreams(episode);
 
   if (metadataBackedStreams.length > 0) {
-    return metadataBackedStreams.map((streamEntry) => ({
+    const streams = metadataBackedStreams.map((streamEntry) => ({
       url: shouldUseDynamicRedirect(episode, streamEntry)
         ? buildVideoRedirectUrl(episode, streamEntry.label)
         : streamEntry.url,
@@ -532,13 +716,20 @@ function buildStreamsForEpisode(episode) {
       description: buildStreamDescription(streamEntry, episode),
       subtitles
     }));
+
+    const torrentFallback = getTorrentFallbackForEpisode(episode);
+    if (torrentFallback) {
+      streams.push(buildTorrentFallbackStream(torrentFallback, subtitles));
+    }
+
+    return streams;
   }
 
   return [
     {
       url: episode.streamUrl,
-      name: 'Whoniverse 1080p • Quality',
-      description: isSpecialEpisode(episode) ? 'Special episode • Quality' : 'Quality',
+      name: '1080p Quality',
+      description: isSpecialEpisode(episode) ? 'Whoniverse Arabic • Special episode • Quality' : 'Whoniverse Arabic • Quality',
       subtitles
     }
   ];
@@ -566,13 +757,27 @@ function getStreamCounts() {
     return count + metadataBackedStreams.filter((entry) => shouldUseDynamicRedirect(episode, entry)).length;
   }, 0);
 
+  const torrentFallbackEpisodes = new Set();
+  const torrentFallbackCount = allNewWhoEpisodes.reduce((count, episode) => {
+    const fallback = getTorrentFallbackForEpisode(episode);
+    if (!fallback) {
+      return count;
+    }
+
+    torrentFallbackEpisodes.add(getEpisodeKey(episode));
+    return count + 1;
+  }, 0);
+
   return {
     episodes: Object.keys(STREAM_METADATA_EPISODES).length,
     stream1080p: STREAM_SUMMARY.episodesWith1080p || 0,
     stream480p: STREAM_SUMMARY.episodesWith480pAdded || 0,
     stream720p: STREAM_SUMMARY.episodesWith720pAdded || 0,
     fastStartBackups: STREAM_SUMMARY.episodesWithFastStartBackup || 0,
-    dynamicRedirectStreamCount
+    dynamicRedirectStreamCount,
+    torrentFallbackCount,
+    episodesWithTorrentFallback: torrentFallbackEpisodes.size,
+    torrentFallbackRejectedCount: Number(TORRENT_FALLBACK_AUDIT_SUMMARY.rejectedCount || 0)
   };
 }
 
@@ -1108,6 +1313,9 @@ const server = http.createServer((req, res) => {
       stream1080pCount: streamCounts.stream1080p,
       stream480pCount: streamCounts.stream480p,
       dynamicRedirectStreamCount: streamCounts.dynamicRedirectStreamCount,
+      torrentFallbackCount: streamCounts.torrentFallbackCount,
+      episodesWithTorrentFallback: streamCounts.episodesWithTorrentFallback,
+      torrentFallbackRejectedCount: streamCounts.torrentFallbackRejectedCount,
       manualReviewSubtitleCount: SUBTITLE_STATUS_SUMMARY.manual_review || 0,
       reviewFolderCount: getReviewSubtitleCount(),
       subtitleStatusSummary: SUBTITLE_STATUS_SUMMARY,

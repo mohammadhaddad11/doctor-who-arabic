@@ -1,0 +1,187 @@
+{
+  "generatedAt": "2026-05-02T06:32:15.885Z",
+  "loadedFiles": [
+    "torrentSources.json"
+  ],
+  "summary": {
+    "totalEntries": 8,
+    "acceptedCount": 8,
+    "rejectedCount": 0,
+    "warningCount": 0,
+    "episodesWithAcceptedFallbackCount": 8,
+    "episodesWithAcceptedFallback": [
+      "S14E03",
+      "S14E04",
+      "S15E01",
+      "S12E03",
+      "S08E05",
+      "S03E12",
+      "S01E05",
+      "S03E01"
+    ]
+  },
+  "accepted": [
+    {
+      "canonicalId": "S14E03",
+      "title": "Wild Blue Yonder (Special)",
+      "type": "torrent",
+      "quality": "1080p",
+      "infoHash": "66a6b9853a4d6f531d678f4d5f2a2893375217e3",
+      "fileIdx": 24,
+      "confidence": "high",
+      "subtitleCompatibility": "matches-current-archive-timing",
+      "subtitleFile": null,
+      "subtitleUrl": null,
+      "trackers": [
+        "http://bt1.archive.org:6969/announce",
+        "http://bt2.archive.org:6969/announce"
+      ],
+      "sources": [
+        "https://archive.org/download/nw_S14/nw_S14_archive.torrent"
+      ],
+      "sourceFile": "torrentSources.json"
+    },
+    {
+      "canonicalId": "S14E04",
+      "title": "The Giggle (Special)",
+      "type": "torrent",
+      "quality": "1080p",
+      "infoHash": "66a6b9853a4d6f531d678f4d5f2a2893375217e3",
+      "fileIdx": 34,
+      "confidence": "high",
+      "subtitleCompatibility": "matches-current-archive-timing",
+      "subtitleFile": null,
+      "subtitleUrl": null,
+      "trackers": [
+        "http://bt1.archive.org:6969/announce",
+        "http://bt2.archive.org:6969/announce"
+      ],
+      "sources": [
+        "https://archive.org/download/nw_S14/nw_S14_archive.torrent"
+      ],
+      "sourceFile": "torrentSources.json"
+    },
+    {
+      "canonicalId": "S15E01",
+      "title": "The Church on Ruby Road (Special)",
+      "type": "torrent",
+      "quality": "1080p",
+      "infoHash": "45b8a0044b384d4080cb0a878e569ac77cf357b5",
+      "fileIdx": 4,
+      "confidence": "high",
+      "subtitleCompatibility": "matches-current-archive-timing",
+      "subtitleFile": null,
+      "subtitleUrl": null,
+      "trackers": [
+        "http://bt1.archive.org:6969/announce",
+        "http://bt2.archive.org:6969/announce"
+      ],
+      "sources": [
+        "https://archive.org/download/nw_S15/nw_S15_archive.torrent"
+      ],
+      "sourceFile": "torrentSources.json"
+    },
+    {
+      "canonicalId": "S12E03",
+      "title": "Orphan 55",
+      "type": "torrent",
+      "quality": "1080p",
+      "infoHash": "939f79fdf7e6986c6dbc7a24a00602a910afe863",
+      "fileIdx": 24,
+      "confidence": "high",
+      "subtitleCompatibility": "matches-current-archive-timing",
+      "subtitleFile": null,
+      "subtitleUrl": null,
+      "trackers": [
+        "http://bt1.archive.org:6969/announce",
+        "http://bt2.archive.org:6969/announce"
+      ],
+      "sources": [
+        "https://archive.org/download/nw_S12/nw_S12_archive.torrent"
+      ],
+      "sourceFile": "torrentSources.json"
+    },
+    {
+      "canonicalId": "S08E05",
+      "title": "Listen",
+      "type": "torrent",
+      "quality": "1080p",
+      "infoHash": "76c12bba5c88e78ac36179b96aafca5d0a8bd43e",
+      "fileIdx": 44,
+      "confidence": "high",
+      "subtitleCompatibility": "matches-current-archive-timing",
+      "subtitleFile": null,
+      "subtitleUrl": null,
+      "trackers": [
+        "http://bt1.archive.org:6969/announce",
+        "http://bt2.archive.org:6969/announce"
+      ],
+      "sources": [
+        "https://archive.org/download/nw_S08/nw_S08_archive.torrent"
+      ],
+      "sourceFile": "torrentSources.json"
+    },
+    {
+      "canonicalId": "S03E12",
+      "title": "Utopia",
+      "type": "torrent",
+      "quality": "1080p",
+      "infoHash": "772d668bb36575ba622044c51851f743ae62a4b6",
+      "fileIdx": 114,
+      "confidence": "high",
+      "subtitleCompatibility": "matches-current-archive-timing",
+      "subtitleFile": null,
+      "subtitleUrl": null,
+      "trackers": [
+        "http://bt1.archive.org:6969/announce",
+        "http://bt2.archive.org:6969/announce"
+      ],
+      "sources": [
+        "https://archive.org/download/nw_S03/nw_S03_archive.torrent"
+      ],
+      "sourceFile": "torrentSources.json"
+    },
+    {
+      "canonicalId": "S01E05",
+      "title": "World War Three",
+      "type": "torrent",
+      "quality": "1080p",
+      "infoHash": "7197b0955138091c1875751a10202a60c8b55f02",
+      "fileIdx": 44,
+      "confidence": "high",
+      "subtitleCompatibility": "matches-current-archive-timing",
+      "subtitleFile": null,
+      "subtitleUrl": null,
+      "trackers": [
+        "http://bt1.archive.org:6969/announce",
+        "http://bt2.archive.org:6969/announce"
+      ],
+      "sources": [
+        "https://archive.org/download/nw_S01/nw_S01_archive.torrent"
+      ],
+      "sourceFile": "torrentSources.json"
+    },
+    {
+      "canonicalId": "S03E01",
+      "title": "Smith and Jones",
+      "type": "torrent",
+      "quality": "1080p",
+      "infoHash": "772d668bb36575ba622044c51851f743ae62a4b6",
+      "fileIdx": 4,
+      "confidence": "high",
+      "subtitleCompatibility": "matches-current-archive-timing",
+      "subtitleFile": null,
+      "subtitleUrl": null,
+      "trackers": [
+        "http://bt1.archive.org:6969/announce",
+        "http://bt2.archive.org:6969/announce"
+      ],
+      "sources": [
+        "https://archive.org/download/nw_S03/nw_S03_archive.torrent"
+      ],
+      "sourceFile": "torrentSources.json"
+    }
+  ],
+  "rejected": [],
+  "warnings": []
+}

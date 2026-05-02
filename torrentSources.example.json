@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "updatedAt": "YYYY-MM-DDTHH:MM:SSZ",
+  "sources": [
+    {
+      "canonicalId": "S14E03",
+      "title": "Wild Blue Yonder (Special)",
+      "type": "torrent",
+      "quality": "1080p",
+      "infoHash": "0123456789abcdef0123456789abcdef01234567",
+      "fileIdx": 0,
+      "name": "example torrent fallback",
+      "seeders": null,
+      "trackers": [
+        "http://bt1.archive.org:6969/announce"
+      ],
+      "sources": [
+        "https://archive.org/download/nw_S14/nw_S14_archive.torrent"
+      ],
+      "confidence": "high",
+      "subtitleCompatibility": "matches-current-archive-timing"
+    }
+  ]
+}

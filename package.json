@@ -11,7 +11,8 @@
     "build:stream-metadata": "node tools/buildStreamMetadata.js",
     "build:subtitle-status": "node tools/buildSubtitleStatus.js",
     "build:arabic-alternatives": "python3 tools/buildArabicAlternatives.py",
-    "check": "node tools/checkProduction.js"
+    "check": "node tools/checkProduction.js",
+    "validate:torrents": "node tools/validateTorrentSources.js"
   },
   "dependencies": {
     "stremio-addon-sdk": "^1.6.10"
