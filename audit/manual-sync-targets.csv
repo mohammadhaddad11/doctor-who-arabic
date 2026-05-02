@@ -2,9 +2,23 @@ canonicalId,title,subtitleFile,quality,segmentStart,segmentEnd,anchorLabel,oldAr
 S02E14,The Runaway Bride (Special),E14_the_runaway_bride_special.ar.srt,1080p,00:40:00,,Late segment start,"00:40:22,397","00:40:21,397",high
 S02E14,The Runaway Bride (Special),E14_the_runaway_bride_special.ar.srt,1080p,00:40:00,,Late segment middle,"00:53:07,390","00:53:06,390",high
 S02E14,The Runaway Bride (Special),E14_the_runaway_bride_special.ar.srt,1080p,00:40:00,,Late segment ending,"00:57:24,047","00:57:23,047",high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,00:56:30,Post-46 drift anchor 1,"00:46:46,220","00:46:43,220",high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,00:56:30,Post-46 drift anchor 2,"00:48:16,477","00:48:13,477",high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:56:30,00:57:40,Transition anchor 1,"00:56:39,164","00:56:36,164",high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:56:30,00:57:40,Transition anchor 2,"00:57:35,920","00:57:10,920",high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:57:40,,Late segment 25s anchor 1,"00:57:41,234","00:57:16,234",high
-S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:57:40,,Late segment 25s anchor 2,"01:00:32,354","01:00:07,354",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,Post-46 baseline anchor,"00:46:43,220","00:46:43,220",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,Post-48 baseline anchor,"00:48:13,477","00:48:13,477",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,52-minute delay anchor,"00:52:44,760","00:52:39,260",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,55-minute delay anchor,"00:55:11,986","00:55:03,486",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,56-minute peak delay anchor,"00:56:36,164","00:56:25,964",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,57-minute recovery anchor,"00:57:30,234","00:57:22,434",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,58-minute recovery anchor,"00:57:56,891","00:57:52,891",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,59-minute stabilization anchor,"00:59:20,983","00:59:15,383",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,Pre-1h zero-cross anchor,"00:59:51,295","00:59:51,295",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,Tardis line anchor,"01:00:21,354","01:00:14,654",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,00:46:00,01:00:32,Hope line anchor,"01:00:28,369","01:00:21,403",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,01:00:20,01:00:45,Local reorder cue 958,"01:00:17,960","01:00:25,872",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,01:00:20,01:00:45,Local reorder cue 959,"01:00:21,701","01:00:29,709",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,01:00:20,01:00:45,Local reorder cue 960,"01:00:26,037","01:00:33,755",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,01:00:20,01:00:45,Local reorder cue 961,"01:00:22,372","01:00:39,886",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,01:06:30,,Ending anchor 1,"01:06:38,505","01:06:38,505",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,01:06:30,,Ending anchor 2,"01:08:13,864","01:08:13,064",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,01:06:30,,Ending anchor 3,"01:10:20,386","01:10:15,086",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,01:06:30,,Ending anchor 4,"01:10:58,776","01:10:52,576",high
+S07E30,The Day of the Doctor (Special),E30_the_day_of_the_doctor_special.ar.srt,1080p,01:06:30,,Ending anchor 5,"01:11:48,815","01:11:44,915",high

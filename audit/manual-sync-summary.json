@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-01T17:21:40.796Z",
+  "generatedAt": "2026-05-02T04:52:03.331818Z",
   "writeApplied": true,
   "entries": [
     {
@@ -54,57 +54,183 @@
       "finalStatus": "verified",
       "anchors": [
         {
-          "label": "Post-46 drift anchor 1",
-          "oldArabicTime": "00:46:46,220",
+          "label": "Post-46 baseline anchor",
+          "oldArabicTime": "00:46:43,220",
           "targetTime": "00:46:43,220",
-          "appliedShiftSeconds": -3,
+          "appliedShiftSeconds": 0.0,
           "confidence": "high",
           "segmentStart": "00:46:00",
-          "segmentEnd": "00:56:30"
+          "segmentEnd": "01:00:32"
         },
         {
-          "label": "Post-46 drift anchor 2",
-          "oldArabicTime": "00:48:16,477",
+          "label": "Post-48 baseline anchor",
+          "oldArabicTime": "00:48:13,477",
           "targetTime": "00:48:13,477",
-          "appliedShiftSeconds": -3,
+          "appliedShiftSeconds": 0.0,
           "confidence": "high",
           "segmentStart": "00:46:00",
-          "segmentEnd": "00:56:30"
+          "segmentEnd": "01:00:32"
         },
         {
-          "label": "Transition anchor 1",
-          "oldArabicTime": "00:56:39,164",
-          "targetTime": "00:56:36,164",
-          "appliedShiftSeconds": -3,
+          "label": "52-minute delay anchor",
+          "oldArabicTime": "00:52:44,760",
+          "targetTime": "00:52:39,260",
+          "appliedShiftSeconds": -5.5,
           "confidence": "high",
-          "segmentStart": "00:56:30",
-          "segmentEnd": "00:57:40"
+          "segmentStart": "00:46:00",
+          "segmentEnd": "01:00:32"
         },
         {
-          "label": "Transition anchor 2",
-          "oldArabicTime": "00:57:35,920",
-          "targetTime": "00:57:10,920",
-          "appliedShiftSeconds": -25,
+          "label": "55-minute delay anchor",
+          "oldArabicTime": "00:55:11,986",
+          "targetTime": "00:55:03,486",
+          "appliedShiftSeconds": -8.5,
           "confidence": "high",
-          "segmentStart": "00:56:30",
-          "segmentEnd": "00:57:40"
+          "segmentStart": "00:46:00",
+          "segmentEnd": "01:00:32"
         },
         {
-          "label": "Late segment 25s anchor 1",
-          "oldArabicTime": "00:57:41,234",
-          "targetTime": "00:57:16,234",
-          "appliedShiftSeconds": -25,
+          "label": "56-minute peak delay anchor",
+          "oldArabicTime": "00:56:36,164",
+          "targetTime": "00:56:25,964",
+          "appliedShiftSeconds": -10.2,
           "confidence": "high",
-          "segmentStart": "00:57:40",
+          "segmentStart": "00:46:00",
+          "segmentEnd": "01:00:32"
+        },
+        {
+          "label": "57-minute recovery anchor",
+          "oldArabicTime": "00:57:30,234",
+          "targetTime": "00:57:22,434",
+          "appliedShiftSeconds": -7.8,
+          "confidence": "high",
+          "segmentStart": "00:46:00",
+          "segmentEnd": "01:00:32"
+        },
+        {
+          "label": "58-minute recovery anchor",
+          "oldArabicTime": "00:57:56,891",
+          "targetTime": "00:57:52,891",
+          "appliedShiftSeconds": -4.0,
+          "confidence": "high",
+          "segmentStart": "00:46:00",
+          "segmentEnd": "01:00:32"
+        },
+        {
+          "label": "59-minute stabilization anchor",
+          "oldArabicTime": "00:59:20,983",
+          "targetTime": "00:59:15,383",
+          "appliedShiftSeconds": -5.6,
+          "confidence": "high",
+          "segmentStart": "00:46:00",
+          "segmentEnd": "01:00:32"
+        },
+        {
+          "label": "Pre-1h zero-cross anchor",
+          "oldArabicTime": "00:59:51,295",
+          "targetTime": "00:59:51,295",
+          "appliedShiftSeconds": 0.0,
+          "confidence": "high",
+          "segmentStart": "00:46:00",
+          "segmentEnd": "01:00:32"
+        },
+        {
+          "label": "Tardis line anchor",
+          "oldArabicTime": "01:00:21,354",
+          "targetTime": "01:00:14,654",
+          "appliedShiftSeconds": -6.7,
+          "confidence": "high",
+          "segmentStart": "00:46:00",
+          "segmentEnd": "01:00:32"
+        },
+        {
+          "label": "Hope line anchor",
+          "oldArabicTime": "01:00:28,369",
+          "targetTime": "01:00:21,403",
+          "appliedShiftSeconds": -6.966,
+          "confidence": "high",
+          "segmentStart": "00:46:00",
+          "segmentEnd": "01:00:32"
+        },
+        {
+          "label": "Local reorder cue 958",
+          "oldArabicTime": "01:00:17,960",
+          "targetTime": "01:00:25,872",
+          "appliedShiftSeconds": 7.912,
+          "confidence": "high",
+          "segmentStart": "01:00:20",
+          "segmentEnd": "01:00:45"
+        },
+        {
+          "label": "Local reorder cue 959",
+          "oldArabicTime": "01:00:21,701",
+          "targetTime": "01:00:29,709",
+          "appliedShiftSeconds": 8.008,
+          "confidence": "high",
+          "segmentStart": "01:00:20",
+          "segmentEnd": "01:00:45"
+        },
+        {
+          "label": "Local reorder cue 960",
+          "oldArabicTime": "01:00:26,037",
+          "targetTime": "01:00:33,755",
+          "appliedShiftSeconds": 7.718,
+          "confidence": "high",
+          "segmentStart": "01:00:20",
+          "segmentEnd": "01:00:45"
+        },
+        {
+          "label": "Local reorder cue 961",
+          "oldArabicTime": "01:00:22,372",
+          "targetTime": "01:00:39,886",
+          "appliedShiftSeconds": 17.514,
+          "confidence": "high",
+          "segmentStart": "01:00:20",
+          "segmentEnd": "01:00:45"
+        },
+        {
+          "label": "Ending anchor 1",
+          "oldArabicTime": "01:06:38,505",
+          "targetTime": "01:06:38,505",
+          "appliedShiftSeconds": 0.0,
+          "confidence": "high",
+          "segmentStart": "01:06:30",
           "segmentEnd": ""
         },
         {
-          "label": "Late segment 25s anchor 2",
-          "oldArabicTime": "01:00:32,354",
-          "targetTime": "01:00:07,354",
-          "appliedShiftSeconds": -25,
+          "label": "Ending anchor 2",
+          "oldArabicTime": "01:08:13,864",
+          "targetTime": "01:08:13,064",
+          "appliedShiftSeconds": -0.8,
           "confidence": "high",
-          "segmentStart": "00:57:40",
+          "segmentStart": "01:06:30",
+          "segmentEnd": ""
+        },
+        {
+          "label": "Ending anchor 3",
+          "oldArabicTime": "01:10:20,386",
+          "targetTime": "01:10:15,086",
+          "appliedShiftSeconds": -5.3,
+          "confidence": "high",
+          "segmentStart": "01:06:30",
+          "segmentEnd": ""
+        },
+        {
+          "label": "Ending anchor 4",
+          "oldArabicTime": "01:10:58,776",
+          "targetTime": "01:10:52,576",
+          "appliedShiftSeconds": -6.2,
+          "confidence": "high",
+          "segmentStart": "01:06:30",
+          "segmentEnd": ""
+        },
+        {
+          "label": "Ending anchor 5",
+          "oldArabicTime": "01:11:48,815",
+          "targetTime": "01:11:44,915",
+          "appliedShiftSeconds": -3.9,
+          "confidence": "high",
+          "segmentStart": "01:06:30",
           "segmentEnd": ""
         }
       ]
