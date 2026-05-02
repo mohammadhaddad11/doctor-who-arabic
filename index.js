@@ -49,6 +49,8 @@ const REPORT_PATH = '/report';
 const REVIEW_SUBTITLE_DIR = path.join(__dirname, 'review', 'arabic-subtitles');
 const GITHUB_ISSUE_TEMPLATE_URL = 'https://github.com/mohammadhaddad11/doctor-who-arabic/issues/new?template=subtitle-issue.md';
 const MIRROR_CACHE_TTL_MS = 15 * 60 * 1000;
+const MIRROR_PROBE_TIMEOUT_MS = 2200;
+const MIRROR_PROBE_MAX_CANDIDATES = 3;
 const DEFAULT_ADDON_LOGO_URL = 'https://www.stremio.com/website/stremio-logo-small.png';
 const LOCAL_ADDON_LOGO_FILE = path.join(ASSET_DIR, 'whoniverse-arabic-logo.svg');
 
@@ -97,6 +99,14 @@ const TORRENT_CONFIDENCE_RANK = {
   high: 3,
   medium: 2,
   low: 1
+};
+
+const SIZE_LABEL_BYTES = {
+  B: 1,
+  KB: 1024,
+  MB: 1024 * 1024,
+  GB: 1024 * 1024 * 1024,
+  TB: 1024 * 1024 * 1024 * 1024
 };
 
 function trimTrailingSlash(value) {
@@ -321,6 +331,40 @@ function getEpisodeStreamMetadata(episode) {
   return key ? STREAM_METADATA_EPISODES[key] || null : null;
 }
 
+function parseSizeLabelToBytes(sizeLabel) {
+  if (typeof sizeLabel !== 'string') {
+    return null;
+  }
+
+  const match = sizeLabel.trim().match(/^(\d+(?:\.\d+)?)\s*(B|KB|MB|GB|TB)$/i);
+  if (!match) {
+    return null;
+  }
+
+  const value = Number(match[1]);
+  const unit = match[2].toUpperCase();
+  const multiplier = SIZE_LABEL_BYTES[unit];
+  if (!Number.isFinite(value) || !multiplier) {
+    return null;
+  }
+
+  const bytes = Math.round(value * multiplier);
+  return bytes > 0 ? bytes : null;
+}
+
+function getStreamBytes(streamEntry) {
+  if (!streamEntry || typeof streamEntry !== 'object') {
+    return null;
+  }
+
+  const directBytes = Number(streamEntry.sizeBytes);
+  if (Number.isFinite(directBytes) && directBytes > 0) {
+    return Math.round(directBytes);
+  }
+
+  return parseSizeLabelToBytes(streamEntry.sizeLabel);
+}
+
 function isArchiveUrl(url) {
   try {
     const parsed = new URL(url);
@@ -427,9 +471,21 @@ function getStreamEntryCandidatesForQuality(metadata, quality) {
   return [...urls.values()];
 }
 
-async function probeMirrorCandidate(url) {
+function getKnownQualitySourceUrl(metadata, quality) {
+  if (!metadata) {
+    return null;
+  }
+
+  if (quality === '1080p') {
+    return metadata.primary?.url || null;
+  }
+
+  return (metadata.alternatives || []).find((entry) => entry.label === quality)?.url || null;
+}
+
+async function probeMirrorCandidate(url, timeoutMs = MIRROR_PROBE_TIMEOUT_MS) {
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 6000);
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
   const startedAt = Date.now();
   try {
     const response = await fetch(url, {
@@ -490,23 +546,20 @@ async function chooseMirrorRedirectTarget(episode, quality) {
     return null;
   }
 
-  let selectedUrl = candidates[0].url;
-  if (candidates.length > 1) {
-    const topCandidates = candidates.slice(0, 2);
-    const liveResults = await Promise.all(topCandidates.map((candidate) => probeMirrorCandidate(candidate.url)));
-    const successful = liveResults
-      .filter((candidate) => [200, 206].includes(candidate.responseStatus))
-      .sort((a, b) => {
-        if ((b.healthScore || 0) !== (a.healthScore || 0)) {
-          return (b.healthScore || 0) - (a.healthScore || 0);
-        }
+  const fallbackUrl = getKnownQualitySourceUrl(metadata, quality) || candidates[0].url;
+  let selectedUrl = null;
+  const probeCandidates = candidates.slice(0, MIRROR_PROBE_MAX_CANDIDATES);
 
-        return (a.startupScore || Infinity) - (b.startupScore || Infinity);
-      });
-
-    if (successful.length) {
-      selectedUrl = successful[0].url;
+  for (const candidate of probeCandidates) {
+    const result = await probeMirrorCandidate(candidate.url);
+    if ([200, 206].includes(result.responseStatus)) {
+      selectedUrl = candidate.url;
+      break;
     }
+  }
+
+  if (!selectedUrl) {
+    selectedUrl = fallbackUrl;
   }
 
   mirrorSelectionCache.set(key, {
@@ -791,14 +844,23 @@ function buildStreamsForEpisode(episode) {
   const metadataBackedStreams = getMetadataBackedStreams(episode);
 
   if (metadataBackedStreams.length > 0) {
-    const streams = metadataBackedStreams.map((streamEntry) => ({
-      url: shouldUseDynamicRedirect(episode, streamEntry)
-        ? buildVideoRedirectUrl(episode, streamEntry.label)
-        : streamEntry.url,
-      name: buildStreamLabel(streamEntry),
-      description: buildStreamDescription(streamEntry, episode),
-      subtitles
-    }));
+    const streams = metadataBackedStreams.map((streamEntry) => {
+      const stream = {
+        url: shouldUseDynamicRedirect(episode, streamEntry)
+          ? buildVideoRedirectUrl(episode, streamEntry.label)
+          : streamEntry.url,
+        name: buildStreamLabel(streamEntry),
+        description: buildStreamDescription(streamEntry, episode),
+        subtitles
+      };
+
+      const bytes = getStreamBytes(streamEntry);
+      if (bytes !== null) {
+        stream.bytes = bytes;
+      }
+
+      return stream;
+    });
 
     const torrentFallback = SHOW_TORRENT_FALLBACK ? getTorrentFallbackForEpisode(episode) : null;
     if (torrentFallback) {
