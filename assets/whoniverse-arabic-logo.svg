@@ -1,25 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Whoniverse Arabic logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Whoniverse Arabic fan-made logo">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0f172a"/>
+    <radialGradient id="space" cx="50%" cy="38%" r="78%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="40%" stop-color="#172554"/>
+      <stop offset="100%" stop-color="#050b1f"/>
+    </radialGradient>
+    <radialGradient id="vortexCore" cx="50%" cy="40%" r="62%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.58"/>
+      <stop offset="55%" stop-color="#2563eb" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tardisBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
       <stop offset="100%" stop-color="#1d4ed8"/>
     </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#93c5fd"/>
-      <stop offset="100%" stop-color="#2563eb"/>
+    <linearGradient id="windowGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dbeafe"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
     </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="512" height="512" rx="48" fill="url(#bg)"/>
-  <rect x="150" y="92" width="132" height="280" rx="14" fill="#0b1220" stroke="#60a5fa" stroke-width="8"/>
-  <rect x="176" y="124" width="80" height="36" rx="8" fill="#e2e8f0" opacity="0.95"/>
-  <rect x="176" y="178" width="36" height="60" rx="6" fill="url(#panel)" opacity="0.95"/>
-  <rect x="220" y="178" width="36" height="60" rx="6" fill="url(#panel)" opacity="0.95"/>
-  <rect x="176" y="248" width="36" height="60" rx="6" fill="url(#panel)" opacity="0.95"/>
-  <rect x="220" y="248" width="36" height="60" rx="6" fill="url(#panel)" opacity="0.95"/>
-  <rect x="192" y="74" width="48" height="24" rx="8" fill="#60a5fa"/>
-  <circle cx="372" cy="148" r="64" fill="#f59e0b" opacity="0.2"/>
-  <text x="330" y="214" fill="#f8fafc" font-family="Arial, sans-serif" font-size="72" font-weight="700">DW</text>
-  <text x="330" y="282" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="34" font-weight="700">ARABIC</text>
-  <text x="74" y="438" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="42" font-weight="700">WHONIVERSE</text>
-  <text x="74" y="474" fill="#93c5fd" font-family="Arial, sans-serif" font-size="20" font-weight="600">1080p addon with English and Arabic tracks</text>
+
+  <rect width="512" height="512" rx="52" fill="url(#space)"/>
+
+  <circle cx="256" cy="212" r="208" fill="url(#vortexCore)"/>
+  <circle cx="256" cy="212" r="162" fill="none" stroke="#60a5fa" stroke-opacity="0.16" stroke-width="12"/>
+  <circle cx="256" cy="212" r="122" fill="none" stroke="#93c5fd" stroke-opacity="0.14" stroke-width="9"/>
+  <path d="M68 232c57-76 146-115 248-103 55 6 98 22 128 44" fill="none" stroke="#7dd3fc" stroke-opacity="0.2" stroke-width="4" stroke-linecap="round"/>
+  <path d="M92 292c61-52 127-73 214-65 60 6 108 24 138 52" fill="none" stroke="#60a5fa" stroke-opacity="0.2" stroke-width="3.5" stroke-linecap="round"/>
+
+  <g opacity="0.9">
+    <circle cx="84" cy="88" r="2" fill="#dbeafe"/>
+    <circle cx="126" cy="58" r="1.8" fill="#bfdbfe"/>
+    <circle cx="172" cy="92" r="1.7" fill="#e0f2fe"/>
+    <circle cx="418" cy="74" r="1.9" fill="#dbeafe"/>
+    <circle cx="454" cy="114" r="1.7" fill="#e2e8f0"/>
+    <circle cx="432" cy="168" r="1.5" fill="#bfdbfe"/>
+    <circle cx="74" cy="180" r="1.6" fill="#dbeafe"/>
+    <circle cx="442" cy="252" r="1.8" fill="#dbeafe"/>
+  </g>
+
+  <g transform="translate(162,112)" filter="url(#softGlow)">
+    <rect x="0" y="16" width="142" height="248" rx="14" fill="#0b1123" stroke="#60a5fa" stroke-opacity="0.6" stroke-width="4"/>
+    <rect x="18" y="0" width="106" height="24" rx="6" fill="#0f172a" stroke="#7dd3fc" stroke-opacity="0.7" stroke-width="2"/>
+    <rect x="20" y="34" width="102" height="18" rx="5" fill="#0b132b"/>
+    <rect x="28" y="76" width="36" height="52" rx="5" fill="url(#windowGlow)" opacity="0.9"/>
+    <rect x="78" y="76" width="36" height="52" rx="5" fill="url(#windowGlow)" opacity="0.9"/>
+    <rect x="28" y="140" width="36" height="52" rx="5" fill="url(#windowGlow)" opacity="0.88"/>
+    <rect x="78" y="140" width="36" height="52" rx="5" fill="url(#windowGlow)" opacity="0.88"/>
+    <rect x="60" y="196" width="22" height="68" rx="6" fill="url(#tardisBody)" opacity="0.82"/>
+  </g>
+
+  <g transform="translate(374,68)">
+    <rect width="74" height="34" rx="17" fill="#0f172a" stroke="#7dd3fc" stroke-opacity="0.7"/>
+    <text x="37" y="23" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#e0f2fe">AR</text>
+  </g>
+
+  <text x="52" y="414" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="43" font-weight="800" fill="#f8fafc" letter-spacing="0.6">Whoniverse Arabic</text>
+  <text x="54" y="446" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#93c5fd">Fan-made Doctor Who inspired addon • 1080p</text>
 </svg>
