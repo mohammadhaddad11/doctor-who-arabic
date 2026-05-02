@@ -10,7 +10,7 @@
     },
     "episodesWith1080p": 239,
     "episodesWith720pAdded": 0,
-    "episodesWith480pAdded": 87,
+    "episodesWith480pAdded": 88,
     "episodesWithFastStartBackup": 26,
     "episodesWithTorrentFallback": 0
   },
@@ -5585,7 +5585,30 @@
         "height": 1080,
         "lengthSeconds": 3057.11
       },
-      "alternatives": [],
+      "alternatives": [
+        {
+          "role": "alternative",
+          "label": "480p",
+          "sourceType": "direct-derivative",
+          "url": "https://ia600908.us.archive.org/7/items/nw_S04/E01_partners_in_crime.ia.mp4",
+          "sizeBytes": 305750432,
+          "sizeLabel": "291.59 MB",
+          "responseStatus": 206,
+          "responseTimeMs": 923,
+          "redirects": 0,
+          "finalUrl": "https://ia600908.us.archive.org/7/items/nw_S04/E01_partners_in_crime.ia.mp4",
+          "host": "ia600908.us.archive.org",
+          "contentType": "video/mp4",
+          "speedCategory": "SLOW",
+          "healthScore": 90,
+          "startupScore": 1595,
+          "sampleDownloadTimeMs": 1595,
+          "sampleBytes": 262144,
+          "width": 836,
+          "height": 480,
+          "lengthSeconds": 3057.13
+        }
+      ],
       "backupCandidates": [
         {
           "role": "alternative",
