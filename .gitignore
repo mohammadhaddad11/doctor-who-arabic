@@ -5,3 +5,4 @@ yarn-debug.log*
 yarn-error.log*
 .env
 torrentSources.local.json
+externalSources.local.json
