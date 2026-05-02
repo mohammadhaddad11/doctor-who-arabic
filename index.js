@@ -109,6 +109,19 @@ const SIZE_LABEL_BYTES = {
   TB: 1024 * 1024 * 1024 * 1024
 };
 
+const INTERNAL_FAST_START_1080P_CANDIDATES = Object.freeze({
+  S05E02: 'https://ia600708.us.archive.org/17/items/nw_S05/E02_meanwhile_in_the_tardis1_minisode.ia.mp4',
+  S05E11: 'https://archive.org/download/nw_S05/E11_cold_blood.ia.mp4',
+  S12E01: 'https://ia800904.us.archive.org/13/items/nw_S12/E01_spyfall_part1.ia.mp4',
+  S13E02: 'https://ia800705.us.archive.org/27/items/nw_S13/E02_war_of_the_sontarans.ia.mp4',
+  S13E05: 'https://ia800705.us.archive.org/27/items/nw_S13/E05_survivors_of_the_flux.ia.mp4',
+  S14E01: 'https://ia600909.us.archive.org/11/items/nw_S14/E01_destination_skaro_minisode.ia.mp4',
+  S14E03: 'https://ia600909.us.archive.org/11/items/nw_S14/E03_wild_blue_yonder_special.ia.mp4',
+  S14E04: 'https://ia600909.us.archive.org/11/items/nw_S14/E04_the_giggle_special.ia.mp4',
+  S15E03: 'https://ia800704.us.archive.org/4/items/nw_S15/E03_the_devils_chord.ia.mp4',
+  S16E01: 'https://ia800900.us.archive.org/19/items/nw_S16/E01_the_robot_revolution.ia.mp4'
+});
+
 function trimTrailingSlash(value) {
   return value.replace(/\/+$/, '');
 }
@@ -426,7 +439,22 @@ function getStreamEntryCandidatesForQuality(metadata, quality) {
   }
 
   if (quality === '1080p') {
-    return metadata.primaryCandidates || [];
+    const candidates = [...(metadata.primaryCandidates || [])];
+    const fastStartUrl = INTERNAL_FAST_START_1080P_CANDIDATES[metadata.canonicalId || ''];
+
+    if (fastStartUrl && !candidates.some((candidate) => candidate?.url === fastStartUrl)) {
+      const baseStartup = metadata.primary?.startupScore || metadata.primary?.responseTimeMs || 1200;
+      const baseHealth = metadata.primary?.healthScore || 90;
+      candidates.unshift({
+        url: fastStartUrl,
+        healthScore: Math.max(1, Math.min(100, baseHealth + 1)),
+        probe: {
+          startupScore: Math.max(1, baseStartup - 250)
+        }
+      });
+    }
+
+    return candidates;
   }
 
   const alternative = (metadata.alternatives || []).find((entry) => entry.label === quality);
