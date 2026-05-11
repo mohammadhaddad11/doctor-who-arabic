@@ -21,6 +21,7 @@ function loadJsonFile(relativePath, fallbackValue) {
 }
 
 const arabicSubtitleAlternatives = loadJsonFile('arabicSubtitleAlternatives.json', {});
+const arabicImprovedSubtitles = loadJsonFile('arabicImprovedSubtitles.json', {});
 const streamMetadata = loadJsonFile('streamMetadata.json', { episodes: {}, summary: {} });
 const subtitleStatus = loadJsonFile('subtitleStatus.json', { entries: {}, summary: {} });
 const torrentSources = loadJsonFile('torrentSources.json', { sources: [] });
@@ -30,6 +31,7 @@ const torrentFallbackAudit = loadJsonFile('audit/torrent-fallback-audit.json', {
 const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
 const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
 const ARABIC_ALT_INDEX = arabicSubtitleAlternatives || {};
+const ARABIC_IMPROVED_INDEX = arabicImprovedSubtitles || {};
 const STREAM_METADATA_EPISODES = streamMetadata.episodes || {};
 const STREAM_SUMMARY = streamMetadata.summary || {};
 const SUBTITLE_STATUS_ENTRIES = subtitleStatus.entries || {};
@@ -40,6 +42,8 @@ const ARABIC_SUBTITLE_DIR = path.join(__dirname, 'ar');
 const ARABIC_SUBTITLE_ROUTE = '/subtitles/ar';
 const ARABIC_ALT_SUBTITLE_DIR = path.join(__dirname, 'ar-alt');
 const ARABIC_ALT_SUBTITLE_ROUTE = '/subtitles/ar-alt';
+const ARABIC_IMPROVED_SUBTITLE_DIR = path.join(__dirname, 'ar-improved');
+const ARABIC_IMPROVED_SUBTITLE_ROUTE = '/subtitles/ar-improved';
 const ASSET_DIR = path.join(__dirname, 'assets');
 const ASSET_ROUTE = '/assets';
 const VIDEO_ROUTE = '/video';
@@ -121,6 +125,12 @@ const INTERNAL_FAST_START_1080P_CANDIDATES = Object.freeze({
   S15E03: 'https://ia800704.us.archive.org/4/items/nw_S15/E03_the_devils_chord.ia.mp4',
   S16E01: 'https://ia800900.us.archive.org/19/items/nw_S16/E01_the_robot_revolution.ia.mp4'
 });
+
+const ARABIC_IMPROVED_ALLOWED_FILES = new Set(
+  Object.values(ARABIC_IMPROVED_INDEX)
+    .map((value) => getArabicImprovedEntryFilename(value))
+    .filter((filename) => Boolean(filename) && filename === path.basename(filename))
+);
 
 function trimTrailingSlash(value) {
   return value.replace(/\/+$/, '');
@@ -235,6 +245,22 @@ function getArabicAltSubtitleFilePath(arabicName) {
   return path.join(ARABIC_ALT_SUBTITLE_DIR, arabicName);
 }
 
+function getArabicImprovedEntryFilename(value) {
+  if (typeof value === 'string') {
+    return value.trim();
+  }
+
+  if (value && typeof value.filename === 'string') {
+    return value.filename.trim();
+  }
+
+  return null;
+}
+
+function getArabicImprovedSubtitleFilePath(arabicName) {
+  return path.join(ARABIC_IMPROVED_SUBTITLE_DIR, arabicName);
+}
+
 function getSubtitleContentVersion(filePath) {
   if (!filePath || !fs.existsSync(filePath)) {
     return null;
@@ -275,6 +301,13 @@ function buildArabicAltSubtitleUrl(arabicName) {
   return version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl;
 }
 
+function buildArabicImprovedSubtitleUrl(arabicName) {
+  const subtitlePath = getArabicImprovedSubtitleFilePath(arabicName);
+  const version = getSubtitleContentVersion(subtitlePath);
+  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${ARABIC_IMPROVED_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
+  return version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl;
+}
+
 function getAssetFilePath(assetName) {
   return path.join(ASSET_DIR, path.basename(assetName));
 }
@@ -310,6 +343,38 @@ function getArabicAlternativeTracks(episode) {
     }));
 }
 
+function getArabicImprovedSubtitleFilename(episode) {
+  const episodeId = getEpisodeKey(episode);
+  if (!episodeId) {
+    return null;
+  }
+
+  const mappedName = getArabicImprovedEntryFilename(ARABIC_IMPROVED_INDEX[episodeId]);
+  if (!mappedName || mappedName !== path.basename(mappedName) || !/\.srt$/i.test(mappedName)) {
+    return null;
+  }
+
+  if (!ARABIC_IMPROVED_ALLOWED_FILES.has(mappedName)) {
+    return null;
+  }
+
+  return mappedName;
+}
+
+function getArabicImprovedSubtitleUrl(episode) {
+  const improvedName = getArabicImprovedSubtitleFilename(episode);
+  if (!improvedName) {
+    return null;
+  }
+
+  const improvedPath = getArabicImprovedSubtitleFilePath(improvedName);
+  if (!fs.existsSync(improvedPath)) {
+    return null;
+  }
+
+  return buildArabicImprovedSubtitleUrl(improvedName);
+}
+
 function getSubtitleTracks(episode) {
   if (!episode) {
     return [];
@@ -331,6 +396,17 @@ function getSubtitleTracks(episode) {
       id: 'local_ar_sub',
       url: arabicUrl,
       lang: 'Arabic'
+    });
+  }
+
+  const arabicImprovedUrl = getArabicImprovedSubtitleUrl(episode);
+  if (arabicImprovedUrl) {
+    subtitles.push({
+      id: 'local_ar_improved_sub',
+      url: arabicImprovedUrl,
+      lang: 'Arabic',
+      title: 'Arabic Improved',
+      name: 'Arabic Improved'
     });
   }
 
@@ -924,6 +1000,17 @@ function getArabicAlternativeEpisodeCount() {
   return Object.keys(ARABIC_ALT_INDEX).length;
 }
 
+function getArabicImprovedEpisodeCount() {
+  return Object.entries(ARABIC_IMPROVED_INDEX).reduce((count, [, value]) => {
+    const filename = getArabicImprovedEntryFilename(value);
+    if (!filename || filename !== path.basename(filename) || !ARABIC_IMPROVED_ALLOWED_FILES.has(filename)) {
+      return count;
+    }
+
+    return fs.existsSync(getArabicImprovedSubtitleFilePath(filename)) ? count + 1 : count;
+  }, 0);
+}
+
 function getStreamCounts() {
   const stream480p = allNewWhoEpisodes.reduce((count, episode) => {
     const metadataBackedStreams = getMetadataBackedStreams(episode);
@@ -1446,6 +1533,40 @@ function serveArabicAltSubtitle(req, res, filename) {
   fs.createReadStream(filePath).pipe(res);
 }
 
+function serveArabicImprovedSubtitle(req, res, filename) {
+  const safeName = path.basename(filename);
+
+  if (!safeName || safeName !== filename || !ARABIC_IMPROVED_ALLOWED_FILES.has(safeName)) {
+    sendCorsHeaders(res);
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.end('Arabic improved subtitle not found');
+    return;
+  }
+
+  const subtitlePath = getArabicImprovedSubtitleFilePath(safeName);
+  if (!fs.existsSync(subtitlePath)) {
+    sendCorsHeaders(res);
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.end('Arabic improved subtitle file missing');
+    return;
+  }
+
+  sendCorsHeaders(res);
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/x-subrip; charset=utf-8');
+  res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
+  res.setHeader('Cache-Control', 'public, max-age=3600');
+
+  if (req.method === 'HEAD') {
+    res.end();
+    return;
+  }
+
+  fs.createReadStream(subtitlePath).pipe(res);
+}
+
 const server = http.createServer((req, res) => {
   const requestUrl = new URL(req.url, `http://${req.headers.host || `127.0.0.1:${port}`}`);
 
@@ -1482,6 +1603,7 @@ const server = http.createServer((req, res) => {
   if (requestUrl.pathname === '/status') {
     const streamCounts = getStreamCounts();
     const arabicAltCount = getArabicAlternativeEpisodeCount();
+    const arabicImprovedCount = getArabicImprovedEpisodeCount();
     jsonResponse(res, 200, {
       name: manifest.name,
       version: manifest.version,
@@ -1489,6 +1611,7 @@ const server = http.createServer((req, res) => {
       arabicSubtitleCount: ARABIC_SUBTITLE_FILES.size,
       arabicPrimaryCount: ARABIC_SUBTITLE_FILES.size,
       arabicAlternativeCount: arabicAltCount,
+      arabicImprovedCount,
       episodesMissingArabicAlternatives: ARABIC_SUBTITLE_FILES.size - arabicAltCount,
       stream1080pCount: streamCounts.stream1080p,
       stream480pCount: streamCounts.stream480p,
@@ -1545,6 +1668,19 @@ const server = http.createServer((req, res) => {
 
     const encodedName = requestUrl.pathname.slice(`${ARABIC_ALT_SUBTITLE_ROUTE}/`.length);
     serveArabicAltSubtitle(req, res, decodeURIComponent(encodedName));
+    return;
+  }
+
+  if (requestUrl.pathname.startsWith(`${ARABIC_IMPROVED_SUBTITLE_ROUTE}/`)) {
+    if (req.method === 'OPTIONS') {
+      sendCorsHeaders(res);
+      res.statusCode = 204;
+      res.end();
+      return;
+    }
+
+    const encodedName = requestUrl.pathname.slice(`${ARABIC_IMPROVED_SUBTITLE_ROUTE}/`.length);
+    serveArabicImprovedSubtitle(req, res, decodeURIComponent(encodedName));
     return;
   }
 

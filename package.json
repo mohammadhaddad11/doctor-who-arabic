@@ -15,7 +15,8 @@
     "speed:audit:archive": "node tools/auditArchiveDerivatives.js",
     "check": "node tools/checkProduction.js",
     "validate:torrents": "node tools/validateTorrentSources.js",
-    "validate:external": "node tools/validateExternalSources.js"
+    "validate:external": "node tools/validateExternalSources.js",
+    "validate:improved-arabic": "node tools/validateImprovedArabicSubtitles.js"
   },
   "dependencies": {
     "stremio-addon-sdk": "^1.6.10"
