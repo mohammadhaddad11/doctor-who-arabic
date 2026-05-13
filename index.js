@@ -390,15 +390,6 @@ function getSubtitleTracks(episode) {
     });
   }
 
-  const arabicUrl = getArabicSubtitleUrl(episode);
-  if (arabicUrl) {
-    subtitles.push({
-      id: 'local_ar_sub',
-      url: arabicUrl,
-      lang: 'Arabic'
-    });
-  }
-
   const arabicImprovedUrl = getArabicImprovedSubtitleUrl(episode);
   if (arabicImprovedUrl) {
     subtitles.push({
@@ -407,6 +398,20 @@ function getSubtitleTracks(episode) {
       lang: 'Arabic',
       title: 'Arabic Improved',
       name: 'Arabic Improved'
+    });
+  }
+
+  const arabicUrl = getArabicSubtitleUrl(episode);
+  if (arabicUrl) {
+    const isArabicBackup = Boolean(arabicImprovedUrl);
+    subtitles.push({
+      id: 'local_ar_sub',
+      url: arabicUrl,
+      lang: 'Arabic',
+      ...(isArabicBackup ? {
+        title: 'Arabic Backup',
+        name: 'Arabic Backup'
+      } : {})
     });
   }
 
