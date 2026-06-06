@@ -6,14 +6,15 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S02E14 The Runaway Bride Special
-Next target episode: S03E01 Smith and Jones
-Completed Arabic Improved count: 29
+Last completed episode: S03E01 Smith and Jones
+Next target episode: S03E02 The Shakespeare Code
+Completed Arabic Improved count: 30
 Date: 2026-06-06
 
 Already completed:
 - S02E13 Doomsday
 - S02E14 The Runaway Bride Special
+- S03E01 Smith and Jones
 
 ## 3. Arabic Improved Priority Rule
 
