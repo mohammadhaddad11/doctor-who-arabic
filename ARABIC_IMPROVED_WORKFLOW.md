@@ -6,11 +6,13 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Already completed:
+Last completed episode: S02E13 Doomsday
+Next target episode: S02E14 The Runaway Bride Special
+Completed Arabic Improved count: 28
+Date: 2026-06-06
 
-- S01E01 Rose
-- S01E02 The End of the World
-- S01E03 The Unquiet Dead
+Already completed:
+- S02E13 Doomsday
 
 ## 3. Arabic Improved Priority Rule
 
