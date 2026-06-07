@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S03E05 Evolution of the Daleks
-Next target episode: S03E06 The Lazarus Experiment
-Completed Arabic Improved count: 34
+Last completed episode: S03E06 The Lazarus Experiment
+Next target episode: S03E07 42
+Completed Arabic Improved count: 35
 Date: 2026-06-07
 
 Already completed:
@@ -19,6 +19,7 @@ Already completed:
 - S03E03 Gridlock
 - S03E04 Daleks in Manhattan
 - S03E05 Evolution of the Daleks
+- S03E06 The Lazarus Experiment
 
 ## 3. Arabic Improved Priority Rule
 
