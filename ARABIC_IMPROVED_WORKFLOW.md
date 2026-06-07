@@ -6,15 +6,17 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S03E01 Smith and Jones
-Next target episode: S03E02 The Shakespeare Code
-Completed Arabic Improved count: 30
-Date: 2026-06-06
+Last completed episode: S03E03 Gridlock
+Next target episode: S03E04 Daleks in Manhattan
+Completed Arabic Improved count: 32
+Date: 2026-06-07
 
 Already completed:
 - S02E13 Doomsday
 - S02E14 The Runaway Bride Special
 - S03E01 Smith and Jones
+- S03E02 The Shakespeare Code
+- S03E03 Gridlock
 
 ## 3. Arabic Improved Priority Rule
 
