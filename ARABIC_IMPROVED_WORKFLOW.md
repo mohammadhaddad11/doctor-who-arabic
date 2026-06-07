@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S03E03 Gridlock
-Next target episode: S03E04 Daleks in Manhattan
-Completed Arabic Improved count: 32
+Last completed episode: S03E04 Daleks in Manhattan
+Next target episode: S03E05 Evolution of the Daleks
+Completed Arabic Improved count: 33
 Date: 2026-06-07
 
 Already completed:
@@ -17,6 +17,7 @@ Already completed:
 - S03E01 Smith and Jones
 - S03E02 The Shakespeare Code
 - S03E03 Gridlock
+- S03E04 Daleks in Manhattan
 
 ## 3. Arabic Improved Priority Rule
 
@@ -63,7 +64,25 @@ Do not translate more than one episode in the same pass, even if the next episod
 - Avoid broken Arabic, awkward phrasing, spelling errors, and malformed punctuation.
 - Do not leave unexplained English except for names or approved terms.
 
-## 7. Doctor Who terminology
+## 7. Character / Addressee Context Rules
+
+- Before translating, identify the main speakers and addressees for the target episode from nearby cues.
+- Use this to fix Arabic gender/number.
+- Do not guess "you/your" randomly.
+- Use a small context window around each cue, normally 5 cues before and 5 cues after, only when needed.
+- Do not read unrelated episodes for context.
+
+## 8. Forbidden Translation Mistakes
+
+- Do not skip short spoken lines.
+- Do not summarize dialogue.
+- Do not remove spoken words because they look unimportant.
+- Do not convert male addressee to feminine or female addressee to masculine.
+- Do not leave unexplained English except names/approved terms.
+- Do not make Arabic overly formal or awkward.
+- Do not use old Arabic subtitles as a reference.
+
+## 9. Doctor Who terminology
 
 - Doctor = `الدكتور`
 - TARDIS = `التارديس`
@@ -74,7 +93,7 @@ Do not translate more than one episode in the same pass, even if the next episod
 - aliens = `كائنات فضائية`
 - Rose = `روز`
 
-## 8. Bracketed/non-speech handling policy
+## 10. Bracketed/non-speech handling policy
 
 ### A) Removed standalone
 
@@ -116,7 +135,7 @@ Final Arabic:
 عبر مكبر الصوت: أخلوا المكان فورًا.
 ```
 
-## 9. Required final report format
+## 11. Required final report format
 
 Each episode report must include:
 
@@ -158,7 +177,18 @@ files changed:
 exact git add/commit/push commands:
 ```
 
-## 10. Standard command to continue
+## 12. Episode completion update
+
+After finishing an episode, update this file minimally:
+
+- Last completed episode = completed episode
+- Next target episode = next missing episode
+- Completed Arabic Improved count = updated count
+- Add completed episode under Already completed if not already listed
+
+Do not rewrite the whole file unnecessarily.
+
+## 13. Standard command to continue
 
 Use this reusable prompt to continue the next missing Arabic Improved episode:
 
@@ -166,15 +196,19 @@ Use this reusable prompt to continue the next missing Arabic Improved episode:
 "Continue the next missing Arabic Improved episode using ARABIC_IMPROVED_WORKFLOW.md.
 Work on ONE episode only.
 Do not rush.
+Use the target English SRT from .subtitle-audit-cache/english/.
+Use GPT-5.5 only for translation, quality, and pronoun QA.
+Use Codex 5.3 for mechanical edits, validation, mapping, and git.
 Preserve spoken dialogue.
 Remove only non-speech captions according to the workflow.
 After creating a new Arabic Improved subtitle, it should become the preferred Arabic track for that episode.
 Old Arabic remains backup.
 Run npm run validate:improved-arabic and npm run check.
-Return the required final report format from the workflow."
+Update this workflow after finishing.
+Return a short final report only."
 ```
 
-## 11. Validation commands
+## 14. Validation commands
 
 Run both commands after finishing an episode:
 
@@ -183,7 +217,7 @@ npm run validate:improved-arabic
 npm run check
 ```
 
-## 12. Credit / Token Saving + Model Routing Rules
+## 15. Credit / Token Saving + Model Routing Rules
 
 ### Rule 1 — One episode only
 
@@ -196,12 +230,13 @@ Never start another episode in the same pass.
 
 For each episode, inspect **only**:
 
-- the English source subtitle for the target episode
+- the target episode English SRT from `.subtitle-audit-cache/english/`
 - the target `ar-improved/*.srt` file if it exists
 - `arabicImprovedSubtitles.json`
 - validation scripts only when needed
 
 **Do not inspect** unrelated episodes, old Arabic subtitles, Arabic Alt, stream metadata, audit files, README, or `index.js` during translation.
+`.subtitle-audit-cache/english/` is allowed only for the target episode English SRT. Other audit files/reports remain forbidden. Do not inspect English SRT files for unrelated episodes.
 
 ---
 
@@ -214,13 +249,14 @@ Do not use old Arabic subtitles as a reference unless explicitly requested.
 
 ### Rule 4 — Model routing
 
-Use the **strong translation model** only for:
+Use **GPT-5.5** only for:
 
 - translating spoken dialogue
 - improving Arabic phrasing
 - fixing meaning/quality issues
+- pronoun/gender QA
 
-Use the **cheaper/code model** for:
+Use **Codex 5.3** for:
 
 - locating files
 - creating files
@@ -323,19 +359,20 @@ commit commands:
 "Continue the next missing Arabic Improved episode using ARABIC_IMPROVED_WORKFLOW.md.
 Work on ONE episode only.
 Use token-saving and model-routing rules.
-Use the local English SRT only.
+Use the target English SRT from .subtitle-audit-cache/english/.
 Inspect only required files.
 Do not print full SRT diffs.
-Translate all spoken dialogue with the strongest translation model.
-Use the cheaper/code model for mechanical cleanup, validation, mapping, and git instructions.
+Use GPT-5.5 only for translation, quality, and pronoun QA.
+Use Codex 5.3 for mechanical edits, validation, mapping, and git.
 Remove only non-speech captions after translation.
 After creating a new Arabic Improved subtitle, it should become the preferred Arabic track for that episode.
 Old Arabic remains backup.
 Run npm run validate:improved-arabic and npm run check.
-Return only the required final report."
+Update this workflow after finishing.
+Return a short final report only."
 ```
 
-## 13. Pronoun / Gender Accuracy Rules
+## 16. Pronoun / Gender Accuracy Rules
 
 English pronouns are often ambiguous, especially "you", "your", and "yourself".
 Arabic Improved must not guess randomly.
