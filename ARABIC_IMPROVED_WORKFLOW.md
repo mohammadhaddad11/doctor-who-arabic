@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S03E08 42
-Next target episode: S03E09 Human Nature
-Completed Arabic Improved count: 37
+Last completed episode: S03E09 Human Nature
+Next target episode: S03E10 The Family of Blood
+Completed Arabic Improved count: 38
 Date: 2026-06-10
 
 Already completed:
@@ -22,6 +22,7 @@ Already completed:
 - S03E06 The Infinite Quest (Animated Series)
 - S03E07 The Lazarus Experiment
 - S03E08 42
+- S03E09 Human Nature
 
 ## 3. Arabic Improved Priority Rule
 
@@ -201,8 +202,8 @@ Use this reusable prompt to continue the next missing Arabic Improved episode:
 Work on ONE episode only.
 Do not rush.
 Use the target English SRT from .subtitle-audit-cache/english/.
-Use GPT-5.5 only for translation, quality, and pronoun QA.
-Use Codex 5.3 for mechanical edits, validation, mapping, and git.
+Use GPT-5.5 for the whole workflow.
+Do not ask the user to switch models.
 Preserve spoken dialogue.
 Remove only non-speech captions according to the workflow.
 After creating a new Arabic Improved subtitle, it should become the preferred Arabic track for that episode.
@@ -221,7 +222,7 @@ npm run validate:improved-arabic
 npm run check
 ```
 
-## 15. Credit / Token Saving + Model Routing Rules
+## 15. Token Saving + Single-Model Rules
 
 ### Rule 1 — One episode only
 
@@ -251,30 +252,13 @@ Do not use old Arabic subtitles as a reference unless explicitly requested.
 
 ---
 
-### Rule 4 — Model routing
+### Rule 4 — Single-model workflow
 
-Use **GPT-5.5** only for:
+Use **GPT-5.5** for the whole Arabic Improved episode workflow.
 
-- translating spoken dialogue
-- improving Arabic phrasing
-- fixing meaning/quality issues
-- pronoun/gender QA
-
-Use **Codex 5.3** for:
-
-- locating files
-- creating files
-- updating `arabicImprovedSubtitles.json`
-- removing standalone non-speech cues after translation
-- renumbering SRT cues
-- running validation
-- fixing SRT formatting
-- git status and commit instructions
-
-If OpenCode supports agent rules, create/use:
-
-- **translator agent**: strongest model, translation quality only
-- **mechanic agent**: cheaper/code model, file operations and validation only
+- Use the same model for translation, cleanup, validation, mapping, and final report.
+- Do not ask the user to switch models.
+- Do not split the workflow into model-specific phases or specialist agents.
 
 ---
 
@@ -362,18 +346,18 @@ commit commands:
 ```text
 "Continue the next missing Arabic Improved episode using ARABIC_IMPROVED_WORKFLOW.md.
 Work on ONE episode only.
-Use token-saving and model-routing rules.
+Use GPT-5.5 for everything.
 Use the target English SRT from .subtitle-audit-cache/english/.
+Follow the workflow.
 Inspect only required files.
+Do not inspect unrelated episodes, old Arabic, or Arabic Alt.
 Do not print full SRT diffs.
-Use GPT-5.5 only for translation, quality, and pronoun QA.
-Use Codex 5.3 for mechanical edits, validation, mapping, and git.
 Remove only non-speech captions after translation.
 After creating a new Arabic Improved subtitle, it should become the preferred Arabic track for that episode.
 Old Arabic remains backup.
 Run npm run validate:improved-arabic and npm run check.
 Update this workflow after finishing.
-Return a short final report only."
+Return only the final report."
 ```
 
 ## 16. Pronoun / Gender Accuracy Rules
