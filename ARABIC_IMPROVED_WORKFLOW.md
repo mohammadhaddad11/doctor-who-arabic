@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S03E10 The Family of Blood
-Next target episode: S03E11 Blink
-Completed Arabic Improved count: 39
+Last completed episode: S03E11 Blink
+Next target episode: S03E12 Utopia
+Completed Arabic Improved count: 40
 Date: 2026-06-12
 
 Already completed:
@@ -24,6 +24,7 @@ Already completed:
 - S03E08 42
 - S03E09 Human Nature
 - S03E10 The Family of Blood
+- S03E11 Blink
 
 ## 3. Arabic Improved Priority Rule
 
