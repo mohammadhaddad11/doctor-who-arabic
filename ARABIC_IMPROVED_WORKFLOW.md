@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S03E12 Utopia
-Next target episode: S03E13 The Sound of Drums
-Completed Arabic Improved count: 41
+Last completed episode: S03E13 The Sound of Drums
+Next target episode: S03E14 Last of the Time Lords
+Completed Arabic Improved count: 42
 Date: 2026-06-12
 
 Already completed:
@@ -26,6 +26,7 @@ Already completed:
 - S03E10 The Family of Blood
 - S03E11 Blink
 - S03E12 Utopia
+- S03E13 The Sound of Drums
 
 ## 3. Arabic Improved Priority Rule
 
