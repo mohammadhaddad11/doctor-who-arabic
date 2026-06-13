@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S03E16 Voyage of the Damned Special
-Next target episode: S04E01 Partners in Crime
-Completed Arabic Improved count: 45
+Last completed episode: S04E01 Partners in Crime
+Next target episode: S04E02 The Fires of Pompeii
+Completed Arabic Improved count: 46
 Date: 2026-06-13
 
 Already completed:
@@ -30,6 +30,7 @@ Already completed:
 - S03E14 Last of the Time Lords
 - S03E15 Time Crash Minisode
 - S03E16 Voyage of the Damned Special
+- S04E01 Partners in Crime
 
 ## 3. Arabic Improved Priority Rule
 
