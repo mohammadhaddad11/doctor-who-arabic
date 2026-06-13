@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S03E14 Last of the Time Lords
-Next target episode: S03E15 Time Crash Minisode
-Completed Arabic Improved count: 43
+Last completed episode: S03E15 Time Crash Minisode
+Next target episode: S03E16 Voyage of the Damned Special
+Completed Arabic Improved count: 44
 Date: 2026-06-13
 
 Already completed:
@@ -28,6 +28,7 @@ Already completed:
 - S03E12 Utopia
 - S03E13 The Sound of Drums
 - S03E14 Last of the Time Lords
+- S03E15 Time Crash Minisode
 
 ## 3. Arabic Improved Priority Rule
 
