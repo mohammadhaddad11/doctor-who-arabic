@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S04E04 The Sontaran Stratagem
-Next target episode: S04E05 The Poison Sky
-Completed Arabic Improved count: 49
+Last completed episode: S04E05 The Poison Sky
+Next target episode: S04E06 The Doctor's Daughter
+Completed Arabic Improved count: 50
 Date: 2026-06-16
 
 Already completed:
@@ -34,6 +34,7 @@ Already completed:
 - S04E02 The Fires of Pompeii
 - S04E03 Planet of the Ood
 - S04E04 The Sontaran Stratagem
+- S04E05 The Poison Sky
 
 ## 3. Arabic Improved Priority Rule
 
