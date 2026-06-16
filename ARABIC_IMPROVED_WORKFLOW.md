@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S04E02 The Fires of Pompeii
-Next target episode: S04E03 Planet of the Ood
-Completed Arabic Improved count: 47
+Last completed episode: S04E03 Planet of the Ood
+Next target episode: S04E04 The Sontaran Stratagem
+Completed Arabic Improved count: 48
 Date: 2026-06-13
 
 Already completed:
@@ -32,6 +32,7 @@ Already completed:
 - S03E16 Voyage of the Damned Special
 - S04E01 Partners in Crime
 - S04E02 The Fires of Pompeii
+- S04E03 Planet of the Ood
 
 ## 3. Arabic Improved Priority Rule
 
