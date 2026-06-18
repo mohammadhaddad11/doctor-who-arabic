@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S04E07 The Unicorn and the Wasp
-Next target episode: S04E08 Silence in the Library
-Completed Arabic Improved count: 52
+Last completed episode: S04E08 Silence in the Library
+Next target episode: S04E09 Forest of the Dead
+Completed Arabic Improved count: 53
 Date: 2026-06-18
 
 Already completed:
@@ -37,6 +37,7 @@ Already completed:
 - S04E05 The Poison Sky
 - S04E06 The Doctor's Daughter
 - S04E07 The Unicorn and the Wasp
+- S04E08 Silence in the Library
 
 ## 3. Arabic Improved Priority Rule
 
