@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S04E09 Forest of the Dead
-Next target episode: S04E10 Midnight
-Completed Arabic Improved count: 54
+Last completed episode: S04E10 Midnight
+Next target episode: S04E11 Turn Left
+Completed Arabic Improved count: 55
 Date: 2026-06-18
 
 Already completed:
@@ -39,6 +39,7 @@ Already completed:
 - S04E07 The Unicorn and the Wasp
 - S04E08 Silence in the Library
 - S04E09 Forest of the Dead
+- S04E10 Midnight
 
 ## 3. Arabic Improved Priority Rule
 
