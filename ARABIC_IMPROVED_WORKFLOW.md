@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S04E14 Music of the Spheres Minisode
-Next target episode: S04E15 The Next Doctor Special
-Completed Arabic Improved count: 59
+Last completed episode: S04E15 The Next Doctor Special
+Next target episode: S04E16 Planet of the Dead Special
+Completed Arabic Improved count: 60
 Date: 2026-06-18
 
 Already completed:
@@ -44,6 +44,7 @@ Already completed:
 - S04E12 The Stolen Earth
 - S04E13 Journey's End
 - S04E14 Music of the Spheres Minisode
+- S04E15 The Next Doctor Special
 
 ## 3. Arabic Improved Priority Rule
 
