@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S04E12 The Stolen Earth
-Next target episode: S04E13 Journey's End
-Completed Arabic Improved count: 57
+Last completed episode: S04E13 Journey's End
+Next target episode: S04E14 Music of the Spheres Minisode
+Completed Arabic Improved count: 58
 Date: 2026-06-18
 
 Already completed:
@@ -42,6 +42,7 @@ Already completed:
 - S04E10 Midnight
 - S04E11 Turn Left
 - S04E12 The Stolen Earth
+- S04E13 Journey's End
 
 ## 3. Arabic Improved Priority Rule
 
