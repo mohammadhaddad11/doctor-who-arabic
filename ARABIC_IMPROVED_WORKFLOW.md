@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S04E11 Turn Left
-Next target episode: S04E12 The Stolen Earth
-Completed Arabic Improved count: 56
+Last completed episode: S04E12 The Stolen Earth
+Next target episode: S04E13 Journey's End
+Completed Arabic Improved count: 57
 Date: 2026-06-18
 
 Already completed:
@@ -41,6 +41,7 @@ Already completed:
 - S04E09 Forest of the Dead
 - S04E10 Midnight
 - S04E11 Turn Left
+- S04E12 The Stolen Earth
 
 ## 3. Arabic Improved Priority Rule
 
