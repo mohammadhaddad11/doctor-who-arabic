@@ -6,10 +6,10 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S04E18 Dreamland Animated Series
-Next target episode: S04E19 The End of Time Part One Special
-Completed Arabic Improved count: 63
-Date: 2026-06-20
+Last completed episode: S04E19 The End of Time Part One Special
+Next target episode: S04E20 The End of Time Part Two Special
+Completed Arabic Improved count: 64
+Date: 2026-06-21
 
 Already completed:
 - S02E13 Doomsday
@@ -48,6 +48,7 @@ Already completed:
 - S04E16 Planet of the Dead Special
 - S04E17 The Waters of Mars Special
 - S04E18 Dreamland Animated Series
+- S04E19 The End of Time Part One Special
 
 ## 3. Arabic Improved Priority Rule
 
