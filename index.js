@@ -57,6 +57,7 @@ const MIRROR_PROBE_TIMEOUT_MS = 2200;
 const MIRROR_PROBE_MAX_CANDIDATES = 3;
 const DEFAULT_ADDON_LOGO_URL = 'https://www.stremio.com/website/stremio-logo-small.png';
 const LOCAL_ADDON_LOGO_FILE = path.join(ASSET_DIR, 'whoniverse-arabic-logo.svg');
+const SEASON_5_THUMBNAIL_BASE_URL = 'https://dn600308.us.archive.org/0/items/nw_S05';
 
 const DYNAMIC_REDIRECT_EPISODE_IDS = new Set([
   'S01E15',
@@ -218,6 +219,19 @@ function getEpisodeKey(episode) {
 
 function isSpecialEpisode(episode) {
   return /\(Special\)$/i.test(episode?.title || '');
+}
+
+function getEpisodeThumbnail(episode) {
+  if (!episode?.thumbnail) {
+    return ADDON_LOGO_URL;
+  }
+
+  if (episode.season === 5) {
+    const thumbnailFile = episode.thumbnail.split('/').pop();
+    return thumbnailFile ? `${SEASON_5_THUMBNAIL_BASE_URL}/${thumbnailFile}` : ADDON_LOGO_URL;
+  }
+
+  return episode.thumbnail;
 }
 
 function getEnglishSubtitleFilename(episode) {
@@ -1445,7 +1459,7 @@ builder.defineMetaHandler(async (args) => {
           episode: ep.episode,
           released: ep.released,
           overview: ep.overview,
-          thumbnail: ep.thumbnail || ADDON_LOGO_URL,
+          thumbnail: getEpisodeThumbnail(ep),
           available: Boolean(ep.streamUrl)
         }))
       }
