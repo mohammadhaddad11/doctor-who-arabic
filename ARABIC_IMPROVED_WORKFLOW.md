@@ -6,10 +6,10 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S05E01 The Eleventh Hour
-Next target episode: S05E02 The Beast Below
-Completed Arabic Improved count: 66
-Date: 2026-06-21
+Last completed episode: S05E02 The Beast Below
+Next target episode: S05E03 Victory of the Daleks
+Completed Arabic Improved count: 67
+Date: 2026-06-23
 
 Already completed:
 - S02E13 Doomsday
@@ -51,6 +51,7 @@ Already completed:
 - S04E19 The End of Time Part One Special
 - S04E20 The End of Time Part Two Special
 - S05E01 The Eleventh Hour
+- S05E02 The Beast Below
 
 ## 3. Arabic Improved Priority Rule
 
