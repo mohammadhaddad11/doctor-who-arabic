@@ -6,9 +6,9 @@ Arabic Improved is a professional Arabic subtitle track built from the English s
 
 ## 2. Current status
 
-Last completed episode: S05E05 Flesh and Stone
-Next target episode: S05E06 The Vampires of Venice
-Completed Arabic Improved count: 70
+Last completed episode: S05E06 The Vampires of Venice
+Next target episode: S05E07 Amy's Choice
+Completed Arabic Improved count: 71
 Date: 2026-06-25
 
 Already completed:
@@ -55,6 +55,7 @@ Already completed:
 - S05E03 Victory of the Daleks
 - S05E04 The Time of Angels
 - S05E05 Flesh and Stone
+- S05E06 The Vampires of Venice
 
 ## 3. Arabic Improved Priority Rule
 
