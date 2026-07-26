@@ -1,15 +1,46 @@
 # Arabic Improved Subtitle Workflow
 
-## 1. Project goal
+## Reusable Commands
+
+Reusable Phase 1 command:
+
+```text
+"Continue the next Arabic Improved staging episode using ARABIC_IMPROVED_WORKFLOW.md."
+```
+
+Reusable Phase 2 command:
+
+```text
+"Integrate staged Arabic Improved subtitles using ARABIC_IMPROVED_WORKFLOW.md."
+```
+
+## 1. Project Goal
 
 Arabic Improved is a professional Arabic subtitle track built from the English subtitles. It should provide clean viewer subtitles, not SDH/closed captions, and improve translation quality while preserving the original timing.
 
-## 2. Current status
+The workflow is now split into two phases:
 
-Last completed episode: S05E08 The Hungry Earth
-Next target episode: S05E09 Cold Blood
-Completed Arabic Improved count: 73
-Date: 2026-06-27
+- Phase 1 stages translated subtitles in `ar-improved-staging/` without adding them to the addon.
+- Phase 2 integrates already staged subtitles into `ar-improved/` and the addon mapping after separate verification.
+
+## 2. Current Status
+
+### Phase 1 — Translation Staging Status
+
+Last staged episode: S08E09 Mummy on the Orient Express
+Next staging target episode: S08E10 Flatline
+Staged Arabic Improved count: 0
+Date: 2026-07-17
+
+Staged episodes pending integration:
+- none
+
+### Phase 2 — Integration Status
+
+Last completed episode: S08E09 Mummy on the Orient Express
+Next target episode: S08E10 Flatline
+Completed Arabic Improved count: 120
+Date: 2026-07-17
 
 Already completed:
 - S02E13 Doomsday
@@ -58,71 +89,313 @@ Already completed:
 - S05E06 The Vampires of Venice
 - S05E07 Amy's Choice
 - S05E08 The Hungry Earth
+- S05E09 Cold Blood
+- S05E10 Vincent and the Doctor
+- S05E11 The Lodger
+- S05E12 The Pandorica Opens
+- S05E13 The Big Bang
+- S05E14 A Christmas Carol Special
+- S06E01 The Impossible Astronaut
+- S06E02 Day of the Moon
+- S06E03 The Curse of the Black Spot
+- S06E04 The Doctor's Wife
+- S06E05 The Rebel Flesh
+- S06E06 The Almost People
+- S06E07 A Good Man Goes to War
+- S06E08 Let's Kill Hitler
+- S06E09 Night Terrors
+- S06E10 The Girl Who Waited
+- S06E11 The God Complex
+- S06E12 Closing Time
+- S06E13 The Wedding of River Song
+- S06E14 The Doctor, the Widow and the Wardrobe Special
+- S07E01 Asylum of the Daleks
+- S07E02 Dinosaurs on a Spaceship
+- S07E03 A Town Called Mercy
+- S07E04 The Power of Three
+- S07E05 The Angels Take Manhattan
+- S07E06 The Snowmen Special
+- S07E07 The Bells of Saint John
+- S07E08 The Rings of Akhaten
+- S07E09 Cold War
+- S07E10 Hide
+- S07E11 Journey to the Centre of the TARDIS
+- S07E12 The Crimson Horror
+- S07E13 Nightmare in Silver
+- S07E14 The Name of the Doctor
+- S07E15 The Night of the Doctor Minisode
+- S07E16 The Last Day Minisode
+- S07E17 The Day of the Doctor Special
+- S07E18 The Time of the Doctor Special
+- S08E01 Deep Breath (Prequel)
+- S08E02 Deep Breath
+- S08E03 Into the Dalek
+- S08E04 Robot of Sherwood
+- S08E05 Listen
+- S08E06 Time Heist
+- S08E07 The Caretaker
+- S08E08 Kill the Moon
+- S08E09 Mummy on the Orient Express
 
-## 3. Arabic Improved Priority Rule
+Staged episodes already integrated:
+- S05E09 Cold Blood
+- S05E10 Vincent and the Doctor
+- S05E11 The Lodger
+- S05E12 The Pandorica Opens
+- S05E13 The Big Bang
+- S05E14 A Christmas Carol Special
+- S06E01 The Impossible Astronaut
+- S06E02 Day of the Moon
+- S06E03 The Curse of the Black Spot
+- S06E04 The Doctor's Wife
+- S06E05 The Rebel Flesh
+- S06E06 The Almost People
+- S06E07 A Good Man Goes to War
+- S06E08 Let's Kill Hitler
+- S06E09 Night Terrors
+- S06E10 The Girl Who Waited
+- S06E11 The God Complex
+- S06E12 Closing Time
+- S06E13 The Wedding of River Song
+- S06E14 The Doctor, the Widow and the Wardrobe Special
+- S07E01 Asylum of the Daleks
+- S07E02 Dinosaurs on a Spaceship
+- S07E03 A Town Called Mercy
+- S07E04 The Power of Three
+- S07E05 The Angels Take Manhattan
+- S07E06 The Snowmen Special
+- S07E07 The Bells of Saint John
+- S07E08 The Rings of Akhaten
+- S07E09 Cold War
+- S07E10 Hide
+- S07E11 Journey to the Centre of the TARDIS
+- S07E12 The Crimson Horror
+- S07E13 Nightmare in Silver
+- S07E14 The Name of the Doctor
+- S07E15 The Night of the Doctor Minisode
+- S07E16 The Last Day Minisode
+- S07E17 The Day of the Doctor Special
+- S07E18 The Time of the Doctor Special
+- S08E01 Deep Breath (Prequel)
+- S08E02 Deep Breath
+- S08E03 Into the Dalek
+- S08E04 Robot of Sherwood
+- S08E05 Listen
+- S08E06 Time Heist
+- S08E07 The Caretaker
+- S08E08 Kill the Moon
+- S08E09 Mummy on the Orient Express
 
-- For episodes that already have Arabic Improved, Arabic Improved should be treated as the primary Arabic subtitle track.
-- The old Arabic subtitle remains as backup/fallback.
-- For episodes without Arabic Improved, the old Arabic subtitle remains the normal Arabic track.
-- This priority applies episode-by-episode as work progresses, not only after the whole season is finished.
+## 3. Global Rules
+
+- Use GPT-5.5 for the whole task.
+- Do not ask the user to switch models.
+- Use Fast Staging Mode for every Phase 1 pass.
+- Do not translate more than one episode in a Phase 1 pass.
+- Do not inspect unrelated episodes.
+- Do not inspect old Arabic subtitles.
+- Do not inspect Arabic Alt.
+- Do not print full SRT diffs.
+- Do not commit or push unless the user explicitly asks.
 - Do not remove old Arabic subtitles.
-- Do not rename/delete Arabic Alt.
-- Each newly completed Arabic Improved episode should become the preferred Arabic track for that episode.
+- Do not rename or delete Arabic Alt.
+- Use the local English SRT as the only translation source during Phase 1.
 
-## 4. Main rule
+## 4. File Scope By Phase
 
-Work on **ONE episode only** per pass.
+### Phase 1 Allowed Files
 
-Do not translate more than one episode in the same pass, even if the next episode looks straightforward.
+During Translation Staging, read only:
 
-## 5. Workflow per episode
+- `ARABIC_IMPROVED_WORKFLOW.md`
+- the matching target English SRT from `.subtitle-audit-cache/english/`
+- the target staged Arabic SRT in `ar-improved-staging/` only if resuming an existing staged file
 
-### PHASE 1: Translate from English
+During Translation Staging, modify only:
 
-- Use the English SRT as the source.
-- Preserve cue order.
+- `ARABIC_IMPROVED_WORKFLOW.md`
+- the target staged Arabic SRT in `ar-improved-staging/`
+
+During Phase 1, do not modify:
+
+- `arabicImprovedSubtitles.json`
+- `ar-improved/`
+- `episodeData.js`
+- stream logic
+- old Arabic subtitles
+- Arabic Alt subtitles
+- unrelated English SRT files
+
+### Phase 2 Allowed Files
+
+During Integration, inspect or modify only:
+
+- `ARABIC_IMPROVED_WORKFLOW.md`
+- staged SRT files from `ar-improved-staging/`
+- final integrated SRT files in `ar-improved/`
+- `arabicImprovedSubtitles.json`
+- `episodeData.js` for read-only canonical ID/title verification
+- validation scripts or package files only if needed to understand validation output
+
+During Phase 2, do not:
+
+- retranslate staged subtitles
+- inspect old Arabic subtitles
+- inspect Arabic Alt subtitles
+- inspect unrelated episodes beyond canonical ID/title verification needed for integration
+- change stream logic
+
+## 5. Phase 1 — Translation Staging
+
+Phase 1 creates a staged Arabic Improved subtitle file, but does not add it to the addon yet.
+
+### Fast Staging Mode
+
+- Do not re-diagnose the whole workflow for each episode.
+- Read only `ARABIC_IMPROVED_WORKFLOW.md`, the target English SRT, and the target staged SRT only if resuming.
+- Work on one episode only.
+- Do not inspect old Arabic, Arabic Alt, `ar-improved/`, or unrelated episodes.
+- Do not print full SRT diffs.
+- Do not print long explanations or examples unless validation fails.
+- Keep Phase 2 integration separate and later.
+
+### Phase 1 Inputs
+
+- Read `Next staging target episode` from this workflow file.
+- Use only the matching English SRT from `.subtitle-audit-cache/english/`.
+- If the matching English SRT is ambiguous or missing, stop and ask for clarification.
+- If the staged file already exists and is partial, continue from the last completed source cue.
+- Do not restart unless the partial staged file is corrupted.
+- Do not use old Arabic subtitles as a reference.
+- Do not use Arabic Alt subtitles as a reference.
+
+### Phase 1 Output
+
+- Create or update only the translated Arabic SRT in `ar-improved-staging/`.
+- Use a predictable filename with the episode ID and English source slug, for example `S05E09_cold_blood.improved.ar.srt`.
+- If the canonical filename is unclear, use the staged filename that best matches the target title; Phase 2 will verify canonical ID and title before integration.
+- Do not copy the staged file into `ar-improved/`.
+- Do not update `arabicImprovedSubtitles.json`.
+- Do not make the subtitle available to the addon during Phase 1.
+
+### Phase 1 Translation Rules
+
+- Translate every spoken line naturally into Arabic.
 - Preserve timestamps.
-- Translate every spoken line.
-- Do not delete cues during translation.
-- Do not merge or split cues.
+- Preserve cue order.
 - Do not summarize.
-
-### PHASE 2: Clean non-speech captions
-
-- Remove standalone non-speech captions only.
+- Do not merge cues.
+- Do not split cues.
+- Translate first, then remove standalone non-speech cues after translation.
+- Remove standalone non-speech cues entirely.
 - If a cue has both non-speech and dialogue, remove only the non-speech part and keep the dialogue.
-- Renumber cues after removing standalone non-speech cues.
-- Never remove spoken dialogue.
-
-## 6. Translation style guide
-
+- Renumber retained cues sequentially after removing standalone non-speech cues.
 - Use professional Modern Standard Arabic.
-- Keep the subtitles natural, cinematic, and watchable.
-- Do not translate too literally when it harms meaning or flow.
+- Keep subtitles natural, cinematic, and watchable.
 - Preserve tone and humor.
 - Keep lines readable.
 - Avoid broken Arabic, awkward phrasing, spelling errors, and malformed punctuation.
-- Do not leave unexplained English except for names or approved terms.
+- Do not leave unexplained English except names or approved terms.
 
-## 7. Character / Addressee Context Rules
+### Phase 1 QA Rules
 
-- Before translating, identify the main speakers and addressees for the target episode from nearby cues.
-- Use this to fix Arabic gender/number.
-- Do not guess "you/your" randomly.
-- Use a small context window around each cue, normally 5 cues before and 5 cues after, only when needed.
-- Do not read unrelated episodes for context.
+- Validate staged SRT structure.
+- Confirm cue count equals source cue count minus removed standalone non-speech cues.
+- Confirm retained timestamps match retained source timestamps.
+- Search for English leftovers.
+- Search for bracketed or parenthesized SDH leftovers.
+- Check for empty cues.
+- Check for orphan dialogue dashes after removing inline non-speech captions.
+- Run pronoun/gender QA silently using episode context.
 
-## 8. Forbidden Translation Mistakes
+### Phase 1 Workflow Update
 
-- Do not skip short spoken lines.
-- Do not summarize dialogue.
-- Do not remove spoken words because they look unimportant.
-- Do not convert male addressee to feminine or female addressee to masculine.
-- Do not leave unexplained English except names/approved terms.
-- Do not make Arabic overly formal or awkward.
-- Do not use old Arabic subtitles as a reference.
+After staging one episode, update only `ARABIC_IMPROVED_WORKFLOW.md`:
 
-## 9. Doctor Who terminology
+- Last staged episode = staged episode.
+- Next staging target episode = next unstaged episode.
+- Staged Arabic Improved count = updated staged count.
+- Add staged episode under `Staged episodes pending integration`.
+- Do not add it under `Already completed`.
+- Do not change `Last completed episode`.
+- Do not change `Completed Arabic Improved count`.
+- Do not update `arabicImprovedSubtitles.json`.
+
+### Phase 1 Final Report Format
+
+```text
+episode:
+source cues:
+final cues:
+removed non-speech:
+QA:
+workflow updated:
+files changed:
+ready for integration:
+```
+
+## 6. Phase 2 — Integration
+
+Phase 2 integrates already staged Arabic Improved subtitles into the addon. This phase happens later and must not retranslate.
+
+### Phase 2 Inputs
+
+- Use staged SRT files from `ar-improved-staging/`.
+- Do not retranslate staged files.
+- Verify canonical episode ID and title from `episodeData.js`.
+- Verify the staged subtitle matches the intended canonical episode.
+
+### Phase 2 Actions
+
+- Copy or move staged SRT files into `ar-improved/`.
+- Use the canonical final filename for `ar-improved/`.
+- Update `arabicImprovedSubtitles.json` with the canonical episode ID and final filename.
+- Update `ARABIC_IMPROVED_WORKFLOW.md`.
+- Mark integrated staged episodes as integrated.
+- Remove integrated episodes from `Staged episodes pending integration` or move them to `Staged episodes already integrated`.
+- Do not retranslate.
+- Do not alter subtitle wording except for mechanical fixes required by validation, such as numbering, timestamp format, or filename mismatch.
+
+### Phase 2 Workflow Update
+
+After integration, update `ARABIC_IMPROVED_WORKFLOW.md`:
+
+- Last completed episode = latest integrated episode.
+- Next target episode = next missing non-integrated episode.
+- Completed Arabic Improved count = updated integrated count.
+- Add integrated episode under `Already completed` if not already listed.
+- Mark staged episodes as integrated.
+- Keep Phase 1 staging status accurate.
+
+### Phase 2 Validation Commands
+
+Run both commands after integration:
+
+```bash
+npm run validate:improved-arabic
+npm run check
+```
+
+### Phase 2 Final Report Format
+
+```text
+integrated episodes:
+canonical verification:
+validation result:
+files changed:
+ready to use:
+```
+
+## 7. Arabic Improved Priority Rule
+
+- Integrated Arabic Improved subtitles in `ar-improved/` should be treated as the primary Arabic subtitle track for that episode.
+- Staged subtitles in `ar-improved-staging/` are not primary tracks yet.
+- Staged subtitles must not be exposed through the addon until Phase 2 integration is complete.
+- Old Arabic subtitles remain backup/fallback.
+- For episodes without integrated Arabic Improved subtitles, the old Arabic subtitle remains the normal Arabic track.
+- This priority applies episode-by-episode as work progresses, not only after the whole season is finished.
+
+## 8. Doctor Who Terminology
 
 - Doctor = `الدكتور`
 - TARDIS = `التارديس`
@@ -133,9 +406,9 @@ Do not translate more than one episode in the same pass, even if the next episod
 - aliens = `كائنات فضائية`
 - Rose = `روز`
 
-## 10. Bracketed/non-speech handling policy
+## 9. Bracketed And Non-Speech Handling Policy
 
-### A) Removed standalone
+### A) Removed Standalone
 
 Standalone non-speech captions should be removed entirely.
 
@@ -146,7 +419,7 @@ English: (footsteps)
 Arabic decision: remove cue entirely
 ```
 
-### B) Removed inline but kept dialogue
+### B) Removed Inline But Kept Dialogue
 
 If a cue contains both non-speech information and dialogue, remove only the non-speech part and keep the dialogue.
 
@@ -161,7 +434,7 @@ Final Arabic:
 ما كان ذلك؟
 ```
 
-### C) Kept/converted important context
+### C) Kept Or Converted Important Context
 
 Only keep non-speech context if it is necessary to understand the scene and cannot be inferred visually.
 
@@ -175,256 +448,46 @@ Final Arabic:
 عبر مكبر الصوت: أخلوا المكان فورًا.
 ```
 
-## 11. Required final report format
+## 10. Pronoun And Gender Accuracy Rules
 
-Each episode report must include:
+English pronouns are often ambiguous, especially `you`, `your`, and `yourself`. Arabic Improved must not guess randomly.
 
-```text
-episode translated:
-source cue count:
-final cue count:
-number of non-speech-only cues removed:
-confirmation spoken dialogue preserved:
-validation result:
-suggested Stremio test timestamps:
+For every staged episode, after translation and before final QA, run a dedicated pronoun/gender review pass:
 
-Pronoun/gender QA:
-- checked yes/no:
-- ambiguous "you" lines reviewed:
-- examples fixed:
-  1. timestamp:
-     English:
-     Final Arabic:
-     reason:
+1. Identify speaker and addressee from episode context.
+2. For every ambiguous English `you`, choose Arabic gender/number from context.
+3. If the addressee is male singular, use masculine Arabic forms.
+4. If the addressee is female singular, use feminine Arabic forms.
+5. If the addressee is plural or a group, use plural Arabic forms.
+6. Use nearby cues before and after the line to resolve context.
+7. Do not translate each cue in isolation.
+8. If gender or number is unclear, prefer natural neutral Arabic wording that avoids gendered forms when possible.
+9. Never change the meaning to avoid gender.
+10. Keep character relationships consistent across the episode.
+11. Pay special attention to commands, warnings, questions, and possessives.
 
-Bracketed/non-speech handling examples:
-1. Removed standalone:
-   timestamp:
-   English:
-   Arabic decision:
+Examples:
 
-2. Removed inline but kept dialogue:
-   timestamp:
-   English:
-   Final Arabic:
+- If someone is addressing Rose: `Are you ready?` -> `هل أنتِ مستعدة؟`
+- If someone is addressing the Doctor: `Are you ready?` -> `هل أنت مستعد؟`
+- If the addressee is unclear, prefer a neutral rewrite when possible: `Are you ready?` -> `هل كل شيء جاهز؟`
 
-3. Kept/converted important context:
-   timestamp:
-   English:
-   Final Arabic:
+## 11. Mechanical Fix Rules
 
-files changed:
-exact git add/commit/push commands:
-```
-
-## 12. Episode completion update
-
-After finishing an episode, update this file minimally:
-
-- Last completed episode = completed episode
-- Next target episode = next missing episode
-- Completed Arabic Improved count = updated count
-- Add completed episode under Already completed if not already listed
-
-Do not rewrite the whole file unnecessarily.
-
-## 13. Standard command to continue
-
-Use this reusable prompt to continue the next missing Arabic Improved episode:
-
-```text
-"Continue the next missing Arabic Improved episode using ARABIC_IMPROVED_WORKFLOW.md.
-Work on ONE episode only.
-Do not rush.
-Use the target English SRT from .subtitle-audit-cache/english/.
-Use GPT-5.5 for the whole workflow.
-Do not ask the user to switch models.
-Preserve spoken dialogue.
-Remove only non-speech captions according to the workflow.
-After creating a new Arabic Improved subtitle, it should become the preferred Arabic track for that episode.
-Old Arabic remains backup.
-Run npm run validate:improved-arabic and npm run check.
-Update this workflow after finishing.
-Return a short final report only."
-```
-
-## 14. Validation commands
-
-Run both commands after finishing an episode:
-
-```bash
-npm run validate:improved-arabic
-npm run check
-```
-
-## 15. Token Saving + Single-Model Rules
-
-### Rule 1 — One episode only
-
-Every translation pass must work on **one episode only**.
-Never start another episode in the same pass.
-
----
-
-### Rule 2 — Strict file scope
-
-For each episode, inspect **only**:
-
-- the target episode English SRT from `.subtitle-audit-cache/english/`
-- the target `ar-improved/*.srt` file if it exists
-- `arabicImprovedSubtitles.json`
-- validation scripts only when needed
-
-**Do not inspect** unrelated episodes, old Arabic subtitles, Arabic Alt, stream metadata, audit files, README, or `index.js` during translation.
-`.subtitle-audit-cache/english/` is allowed only for the target episode English SRT. Other audit files/reports remain forbidden. Do not inspect English SRT files for unrelated episodes.
-
----
-
-### Rule 3 — English-only source
-
-Use the local English SRT as the **only** translation source.
-Do not use old Arabic subtitles as a reference unless explicitly requested.
-
----
-
-### Rule 4 — Single-model workflow
-
-Use **GPT-5.5** for the whole Arabic Improved episode workflow.
-
-- Use the same model for translation, cleanup, validation, mapping, and final report.
-- Do not ask the user to switch models.
-- Do not split the workflow into model-specific phases or specialist agents.
-
----
-
-### Rule 5 — No pre-clean phase for now
-
-Do not pre-clean the English subtitle before translation.
-Translate first, then remove non-speech captions after translation.
-This avoids accidentally removing spoken dialogue.
-
----
-
-### Rule 6 — No full subtitle diffs
-
-Never print the full SRT diff in final output.
-Use only:
-
-- `git diff --stat`
-- cue counts
-- validation summary
-- 3 bracket/non-speech examples
-
----
-
-### Rule 7 — Formatting fixes do not need retranslation
-
-If validation fails because of:
+If QA or validation fails because of a mechanical issue, fix only the mechanical issue. Mechanical issues include:
 
 - numbering
 - timestamp format
 - empty cue
-- mapping typo
-- missing file
+- orphan dialogue dash
+- missing final newline
+- filename mismatch
+- mapping typo during Phase 2
 
-Fix **only** the mechanical issue.
-Do **not** retranslate the episode.
+Do not retranslate an episode for a mechanical fix unless the user explicitly asks.
 
----
+## 12. No Full Diff Rule
 
-### Rule 8 — Final report must be short
-
-Use only this format:
-
-```text
-episode:
-source cues:
-final cues:
-removed non-speech:
-spoken dialogue preserved:
-validation:
-suggested Stremio test timestamps:
-
-Pronoun/gender QA:
-- checked yes/no:
-- ambiguous "you" lines reviewed:
-- examples fixed:
-  1. timestamp:
-     English:
-     Final Arabic:
-     reason:
-
-Bracketed/non-speech handling examples:
-1. Removed standalone:
-   timestamp:
-   English:
-   Arabic decision:
-
-2. Removed inline but kept dialogue:
-   timestamp:
-   English:
-   Final Arabic:
-
-3. Kept/converted important context:
-   timestamp:
-   English:
-   Final Arabic:
-
-files changed:
-commit commands:
-```
-
----
-
-### Rule 9 — Reusable continue command
-
-```text
-"Continue the next missing Arabic Improved episode using ARABIC_IMPROVED_WORKFLOW.md.
-Work on ONE episode only.
-Use GPT-5.5 for everything.
-Use the target English SRT from .subtitle-audit-cache/english/.
-Follow the workflow.
-Inspect only required files.
-Do not inspect unrelated episodes, old Arabic, or Arabic Alt.
-Do not print full SRT diffs.
-Remove only non-speech captions after translation.
-After creating a new Arabic Improved subtitle, it should become the preferred Arabic track for that episode.
-Old Arabic remains backup.
-Run npm run validate:improved-arabic and npm run check.
-Update this workflow after finishing.
-Return only the final report."
-```
-
-## 16. Pronoun / Gender Accuracy Rules
-
-English pronouns are often ambiguous, especially "you", "your", and "yourself".
-Arabic Improved must not guess randomly.
-
-For every episode, after translation and before final validation, run a dedicated pronoun/gender review pass:
-
-1. Identify speaker and addressee from context.
-2. For every ambiguous English "you":
-   - if the addressee is male singular, use masculine Arabic forms.
-   - if the addressee is female singular, use feminine Arabic forms.
-   - if the addressee is plural/group, use plural Arabic forms.
-3. Use nearby cues before and after the line to resolve context.
-4. Do not translate each cue in isolation.
-5. If gender/number is unclear, prefer natural neutral Arabic wording that avoids gendered forms when possible.
-6. Never change the meaning to avoid gender.
-7. Keep character relationships consistent across the episode.
-8. Pay special attention to:
-   - Doctor speaking to Rose
-   - Rose speaking to the Doctor
-   - people speaking to Jackie
-   - people speaking to Mickey
-   - groups being addressed
-   - commands and warnings
-
-Examples:
-- If someone is addressing Rose:
-  "Are you ready?" -> "هل أنتِ مستعدة؟"
-- If someone is addressing the Doctor:
-  "Are you ready?" -> "هل أنت مستعد؟"
-- If the addressee is unclear:
-  prefer a neutral rewrite when possible:
-  "Are you ready?" -> "هل كل شيء جاهز؟"
+- Never print full SRT diffs in final output.
+- Use cue counts, validation summaries, and short examples instead.
+- For workflow-only edits, a limited workflow diff is allowed when explicitly requested.
