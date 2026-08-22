@@ -27,20 +27,20 @@ The workflow is now split into two phases:
 
 ### Phase 1 — Translation Staging Status
 
-Last staged episode: S08E09 Mummy on the Orient Express
-Next staging target episode: S08E10 Flatline
-Staged Arabic Improved count: 0
-Date: 2026-07-17
+Last staged episode: S15E08 The Reality War
+Next staging target episode: None (all available episodes staged)
+Staged Arabic Improved count: 87
+Date: 2026-08-14
 
 Staged episodes pending integration:
-- none
+- None
 
 ### Phase 2 — Integration Status
 
-Last completed episode: S08E09 Mummy on the Orient Express
-Next target episode: S08E10 Flatline
-Completed Arabic Improved count: 120
-Date: 2026-07-17
+Last completed episode: S16E08 The Reality War
+Next target episode: None (all staged episodes integrated)
+Completed Arabic Improved count: 207
+Date: 2026-08-22
 
 Already completed:
 - S02E13 Doomsday
@@ -136,6 +136,93 @@ Already completed:
 - S08E07 The Caretaker
 - S08E08 Kill the Moon
 - S08E09 Mummy on the Orient Express
+- S08E10 Flatline
+- S08E11 In the Forest of the Night
+- S08E12 Dark Water
+- S08E13 Death in Heaven
+- S08E14 Last Christmas (Special)
+- S09E01 Prologue (Prequel)
+- S09E02 The Doctor's Meditation (Prequel)
+- S09E03 The Magician's Apprentice
+- S09E04 The Witch's Familiar
+- S09E05 Under the Lake
+- S09E06 Before the Flood
+- S09E07 The Girl Who Died
+- S09E08 The Woman Who Lived
+- S09E09 The Zygon Invasion
+- S09E10 The Zygon Inversion
+- S09E11 Sleep No More
+- S09E12 Face the Raven
+- S09E13 Heaven Sent
+- S09E14 Hell Bent
+- S09E15 The Husbands of River Song (Special)
+- S09E16 The Return of Doctor Mysterio (Special)
+- S10E01 Friend from the Future (Prequel)
+- S10E02 The Pilot
+- S10E03 Smile
+- S10E04 Thin Ice
+- S10E05 Knock Knock
+- S10E06 Oxygen
+- S10E07 Extremis
+- S10E08 The Pyramid at the End of the World
+- S10E09 The Lie of the Land
+- S10E10 Empress of Mars
+- S10E11 The Eaters of Light
+- S10E12 World Enough and Time
+- S10E13 The Doctor Falls
+- S10E14 Twice Upon a Time (Special)
+- S11E01 The Woman Who Fell to Earth
+- S11E02 The Ghost Monument
+- S11E03 Rosa
+- S11E04 Arachnids in the UK
+- S11E05 The Tsuranga Conundrum
+- S11E06 Demons of the Punjab
+- S11E07 Kerblam!
+- S11E08 The Witchfinders
+- S11E09 It Takes You Away
+- S11E10 The Battle of Ranskoor Av Kolos
+- S11E11 Resolution (Special)
+- S12E01 Spyfall, Part 1
+- S12E02 Spyfall, Part 2
+- S12E03 Orphan 55
+- S12E04 Nikola Tesla's Night of Terror
+- S12E05 Fugitive of the Judoon
+- S12E06 Praxeus
+- S12E07 Can You Hear Me?
+- S12E08 The Haunting of Villa Diodati
+- S12E09 Ascension of the Cybermen
+- S12E10 The Timeless Children
+- S12E11 Revolution of the Daleks (Special)
+- S13E01 The Halloween Apocalypse
+- S13E02 War of the Sontarans
+- S13E03 Once, Upon Time
+- S13E04 Village of the Angels
+- S13E05 Survivors of the Flux
+- S13E06 The Vanquishers
+- S13E07 Eve of the Daleks (Special)
+- S13E08 Legend of the Sea Devils (Special)
+- S13E09 The Power of the Doctor (Special)
+- S14E02 The Star Beast (Special)
+- S14E03 Wild Blue Yonder (Special)
+- S14E04 The Giggle (Special)
+- S15E01 The Church on Ruby Road (Special)
+- S15E02 Space Babies
+- S15E03 The Devil's Chord
+- S15E04 Boom
+- S15E05 73 Yards
+- S15E06 Dot and Bubble
+- S15E07 Rogue
+- S15E08 The Legend of Ruby Sunday
+- S15E09 Empire of Death
+- S15E11 Joy to the World (Special)
+- S16E01 The Robot Revolution
+- S16E02 Lux
+- S16E03 The Well
+- S16E04 Lucky Day
+- S16E05 The Story and the Engine
+- S16E06 The Interstellar Song Contest
+- S16E07 Wish World
+- S16E08 The Reality War
 
 Staged episodes already integrated:
 - S05E09 Cold Blood
@@ -185,6 +272,93 @@ Staged episodes already integrated:
 - S08E07 The Caretaker
 - S08E08 Kill the Moon
 - S08E09 Mummy on the Orient Express
+- S08E10 Flatline
+- S08E11 In the Forest of the Night
+- S08E12 Dark Water
+- S08E13 Death in Heaven
+- S08E14 Last Christmas Special
+- S09E01 Prologue (Prequel)
+- S09E02 The Doctor's Meditation (Prequel)
+- S09E03 The Magician's Apprentice
+- S09E04 The Witch's Familiar
+- S09E05 Under the Lake
+- S09E06 Before the Flood
+- S09E07 The Girl Who Died
+- S09E08 The Woman Who Lived
+- S09E09 The Zygon Invasion
+- S09E10 The Zygon Inversion
+- S09E11 Sleep No More
+- S09E12 Face the Raven
+- S09E13 Heaven Sent
+- S09E14 Hell Bent
+- S09E15 The Husbands of River Song Special
+- S09E16 The Return of Doctor Mysterio Special
+- S10E01 Friend from the Future (Prequel)
+- S10E02 The Pilot
+- S10E03 Smile
+- S10E04 Thin Ice
+- S10E05 Knock Knock
+- S10E06 Oxygen
+- S10E07 Extremis
+- S10E08 The Pyramid at the End of the World
+- S10E09 The Lie of the Land
+- S10E10 Empress of Mars
+- S10E11 The Eaters of Light
+- S10E12 World Enough and Time
+- S10E13 The Doctor Falls
+- S10E14 Twice Upon a Time Special
+- S11E01 The Woman Who Fell to Earth
+- S11E02 The Ghost Monument
+- S11E03 Rosa
+- S11E04 Arachnids in the UK
+- S11E05 The Tsuranga Conundrum
+- S11E06 Demons of the Punjab
+- S11E07 Kerblam!
+- S11E08 The Witchfinders
+- S11E09 It Takes You Away
+- S11E10 The Battle of Ranskoor Av Kolos
+- S11E11 Resolution Special
+- S12E01 Spyfall Part 1
+- S12E02 Spyfall Part 2
+- S12E03 Orphan 55
+- S12E04 Nikola Tesla's Night of Terror
+- S12E05 Fugitive of the Judoon
+- S12E06 Praxeus
+- S12E07 Can You Hear Me?
+- S12E08 The Haunting of Villa Diodati
+- S12E09 Ascension of the Cybermen
+- S12E10 The Timeless Children
+- S12E11 Revolution of the Daleks Special
+- S13E01 The Halloween Apocalypse
+- S13E02 War of the Sontarans
+- S13E03 Once, Upon Time
+- S13E04 Village of the Angels
+- S13E05 Survivors of the Flux
+- S13E06 The Vanquishers
+- S13E07 Eve of the Daleks Special
+- S13E08 Legend of the Sea Devils Special
+- S13E09 The Power of the Doctor Special
+- S14E01 The Church on Ruby Road Special
+- S14E02 The Star Beast Special
+- S14E03 Wild Blue Yonder Special
+- S14E04 The Giggle Special
+- S14E05 Space Babies
+- S14E06 The Devil's Chord
+- S14E07 Boom
+- S14E08 73 Yards
+- S14E09 Dot and Bubble
+- S14E10 Rogue
+- S14E11 The Legend of Ruby Sunday
+- S14E12 Empire of Death
+- S14E13 Joy to the World Special
+- S15E01 The Robot Revolution
+- S15E02 Lux
+- S15E03 The Well
+- S15E04 Lucky Day
+- S15E05 The Story & the Engine
+- S15E06 The Interstellar Song Contest
+- S15E07 Wish World
+- S15E08 The Reality War
 
 ## 3. Global Rules
 
@@ -397,7 +571,8 @@ ready to use:
 
 ## 8. Doctor Who Terminology
 
-- Doctor = `الدكتور`
+- The character title/name "The Doctor" = `الدكتور` in every incarnation, including when the Doctor is female or another character assumes the identity. Keep the title lexically masculine (`الدكتور`, `يا دكتور`) while pronouns and adjectives follow the character's context. Do not apply this rule to women who are actual doctors, such as `الدكتورة سونغ` or `الدكتورة جونز`.
+- DoctorDonna = `الدكتور-دونا`. Never translate DoctorDonna as `الدكتورة دونا`.
 - TARDIS = `التارديس`
 - sonic screwdriver = `المفك الصوتي`
 - Dalek = `داليك`
