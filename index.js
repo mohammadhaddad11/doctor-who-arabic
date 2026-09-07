@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const path = require('path');
 const { addonBuilder, getRouter } = require('stremio-addon-sdk');
 const allNewWhoEpisodesPreSorted = require('./episodeData');
+const { DEFAULT_EPISODE_GENRES, buildEpisodeTagMetadata } = require('./episodeTagMetadata');
 const arabicSubtitleFiles = require('./arabicSubtitles.json');
 
 function loadJsonFile(relativePath, fallbackValue) {
@@ -217,33 +218,6 @@ function getEpisodeKey(episode) {
   }
 
   return `S${String(episode.season).padStart(2, '0')}E${String(episode.episode).padStart(2, '0')}`;
-}
-
-function formatEpisodeTagLabel(value) {
-  return String(value || '')
-    .split('-')
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ');
-}
-
-function buildEpisodeOverview(episode) {
-  const tag = EPISODE_TAGS[getEpisodeKey(episode)];
-  if (!tag) {
-    return episode.overview;
-  }
-
-  const displayTags = [tag.importance, tag.watchNote, tag.qualityNote]
-    .filter(Boolean)
-    .map(formatEpisodeTagLabel);
-  const tagLines = [`Tags: ${displayTags.join(' · ')}`];
-  if (tag.comment) {
-    tagLines.push(`Note: ${tag.comment}`);
-  }
-
-  return episode.overview
-    ? `${tagLines.join('\n')}\n\n${episode.overview}`
-    : tagLines.join('\n');
 }
 
 function isSpecialEpisode(episode) {
@@ -1458,7 +1432,7 @@ builder.defineCatalogHandler(async (args) => {
           poster: NEW_WHO_SERIES_POSTER_URL,
           description: 'Doctor Who from 2005 onward with separate English and Arabic subtitle tracks plus simple 1080p quality and 480p speed stream choices.',
           logo: ADDON_LOGO_URL,
-          genres: ['Sci-Fi', 'Adventure', 'Drama'],
+          genres: [...DEFAULT_EPISODE_GENRES],
           releaseInfo: '2005-Present'
         }
       ]
@@ -1480,17 +1454,21 @@ builder.defineMetaHandler(async (args) => {
         logo: ADDON_LOGO_URL,
         description: 'Doctor Who from 2005 onward in broadcast order, with separate English and Arabic subtitle options plus audited 1080p quality and 480p speed streams.',
         releaseInfo: '2005-Present',
-        genres: ['Sci-Fi', 'Adventure', 'Drama'],
-        videos: allNewWhoEpisodes.map((ep) => ({
-          id: `${NEW_WHO_SERIES_STREMIO_ID}:${ep.season}:${ep.episode}`,
-          title: ep.title,
-          season: ep.season,
-          episode: ep.episode,
-          released: ep.released,
-          overview: buildEpisodeOverview(ep),
-          thumbnail: getEpisodeThumbnail(ep),
-          available: Boolean(ep.streamUrl)
-        }))
+        genres: [...DEFAULT_EPISODE_GENRES],
+        videos: allNewWhoEpisodes.map((ep) => {
+          const tagMetadata = buildEpisodeTagMetadata(ep, EPISODE_TAGS[getEpisodeKey(ep)]);
+          return {
+            id: `${NEW_WHO_SERIES_STREMIO_ID}:${ep.season}:${ep.episode}`,
+            title: ep.title,
+            season: ep.season,
+            episode: ep.episode,
+            released: ep.released,
+            overview: tagMetadata.overview,
+            genres: tagMetadata.genres,
+            thumbnail: getEpisodeThumbnail(ep),
+            available: Boolean(ep.streamUrl)
+          };
+        })
       }
     };
   }

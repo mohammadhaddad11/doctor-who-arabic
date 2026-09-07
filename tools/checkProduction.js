@@ -8,6 +8,7 @@ const arDir = path.join(ROOT, 'ar');
 const arAltDir = path.join(ROOT, 'ar-alt');
 const arabicSubtitles = require('../arabicSubtitles.json');
 const arabicSubtitleAlternatives = require('../arabicSubtitleAlternatives.json');
+const { DEFAULT_EPISODE_GENRES, buildEpisodeTagMetadata, formatEpisodeTagLabel } = require('../episodeTagMetadata');
 const episodeTags = require('../episodeTags.json');
 const episodeData = require('../episodeData');
 const streamMetadata = require('../streamMetadata.json');
@@ -208,10 +209,54 @@ function checkEpisodeTags() {
   }
 }
 
+function checkEpisodeTagMetadata() {
+  const episodesById = new Map(episodeData.map((episode) => [episodeToCanonicalId(episode), episode]));
+
+  for (const [canonicalId, tag] of Object.entries(episodeTags)) {
+    const episode = episodesById.get(canonicalId);
+    if (!episode) {
+      continue;
+    }
+
+    const metadata = buildEpisodeTagMetadata(episode, tag);
+    const expectedTagGenres = [
+      formatEpisodeTagLabel(tag.importance),
+      formatEpisodeTagLabel(tag.watchNote),
+      `Quality: ${formatEpisodeTagLabel(tag.qualityNote)}`
+    ];
+
+    if (metadata.overview !== episode.overview) {
+      fail(`${canonicalId}: episode tags changed the original description`);
+    }
+    if (/^(?:Tags:|Episode Tags|Note:|Summary\b)/.test(metadata.overview || '')) {
+      fail(`${canonicalId}: description still contains injected episode tag text`);
+    }
+    if (metadata.genres.slice(0, DEFAULT_EPISODE_GENRES.length).join('|') !== DEFAULT_EPISODE_GENRES.join('|')) {
+      fail(`${canonicalId}: existing episode genres were not preserved`);
+    }
+    if (metadata.genres.slice(-expectedTagGenres.length).join('|') !== expectedTagGenres.join('|')) {
+      fail(`${canonicalId}: episode tag genre chips are missing or out of order`);
+    }
+  }
+
+  for (const episode of episodeData) {
+    const canonicalId = episodeToCanonicalId(episode);
+    if (episodeTags[canonicalId]) {
+      continue;
+    }
+
+    const metadata = buildEpisodeTagMetadata(episode, null);
+    if (metadata.overview !== episode.overview || metadata.genres.join('|') !== DEFAULT_EPISODE_GENRES.join('|')) {
+      fail(`${canonicalId}: untagged episode metadata changed unexpectedly`);
+    }
+  }
+}
+
 function main() {
   checkNodeSyntax();
   checkConsistency();
   checkEpisodeTags();
+  checkEpisodeTagMetadata();
   checkArabicFiles();
   checkArabicAlternativeFiles();
   checkStreamMetadata();
