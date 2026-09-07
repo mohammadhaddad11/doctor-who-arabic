@@ -4,7 +4,7 @@ const crypto = require('crypto');
 const path = require('path');
 const { addonBuilder, getRouter } = require('stremio-addon-sdk');
 const allNewWhoEpisodesPreSorted = require('./episodeData');
-const { DEFAULT_EPISODE_GENRES, buildEpisodeTagMetadata } = require('./episodeTagMetadata');
+const { DEFAULT_EPISODE_GENRES, buildEpisodeTagLine, buildEpisodeTagMetadata } = require('./episodeTagMetadata');
 const arabicSubtitleFiles = require('./arabicSubtitles.json');
 
 function loadJsonFile(relativePath, fallbackValue) {
@@ -919,10 +919,18 @@ function buildTrackerSources(entry) {
   )];
 }
 
-function buildTorrentFallbackStream(entry, subtitles) {
+function buildStreamTagDescription(episode, description) {
+  const tagLine = buildEpisodeTagLine(EPISODE_TAGS[getEpisodeKey(episode)]);
+  return tagLine ? `${tagLine} • ${description}` : description;
+}
+
+function buildTorrentFallbackStream(entry, subtitles, episode) {
   const stream = {
     name: 'Torrent Fallback',
-    description: `Whoniverse Arabic • fallback only • ${entry.quality} • subtitles: English + Arabic`,
+    description: buildStreamTagDescription(
+      episode,
+      `Whoniverse Arabic • fallback only • ${entry.quality} • subtitles: English + Arabic`
+    ),
     infoHash: entry.infoHash,
     fileIdx: entry.fileIdx,
     behaviorHints: {
@@ -958,7 +966,7 @@ function buildStreamDescription(streamEntry, episode) {
   parts.push(`Source health ${streamEntry.healthScore || 0}/100`);
   parts.push('Subtitles: English + Arabic');
 
-  return parts.join(' • ');
+  return buildStreamTagDescription(episode, parts.join(' • '));
 }
 
 function buildStreamsForEpisode(episode) {
@@ -990,7 +998,7 @@ function buildStreamsForEpisode(episode) {
 
     const torrentFallback = SHOW_TORRENT_FALLBACK ? getTorrentFallbackForEpisode(episode) : null;
     if (torrentFallback) {
-      streams.push(buildTorrentFallbackStream(torrentFallback, subtitles));
+      streams.push(buildTorrentFallbackStream(torrentFallback, subtitles, episode));
     }
 
     return streams;
@@ -1000,7 +1008,10 @@ function buildStreamsForEpisode(episode) {
     {
       url: episode.streamUrl,
       name: '1080p Quality',
-      description: isSpecialEpisode(episode) ? 'Whoniverse Arabic • Special episode • Quality' : 'Whoniverse Arabic • Quality',
+      description: buildStreamTagDescription(
+        episode,
+        isSpecialEpisode(episode) ? 'Whoniverse Arabic • Special episode • Quality' : 'Whoniverse Arabic • Quality'
+      ),
       subtitles
     }
   ];

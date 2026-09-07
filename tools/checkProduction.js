@@ -8,7 +8,7 @@ const arDir = path.join(ROOT, 'ar');
 const arAltDir = path.join(ROOT, 'ar-alt');
 const arabicSubtitles = require('../arabicSubtitles.json');
 const arabicSubtitleAlternatives = require('../arabicSubtitleAlternatives.json');
-const { DEFAULT_EPISODE_GENRES, buildEpisodeTagMetadata, formatEpisodeTagLabel } = require('../episodeTagMetadata');
+const { DEFAULT_EPISODE_GENRES, buildEpisodeTagLine, buildEpisodeTagMetadata } = require('../episodeTagMetadata');
 const episodeTags = require('../episodeTags.json');
 const episodeData = require('../episodeData');
 const streamMetadata = require('../streamMetadata.json');
@@ -219,23 +219,17 @@ function checkEpisodeTagMetadata() {
     }
 
     const metadata = buildEpisodeTagMetadata(episode, tag);
-    const expectedTagGenres = [
-      formatEpisodeTagLabel(tag.importance),
-      formatEpisodeTagLabel(tag.watchNote),
-      `Quality: ${formatEpisodeTagLabel(tag.qualityNote)}`
-    ];
+    const expectedTagLine = buildEpisodeTagLine(tag);
+    const expectedOverview = `${expectedTagLine} —\n\n${episode.overview}`;
 
-    if (metadata.overview !== episode.overview) {
-      fail(`${canonicalId}: episode tags changed the original description`);
+    if (metadata.overview !== expectedOverview) {
+      fail(`${canonicalId}: bracket tags are missing from the episode description`);
     }
     if (/^(?:Tags:|Episode Tags|Note:|Summary\b)/.test(metadata.overview || '')) {
-      fail(`${canonicalId}: description still contains injected episode tag text`);
+      fail(`${canonicalId}: description contains a forbidden episode tag heading`);
     }
-    if (metadata.genres.slice(0, DEFAULT_EPISODE_GENRES.length).join('|') !== DEFAULT_EPISODE_GENRES.join('|')) {
-      fail(`${canonicalId}: existing episode genres were not preserved`);
-    }
-    if (metadata.genres.slice(-expectedTagGenres.length).join('|') !== expectedTagGenres.join('|')) {
-      fail(`${canonicalId}: episode tag genre chips are missing or out of order`);
+    if (metadata.genres.join('|') !== DEFAULT_EPISODE_GENRES.join('|')) {
+      fail(`${canonicalId}: episode tags leaked into genres`);
     }
   }
 

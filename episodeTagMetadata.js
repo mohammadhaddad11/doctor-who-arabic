@@ -8,27 +8,36 @@ function formatEpisodeTagLabel(value) {
     .join(' ');
 }
 
+function buildEpisodeTagLine(tag) {
+  if (!tag) {
+    return '';
+  }
+
+  const labels = [tag.importance, tag.watchNote]
+    .map((value) => `[${formatEpisodeTagLabel(value)}]`);
+  if (tag.qualityNote) {
+    labels.push(`[Quality: ${formatEpisodeTagLabel(tag.qualityNote)}]`);
+  }
+  return labels.join(' ');
+}
+
 function buildEpisodeTagMetadata(episode, tag) {
   const genres = Array.isArray(episode?.genres)
     ? [...episode.genres]
     : [...DEFAULT_EPISODE_GENRES];
-
-  if (tag) {
-    genres.push(formatEpisodeTagLabel(tag.importance));
-    genres.push(formatEpisodeTagLabel(tag.watchNote));
-    if (tag.qualityNote) {
-      genres.push(`Quality: ${formatEpisodeTagLabel(tag.qualityNote)}`);
-    }
-  }
+  const tagLine = buildEpisodeTagLine(tag);
 
   return {
-    overview: episode?.overview,
+    overview: tagLine && episode?.overview
+      ? `${tagLine} —\n\n${episode.overview}`
+      : episode?.overview,
     genres
   };
 }
 
 module.exports = {
   DEFAULT_EPISODE_GENRES,
+  buildEpisodeTagLine,
   buildEpisodeTagMetadata,
   formatEpisodeTagLabel
 };
