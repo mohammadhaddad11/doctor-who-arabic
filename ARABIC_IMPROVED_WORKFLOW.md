@@ -571,12 +571,16 @@ ready to use:
 
 ## 8. Doctor Who Terminology
 
-- The character title/name "The Doctor" = `الدكتور` in every incarnation, including when the Doctor is female or another character assumes the identity. Keep the title lexically masculine (`الدكتور`, `يا دكتور`) while pronouns and adjectives follow the character's context. Do not apply this rule to women who are actual doctors, such as `الدكتورة سونغ` or `الدكتورة جونز`.
-- DoctorDonna = `الدكتور-دونا`. Never translate DoctorDonna as `الدكتورة دونا`.
+- The character title/name "The Doctor" = `الدكتور` in every incarnation, including when the Doctor is female or another character assumes the identity. Never translate the character/title as `طبيب` or `الطبيب`. Keep the title lexically masculine (`الدكتور`, `يا دكتور`) while pronouns and adjectives follow the character's context. Do not apply this rule to women who are actual doctors, such as `الدكتورة سونغ` or `الدكتورة جونز`.
+- DoctorDonna = `الدكتور-دونا`. Never translate DoctorDonna as `الدكتور دونا` or `الدكتورة دونا`.
 - TARDIS = `التارديس`
-- sonic screwdriver = `المفك الصوتي`
-- Dalek = `داليك`
+- Sonic Screwdriver = `المفك الصوتي`
+- Dalek / Daleks = `داليك` / `الداليك`
+- Cybermen = `السايبرمن`
 - Time Lord = `سيد الزمن`
+- Time Lords = `أسياد الزمن`
+- Time Lady = `سيدة الزمن`
+- Gallifrey = `غاليفري`
 - Earth = `الأرض`
 - aliens = `كائنات فضائية`
 - Rose = `روز`
