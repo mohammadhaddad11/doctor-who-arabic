@@ -233,8 +233,17 @@ function buildEpisodeOverview(episode) {
     return episode.overview;
   }
 
-  const tagLine = `[${formatEpisodeTagLabel(tag.importance)}] [${formatEpisodeTagLabel(tag.watchNote)}] — ${tag.comment}`;
-  return episode.overview ? `${tagLine}\n\n${episode.overview}` : tagLine;
+  const displayTags = [tag.importance, tag.watchNote, tag.qualityNote]
+    .filter(Boolean)
+    .map(formatEpisodeTagLabel);
+  const tagLines = [`Tags: ${displayTags.join(' · ')}`];
+  if (tag.comment) {
+    tagLines.push(`Note: ${tag.comment}`);
+  }
+
+  return episode.overview
+    ? `${tagLines.join('\n')}\n\n${episode.overview}`
+    : tagLines.join('\n');
 }
 
 function isSpecialEpisode(episode) {
