@@ -220,7 +220,10 @@ function checkEpisodeTagMetadata() {
 
     const metadata = buildEpisodeTagMetadata(episode, tag);
     const expectedTagLine = buildEpisodeTagLine(tag);
-    const expectedOverview = `${expectedTagLine} —\n\n${episode.overview}`;
+    const comment = typeof tag.comment === 'string' && tag.comment.trim()
+      ? ` ${tag.comment.trim()}`
+      : '';
+    const expectedOverview = `${expectedTagLine}${comment} — ${episode.overview}`;
 
     if (metadata.overview !== expectedOverview) {
       fail(`${canonicalId}: bracket tags are missing from the episode description`);

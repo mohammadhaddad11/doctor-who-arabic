@@ -26,10 +26,13 @@ function buildEpisodeTagMetadata(episode, tag) {
     ? [...episode.genres]
     : [...DEFAULT_EPISODE_GENRES];
   const tagLine = buildEpisodeTagLine(tag);
+  const comment = typeof tag?.comment === 'string' && tag.comment.trim()
+    ? ` ${tag.comment.trim()}`
+    : '';
 
   return {
     overview: tagLine && episode?.overview
-      ? `${tagLine} —\n\n${episode.overview}`
+      ? `${tagLine}${comment} — ${episode.overview}`
       : episode?.overview,
     genres
   };
