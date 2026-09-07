@@ -8,12 +8,16 @@ const arDir = path.join(ROOT, 'ar');
 const arAltDir = path.join(ROOT, 'ar-alt');
 const arabicSubtitles = require('../arabicSubtitles.json');
 const arabicSubtitleAlternatives = require('../arabicSubtitleAlternatives.json');
+const episodeTags = require('../episodeTags.json');
 const episodeData = require('../episodeData');
 const streamMetadata = require('../streamMetadata.json');
 const subtitleStatus = require('../subtitleStatus.json');
 
 const failures = [];
 const warnings = [];
+const EPISODE_TAG_IMPORTANCE = new Set(['canon', 'mid', 'filler']);
+const EPISODE_TAG_WATCH_NOTES = new Set(['essential', 'recommended', 'optional', 'skippable', 'skippable-first-watch']);
+const EPISODE_TAG_QUALITY_NOTES = new Set(['strong', 'good', 'okay', 'weak', 'controversial']);
 
 function fail(message) {
   failures.push(message);
@@ -141,9 +145,73 @@ function checkConsistency() {
   }
 }
 
+function episodeToCanonicalId(episode) {
+  return `S${String(episode.season).padStart(2, '0')}E${String(episode.episode).padStart(2, '0')}`;
+}
+
+function checkEpisodeTags() {
+  if (!episodeTags || typeof episodeTags !== 'object' || Array.isArray(episodeTags)) {
+    fail('episodeTags.json must be an object keyed by canonical episode ID');
+    return;
+  }
+
+  const tagPath = path.join(ROOT, 'episodeTags.json');
+  const rawTagIds = [...fs.readFileSync(tagPath, 'utf8').matchAll(/^\s*"(S\d{2}E\d{2})"\s*:/gm)]
+    .map((match) => match[1]);
+  const duplicateIds = rawTagIds.filter((id, index) => rawTagIds.indexOf(id) !== index);
+  if (duplicateIds.length) {
+    fail(`episodeTags.json contains duplicate canonical IDs: ${[...new Set(duplicateIds)].join(', ')}`);
+  }
+
+  const episodesById = new Map(episodeData.map((episode) => [episodeToCanonicalId(episode), episode]));
+  const episodeIdsByTitle = new Map(episodeData.map((episode) => [episode.title, episodeToCanonicalId(episode)]));
+  const seenTitles = new Set();
+
+  for (const [canonicalId, tag] of Object.entries(episodeTags)) {
+    const episode = episodesById.get(canonicalId);
+    if (!episode) {
+      fail(`episodeTags.json references unknown episode ID: ${canonicalId}`);
+      continue;
+    }
+
+    if (!tag || typeof tag !== 'object' || Array.isArray(tag)) {
+      fail(`${canonicalId}: episode tag must be an object`);
+      continue;
+    }
+
+    if (tag.title !== episode.title) {
+      fail(`${canonicalId}: tag title does not match episodeData.js (${tag.title || '(missing)'} != ${episode.title})`);
+    }
+
+    if (seenTitles.has(tag.title)) {
+      fail(`${canonicalId}: duplicate tagged title (${tag.title})`);
+    }
+    seenTitles.add(tag.title);
+
+    const titleCanonicalId = episodeIdsByTitle.get(tag.title);
+    if (titleCanonicalId && titleCanonicalId !== canonicalId) {
+      fail(`${canonicalId}: title belongs to ${titleCanonicalId}; possible minisode/prequel shift`);
+    }
+
+    if (!EPISODE_TAG_IMPORTANCE.has(tag.importance)) {
+      fail(`${canonicalId}: invalid importance (${tag.importance || '(missing)'})`);
+    }
+    if (!EPISODE_TAG_WATCH_NOTES.has(tag.watchNote)) {
+      fail(`${canonicalId}: invalid watchNote (${tag.watchNote || '(missing)'})`);
+    }
+    if (!EPISODE_TAG_QUALITY_NOTES.has(tag.qualityNote)) {
+      fail(`${canonicalId}: invalid qualityNote (${tag.qualityNote || '(missing)'})`);
+    }
+    if (typeof tag.comment !== 'string' || !tag.comment.trim()) {
+      fail(`${canonicalId}: comment must be a non-empty string`);
+    }
+  }
+}
+
 function main() {
   checkNodeSyntax();
   checkConsistency();
+  checkEpisodeTags();
   checkArabicFiles();
   checkArabicAlternativeFiles();
   checkStreamMetadata();
@@ -155,6 +223,7 @@ function main() {
     arabicAlternatives: Object.keys(arabicSubtitleAlternatives).length,
     streamEpisodes: Object.keys(streamMetadata.episodes || {}).length,
     manualReviewSubtitles: subtitleStatus.summary?.manual_review || 0,
+    taggedEpisodes: Object.keys(episodeTags).length,
     failures,
     warnings
   };

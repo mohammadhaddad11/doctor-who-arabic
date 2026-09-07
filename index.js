@@ -22,6 +22,7 @@ function loadJsonFile(relativePath, fallbackValue) {
 
 const arabicSubtitleAlternatives = loadJsonFile('arabicSubtitleAlternatives.json', {});
 const arabicImprovedSubtitles = loadJsonFile('arabicImprovedSubtitles.json', {});
+const episodeTags = loadJsonFile('episodeTags.json', {});
 const streamMetadata = loadJsonFile('streamMetadata.json', { episodes: {}, summary: {} });
 const subtitleStatus = loadJsonFile('subtitleStatus.json', { entries: {}, summary: {} });
 const torrentSources = loadJsonFile('torrentSources.json', { sources: [] });
@@ -32,6 +33,7 @@ const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
 const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
 const ARABIC_ALT_INDEX = arabicSubtitleAlternatives || {};
 const ARABIC_IMPROVED_INDEX = arabicImprovedSubtitles || {};
+const EPISODE_TAGS = episodeTags || {};
 const STREAM_METADATA_EPISODES = streamMetadata.episodes || {};
 const STREAM_SUMMARY = streamMetadata.summary || {};
 const SUBTITLE_STATUS_ENTRIES = subtitleStatus.entries || {};
@@ -215,6 +217,24 @@ function getEpisodeKey(episode) {
   }
 
   return `S${String(episode.season).padStart(2, '0')}E${String(episode.episode).padStart(2, '0')}`;
+}
+
+function formatEpisodeTagLabel(value) {
+  return String(value || '')
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+function buildEpisodeOverview(episode) {
+  const tag = EPISODE_TAGS[getEpisodeKey(episode)];
+  if (!tag) {
+    return episode.overview;
+  }
+
+  const tagLine = `[${formatEpisodeTagLabel(tag.importance)}] [${formatEpisodeTagLabel(tag.watchNote)}] — ${tag.comment}`;
+  return episode.overview ? `${tagLine}\n\n${episode.overview}` : tagLine;
 }
 
 function isSpecialEpisode(episode) {
@@ -1458,7 +1478,7 @@ builder.defineMetaHandler(async (args) => {
           season: ep.season,
           episode: ep.episode,
           released: ep.released,
-          overview: ep.overview,
+          overview: buildEpisodeOverview(ep),
           thumbnail: getEpisodeThumbnail(ep),
           available: Boolean(ep.streamUrl)
         }))

@@ -670,3 +670,13 @@ Do not retranslate an episode for a mechanical fix unless the user explicitly as
 - Never print full SRT diffs in final output.
 - Use cue counts, validation summaries, and short examples instead.
 - For workflow-only edits, a limited workflow diff is allowed when explicitly requested.
+
+## 13. Episode Importance Tags
+
+- `episodeTags.json` is the source of truth for episode importance and watch guidance.
+- Tag entries use canonical IDs and exact titles from `episodeData.js`; subtitle filename numbering must never be used for matching.
+- Importance values are `canon`, `mid`, or `filler`.
+- Watch notes are `essential`, `recommended`, `optional`, `skippable`, or `skippable-first-watch`.
+- Quality notes are `strong`, `good`, `okay`, `weak`, or `controversial`.
+- Classifications come from the user-provided catalog and must not be inferred or changed during implementation.
+- Tags affect episode metadata descriptions only and do not alter streams or subtitle selection.
