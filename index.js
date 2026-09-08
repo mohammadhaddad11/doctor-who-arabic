@@ -32,6 +32,7 @@ const torrentFallbackAudit = loadJsonFile('audit/torrent-fallback-audit.json', {
 
 const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
 const DOCTOR_WHO_MOVIE_1996_STREMIO_ID = 'doctor-who-movie-1996';
+const DOCTOR_WHO_MOVIE_1996_POSTER_URL = 'https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/__ia_thumb.jpg';
 const DOCTOR_WHO_MOVIE_1996_STREAMS = Object.freeze([
   Object.freeze({
     url: 'https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/Doctor%20Who%20The%20Movie%201996%201080p%20BluRay%20HDR10%20FLAC%202%200%20x265-GeneMige.mkv',
@@ -174,7 +175,7 @@ const NEW_WHO_SERIES_BACKGROUND_URL = ADDON_LOGO_URL;
 
 const manifest = {
   id: 'community.mhaddad.whoniverse.arabic',
-  version: '1.5.0',
+  version: '1.5.1',
   name: 'Whoniverse Arabic 1080p',
   description: 'Doctor Who for Stremio with separate English and Arabic subtitle tracks plus simple 1080p quality and 480p speed stream options.',
   logo: ADDON_LOGO_URL,
@@ -185,6 +186,11 @@ const manifest = {
       type: 'series',
       id: 'whoniverse_catalog',
       name: 'Whoniverse'
+    },
+    {
+      type: 'movie',
+      id: 'whoniverse_movies',
+      name: 'Whoniverse Movies'
     }
   ],
   behaviorHints: {
@@ -1465,6 +1471,22 @@ builder.defineCatalogHandler(async (args) => {
     };
   }
 
+  if (args.type === 'movie' && args.id === 'whoniverse_movies') {
+    return {
+      metas: [
+        {
+          id: DOCTOR_WHO_MOVIE_1996_STREMIO_ID,
+          type: 'movie',
+          name: 'Doctor Who: The Movie 1996',
+          poster: DOCTOR_WHO_MOVIE_1996_POSTER_URL,
+          description: 'The Doctor Who television movie starring Paul McGann as the Eighth Doctor.',
+          genres: [...DEFAULT_EPISODE_GENRES],
+          releaseInfo: '1996'
+        }
+      ]
+    };
+  }
+
   return { metas: [] };
 });
 
@@ -1495,6 +1517,21 @@ builder.defineMetaHandler(async (args) => {
             available: Boolean(ep.streamUrl)
           };
         })
+      }
+    };
+  }
+
+  if (args.type === 'movie' && args.id === DOCTOR_WHO_MOVIE_1996_STREMIO_ID) {
+    return {
+      meta: {
+        id: DOCTOR_WHO_MOVIE_1996_STREMIO_ID,
+        type: 'movie',
+        name: 'Doctor Who: The Movie 1996',
+        poster: DOCTOR_WHO_MOVIE_1996_POSTER_URL,
+        background: DOCTOR_WHO_MOVIE_1996_POSTER_URL,
+        description: 'The Doctor Who television movie starring Paul McGann as the Eighth Doctor.',
+        releaseInfo: '1996',
+        genres: [...DEFAULT_EPISODE_GENRES]
       }
     };
   }
