@@ -6,6 +6,7 @@ const { spawnSync } = require('child_process');
 const ROOT = path.resolve(__dirname, '..');
 const arDir = path.join(ROOT, 'ar');
 const arAltDir = path.join(ROOT, 'ar-alt');
+const movieSubtitlePath = path.join(ROOT, 'movie-subtitles', 'doctor-who-movie-1996.primary.improved.ar.srt');
 const arabicSubtitles = require('../arabicSubtitles.json');
 const arabicSubtitleAlternatives = require('../arabicSubtitleAlternatives.json');
 const { DEFAULT_EPISODE_GENRES, buildEpisodeTagLine, buildEpisodeTagMetadata } = require('../episodeTagMetadata');
@@ -98,6 +99,30 @@ function checkArabicAlternativeFiles() {
       }
     }
   }
+}
+
+function checkMovieSubtitle() {
+  if (!fs.existsSync(movieSubtitlePath)) {
+    fail('Missing Doctor Who 1996 Arabic Improved movie subtitle');
+    return;
+  }
+
+  const text = fs.readFileSync(movieSubtitlePath, 'utf8');
+  if (text.includes('\uFFFD')) {
+    fail('Doctor Who 1996 movie subtitle is not valid UTF-8');
+  }
+
+  const blocks = text.replace(/^\uFEFF/, '').replace(/\r/g, '').trim().split(/\n{2,}/);
+  if (blocks.length !== 960) {
+    fail(`Doctor Who 1996 movie subtitle has ${blocks.length} cues; expected 960`);
+  }
+
+  blocks.forEach((block, index) => {
+    const lines = block.split('\n');
+    if (Number(lines[0]) !== index + 1 || !/^\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3}$/.test(lines[1] || '') || lines.length < 3) {
+      fail(`Doctor Who 1996 movie subtitle has an invalid cue at position ${index + 1}`);
+    }
+  });
 }
 
 function checkStreamMetadata() {
@@ -256,6 +281,7 @@ function main() {
   checkEpisodeTagMetadata();
   checkArabicFiles();
   checkArabicAlternativeFiles();
+  checkMovieSubtitle();
   checkStreamMetadata();
 
   const result = {

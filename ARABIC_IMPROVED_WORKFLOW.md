@@ -419,6 +419,17 @@ During Phase 2, do not:
 - inspect unrelated episodes beyond canonical ID/title verification needed for integration
 - change stream logic
 
+### Movie-Specific One-Pass Exception
+
+When the user explicitly authorizes one-pass integration for a standalone movie:
+
+- Use only an English subtitle track proven to match the target movie stream; an extracted embedded English track is allowed.
+- Preserve every retained cue number and timestamp exactly and translate text only, except for the existing standalone non-speech removal rule.
+- Keep separate English and Arabic files for streams with different subtitle timing.
+- The final Arabic files may be written to `movie-subtitles/` and exposed by movie-only stream/subtitle logic in the same task.
+- Apply all Arabic Improved translation, terminology, pronoun/gender, QA, UTF-8, and no-full-diff rules.
+- This exception does not change the two-phase workflow or allowed file scope for TV episodes.
+
 ## 5. Phase 1 — Translation Staging
 
 Phase 1 creates a staged Arabic Improved subtitle file, but does not add it to the addon yet.
