@@ -31,6 +31,21 @@ const torrentSourcesLocal = loadJsonFile('torrentSources.local.json', { sources:
 const torrentFallbackAudit = loadJsonFile('audit/torrent-fallback-audit.json', { summary: {} });
 
 const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
+const DOCTOR_WHO_MOVIE_1996_STREMIO_ID = 'doctor-who-movie-1996';
+const DOCTOR_WHO_MOVIE_1996_STREAMS = Object.freeze([
+  Object.freeze({
+    url: 'https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/Doctor%20Who%20The%20Movie%201996%201080p%20BluRay%20HDR10%20FLAC%202%200%20x265-GeneMige.mkv',
+    name: 'Whoniverse Arabic • 1080p • Primary',
+    description: 'Doctor Who (1996) • MKV • HEVC Main 10 HDR • 5.10 GB',
+    bytes: 5104562536
+  }),
+  Object.freeze({
+    url: 'https://archive.org/download/doctor-who-the-movie-uk-version/Doctor%20Who%20-%20The%20Movie%20-%20UK%20Version.mkv',
+    name: 'Whoniverse Arabic • Remastered 20GB • High Quality Alt',
+    description: 'Doctor Who (1996) • MKV • H.264 1080p • 23.17 GB',
+    bytes: 23171985710
+  })
+]);
 const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
 const ARABIC_ALT_INDEX = arabicSubtitleAlternatives || {};
 const ARABIC_IMPROVED_INDEX = arabicImprovedSubtitles || {};
@@ -163,7 +178,7 @@ const manifest = {
   name: 'Whoniverse Arabic 1080p',
   description: 'Doctor Who for Stremio with separate English and Arabic subtitle tracks plus simple 1080p quality and 480p speed stream options.',
   logo: ADDON_LOGO_URL,
-  types: ['series'],
+  types: ['series', 'movie'],
   resources: ['catalog', 'meta', 'stream', 'subtitles'],
   catalogs: [
     {
@@ -1488,6 +1503,10 @@ builder.defineMetaHandler(async (args) => {
 });
 
 builder.defineStreamHandler(async (args) => {
+  if (args.type === 'movie' && args.id === DOCTOR_WHO_MOVIE_1996_STREMIO_ID) {
+    return { streams: DOCTOR_WHO_MOVIE_1996_STREAMS.map((stream) => ({ ...stream })) };
+  }
+
   if (args.type !== 'series' || !args.id) {
     return { streams: [] };
   }
