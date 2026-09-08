@@ -33,18 +33,13 @@ const torrentFallbackAudit = loadJsonFile('audit/torrent-fallback-audit.json', {
 const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
 const DOCTOR_WHO_MOVIE_1996_STREMIO_ID = 'doctor-who-movie-1996';
 const DOCTOR_WHO_MOVIE_1996_POSTER_URL = 'https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/__ia_thumb.jpg';
+const DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE = 'doctor-who-movie-1996.primary.improved.ar.srt';
 const DOCTOR_WHO_MOVIE_1996_STREAMS = Object.freeze([
   Object.freeze({
     url: 'https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/Doctor%20Who%20The%20Movie%201996%201080p%20BluRay%20HDR10%20FLAC%202%200%20x265-GeneMige.mkv',
     name: 'Whoniverse Arabic • 1080p • Primary',
     description: 'Doctor Who (1996) • MKV • HEVC Main 10 HDR • 5.10 GB',
     bytes: 5104562536
-  }),
-  Object.freeze({
-    url: 'https://archive.org/download/doctor-who-the-movie-uk-version/Doctor%20Who%20-%20The%20Movie%20-%20UK%20Version.mkv',
-    name: 'Whoniverse Arabic • Remastered 20GB • High Quality Alt',
-    description: 'Doctor Who (1996) • MKV • H.264 1080p • 23.17 GB',
-    bytes: 23171985710
   })
 ]);
 const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
@@ -63,6 +58,8 @@ const ARABIC_ALT_SUBTITLE_DIR = path.join(__dirname, 'ar-alt');
 const ARABIC_ALT_SUBTITLE_ROUTE = '/subtitles/ar-alt';
 const ARABIC_IMPROVED_SUBTITLE_DIR = path.join(__dirname, 'ar-improved');
 const ARABIC_IMPROVED_SUBTITLE_ROUTE = '/subtitles/ar-improved';
+const MOVIE_SUBTITLE_DIR = path.join(__dirname, 'movie-subtitles');
+const MOVIE_SUBTITLE_ROUTE = '/subtitles/movie-ar';
 const ASSET_DIR = path.join(__dirname, 'assets');
 const ASSET_ROUTE = '/assets';
 const VIDEO_ROUTE = '/video';
@@ -299,6 +296,10 @@ function getArabicImprovedSubtitleFilePath(arabicName) {
   return path.join(ARABIC_IMPROVED_SUBTITLE_DIR, arabicName);
 }
 
+function getMovieSubtitleFilePath(filename) {
+  return path.join(MOVIE_SUBTITLE_DIR, filename);
+}
+
 function getSubtitleContentVersion(filePath) {
   if (!filePath || !fs.existsSync(filePath)) {
     return null;
@@ -344,6 +345,23 @@ function buildArabicImprovedSubtitleUrl(arabicName) {
   const version = getSubtitleContentVersion(subtitlePath);
   const baseUrl = `${PUBLIC_ADDON_BASE_URL}${ARABIC_IMPROVED_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
   return version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl;
+}
+
+function getMovieArabicSubtitleTrack() {
+  const subtitlePath = getMovieSubtitleFilePath(DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE);
+  if (!fs.existsSync(subtitlePath)) {
+    return null;
+  }
+
+  const version = getSubtitleContentVersion(subtitlePath);
+  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${MOVIE_SUBTITLE_ROUTE}/${encodeURIComponent(DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE)}`;
+  return {
+    id: 'movie_ar_improved_sub',
+    url: version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl,
+    lang: 'Arabic',
+    title: 'Arabic Improved (عربي)',
+    name: 'Arabic Improved (عربي)'
+  };
 }
 
 function getAssetFilePath(assetName) {
@@ -1541,7 +1559,13 @@ builder.defineMetaHandler(async (args) => {
 
 builder.defineStreamHandler(async (args) => {
   if (args.type === 'movie' && args.id === DOCTOR_WHO_MOVIE_1996_STREMIO_ID) {
-    return { streams: DOCTOR_WHO_MOVIE_1996_STREAMS.map((stream) => ({ ...stream })) };
+    const arabicSubtitle = getMovieArabicSubtitleTrack();
+    return {
+      streams: DOCTOR_WHO_MOVIE_1996_STREAMS.map((stream) => ({
+        ...stream,
+        ...(arabicSubtitle ? { subtitles: [arabicSubtitle] } : {})
+      }))
+    };
   }
 
   if (args.type !== 'series' || !args.id) {
@@ -1553,6 +1577,11 @@ builder.defineStreamHandler(async (args) => {
 });
 
 builder.defineSubtitlesHandler(async (args) => {
+  if (args.type === 'movie' && args.id === DOCTOR_WHO_MOVIE_1996_STREMIO_ID) {
+    const arabicSubtitle = getMovieArabicSubtitleTrack();
+    return { subtitles: arabicSubtitle ? [arabicSubtitle] : [] };
+  }
+
   if (args.type !== 'series' || !args.id) {
     return { subtitles: [] };
   }
@@ -1652,6 +1681,38 @@ function serveArabicImprovedSubtitle(req, res, filename) {
   res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
   res.setHeader('Cache-Control', 'public, max-age=3600');
 
+  if (req.method === 'HEAD') {
+    res.end();
+    return;
+  }
+
+  fs.createReadStream(subtitlePath).pipe(res);
+}
+
+function serveMovieSubtitle(req, res, filename) {
+  const safeName = path.basename(filename);
+  if (safeName !== DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE) {
+    sendCorsHeaders(res);
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.end('Movie subtitle not found');
+    return;
+  }
+
+  const subtitlePath = getMovieSubtitleFilePath(safeName);
+  if (!fs.existsSync(subtitlePath)) {
+    sendCorsHeaders(res);
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.end('Movie subtitle file missing');
+    return;
+  }
+
+  sendCorsHeaders(res);
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/x-subrip; charset=utf-8');
+  res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
+  res.setHeader('Cache-Control', 'public, max-age=3600');
   if (req.method === 'HEAD') {
     res.end();
     return;
@@ -1774,6 +1835,19 @@ const server = http.createServer((req, res) => {
 
     const encodedName = requestUrl.pathname.slice(`${ARABIC_IMPROVED_SUBTITLE_ROUTE}/`.length);
     serveArabicImprovedSubtitle(req, res, decodeURIComponent(encodedName));
+    return;
+  }
+
+  if (requestUrl.pathname.startsWith(`${MOVIE_SUBTITLE_ROUTE}/`)) {
+    if (req.method === 'OPTIONS') {
+      sendCorsHeaders(res);
+      res.statusCode = 204;
+      res.end();
+      return;
+    }
+
+    const encodedName = requestUrl.pathname.slice(`${MOVIE_SUBTITLE_ROUTE}/`.length);
+    serveMovieSubtitle(req, res, decodeURIComponent(encodedName));
     return;
   }
 
