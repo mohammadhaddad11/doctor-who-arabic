@@ -12,6 +12,7 @@ const arabicSubtitleAlternatives = require('../arabicSubtitleAlternatives.json')
 const { DEFAULT_EPISODE_GENRES, buildEpisodeTagLine, buildEpisodeTagMetadata } = require('../episodeTagMetadata');
 const episodeTags = require('../episodeTags.json');
 const episodeData = require('../episodeData');
+const { ARCHIVE_IDENTIFIER: torchwoodArchiveIdentifier, episodes: torchwoodEpisodes } = require('../torchwoodData');
 const streamMetadata = require('../streamMetadata.json');
 const subtitleStatus = require('../subtitleStatus.json');
 
@@ -171,6 +172,56 @@ function checkConsistency() {
   }
 }
 
+function checkTorchwoodData() {
+  const expectedTitles = [
+    'Everything Changes',
+    'Day One',
+    'Ghost Machine',
+    'Cyberwoman',
+    'Small Worlds',
+    'Countrycide',
+    'Greeks Bearing Gifts',
+    'They Keep Killing Suzie',
+    'Random Shoes',
+    'Out of Time',
+    'Combat',
+    'Captain Jack Harkness',
+    'End of Days'
+  ];
+  const episodesWithStreams = new Set([1, 3, 4, 5, 6, 7, 8, 9, 11, 12]);
+  const expectedUrlPrefix = `https://archive.org/download/${torchwoodArchiveIdentifier}/`;
+
+  if (torchwoodArchiveIdentifier !== 'torchwood-1x-08-volver-a-matar-a-suzie-dual-1080p') {
+    fail('Torchwood uses an unexpected Archive.org identifier');
+  }
+  if (!Array.isArray(torchwoodEpisodes) || torchwoodEpisodes.length !== 13) {
+    fail(`Torchwood Season 1 has ${torchwoodEpisodes?.length || 0} episodes; expected 13`);
+    return;
+  }
+
+  torchwoodEpisodes.forEach((episode, index) => {
+    const episodeNumber = index + 1;
+    if (episode.season !== 1 || episode.episode !== episodeNumber || episode.title !== expectedTitles[index]) {
+      fail(`Torchwood S01E${String(episodeNumber).padStart(2, '0')} metadata is invalid`);
+    }
+    if (!episode.released || !episode.overview || !episode.thumbnail || !Array.isArray(episode.streams)) {
+      fail(`Torchwood S01E${String(episodeNumber).padStart(2, '0')} is missing required metadata`);
+      return;
+    }
+
+    const expectedStreamCount = episodesWithStreams.has(episodeNumber) ? 1 : 0;
+    if (episode.streams.length !== expectedStreamCount) {
+      fail(`Torchwood S01E${String(episodeNumber).padStart(2, '0')} has ${episode.streams.length} streams; expected ${expectedStreamCount}`);
+    }
+
+    for (const stream of episode.streams) {
+      if (!stream.url.startsWith(expectedUrlPrefix) || !stream.url.endsWith('.mkv') || /50fps|\.mp4(?:$|\?)/i.test(stream.url)) {
+        fail(`Torchwood S01E${String(episodeNumber).padStart(2, '0')} has a disallowed stream URL`);
+      }
+    }
+  });
+}
+
 function episodeToCanonicalId(episode) {
   return `S${String(episode.season).padStart(2, '0')}E${String(episode.episode).padStart(2, '0')}`;
 }
@@ -277,6 +328,7 @@ function checkEpisodeTagMetadata() {
 function main() {
   checkNodeSyntax();
   checkConsistency();
+  checkTorchwoodData();
   checkEpisodeTags();
   checkEpisodeTagMetadata();
   checkArabicFiles();
@@ -287,6 +339,8 @@ function main() {
   const result = {
     status: failures.length ? 'failed' : 'ok',
     episodes: episodeData.length,
+    torchwoodEpisodes: torchwoodEpisodes.length,
+    torchwoodStreamEpisodes: torchwoodEpisodes.filter((episode) => episode.streams.length > 0).length,
     arabicSubtitles: arabicSubtitles.length,
     arabicAlternatives: Object.keys(arabicSubtitleAlternatives).length,
     streamEpisodes: Object.keys(streamMetadata.episodes || {}).length,

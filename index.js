@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const path = require('path');
 const { addonBuilder, getRouter } = require('stremio-addon-sdk');
 const allNewWhoEpisodesPreSorted = require('./episodeData');
+const { POSTER_URL: TORCHWOOD_POSTER_URL, episodes: torchwoodEpisodes } = require('./torchwoodData');
 const { DEFAULT_EPISODE_GENRES, buildEpisodeTagLine, buildEpisodeTagMetadata } = require('./episodeTagMetadata');
 const arabicSubtitleFiles = require('./arabicSubtitles.json');
 
@@ -31,6 +32,7 @@ const torrentSourcesLocal = loadJsonFile('torrentSources.local.json', { sources:
 const torrentFallbackAudit = loadJsonFile('audit/torrent-fallback-audit.json', { summary: {} });
 
 const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
+const TORCHWOOD_SERIES_STREMIO_ID = 'whoniverse_torchwood';
 const DOCTOR_WHO_MOVIE_1996_STREMIO_ID = 'doctor-who-movie-1996';
 const DOCTOR_WHO_MOVIE_1996_POSTER_URL = 'https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/__ia_thumb.jpg';
 const DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE = 'doctor-who-movie-1996.primary.improved.ar.srt';
@@ -172,7 +174,7 @@ const NEW_WHO_SERIES_BACKGROUND_URL = ADDON_LOGO_URL;
 
 const manifest = {
   id: 'community.mhaddad.whoniverse.arabic',
-  version: '1.5.1',
+  version: '1.6.0',
   name: 'Whoniverse Arabic 1080p',
   description: 'Doctor Who for Stremio with separate English and Arabic subtitle tracks plus simple 1080p quality and 480p speed stream options.',
   logo: ADDON_LOGO_URL,
@@ -224,6 +226,19 @@ function getEpisodeFromArgs(id) {
   const episodeNum = Number.parseInt(episodeStr, 10);
 
   return allNewWhoEpisodes.find((ep) => ep.season === season && ep.episode === episodeNum) || null;
+}
+
+function getTorchwoodEpisodeFromArgs(id) {
+  const [seriesId, seasonStr, episodeStr] = id.split(':');
+
+  if (seriesId !== TORCHWOOD_SERIES_STREMIO_ID) {
+    return null;
+  }
+
+  const season = Number.parseInt(seasonStr, 10);
+  const episodeNum = Number.parseInt(episodeStr, 10);
+
+  return torchwoodEpisodes.find((episode) => episode.season === season && episode.episode === episodeNum) || null;
 }
 
 function getEpisodeFromCanonicalId(canonicalId) {
@@ -1484,6 +1499,16 @@ builder.defineCatalogHandler(async (args) => {
           logo: ADDON_LOGO_URL,
           genres: [...DEFAULT_EPISODE_GENRES],
           releaseInfo: '2005-Present'
+        },
+        {
+          id: TORCHWOOD_SERIES_STREMIO_ID,
+          type: 'series',
+          name: 'Torchwood 1080p',
+          poster: TORCHWOOD_POSTER_URL,
+          description: 'Torchwood Season 1 using original 1080p MKV files from the selected Archive.org collection. Some episodes are intentionally unavailable pending approved sources.',
+          logo: ADDON_LOGO_URL,
+          genres: ['Science Fiction', 'Drama'],
+          releaseInfo: '2006-2007'
         }
       ]
     };
@@ -1539,6 +1564,32 @@ builder.defineMetaHandler(async (args) => {
     };
   }
 
+  if (args.type === 'series' && args.id === TORCHWOOD_SERIES_STREMIO_ID) {
+    return {
+      meta: {
+        id: TORCHWOOD_SERIES_STREMIO_ID,
+        type: 'series',
+        name: 'Torchwood 1080p',
+        poster: TORCHWOOD_POSTER_URL,
+        background: TORCHWOOD_POSTER_URL,
+        logo: ADDON_LOGO_URL,
+        description: 'Torchwood Season 1 in broadcast order with original 1080p MKV streams from Candidate A. Episodes 2, 10, and 13 are listed but intentionally have no playable stream.',
+        releaseInfo: '2006-2007',
+        genres: ['Science Fiction', 'Drama'],
+        videos: torchwoodEpisodes.map((episode) => ({
+          id: `${TORCHWOOD_SERIES_STREMIO_ID}:${episode.season}:${episode.episode}`,
+          title: episode.title,
+          season: episode.season,
+          episode: episode.episode,
+          released: episode.released,
+          overview: episode.overview,
+          thumbnail: episode.thumbnail,
+          available: episode.streams.length > 0
+        }))
+      }
+    };
+  }
+
   if (args.type === 'movie' && args.id === DOCTOR_WHO_MOVIE_1996_STREMIO_ID) {
     return {
       meta: {
@@ -1570,6 +1621,11 @@ builder.defineStreamHandler(async (args) => {
 
   if (args.type !== 'series' || !args.id) {
     return { streams: [] };
+  }
+
+  const torchwoodEpisode = getTorchwoodEpisodeFromArgs(args.id);
+  if (torchwoodEpisode) {
+    return { streams: torchwoodEpisode.streams.map((stream) => ({ ...stream })) };
   }
 
   const episode = getEpisodeFromArgs(args.id);
