@@ -14,13 +14,14 @@ const { DEFAULT_EPISODE_GENRES, buildEpisodeTagLine, buildEpisodeTagMetadata, fo
 const episodeTags = require('../episodeTags.json');
 const episodeData = require('../episodeData');
 const { CATALOGS, CONTENT_IDS, createContentLibrary } = require('../contentLibrary');
+const { attachSubtitlesToStream, buildTorchwoodStreamDescription, createStreamRegistry } = require('../streamRegistry');
+const { TORCHWOOD_CLEAN_ENGLISH_SUBTITLES, createSubtitleRegistry } = require('../subtitleRegistry');
 const { ARCHIVE_IDENTIFIERS: torchwoodArchiveIdentifiers, episodes: torchwoodEpisodes } = require('../torchwoodData');
 const torchwoodEpisodeImages = require('../torchwoodEpisodeImages');
 const {
   TORCHWOOD_EPISODE_TAGS,
   buildTorchwoodEpisodeOverview,
-  buildTorchwoodEpisodeTagLine,
-  buildTorchwoodStreamDescription
+  buildTorchwoodEpisodeTagLine
 } = require('../torchwoodEpisodeTags');
 const streamMetadata = require('../streamMetadata.json');
 const subtitleStatus = require('../subtitleStatus.json');
@@ -44,17 +45,6 @@ const TORCHWOOD_TAG_CONTENT_NOTE = new Set([
   'skipped'
 ]);
 const TORCHWOOD_TAG_FIELDS = new Set(['title', 'importance', 'cleanStatus', 'contentNote', 'comment']);
-const TORCHWOOD_CLEAN_ENGLISH_SUBTITLES = Object.freeze({
-  S01E10: 'S01E10.clean.en.srt',
-  S01E13: 'S01E13.clean.en.srt',
-  S02E03: 'S02E03.clean.en.srt',
-  S02E05: 'S02E05.clean.en.srt',
-  S02E09: 'S02E09.clean.en.srt',
-  S02E11: 'S02E11.clean.v2.en.srt',
-  S04E03: 'S04E03.clean.en.srt',
-  S04E07: 'S04E07.clean.en.srt'
-});
-
 function fail(message) {
   failures.push(message);
 }
@@ -64,13 +54,39 @@ function warn(message) {
 }
 
 function checkNodeSyntax() {
-  const result = spawnSync(process.execPath, ['-c', 'index.js'], {
-    cwd: ROOT,
-    encoding: 'utf8'
-  });
+  for (const filename of ['index.js', 'subtitleRegistry.js', 'streamRegistry.js', 'torchwoodArabicModeration.js', 'tools/validateArabicModeration.js']) {
+    const result = spawnSync(process.execPath, ['-c', filename], {
+      cwd: ROOT,
+      encoding: 'utf8'
+    });
+    if (result.status !== 0) {
+      fail(`${filename} syntax check failed: ${(result.stderr || result.stdout || '').trim()}`);
+    }
+  }
+}
 
-  if (result.status !== 0) {
-    fail(`index.js syntax check failed: ${(result.stderr || result.stdout || '').trim()}`);
+function checkArchitectureModules() {
+  if (typeof createSubtitleRegistry !== 'function' || typeof createStreamRegistry !== 'function') {
+    fail('Subtitle and stream registry factories must be available');
+  }
+  const subtitle = { id: 'test', url: 'https://example.com/test.srt', lang: 'English' };
+  const attached = attachSubtitlesToStream(
+    { url: 'https://example.com/video.mp4', subtitles: [subtitle] },
+    [subtitle]
+  );
+  if (attached.subtitles.length !== 1) {
+    fail('streamRegistry subtitle attachment must prevent duplicate tracks');
+  }
+
+  const workflowPath = path.join(ROOT, 'TORCHWOOD_ARABIC_WORKFLOW.md');
+  const validatorPath = path.join(ROOT, 'tools', 'validateArabicModeration.js');
+  if (!fs.existsSync(workflowPath) || !fs.existsSync(validatorPath)) {
+    fail('Torchwood Arabic workflow or moderation validator is missing');
+    return;
+  }
+  const workflow = fs.readFileSync(workflowPath, 'utf8');
+  if (!workflow.includes('RTL Punctuation And BiDi Policy') || !workflow.includes('episode by episode')) {
+    fail('Torchwood Arabic workflow is missing episode-level or BiDi policy');
   }
 }
 
@@ -589,6 +605,7 @@ function checkTorchwoodEpisodeTags() {
 
 function main() {
   checkNodeSyntax();
+  checkArchitectureModules();
   checkConsistency();
   checkContentLibrary();
   checkTorchwoodData();

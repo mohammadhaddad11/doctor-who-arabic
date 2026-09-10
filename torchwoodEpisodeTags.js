@@ -82,17 +82,8 @@ function buildTorchwoodEpisodeOverview(episode, tag) {
   return `${tagLine}${comment} — ${episode.overview}`;
 }
 
-function buildTorchwoodStreamDescription(stream, tag) {
-  if (!tag || !stream?.description) {
-    return stream?.description;
-  }
-
-  return `[${formatEpisodeTagLabel(tag.cleanStatus)}] [1080p] • ${stream.description}`;
-}
-
 module.exports = {
   TORCHWOOD_EPISODE_TAGS,
   buildTorchwoodEpisodeOverview,
-  buildTorchwoodEpisodeTagLine,
-  buildTorchwoodStreamDescription
+  buildTorchwoodEpisodeTagLine
 };

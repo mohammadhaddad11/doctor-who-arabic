@@ -637,6 +637,7 @@ Doctor Who usually needs less moderation, but the same clean-language policy app
 
 ## 10. Future Torchwood Arabic Translation Plan
 
+- The detailed future workflow, stricter moderation checks, and RTL/BiDi punctuation policy are maintained separately in `TORCHWOOD_ARABIC_WORKFLOW.md`.
 - Torchwood Arabic subtitles are postponed and must not be created, mapped, or exposed until a dedicated translation task begins.
 - Translate Torchwood episode by episode from an English subtitle source proven to match the exact playable stream.
 - For clean-cut episodes, use subtitles specifically synchronized to the clean edit; do not attach uncut timings.

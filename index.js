@@ -1,14 +1,16 @@
 const fs = require('fs');
 const http = require('http');
-const crypto = require('crypto');
 const path = require('path');
+const QRCode = require('qrcode');
 const { addonBuilder, getRouter } = require('stremio-addon-sdk');
 const { CATALOGS, CONTENT_IDS, createContentLibrary } = require('./contentLibrary');
-const { buildEpisodeTagLine, buildEpisodeTagMetadata } = require('./episodeTagMetadata');
+const { buildEpisodeTagLine, buildEpisodeTagMetadata, formatEpisodeTagLabel } = require('./episodeTagMetadata');
+const { createStreamRegistry } = require('./streamRegistry');
+const { createSubtitleRegistry } = require('./subtitleRegistry');
 const {
   TORCHWOOD_EPISODE_TAGS,
   buildTorchwoodEpisodeOverview,
-  buildTorchwoodStreamDescription
+  buildTorchwoodEpisodeTagLine
 } = require('./torchwoodEpisodeTags');
 const arabicSubtitleFiles = require('./arabicSubtitles.json');
 
@@ -38,43 +40,20 @@ const torrentFallbackAudit = loadJsonFile('audit/torrent-fallback-audit.json', {
 const NEW_WHO_SERIES_STREMIO_ID = CONTENT_IDS.newWho;
 const TORCHWOOD_SERIES_STREMIO_ID = CONTENT_IDS.torchwood;
 const DOCTOR_WHO_MOVIE_1996_STREMIO_ID = CONTENT_IDS.doctorWhoMovie1996;
-const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
-const ARABIC_ALT_INDEX = arabicSubtitleAlternatives || {};
-const ARABIC_IMPROVED_INDEX = arabicImprovedSubtitles || {};
 const EPISODE_TAGS = episodeTags || {};
 const STREAM_METADATA_EPISODES = streamMetadata.episodes || {};
 const STREAM_SUMMARY = streamMetadata.summary || {};
 const SUBTITLE_STATUS_ENTRIES = subtitleStatus.entries || {};
 const SUBTITLE_STATUS_SUMMARY = subtitleStatus.summary || {};
 const TORRENT_FALLBACK_AUDIT_SUMMARY = torrentFallbackAudit.summary || {};
-const TORCHWOOD_CLEAN_ENGLISH_SUBTITLES = Object.freeze({
-  S01E10: 'S01E10.clean.en.srt',
-  S01E13: 'S01E13.clean.en.srt',
-  S02E03: 'S02E03.clean.en.srt',
-  S02E05: 'S02E05.clean.en.srt',
-  S02E09: 'S02E09.clean.en.srt',
-  S02E11: 'S02E11.clean.v2.en.srt',
-  S04E03: 'S04E03.clean.en.srt',
-  S04E07: 'S04E07.clean.en.srt'
-});
-const TORCHWOOD_CLEAN_ENGLISH_SUBTITLE_FILES = new Set(Object.values(TORCHWOOD_CLEAN_ENGLISH_SUBTITLES));
-
-const ARABIC_SUBTITLE_DIR = path.join(__dirname, 'ar');
-const ARABIC_SUBTITLE_ROUTE = '/subtitles/ar';
-const ARABIC_ALT_SUBTITLE_DIR = path.join(__dirname, 'ar-alt');
-const ARABIC_ALT_SUBTITLE_ROUTE = '/subtitles/ar-alt';
-const ARABIC_IMPROVED_SUBTITLE_DIR = path.join(__dirname, 'ar-improved');
-const ARABIC_IMPROVED_SUBTITLE_ROUTE = '/subtitles/ar-improved';
-const MOVIE_SUBTITLE_DIR = path.join(__dirname, 'movie-subtitles');
-const MOVIE_SUBTITLE_ROUTE = '/subtitles/movie-ar';
-const TORCHWOOD_ENGLISH_SUBTITLE_DIR = path.join(__dirname, 'torchwood-subtitles', 'en-clean');
-const TORCHWOOD_ENGLISH_SUBTITLE_ROUTE = '/subtitles/torchwood-en-clean';
 const ASSET_DIR = path.join(__dirname, 'assets');
 const ASSET_ROUTE = '/assets';
 const VIDEO_ROUTE = '/video';
 const port = Number(process.env.PORT) || 7000;
 const host = process.env.HOST || '0.0.0.0';
 const REPORT_PATH = '/report';
+const LIBRARY_PATH = '/library';
+const INSTALL_PATH = '/install';
 const REVIEW_SUBTITLE_DIR = path.join(__dirname, 'review', 'arabic-subtitles');
 const GITHUB_ISSUE_TEMPLATE_URL = 'https://github.com/mohammadhaddad11/doctor-who-arabic/issues/new?template=subtitle-issue.md';
 const MIRROR_CACHE_TTL_MS = 15 * 60 * 1000;
@@ -110,7 +89,6 @@ const DYNAMIC_REDIRECT_EPISODE_IDS = new Set([
 
 const archiveMetadataCache = new Map();
 const mirrorSelectionCache = new Map();
-const subtitleVersionCache = new Map();
 const SHOW_TORRENT_FALLBACK = String(process.env.SHOW_TORRENT_FALLBACK || '').toLowerCase() === 'true';
 const FORCE_SPEED_480_EPISODE_IDS = new Set(['S04E01']);
 const SLOW_DYNAMIC_REDIRECT_EPISODE_IDS = new Set(
@@ -152,12 +130,6 @@ const INTERNAL_FAST_START_1080P_CANDIDATES = Object.freeze({
   S16E01: 'https://ia800900.us.archive.org/19/items/nw_S16/E01_the_robot_revolution.ia.mp4'
 });
 
-const ARABIC_IMPROVED_ALLOWED_FILES = new Set(
-  Object.values(ARABIC_IMPROVED_INDEX)
-    .map((value) => getArabicImprovedEntryFilename(value))
-    .filter((filename) => Boolean(filename) && filename === path.basename(filename))
-);
-
 function trimTrailingSlash(value) {
   return value.replace(/\/+$/, '');
 }
@@ -185,6 +157,14 @@ const TORCHWOOD_SERIES = CONTENT_LIBRARY.getSeriesById(TORCHWOOD_SERIES_STREMIO_
 const DOCTOR_WHO_MOVIE_1996 = CONTENT_LIBRARY.getMovieById(DOCTOR_WHO_MOVIE_1996_STREMIO_ID);
 const allNewWhoEpisodesPreSorted = NEW_WHO_SERIES.episodes;
 const torchwoodEpisodes = TORCHWOOD_SERIES.episodes;
+const subtitleRegistry = createSubtitleRegistry({
+  rootDir: __dirname,
+  publicBaseUrl: PUBLIC_ADDON_BASE_URL,
+  primaryArabicFiles: arabicSubtitleFiles,
+  arabicAlternativeIndex: arabicSubtitleAlternatives,
+  arabicImprovedIndex: arabicImprovedSubtitles,
+  movie: DOCTOR_WHO_MOVIE_1996
+});
 
 function buildCatalogMeta(entry) {
   return {
@@ -300,252 +280,8 @@ function getEpisodeThumbnail(episode) {
   return episode.thumbnail;
 }
 
-function getEnglishSubtitleFilename(episode) {
-  if (!episode || !episode.subtitleUrl) {
-    return null;
-  }
-
-  return episode.subtitleUrl.split('/').pop() || null;
-}
-
-function getArabicSubtitleFilename(episode) {
-  const englishName = getEnglishSubtitleFilename(episode);
-  if (!englishName || !/\.srt$/i.test(englishName)) {
-    return null;
-  }
-
-  return englishName.replace(/\.srt$/i, '.ar.srt');
-}
-
-function getArabicSubtitleFilePath(arabicName) {
-  return path.join(ARABIC_SUBTITLE_DIR, arabicName);
-}
-
-function getArabicAltSubtitleFilePath(arabicName) {
-  return path.join(ARABIC_ALT_SUBTITLE_DIR, arabicName);
-}
-
-function getArabicImprovedEntryFilename(value) {
-  if (typeof value === 'string') {
-    return value.trim();
-  }
-
-  if (value && typeof value.filename === 'string') {
-    return value.filename.trim();
-  }
-
-  return null;
-}
-
-function getArabicImprovedSubtitleFilePath(arabicName) {
-  return path.join(ARABIC_IMPROVED_SUBTITLE_DIR, arabicName);
-}
-
-function getMovieSubtitleFilePath(filename) {
-  return path.join(MOVIE_SUBTITLE_DIR, filename);
-}
-
-function getTorchwoodEnglishSubtitleFilePath(filename) {
-  return path.join(TORCHWOOD_ENGLISH_SUBTITLE_DIR, filename);
-}
-
-function getSubtitleContentVersion(filePath) {
-  if (!filePath || !fs.existsSync(filePath)) {
-    return null;
-  }
-
-  try {
-    const stats = fs.statSync(filePath);
-    const cached = subtitleVersionCache.get(filePath);
-    if (cached && cached.mtimeMs === stats.mtimeMs && cached.size === stats.size) {
-      return cached.version;
-    }
-
-    const fileBuffer = fs.readFileSync(filePath);
-    const version = crypto.createHash('sha1').update(fileBuffer).digest('hex').slice(0, 12);
-    subtitleVersionCache.set(filePath, {
-      mtimeMs: stats.mtimeMs,
-      size: stats.size,
-      version
-    });
-    return version;
-  } catch (error) {
-    console.warn(`Unable to hash subtitle for cache busting (${filePath}):`, error.message);
-    return null;
-  }
-}
-
-function buildArabicSubtitleUrl(arabicName) {
-  const subtitlePath = getArabicSubtitleFilePath(arabicName);
-  const version = getSubtitleContentVersion(subtitlePath);
-  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${ARABIC_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
-  return version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl;
-}
-
-function buildArabicAltSubtitleUrl(arabicName) {
-  const subtitlePath = getArabicAltSubtitleFilePath(arabicName);
-  const version = getSubtitleContentVersion(subtitlePath);
-  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${ARABIC_ALT_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
-  return version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl;
-}
-
-function buildArabicImprovedSubtitleUrl(arabicName) {
-  const subtitlePath = getArabicImprovedSubtitleFilePath(arabicName);
-  const version = getSubtitleContentVersion(subtitlePath);
-  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${ARABIC_IMPROVED_SUBTITLE_ROUTE}/${encodeURIComponent(arabicName)}`;
-  return version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl;
-}
-
-function getMovieArabicSubtitleTrack() {
-  const subtitleFilename = DOCTOR_WHO_MOVIE_1996.arabicImprovedSubtitle;
-  const subtitlePath = getMovieSubtitleFilePath(subtitleFilename);
-  if (!fs.existsSync(subtitlePath)) {
-    return null;
-  }
-
-  const version = getSubtitleContentVersion(subtitlePath);
-  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${MOVIE_SUBTITLE_ROUTE}/${encodeURIComponent(subtitleFilename)}`;
-  return {
-    id: 'movie_ar_improved_sub',
-    url: version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl,
-    lang: 'Arabic',
-    title: 'Arabic Improved (عربي)',
-    name: 'Arabic Improved (عربي)'
-  };
-}
-
-function getTorchwoodEnglishSubtitleTrack(episode) {
-  const filename = TORCHWOOD_CLEAN_ENGLISH_SUBTITLES[getEpisodeKey(episode)];
-  if (!filename) {
-    return null;
-  }
-
-  const subtitlePath = getTorchwoodEnglishSubtitleFilePath(filename);
-  if (!fs.existsSync(subtitlePath)) {
-    return null;
-  }
-
-  const version = getSubtitleContentVersion(subtitlePath);
-  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${TORCHWOOD_ENGLISH_SUBTITLE_ROUTE}/${encodeURIComponent(filename)}`;
-  return {
-    id: 'torchwood_clean_en_sub',
-    url: version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl,
-    lang: 'English',
-    title: 'English (Clean Cut)',
-    name: 'English (Clean Cut)'
-  };
-}
-
 function getAssetFilePath(assetName) {
   return path.join(ASSET_DIR, path.basename(assetName));
-}
-
-function getArabicSubtitleUrl(episode) {
-  const arabicName = getArabicSubtitleFilename(episode);
-  if (!arabicName || !ARABIC_SUBTITLE_FILES.has(arabicName)) {
-    return null;
-  }
-
-  const arabicPath = getArabicSubtitleFilePath(arabicName);
-  if (!fs.existsSync(arabicPath)) {
-    return null;
-  }
-
-  return buildArabicSubtitleUrl(arabicName);
-}
-
-function getArabicAlternativeTracks(episode) {
-  const primaryArabicName = getArabicSubtitleFilename(episode);
-  if (!primaryArabicName) {
-    return [];
-  }
-
-  const alternatives = ARABIC_ALT_INDEX[primaryArabicName] || [];
-  return alternatives
-    .filter((entry) => entry && entry.filename)
-    .filter((entry) => fs.existsSync(getArabicAltSubtitleFilePath(entry.filename)))
-    .map((entry, index) => ({
-      id: `arabic_alt_${index + 1}`,
-      url: buildArabicAltSubtitleUrl(entry.filename),
-      lang: entry.label || `Arabic Alt${index > 0 ? ` ${index + 1}` : ''}`
-    }));
-}
-
-function getArabicImprovedSubtitleFilename(episode) {
-  const episodeId = getEpisodeKey(episode);
-  if (!episodeId) {
-    return null;
-  }
-
-  const mappedName = getArabicImprovedEntryFilename(ARABIC_IMPROVED_INDEX[episodeId]);
-  if (!mappedName || mappedName !== path.basename(mappedName) || !/\.srt$/i.test(mappedName)) {
-    return null;
-  }
-
-  if (!ARABIC_IMPROVED_ALLOWED_FILES.has(mappedName)) {
-    return null;
-  }
-
-  return mappedName;
-}
-
-function getArabicImprovedSubtitleUrl(episode) {
-  const improvedName = getArabicImprovedSubtitleFilename(episode);
-  if (!improvedName) {
-    return null;
-  }
-
-  const improvedPath = getArabicImprovedSubtitleFilePath(improvedName);
-  if (!fs.existsSync(improvedPath)) {
-    return null;
-  }
-
-  return buildArabicImprovedSubtitleUrl(improvedName);
-}
-
-function getSubtitleTracks(episode) {
-  if (!episode) {
-    return [];
-  }
-
-  const subtitles = [];
-
-  if (episode.subtitleUrl) {
-    subtitles.push({
-      id: 'archive_en_sub',
-      url: episode.subtitleUrl,
-      lang: 'English'
-    });
-  }
-
-  const arabicImprovedUrl = getArabicImprovedSubtitleUrl(episode);
-  if (arabicImprovedUrl) {
-    subtitles.push({
-      id: 'local_ar_improved_sub',
-      url: arabicImprovedUrl,
-      lang: 'Arabic',
-      title: 'Arabic Improved',
-      name: 'Arabic Improved'
-    });
-  }
-
-  const arabicUrl = getArabicSubtitleUrl(episode);
-  if (arabicUrl) {
-    const isArabicBackup = Boolean(arabicImprovedUrl);
-    subtitles.push({
-      id: 'local_ar_sub',
-      url: arabicUrl,
-      lang: 'Arabic',
-      ...(isArabicBackup ? {
-        title: 'Arabic Backup',
-        name: 'Arabic Backup'
-      } : {})
-    });
-  }
-
-  subtitles.push(...getArabicAlternativeTracks(episode));
-
-  return subtitles;
 }
 
 function getEpisodeStreamMetadata(episode) {
@@ -1030,104 +766,6 @@ function buildTrackerSources(entry) {
   )];
 }
 
-function buildStreamTagDescription(episode, description) {
-  const tagLine = buildEpisodeTagLine(EPISODE_TAGS[getEpisodeKey(episode)]);
-  return tagLine ? `${tagLine} • ${description}` : description;
-}
-
-function buildTorrentFallbackStream(entry, subtitles, episode) {
-  const stream = {
-    name: 'Torrent Fallback',
-    description: buildStreamTagDescription(
-      episode,
-      `Whoniverse Arabic • fallback only • ${entry.quality} • subtitles: English + Arabic`
-    ),
-    infoHash: entry.infoHash,
-    fileIdx: entry.fileIdx,
-    behaviorHints: {
-      notWebReady: true
-    },
-    subtitles
-  };
-
-  const trackerSources = buildTrackerSources(entry);
-  if (trackerSources.length > 0) {
-    stream.sources = trackerSources;
-  }
-
-  return stream;
-}
-
-function buildStreamLabel(streamEntry) {
-  const prefix = streamEntry.label === '480p' ? '480p Speed' : '1080p Quality';
-  if (!streamEntry.sizeLabel) {
-    return prefix;
-  }
-  return `${prefix} • ${streamEntry.sizeLabel}`;
-}
-
-function buildStreamDescription(streamEntry, episode) {
-  const parts = ['Whoniverse Arabic'];
-
-  if (isSpecialEpisode(episode)) {
-    parts.push('Special episode');
-  }
-
-  parts.push(streamEntry.label === '480p' ? 'Speed' : 'Quality');
-  parts.push(`Source health ${streamEntry.healthScore || 0}/100`);
-  parts.push('Subtitles: English + Arabic');
-
-  return buildStreamTagDescription(episode, parts.join(' • '));
-}
-
-function buildStreamsForEpisode(episode) {
-  if (!episode || !episode.streamUrl) {
-    return [];
-  }
-
-  const subtitles = getSubtitleTracks(episode);
-  const metadataBackedStreams = getMetadataBackedStreams(episode);
-
-  if (metadataBackedStreams.length > 0) {
-    const streams = metadataBackedStreams.map((streamEntry) => {
-      const stream = {
-        url: shouldUseDynamicRedirect(episode, streamEntry)
-          ? buildVideoRedirectUrl(episode, streamEntry.label)
-          : streamEntry.url,
-        name: buildStreamLabel(streamEntry),
-        description: buildStreamDescription(streamEntry, episode),
-        subtitles
-      };
-
-      const bytes = getStreamBytes(streamEntry);
-      if (bytes !== null) {
-        stream.bytes = bytes;
-      }
-
-      return stream;
-    });
-
-    const torrentFallback = SHOW_TORRENT_FALLBACK ? getTorrentFallbackForEpisode(episode) : null;
-    if (torrentFallback) {
-      streams.push(buildTorrentFallbackStream(torrentFallback, subtitles, episode));
-    }
-
-    return streams;
-  }
-
-  return [
-    {
-      url: episode.streamUrl,
-      name: '1080p Quality',
-      description: buildStreamTagDescription(
-        episode,
-        isSpecialEpisode(episode) ? 'Whoniverse Arabic • Special episode • Quality' : 'Whoniverse Arabic • Quality'
-      ),
-      subtitles
-    }
-  ];
-}
-
 function getManifestUrl() {
   return `${PUBLIC_ADDON_BASE_URL}/manifest.json`;
 }
@@ -1138,21 +776,6 @@ function getReviewSubtitleCount() {
   }
 
   return fs.readdirSync(REVIEW_SUBTITLE_DIR).filter((name) => /\.srt$/i.test(name)).length;
-}
-
-function getArabicAlternativeEpisodeCount() {
-  return Object.keys(ARABIC_ALT_INDEX).length;
-}
-
-function getArabicImprovedEpisodeCount() {
-  return Object.entries(ARABIC_IMPROVED_INDEX).reduce((count, [, value]) => {
-    const filename = getArabicImprovedEntryFilename(value);
-    if (!filename || filename !== path.basename(filename) || !ARABIC_IMPROVED_ALLOWED_FILES.has(filename)) {
-      return count;
-    }
-
-    return fs.existsSync(getArabicImprovedSubtitleFilePath(filename)) ? count + 1 : count;
-  }, 0);
 }
 
 function getStreamCounts() {
@@ -1191,6 +814,21 @@ function getStreamCounts() {
     torrentFallbackRejectedCount: Number(TORRENT_FALLBACK_AUDIT_SUMMARY.rejectedCount || 0)
   };
 }
+
+const streamRegistry = createStreamRegistry({
+  getEpisodeKey,
+  getMetadataBackedStreams,
+  shouldUseDynamicRedirect,
+  buildVideoRedirectUrl,
+  getStreamBytes,
+  getTorrentFallbackForEpisode,
+  buildTrackerSources,
+  showTorrentFallback: SHOW_TORRENT_FALLBACK,
+  isSpecialEpisode,
+  episodeTags: EPISODE_TAGS,
+  buildEpisodeTagLine,
+  subtitleRegistry
+});
 
 function jsonResponse(res, statusCode, payload) {
   sendCorsHeaders(res);
@@ -1250,7 +888,36 @@ function renderHtmlPage(title, body) {
     details{background:#0b1220;border:1px solid #334155;border-radius:12px;padding:12px}
     details summary{cursor:pointer;font-weight:600}
     .status-note{min-height:20px;color:#93c5fd;font-size:13px}
+    .hero{background:linear-gradient(135deg,#172554 0%,#111827 55%,#0f172a 100%);border-color:#3b82f6}
+    .eyebrow{color:#93c5fd;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .content-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:24px}
+    .content-grid.single{grid-template-columns:minmax(0,480px)}
+    .content-card{background:#111827;border:1px solid #334155;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+    .content-card img{width:100%;aspect-ratio:16/10;object-fit:cover;background:#020617}
+    .content-card-body{padding:18px;display:flex;flex-direction:column;flex:1}
+    .content-card-body .actions{margin-top:auto;padding-top:8px}
+    .meta-line{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+    .stat{background:#0b1220;border:1px solid #334155;border-radius:12px;padding:12px}
+    .stat strong{display:block;color:#f8fafc;font-size:20px}
+    .table-wrap{overflow-x:auto;border:1px solid #334155;border-radius:12px;margin:12px 0 20px}
+    table{width:100%;border-collapse:collapse;min-width:900px;background:#0b1220}
+    th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid #253247;font-size:13px}
+    th{background:#111827;color:#cbd5e1;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+    tr:last-child td{border-bottom:0}
+    .episode-code{color:#93c5fd;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700;white-space:nowrap}
+    .badge-row{display:flex;gap:6px;flex-wrap:wrap}
+    .badge{display:inline-flex;padding:3px 7px;border-radius:999px;background:#172033;border:1px solid #334155;color:#cbd5e1;font-size:11px;white-space:nowrap}
+    .yes{color:#86efac}.no{color:#fca5a5}
+    .section-heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:30px 0 14px}
+    .section-heading p{margin:0}
+    .qr-layout{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:24px;align-items:center}
+    .qr-code{display:block;width:100%;max-width:320px;background:#fff;border-radius:16px;padding:14px;box-sizing:border-box}
+    .copy-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin:10px 0 18px}
+    .copy-row input{min-width:0}
     @media (max-width: 720px){body{padding:16px}.card{padding:18px}.grid{grid-template-columns:1fr}.actions{flex-direction:column}.button,.ghost-button,button{width:100%}}
+    @media (max-width: 900px){.content-grid{grid-template-columns:1fr}.content-card{display:grid;grid-template-columns:140px 1fr}.content-card img{height:100%;aspect-ratio:auto}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width: 720px){.qr-layout{grid-template-columns:1fr}.qr-code{margin:0 auto}.copy-row{grid-template-columns:1fr}.content-card{display:flex}.content-card img{height:auto;aspect-ratio:16/9}.section-heading{display:block}.stats{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
@@ -1263,7 +930,7 @@ function renderHomePage() {
   const streamCounts = getStreamCounts();
   const manifestUrl = getManifestUrl();
   const installUrl = getStremioInstallUrl();
-  const altCount = getArabicAlternativeEpisodeCount();
+  const altCount = subtitleRegistry.getArabicAlternativeEpisodeCount();
   return renderHtmlPage(
     manifest.name,
     `<div class="card">
@@ -1274,6 +941,8 @@ function renderHomePage() {
       <div class="actions">
         <a id="installButton" class="button" href="${htmlEscape(installUrl)}">Install in Stremio</a>
         <button id="copyManifestButton" class="ghost-button" type="button">Copy Manifest URL</button>
+        <a class="ghost-button" href="${htmlEscape(INSTALL_PATH)}">QR Install</a>
+        <a class="ghost-button" href="${htmlEscape(LIBRARY_PATH)}">Browse Library</a>
         <a class="ghost-button" href="${htmlEscape(REPORT_PATH)}">Report Subtitle Issue</a>
       </div>
       <p class="status-note" id="installStatus"></p>
@@ -1283,7 +952,7 @@ function renderHomePage() {
       <h2>Current Production Counts</h2>
       <ul>
         <li>Episode entries: ${allNewWhoEpisodes.length}</li>
-        <li>Arabic subtitles: ${ARABIC_SUBTITLE_FILES.size}</li>
+        <li>Arabic subtitles: ${subtitleRegistry.primaryArabicCount}</li>
         <li>Arabic Alt coverage: ${altCount}</li>
         <li>1080p stream entries: ${streamCounts.stream1080p}</li>
         <li>480p speed entries: ${streamCounts.stream480p}</li>
@@ -1323,6 +992,242 @@ function renderHomePage() {
         });
       })();
     </script>`
+  );
+}
+
+let installQrCache = null;
+
+function getInstallQrDataUrl(installUrl) {
+  if (!installQrCache || installQrCache.installUrl !== installUrl) {
+    installQrCache = {
+      installUrl,
+      promise: QRCode.toDataURL(installUrl, {
+        errorCorrectionLevel: 'M',
+        margin: 2,
+        width: 320,
+        color: { dark: '#0f172a', light: '#ffffff' }
+      })
+    };
+    installQrCache.promise.catch(() => {
+      installQrCache = null;
+    });
+  }
+  return installQrCache.promise;
+}
+
+async function renderInstallPage() {
+  const manifestUrl = getManifestUrl();
+  const installUrl = getStremioInstallUrl();
+  const qrDataUrl = await getInstallQrDataUrl(installUrl);
+  return renderHtmlPage(
+    `Install · ${manifest.name}`,
+    `<header class="card hero">
+      <p class="eyebrow">Addon installation</p>
+      <h1>Install Whoniverse Arabic 1080p</h1>
+      <p>Scan the QR code on your Stremio device, open the install link directly, or copy the manifest URL.</p>
+      <div class="actions">
+        <a class="button" href="${htmlEscape(installUrl)}">Open in Stremio</a>
+        <a class="ghost-button" href="${htmlEscape(LIBRARY_PATH)}">Browse Library</a>
+        <a class="ghost-button" href="/status">Status</a>
+        <a class="ghost-button" href="/">Home</a>
+      </div>
+    </header>
+    <section class="card qr-layout">
+      <div><img class="qr-code" src="${htmlEscape(qrDataUrl)}" alt="QR code for the Stremio install URL"></div>
+      <div>
+        <h2>Scan or Copy</h2>
+        <p class="small muted">The QR code contains the Stremio install URL. No third-party QR service is contacted.</p>
+        <label class="small" for="manifestUrl"><strong>Manifest URL</strong></label>
+        <div class="copy-row"><input id="manifestUrl" value="${htmlEscape(manifestUrl)}" readonly><button class="ghost-button" type="button" data-copy="manifestUrl">Copy</button></div>
+        <label class="small" for="installUrl"><strong>Stremio install URL</strong></label>
+        <div class="copy-row"><input id="installUrl" value="${htmlEscape(installUrl)}" readonly><button class="ghost-button" type="button" data-copy="installUrl">Copy</button></div>
+        <p id="copyStatus" class="status-note" aria-live="polite"></p>
+      </div>
+    </section>
+    <script>
+      document.querySelectorAll('[data-copy]').forEach((button) => {
+        button.addEventListener('click', async () => {
+          const input = document.getElementById(button.dataset.copy);
+          const status = document.getElementById('copyStatus');
+          try {
+            await navigator.clipboard.writeText(input.value);
+            status.textContent = 'Link copied.';
+          } catch {
+            input.select();
+            status.textContent = 'Select and copy the highlighted link.';
+          }
+        });
+      });
+    </script>`
+  );
+}
+
+function renderLibraryContentCard(entry, { displayName, countLabel, subtitleSummary, catalogPath, streamPath = null }) {
+  const metaPath = `/meta/${entry.type}/${encodeURIComponent(entry.id)}.json`;
+  const streamLink = streamPath
+    ? `<a class="ghost-button" href="${htmlEscape(streamPath)}">Streams</a>`
+    : '';
+  return `<article class="content-card">
+    <img src="${htmlEscape(entry.background || entry.poster)}" alt="${htmlEscape(displayName)} artwork" loading="lazy">
+    <div class="content-card-body">
+      <p class="eyebrow">${htmlEscape(entry.type)}</p>
+      <h3>${htmlEscape(displayName)}</h3>
+      <div class="meta-line">
+        <span class="pill">${htmlEscape(entry.releaseInfo)}</span>
+        <span class="pill">${htmlEscape(countLabel)}</span>
+      </div>
+      <p class="small">${htmlEscape(entry.description)}</p>
+      <p class="small muted"><strong>Subtitles:</strong> ${htmlEscape(subtitleSummary)}</p>
+      <div class="actions">
+        <a class="ghost-button" href="${htmlEscape(metaPath)}">Metadata</a>
+        ${streamLink}
+        <a class="ghost-button" href="${htmlEscape(catalogPath)}">Catalog</a>
+      </div>
+    </div>
+  </article>`;
+}
+
+function renderTorchwoodEpisodeTable(season, episodes) {
+  const rows = episodes.map((episode) => {
+    const canonicalId = getEpisodeKey(episode);
+    const tag = TORCHWOOD_EPISODE_TAGS[canonicalId];
+    const playable = episode.streams.length > 0;
+    const visibleTags = buildTorchwoodEpisodeTagLine(tag).match(/\[[^\]]+\]/g) || [];
+    const badges = visibleTags
+      .map((label) => `<span class="badge">${htmlEscape(label.slice(1, -1))}</span>`)
+      .join('');
+    const note = canonicalId === 'S01E02'
+      ? 'Listed for continuity only — no playable stream'
+      : tag?.comment || '';
+    const streamPath = `/stream/series/${encodeURIComponent(TORCHWOOD_SERIES_STREMIO_ID)}:${episode.season}:${episode.episode}.json`;
+    return `<tr>
+      <td><span class="episode-code">${htmlEscape(canonicalId)}</span></td>
+      <td><strong>${htmlEscape(episode.title)}</strong></td>
+      <td class="${playable ? 'yes' : 'no'}">${playable ? 'Yes' : 'No'}</td>
+      <td>${htmlEscape(formatEpisodeTagLabel(tag?.cleanStatus))}</td>
+      <td><div class="badge-row">${badges}</div></td>
+      <td>${htmlEscape(note)}</td>
+      <td><a href="${htmlEscape(streamPath)}">Stream JSON</a></td>
+    </tr>`;
+  }).join('');
+
+  return `<h3>Season ${season}</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Episode</th><th>Title</th><th>Playable</th><th>Source</th><th>Viewer tags</th><th>Note</th><th>Endpoint</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+function renderLibraryPage() {
+  const manifestUrl = getManifestUrl();
+  const installUrl = getStremioInstallUrl();
+  const improvedArabicCount = subtitleRegistry.getArabicImprovedEpisodeCount();
+  const newWhoEnglishCount = allNewWhoEpisodes.filter((episode) => Boolean(episode.subtitleUrl)).length;
+  const torchwoodPlayableCount = torchwoodEpisodes.filter((episode) => episode.streams.length > 0).length;
+  const torchwoodCleanCount = TORCHWOOD_SERIES.notes.cleanCutEpisodeIds.length;
+  const torchwoodOriginalCount = torchwoodPlayableCount - torchwoodCleanCount;
+  const movieSubtitleAvailable = subtitleRegistry.getMovie1996Subtitles().length > 0;
+  const seriesCatalogPath = `/catalog/${CATALOGS.series.type}/${encodeURIComponent(CATALOGS.series.id)}.json`;
+  const movieCatalogPath = `/catalog/${CATALOGS.movies.type}/${encodeURIComponent(CATALOGS.movies.id)}.json`;
+  const seasonTables = [...new Set(torchwoodEpisodes.map((episode) => episode.season))]
+    .sort((a, b) => a - b)
+    .map((season) => renderTorchwoodEpisodeTable(
+      season,
+      torchwoodEpisodes.filter((episode) => episode.season === season)
+    ))
+    .join('');
+
+  const seriesCards = [
+    renderLibraryContentCard(NEW_WHO_SERIES, {
+      displayName: 'Doctor Who',
+      countLabel: `${allNewWhoEpisodes.length} episodes`,
+      subtitleSummary: `${newWhoEnglishCount} English tracks; ${subtitleRegistry.primaryArabicCount} Arabic tracks; ${improvedArabicCount} Arabic Improved tracks`,
+      catalogPath: seriesCatalogPath
+    }),
+    renderLibraryContentCard(TORCHWOOD_SERIES, {
+      displayName: 'Torchwood',
+      countLabel: `${torchwoodPlayableCount}/${torchwoodEpisodes.length} playable`,
+      subtitleSummary: 'Embedded English on original MKVs; external English on clean cuts; Arabic planned later',
+      catalogPath: seriesCatalogPath
+    })
+  ].join('');
+  const movieCard = renderLibraryContentCard(DOCTOR_WHO_MOVIE_1996, {
+    displayName: DOCTOR_WHO_MOVIE_1996.name,
+    countLabel: `${DOCTOR_WHO_MOVIE_1996.streams.length} stream`,
+    subtitleSummary: movieSubtitleAvailable ? 'Arabic Improved available' : 'No local subtitle currently available',
+    catalogPath: movieCatalogPath,
+    streamPath: `/stream/movie/${encodeURIComponent(DOCTOR_WHO_MOVIE_1996_STREMIO_ID)}.json`
+  });
+
+  return renderHtmlPage(
+    `Library · ${manifest.name}`,
+    `<header class="card hero">
+      <p class="eyebrow">Public addon library</p>
+      <h1>Whoniverse Arabic 1080p</h1>
+      <p>Browse the Doctor Who and Torchwood titles available through this addon without opening raw catalog data.</p>
+      <div class="actions">
+        <a class="button" href="${htmlEscape(installUrl)}">Install Addon</a>
+        <a class="ghost-button" href="${htmlEscape(INSTALL_PATH)}">QR Install</a>
+        <a class="ghost-button" href="${htmlEscape(manifestUrl)}">Manifest</a>
+        <a class="ghost-button" href="/status">Status</a>
+        <a class="ghost-button" href="/">Home</a>
+      </div>
+    </header>
+
+    <div class="section-heading"><div><p class="eyebrow">Series</p><h2>Series Library</h2></div><p class="small muted">Two series in broadcast order</p></div>
+    <div class="content-grid">${seriesCards}</div>
+
+    <div class="section-heading"><div><p class="eyebrow">Movies</p><h2>Movie Library</h2></div><p class="small muted">One feature-length title</p></div>
+    <div class="content-grid single">${movieCard}</div>
+
+    <section class="card">
+      <p class="eyebrow">Doctor Who</p>
+      <h2>Doctor Who Summary</h2>
+      <div class="stats">
+        <div class="stat"><strong>${allNewWhoEpisodes.length}</strong><span class="small muted">Episodes</span></div>
+        <div class="stat"><strong>${subtitleRegistry.primaryArabicCount}</strong><span class="small muted">Arabic tracks</span></div>
+        <div class="stat"><strong>${improvedArabicCount}</strong><span class="small muted">Arabic Improved</span></div>
+        <div class="stat"><strong>1</strong><span class="small muted">Movie</span></div>
+      </div>
+      <p class="muted">Doctor Who remains available in broadcast order with its existing stream choices and selectable subtitle tracks.</p>
+      <div class="actions">
+        <a class="ghost-button" href="/meta/series/${htmlEscape(NEW_WHO_SERIES_STREMIO_ID)}.json">Series Metadata</a>
+        <a class="ghost-button" href="${htmlEscape(seriesCatalogPath)}">Series Catalog</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Torchwood</p>
+      <h2>Torchwood Summary</h2>
+      <div class="stats">
+        <div class="stat"><strong>${torchwoodEpisodes.length}</strong><span class="small muted">Total episodes</span></div>
+        <div class="stat"><strong>${torchwoodPlayableCount}</strong><span class="small muted">Playable</span></div>
+        <div class="stat"><strong>${torchwoodCleanCount}</strong><span class="small muted">Clean Cut</span></div>
+        <div class="stat"><strong>${torchwoodOriginalCount}</strong><span class="small muted">Original MKV</span></div>
+      </div>
+      <p><strong>Non-playable:</strong> S01E02 only.</p>
+      <p class="small muted"><strong>English subtitles:</strong> Original MKVs may contain embedded English subtitles. All clean-cut episodes have external English subtitles.</p>
+      <p class="small muted"><strong>Arabic subtitles:</strong> Planned later, episode by episode; none are currently wired for Torchwood.</p>
+    </section>
+
+    <section>
+      <div class="section-heading"><div><p class="eyebrow">Episode guide</p><h2>Torchwood Episodes</h2></div><p class="small muted">Grouped by season</p></div>
+      ${seasonTables}
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Movie</p>
+      <h2>${htmlEscape(DOCTOR_WHO_MOVIE_1996.name)}</h2>
+      <p>${htmlEscape(DOCTOR_WHO_MOVIE_1996.description)}</p>
+      <p><strong>Stream:</strong> ${DOCTOR_WHO_MOVIE_1996.streams.length ? 'Available' : 'Unavailable'}</p>
+      <p><strong>Arabic Improved:</strong> ${movieSubtitleAvailable ? 'Available' : 'Unavailable'}</p>
+      <div class="actions">
+        <a class="ghost-button" href="/meta/movie/${htmlEscape(DOCTOR_WHO_MOVIE_1996_STREMIO_ID)}.json">Movie Metadata</a>
+        <a class="ghost-button" href="/stream/movie/${htmlEscape(DOCTOR_WHO_MOVIE_1996_STREMIO_ID)}.json">Movie Stream</a>
+      </div>
+    </section>`
   );
 }
 
@@ -1608,13 +1513,7 @@ builder.defineMetaHandler(async (args) => {
 
 builder.defineStreamHandler(async (args) => {
   if (args.type === 'movie' && args.id === DOCTOR_WHO_MOVIE_1996_STREMIO_ID) {
-    const arabicSubtitle = getMovieArabicSubtitleTrack();
-    return {
-      streams: DOCTOR_WHO_MOVIE_1996.streams.map((stream) => ({
-        ...stream,
-        ...(arabicSubtitle ? { subtitles: [arabicSubtitle] } : {})
-      }))
-    };
+    return { streams: streamRegistry.buildMovieStreams(DOCTOR_WHO_MOVIE_1996) };
   }
 
   if (args.type !== 'series' || !args.id) {
@@ -1624,24 +1523,16 @@ builder.defineStreamHandler(async (args) => {
   const torchwoodEpisode = getTorchwoodEpisodeFromArgs(args.id);
   if (torchwoodEpisode) {
     const tag = TORCHWOOD_EPISODE_TAGS[getEpisodeKey(torchwoodEpisode)];
-    const englishSubtitle = getTorchwoodEnglishSubtitleTrack(torchwoodEpisode);
-    return {
-      streams: torchwoodEpisode.streams.map((stream) => ({
-        ...stream,
-        description: buildTorchwoodStreamDescription(stream, tag),
-        ...(englishSubtitle ? { subtitles: [englishSubtitle] } : {})
-      }))
-    };
+    return { streams: streamRegistry.buildTorchwoodStreams(torchwoodEpisode, tag) };
   }
 
   const episode = getEpisodeFromArgs(args.id);
-  return { streams: buildStreamsForEpisode(episode) };
+  return { streams: streamRegistry.buildDoctorWhoStreams(episode) };
 });
 
 builder.defineSubtitlesHandler(async (args) => {
   if (args.type === 'movie' && args.id === DOCTOR_WHO_MOVIE_1996_STREMIO_ID) {
-    const arabicSubtitle = getMovieArabicSubtitleTrack();
-    return { subtitles: arabicSubtitle ? [arabicSubtitle] : [] };
+    return { subtitles: subtitleRegistry.getMovie1996Subtitles() };
   }
 
   if (args.type !== 'series' || !args.id) {
@@ -1649,7 +1540,7 @@ builder.defineSubtitlesHandler(async (args) => {
   }
 
   const episode = getEpisodeFromArgs(args.id);
-  return { subtitles: getSubtitleTracks(episode) };
+  return { subtitles: subtitleRegistry.getDoctorWhoEpisodeSubtitles(episode) };
 });
 
 const addonRouter = getRouter(builder.getInterface());
@@ -1660,161 +1551,6 @@ function sendCorsHeaders(res) {
   res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
 }
 
-function serveArabicSubtitle(req, res, filename) {
-  const safeName = path.basename(filename);
-
-  if (!safeName || !ARABIC_SUBTITLE_FILES.has(safeName)) {
-    sendCorsHeaders(res);
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.end('Subtitle not found');
-    return;
-  }
-
-  const subtitlePath = getArabicSubtitleFilePath(safeName);
-  if (!fs.existsSync(subtitlePath)) {
-    sendCorsHeaders(res);
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.end('Subtitle file missing');
-    return;
-  }
-
-  sendCorsHeaders(res);
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/x-subrip; charset=utf-8');
-  res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
-  res.setHeader('Cache-Control', 'public, max-age=3600');
-
-  if (req.method === 'HEAD') {
-    res.end();
-    return;
-  }
-
-  fs.createReadStream(subtitlePath).pipe(res);
-}
-
-function serveArabicAltSubtitle(req, res, filename) {
-  const safeName = path.basename(filename);
-  const filePath = getArabicAltSubtitleFilePath(safeName);
-  if (!safeName || !fs.existsSync(filePath)) {
-    sendCorsHeaders(res);
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.end('Subtitle alternative not found');
-    return;
-  }
-
-  sendCorsHeaders(res);
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/x-subrip; charset=utf-8');
-  res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
-  res.setHeader('Cache-Control', 'public, max-age=3600');
-  if (req.method === 'HEAD') {
-    res.end();
-    return;
-  }
-  fs.createReadStream(filePath).pipe(res);
-}
-
-function serveArabicImprovedSubtitle(req, res, filename) {
-  const safeName = path.basename(filename);
-
-  if (!safeName || safeName !== filename || !ARABIC_IMPROVED_ALLOWED_FILES.has(safeName)) {
-    sendCorsHeaders(res);
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.end('Arabic improved subtitle not found');
-    return;
-  }
-
-  const subtitlePath = getArabicImprovedSubtitleFilePath(safeName);
-  if (!fs.existsSync(subtitlePath)) {
-    sendCorsHeaders(res);
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.end('Arabic improved subtitle file missing');
-    return;
-  }
-
-  sendCorsHeaders(res);
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/x-subrip; charset=utf-8');
-  res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
-  res.setHeader('Cache-Control', 'public, max-age=3600');
-
-  if (req.method === 'HEAD') {
-    res.end();
-    return;
-  }
-
-  fs.createReadStream(subtitlePath).pipe(res);
-}
-
-function serveMovieSubtitle(req, res, filename) {
-  const safeName = path.basename(filename);
-  if (safeName !== DOCTOR_WHO_MOVIE_1996.arabicImprovedSubtitle) {
-    sendCorsHeaders(res);
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.end('Movie subtitle not found');
-    return;
-  }
-
-  const subtitlePath = getMovieSubtitleFilePath(safeName);
-  if (!fs.existsSync(subtitlePath)) {
-    sendCorsHeaders(res);
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.end('Movie subtitle file missing');
-    return;
-  }
-
-  sendCorsHeaders(res);
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/x-subrip; charset=utf-8');
-  res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
-  res.setHeader('Cache-Control', 'public, max-age=3600');
-  if (req.method === 'HEAD') {
-    res.end();
-    return;
-  }
-
-  fs.createReadStream(subtitlePath).pipe(res);
-}
-
-function serveTorchwoodEnglishSubtitle(req, res, filename) {
-  const safeName = path.basename(filename);
-  if (!safeName || safeName !== filename || !TORCHWOOD_CLEAN_ENGLISH_SUBTITLE_FILES.has(safeName)) {
-    sendCorsHeaders(res);
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.end('Torchwood subtitle not found');
-    return;
-  }
-
-  const subtitlePath = getTorchwoodEnglishSubtitleFilePath(safeName);
-  if (!fs.existsSync(subtitlePath)) {
-    sendCorsHeaders(res);
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    res.end('Torchwood subtitle file missing');
-    return;
-  }
-
-  sendCorsHeaders(res);
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/x-subrip; charset=utf-8');
-  res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
-  res.setHeader('Cache-Control', 'public, max-age=3600');
-  if (req.method === 'HEAD') {
-    res.end();
-    return;
-  }
-
-  fs.createReadStream(subtitlePath).pipe(res);
-}
-
 const server = http.createServer((req, res) => {
   const requestUrl = new URL(req.url, `http://${req.headers.host || `127.0.0.1:${port}`}`);
 
@@ -1823,6 +1559,39 @@ const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.end(renderHomePage());
+    return;
+  }
+
+  if (requestUrl.pathname === LIBRARY_PATH) {
+    sendCorsHeaders(res);
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    if (req.method === 'HEAD') {
+      res.end();
+      return;
+    }
+    res.end(renderLibraryPage());
+    return;
+  }
+
+  if (requestUrl.pathname === INSTALL_PATH) {
+    sendCorsHeaders(res);
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    if (req.method === 'HEAD') {
+      res.end();
+      return;
+    }
+    void renderInstallPage()
+      .then((html) => res.end(html))
+      .catch((error) => {
+        console.error('Failed to render install page:', error.message);
+        if (!res.headersSent) {
+          res.statusCode = 500;
+          res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+        }
+        res.end('Unable to render install page');
+      });
     return;
   }
 
@@ -1842,7 +1611,7 @@ const server = http.createServer((req, res) => {
       version: manifest.version,
       manifest: getManifestUrl(),
       episodes: allNewWhoEpisodes.length,
-      arabicSubtitles: ARABIC_SUBTITLE_FILES.size,
+      arabicSubtitles: subtitleRegistry.primaryArabicCount,
       streams: streamCounts.episodes
     });
     return;
@@ -1850,17 +1619,17 @@ const server = http.createServer((req, res) => {
 
   if (requestUrl.pathname === '/status') {
     const streamCounts = getStreamCounts();
-    const arabicAltCount = getArabicAlternativeEpisodeCount();
-    const arabicImprovedCount = getArabicImprovedEpisodeCount();
+    const arabicAltCount = subtitleRegistry.getArabicAlternativeEpisodeCount();
+    const arabicImprovedCount = subtitleRegistry.getArabicImprovedEpisodeCount();
     jsonResponse(res, 200, {
       name: manifest.name,
       version: manifest.version,
       episodeCount: allNewWhoEpisodes.length,
-      arabicSubtitleCount: ARABIC_SUBTITLE_FILES.size,
-      arabicPrimaryCount: ARABIC_SUBTITLE_FILES.size,
+      arabicSubtitleCount: subtitleRegistry.primaryArabicCount,
+      arabicPrimaryCount: subtitleRegistry.primaryArabicCount,
       arabicAlternativeCount: arabicAltCount,
       arabicImprovedCount,
-      episodesMissingArabicAlternatives: ARABIC_SUBTITLE_FILES.size - arabicAltCount,
+      episodesMissingArabicAlternatives: subtitleRegistry.primaryArabicCount - arabicAltCount,
       stream1080pCount: streamCounts.stream1080p,
       stream480pCount: streamCounts.stream480p,
       dynamicRedirectStreamCount: streamCounts.dynamicRedirectStreamCount,
@@ -1906,68 +1675,7 @@ const server = http.createServer((req, res) => {
     }
   }
 
-  if (requestUrl.pathname.startsWith(`${ARABIC_ALT_SUBTITLE_ROUTE}/`)) {
-    if (req.method === 'OPTIONS') {
-      sendCorsHeaders(res);
-      res.statusCode = 204;
-      res.end();
-      return;
-    }
-
-    const encodedName = requestUrl.pathname.slice(`${ARABIC_ALT_SUBTITLE_ROUTE}/`.length);
-    serveArabicAltSubtitle(req, res, decodeURIComponent(encodedName));
-    return;
-  }
-
-  if (requestUrl.pathname.startsWith(`${ARABIC_IMPROVED_SUBTITLE_ROUTE}/`)) {
-    if (req.method === 'OPTIONS') {
-      sendCorsHeaders(res);
-      res.statusCode = 204;
-      res.end();
-      return;
-    }
-
-    const encodedName = requestUrl.pathname.slice(`${ARABIC_IMPROVED_SUBTITLE_ROUTE}/`.length);
-    serveArabicImprovedSubtitle(req, res, decodeURIComponent(encodedName));
-    return;
-  }
-
-  if (requestUrl.pathname.startsWith(`${MOVIE_SUBTITLE_ROUTE}/`)) {
-    if (req.method === 'OPTIONS') {
-      sendCorsHeaders(res);
-      res.statusCode = 204;
-      res.end();
-      return;
-    }
-
-    const encodedName = requestUrl.pathname.slice(`${MOVIE_SUBTITLE_ROUTE}/`.length);
-    serveMovieSubtitle(req, res, decodeURIComponent(encodedName));
-    return;
-  }
-
-  if (requestUrl.pathname.startsWith(`${TORCHWOOD_ENGLISH_SUBTITLE_ROUTE}/`)) {
-    if (req.method === 'OPTIONS') {
-      sendCorsHeaders(res);
-      res.statusCode = 204;
-      res.end();
-      return;
-    }
-
-    const encodedName = requestUrl.pathname.slice(`${TORCHWOOD_ENGLISH_SUBTITLE_ROUTE}/`.length);
-    serveTorchwoodEnglishSubtitle(req, res, decodeURIComponent(encodedName));
-    return;
-  }
-
-  if (requestUrl.pathname.startsWith(`${ARABIC_SUBTITLE_ROUTE}/`)) {
-    if (req.method === 'OPTIONS') {
-      sendCorsHeaders(res);
-      res.statusCode = 204;
-      res.end();
-      return;
-    }
-
-    const encodedName = requestUrl.pathname.slice(`${ARABIC_SUBTITLE_ROUTE}/`.length);
-    serveArabicSubtitle(req, res, decodeURIComponent(encodedName));
+  if (subtitleRegistry.handleHttpRequest(req, res, requestUrl.pathname)) {
     return;
   }
 
@@ -1982,6 +1690,6 @@ const server = http.createServer((req, res) => {
 server.listen(port, host, () => {
   console.log(`Whoniverse Addon active on http://${host}:${port}`);
   console.log(`Install URL: ${getManifestUrl()}`);
-  console.log(`Arabic subtitles served from: ${PUBLIC_ADDON_BASE_URL}${ARABIC_SUBTITLE_ROUTE}/<filename>`);
-  console.log(`Torchwood clean English subtitles served from: ${PUBLIC_ADDON_BASE_URL}${TORCHWOOD_ENGLISH_SUBTITLE_ROUTE}/<filename>`);
+  console.log(`Arabic subtitles served from: ${PUBLIC_ADDON_BASE_URL}${subtitleRegistry.routes.arabic}/<filename>`);
+  console.log(`Torchwood clean English subtitles served from: ${PUBLIC_ADDON_BASE_URL}${subtitleRegistry.routes.torchwoodCleanEnglish}/<filename>`);
 });

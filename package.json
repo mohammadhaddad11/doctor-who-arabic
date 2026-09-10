@@ -16,9 +16,11 @@
     "check": "node tools/checkProduction.js",
     "validate:torrents": "node tools/validateTorrentSources.js",
     "validate:external": "node tools/validateExternalSources.js",
-    "validate:improved-arabic": "node tools/validateImprovedArabicSubtitles.js"
+    "validate:improved-arabic": "node tools/validateImprovedArabicSubtitles.js",
+    "validate:arabic-moderation": "node tools/validateArabicModeration.js"
   },
   "dependencies": {
+    "qrcode": "^1.5.4",
     "stremio-addon-sdk": "^1.6.10"
   },
   "engines": {
