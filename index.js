@@ -174,7 +174,7 @@ const NEW_WHO_SERIES_BACKGROUND_URL = ADDON_LOGO_URL;
 
 const manifest = {
   id: 'community.mhaddad.whoniverse.arabic',
-  version: '1.6.0',
+  version: '1.7.0',
   name: 'Whoniverse Arabic 1080p',
   description: 'Doctor Who for Stremio with separate English and Arabic subtitle tracks plus simple 1080p quality and 480p speed stream options.',
   logo: ADDON_LOGO_URL,
@@ -1505,10 +1505,10 @@ builder.defineCatalogHandler(async (args) => {
           type: 'series',
           name: 'Torchwood 1080p',
           poster: TORCHWOOD_POSTER_URL,
-          description: 'Torchwood Season 1 using original 1080p MKV files from the selected Archive.org collection. Some episodes are intentionally unavailable pending approved sources.',
+          description: 'The complete Torchwood television series with original 1080p MKV streams and selected clean-cut 1080p episodes.',
           logo: ADDON_LOGO_URL,
           genres: ['Science Fiction', 'Drama'],
-          releaseInfo: '2006-2007'
+          releaseInfo: '2006-2011'
         }
       ]
     };
@@ -1573,8 +1573,8 @@ builder.defineMetaHandler(async (args) => {
         poster: TORCHWOOD_POSTER_URL,
         background: TORCHWOOD_POSTER_URL,
         logo: ADDON_LOGO_URL,
-        description: 'Torchwood Season 1 in broadcast order with original 1080p MKV streams from Candidate A. Episodes 2, 10, and 13 are listed but intentionally have no playable stream.',
-        releaseInfo: '2006-2007',
+        description: 'All four seasons of Torchwood in broadcast order. Original episodes use 1080p MKV streams, selected episodes use clean-cut 1080p streams, and S01E02 is intentionally unavailable.',
+        releaseInfo: '2006-2011',
         genres: ['Science Fiction', 'Drama'],
         videos: torchwoodEpisodes.map((episode) => ({
           id: `${TORCHWOOD_SERIES_STREMIO_ID}:${episode.season}:${episode.episode}`,
