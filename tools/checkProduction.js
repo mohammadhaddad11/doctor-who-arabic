@@ -13,6 +13,7 @@ const { DEFAULT_EPISODE_GENRES, buildEpisodeTagLine, buildEpisodeTagMetadata } =
 const episodeTags = require('../episodeTags.json');
 const episodeData = require('../episodeData');
 const { ARCHIVE_IDENTIFIERS: torchwoodArchiveIdentifiers, episodes: torchwoodEpisodes } = require('../torchwoodData');
+const torchwoodEpisodeImages = require('../torchwoodEpisodeImages');
 const streamMetadata = require('../streamMetadata.json');
 const subtitleStatus = require('../subtitleStatus.json');
 
@@ -212,6 +213,9 @@ function checkTorchwoodData() {
     fail(`Torchwood has ${torchwoodEpisodes?.length || 0} episodes; expected 41`);
     return;
   }
+  if (Object.keys(torchwoodEpisodeImages).length !== 41) {
+    fail(`Torchwood has ${Object.keys(torchwoodEpisodeImages).length} IMDb episode images; expected 41`);
+  }
 
   const seenIds = new Set();
   torchwoodEpisodes.forEach((episode) => {
@@ -224,6 +228,11 @@ function checkTorchwoodData() {
     if (!episode.released || !episode.overview || !episode.thumbnail || !Array.isArray(episode.streams)) {
       fail(`Torchwood ${canonicalId} is missing required metadata`);
       return;
+    }
+
+    const image = torchwoodEpisodeImages[canonicalId];
+    if (!image || !/^tt\d+$/.test(image.imdbEpisodeId || '') || !image.imdbTitle || !image.url.startsWith('https://m.media-amazon.com/images/') || episode.thumbnail !== image.url) {
+      fail(`Torchwood ${canonicalId} does not have a verified IMDb still mapping`);
     }
 
     const expectedStreamCount = canonicalId === 'S01E02' ? 0 : 1;

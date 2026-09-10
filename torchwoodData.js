@@ -1,3 +1,5 @@
+const episodeImages = require('./torchwoodEpisodeImages');
+
 const ARCHIVE_IDENTIFIERS = Object.freeze({
   clean: 'Torchwood.clean',
   season1: 'torchwood-1x-08-volver-a-matar-a-suzie-dual-1080p',
@@ -11,11 +13,15 @@ function buildArchiveUrl(identifier, filename) {
   return `https://archive.org/download/${identifier}/${encodeURIComponent(filename)}`;
 }
 
+function formatFileSize(bytes) {
+  return `${(bytes / (1024 ** 3)).toFixed(2)} GB`;
+}
+
 function buildStream(episode, filename, bytes) {
   return {
     url: buildArchiveUrl(ARCHIVE_IDENTIFIERS.season1, filename),
     name: 'Torchwood 1080p • Original MKV',
-    description: `Torchwood S01E${String(episode).padStart(2, '0')} • Dual audio: English DTS + Spanish AAC • Embedded English and Spanish subtitles`,
+    description: `Torchwood S01E${String(episode).padStart(2, '0')} • Original Archive.org MKV • English + Spanish audio • Embedded English subtitles • ${formatFileSize(bytes)}`,
     bytes
   };
 }
@@ -24,7 +30,7 @@ function buildOriginalStream(season, episode, filename, bytes) {
   return {
     url: buildArchiveUrl(ARCHIVE_IDENTIFIERS[`season${season}`], filename),
     name: 'Torchwood 1080p • Original MKV',
-    description: `Torchwood S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')} • Original Archive.org MKV • Dual English/Spanish audio • Embedded subtitles`,
+    description: `Torchwood S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')} • Original Archive.org MKV • English + Spanish audio • Embedded English subtitles • ${formatFileSize(bytes)}`,
     bytes
   };
 }
@@ -33,7 +39,7 @@ function buildCleanStream(season, episode, filename, bytes) {
   return {
     url: buildArchiveUrl(ARCHIVE_IDENTIFIERS.clean, filename),
     name: 'Torchwood Clean Cut • 1080p',
-    description: `Torchwood S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')} • Clean edit • AAC audio • No embedded subtitles`,
+    description: `Torchwood S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')} • Clean-cut version • AAC audio • No embedded subtitles • ${formatFileSize(bytes)}`,
     bytes
   };
 }
@@ -409,6 +415,11 @@ const episodes = [
     streams: [buildOriginalStream(4, 10, 'TorchWood 4x10 El Día del Milagro - Línea de sangre [Dual] [1080p].mkv', 4341801970)]
   }
 ];
+
+for (const episode of episodes) {
+  const episodeId = `S${String(episode.season).padStart(2, '0')}E${String(episode.episode).padStart(2, '0')}`;
+  episode.thumbnail = episodeImages[episodeId]?.url || episode.thumbnail;
+}
 
 module.exports = {
   ARCHIVE_IDENTIFIERS,

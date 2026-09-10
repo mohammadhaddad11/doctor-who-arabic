@@ -174,9 +174,9 @@ const NEW_WHO_SERIES_BACKGROUND_URL = ADDON_LOGO_URL;
 
 const manifest = {
   id: 'community.mhaddad.whoniverse.arabic',
-  version: '1.7.0',
+  version: '1.7.1',
   name: 'Whoniverse Arabic 1080p',
-  description: 'Doctor Who for Stremio with separate English and Arabic subtitle tracks plus simple 1080p quality and 480p speed stream options.',
+  description: 'Doctor Who and Torchwood in broadcast order with curated HD streams and selectable subtitle tracks where available.',
   logo: ADDON_LOGO_URL,
   types: ['series', 'movie'],
   resources: ['catalog', 'meta', 'stream', 'subtitles'],
@@ -1505,7 +1505,7 @@ builder.defineCatalogHandler(async (args) => {
           type: 'series',
           name: 'Torchwood 1080p',
           poster: TORCHWOOD_POSTER_URL,
-          description: 'The complete Torchwood television series with original 1080p MKV streams and selected clean-cut 1080p episodes.',
+          description: 'Torchwood in broadcast order. Original episodes use 1080p Archive.org MKV sources, while selected episodes use clean-cut versions. S01E02 is listed for continuity only and intentionally has no playable stream. Some sources include embedded English subtitles. Arabic subtitles for Torchwood are planned for a later episode-by-episode pass.',
           logo: ADDON_LOGO_URL,
           genres: ['Science Fiction', 'Drama'],
           releaseInfo: '2006-2011'
@@ -1573,7 +1573,7 @@ builder.defineMetaHandler(async (args) => {
         poster: TORCHWOOD_POSTER_URL,
         background: TORCHWOOD_POSTER_URL,
         logo: ADDON_LOGO_URL,
-        description: 'All four seasons of Torchwood in broadcast order. Original episodes use 1080p MKV streams, selected episodes use clean-cut 1080p streams, and S01E02 is intentionally unavailable.',
+        description: 'Torchwood in broadcast order. Original episodes use 1080p Archive.org MKV sources, while selected episodes use clean-cut versions. S01E02 is listed for continuity only and intentionally has no playable stream. Some sources include embedded English subtitles. Arabic subtitles for Torchwood are planned for a later episode-by-episode pass.',
         releaseInfo: '2006-2011',
         genres: ['Science Fiction', 'Drama'],
         videos: torchwoodEpisodes.map((episode) => ({
