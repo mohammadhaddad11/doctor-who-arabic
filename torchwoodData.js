@@ -21,7 +21,7 @@ function buildStream(episode, filename, bytes) {
   return {
     url: buildArchiveUrl(ARCHIVE_IDENTIFIERS.season1, filename),
     name: 'Torchwood 1080p • Original MKV',
-    description: `Torchwood S01E${String(episode).padStart(2, '0')} • Original Archive.org MKV • English + Spanish audio • Embedded English subtitles • ${formatFileSize(bytes)}`,
+    description: `Torchwood Original MKV • S01E${String(episode).padStart(2, '0')} • Archive.org • English + Spanish audio • Embedded English subtitles • ${formatFileSize(bytes)}`,
     bytes
   };
 }
@@ -30,7 +30,7 @@ function buildOriginalStream(season, episode, filename, bytes) {
   return {
     url: buildArchiveUrl(ARCHIVE_IDENTIFIERS[`season${season}`], filename),
     name: 'Torchwood 1080p • Original MKV',
-    description: `Torchwood S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')} • Original Archive.org MKV • English + Spanish audio • Embedded English subtitles • ${formatFileSize(bytes)}`,
+    description: `Torchwood Original MKV • S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')} • Archive.org • English + Spanish audio • Embedded English subtitles • ${formatFileSize(bytes)}`,
     bytes
   };
 }
@@ -39,7 +39,7 @@ function buildCleanStream(season, episode, filename, bytes) {
   return {
     url: buildArchiveUrl(ARCHIVE_IDENTIFIERS.clean, filename),
     name: 'Torchwood Clean Cut • 1080p',
-    description: `Torchwood S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')} • Clean-cut version • AAC audio • No embedded subtitles • ${formatFileSize(bytes)}`,
+    description: `Torchwood Clean Cut • S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')} • Archive.org • AAC audio • External English subtitles • ${formatFileSize(bytes)}`,
     bytes
   };
 }

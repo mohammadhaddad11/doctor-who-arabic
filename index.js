@@ -47,6 +47,17 @@ const STREAM_SUMMARY = streamMetadata.summary || {};
 const SUBTITLE_STATUS_ENTRIES = subtitleStatus.entries || {};
 const SUBTITLE_STATUS_SUMMARY = subtitleStatus.summary || {};
 const TORRENT_FALLBACK_AUDIT_SUMMARY = torrentFallbackAudit.summary || {};
+const TORCHWOOD_CLEAN_ENGLISH_SUBTITLES = Object.freeze({
+  S01E10: 'S01E10.clean.en.srt',
+  S01E13: 'S01E13.clean.en.srt',
+  S02E03: 'S02E03.clean.en.srt',
+  S02E05: 'S02E05.clean.en.srt',
+  S02E09: 'S02E09.clean.en.srt',
+  S02E11: 'S02E11.clean.v2.en.srt',
+  S04E03: 'S04E03.clean.en.srt',
+  S04E07: 'S04E07.clean.en.srt'
+});
+const TORCHWOOD_CLEAN_ENGLISH_SUBTITLE_FILES = new Set(Object.values(TORCHWOOD_CLEAN_ENGLISH_SUBTITLES));
 
 const ARABIC_SUBTITLE_DIR = path.join(__dirname, 'ar');
 const ARABIC_SUBTITLE_ROUTE = '/subtitles/ar';
@@ -56,6 +67,8 @@ const ARABIC_IMPROVED_SUBTITLE_DIR = path.join(__dirname, 'ar-improved');
 const ARABIC_IMPROVED_SUBTITLE_ROUTE = '/subtitles/ar-improved';
 const MOVIE_SUBTITLE_DIR = path.join(__dirname, 'movie-subtitles');
 const MOVIE_SUBTITLE_ROUTE = '/subtitles/movie-ar';
+const TORCHWOOD_ENGLISH_SUBTITLE_DIR = path.join(__dirname, 'torchwood-subtitles', 'en-clean');
+const TORCHWOOD_ENGLISH_SUBTITLE_ROUTE = '/subtitles/torchwood-en-clean';
 const ASSET_DIR = path.join(__dirname, 'assets');
 const ASSET_ROUTE = '/assets';
 const VIDEO_ROUTE = '/video';
@@ -332,6 +345,10 @@ function getMovieSubtitleFilePath(filename) {
   return path.join(MOVIE_SUBTITLE_DIR, filename);
 }
 
+function getTorchwoodEnglishSubtitleFilePath(filename) {
+  return path.join(TORCHWOOD_ENGLISH_SUBTITLE_DIR, filename);
+}
+
 function getSubtitleContentVersion(filePath) {
   if (!filePath || !fs.existsSync(filePath)) {
     return null;
@@ -394,6 +411,28 @@ function getMovieArabicSubtitleTrack() {
     lang: 'Arabic',
     title: 'Arabic Improved (عربي)',
     name: 'Arabic Improved (عربي)'
+  };
+}
+
+function getTorchwoodEnglishSubtitleTrack(episode) {
+  const filename = TORCHWOOD_CLEAN_ENGLISH_SUBTITLES[getEpisodeKey(episode)];
+  if (!filename) {
+    return null;
+  }
+
+  const subtitlePath = getTorchwoodEnglishSubtitleFilePath(filename);
+  if (!fs.existsSync(subtitlePath)) {
+    return null;
+  }
+
+  const version = getSubtitleContentVersion(subtitlePath);
+  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${TORCHWOOD_ENGLISH_SUBTITLE_ROUTE}/${encodeURIComponent(filename)}`;
+  return {
+    id: 'torchwood_clean_en_sub',
+    url: version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl,
+    lang: 'English',
+    title: 'English (Clean Cut)',
+    name: 'English (Clean Cut)'
   };
 }
 
@@ -1585,10 +1624,12 @@ builder.defineStreamHandler(async (args) => {
   const torchwoodEpisode = getTorchwoodEpisodeFromArgs(args.id);
   if (torchwoodEpisode) {
     const tag = TORCHWOOD_EPISODE_TAGS[getEpisodeKey(torchwoodEpisode)];
+    const englishSubtitle = getTorchwoodEnglishSubtitleTrack(torchwoodEpisode);
     return {
       streams: torchwoodEpisode.streams.map((stream) => ({
         ...stream,
-        description: buildTorchwoodStreamDescription(stream, tag)
+        description: buildTorchwoodStreamDescription(stream, tag),
+        ...(englishSubtitle ? { subtitles: [englishSubtitle] } : {})
       }))
     };
   }
@@ -1742,6 +1783,38 @@ function serveMovieSubtitle(req, res, filename) {
   fs.createReadStream(subtitlePath).pipe(res);
 }
 
+function serveTorchwoodEnglishSubtitle(req, res, filename) {
+  const safeName = path.basename(filename);
+  if (!safeName || safeName !== filename || !TORCHWOOD_CLEAN_ENGLISH_SUBTITLE_FILES.has(safeName)) {
+    sendCorsHeaders(res);
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.end('Torchwood subtitle not found');
+    return;
+  }
+
+  const subtitlePath = getTorchwoodEnglishSubtitleFilePath(safeName);
+  if (!fs.existsSync(subtitlePath)) {
+    sendCorsHeaders(res);
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.end('Torchwood subtitle file missing');
+    return;
+  }
+
+  sendCorsHeaders(res);
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/x-subrip; charset=utf-8');
+  res.setHeader('Content-Disposition', `inline; filename="${safeName}"`);
+  res.setHeader('Cache-Control', 'public, max-age=3600');
+  if (req.method === 'HEAD') {
+    res.end();
+    return;
+  }
+
+  fs.createReadStream(subtitlePath).pipe(res);
+}
+
 const server = http.createServer((req, res) => {
   const requestUrl = new URL(req.url, `http://${req.headers.host || `127.0.0.1:${port}`}`);
 
@@ -1872,6 +1945,19 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  if (requestUrl.pathname.startsWith(`${TORCHWOOD_ENGLISH_SUBTITLE_ROUTE}/`)) {
+    if (req.method === 'OPTIONS') {
+      sendCorsHeaders(res);
+      res.statusCode = 204;
+      res.end();
+      return;
+    }
+
+    const encodedName = requestUrl.pathname.slice(`${TORCHWOOD_ENGLISH_SUBTITLE_ROUTE}/`.length);
+    serveTorchwoodEnglishSubtitle(req, res, decodeURIComponent(encodedName));
+    return;
+  }
+
   if (requestUrl.pathname.startsWith(`${ARABIC_SUBTITLE_ROUTE}/`)) {
     if (req.method === 'OPTIONS') {
       sendCorsHeaders(res);
@@ -1897,4 +1983,5 @@ server.listen(port, host, () => {
   console.log(`Whoniverse Addon active on http://${host}:${port}`);
   console.log(`Install URL: ${getManifestUrl()}`);
   console.log(`Arabic subtitles served from: ${PUBLIC_ADDON_BASE_URL}${ARABIC_SUBTITLE_ROUTE}/<filename>`);
+  console.log(`Torchwood clean English subtitles served from: ${PUBLIC_ADDON_BASE_URL}${TORCHWOOD_ENGLISH_SUBTITLE_ROUTE}/<filename>`);
 });
