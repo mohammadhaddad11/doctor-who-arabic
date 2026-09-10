@@ -3,9 +3,13 @@ const http = require('http');
 const crypto = require('crypto');
 const path = require('path');
 const { addonBuilder, getRouter } = require('stremio-addon-sdk');
-const allNewWhoEpisodesPreSorted = require('./episodeData');
-const { POSTER_URL: TORCHWOOD_POSTER_URL, episodes: torchwoodEpisodes } = require('./torchwoodData');
-const { DEFAULT_EPISODE_GENRES, buildEpisodeTagLine, buildEpisodeTagMetadata } = require('./episodeTagMetadata');
+const { CATALOGS, CONTENT_IDS, createContentLibrary } = require('./contentLibrary');
+const { buildEpisodeTagLine, buildEpisodeTagMetadata } = require('./episodeTagMetadata');
+const {
+  TORCHWOOD_EPISODE_TAGS,
+  buildTorchwoodEpisodeOverview,
+  buildTorchwoodStreamDescription
+} = require('./torchwoodEpisodeTags');
 const arabicSubtitleFiles = require('./arabicSubtitles.json');
 
 function loadJsonFile(relativePath, fallbackValue) {
@@ -31,19 +35,9 @@ const torrentSources = loadJsonFile('torrentSources.json', { sources: [] });
 const torrentSourcesLocal = loadJsonFile('torrentSources.local.json', { sources: [] });
 const torrentFallbackAudit = loadJsonFile('audit/torrent-fallback-audit.json', { summary: {} });
 
-const NEW_WHO_SERIES_STREMIO_ID = 'whoniverse_new_who';
-const TORCHWOOD_SERIES_STREMIO_ID = 'whoniverse_torchwood';
-const DOCTOR_WHO_MOVIE_1996_STREMIO_ID = 'doctor-who-movie-1996';
-const DOCTOR_WHO_MOVIE_1996_POSTER_URL = 'https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/__ia_thumb.jpg';
-const DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE = 'doctor-who-movie-1996.primary.improved.ar.srt';
-const DOCTOR_WHO_MOVIE_1996_STREAMS = Object.freeze([
-  Object.freeze({
-    url: 'https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/Doctor%20Who%20The%20Movie%201996%201080p%20BluRay%20HDR10%20FLAC%202%200%20x265-GeneMige.mkv',
-    name: 'Whoniverse Arabic • 1080p • Primary',
-    description: 'Doctor Who (1996) • MKV • HEVC Main 10 HDR • 5.10 GB',
-    bytes: 5104562536
-  })
-]);
+const NEW_WHO_SERIES_STREMIO_ID = CONTENT_IDS.newWho;
+const TORCHWOOD_SERIES_STREMIO_ID = CONTENT_IDS.torchwood;
+const DOCTOR_WHO_MOVIE_1996_STREMIO_ID = CONTENT_IDS.doctorWhoMovie1996;
 const ARABIC_SUBTITLE_FILES = new Set(arabicSubtitleFiles);
 const ARABIC_ALT_INDEX = arabicSubtitleAlternatives || {};
 const ARABIC_IMPROVED_INDEX = arabicImprovedSubtitles || {};
@@ -169,8 +163,42 @@ const PUBLIC_ADDON_BASE_URL = resolvePublicBaseUrl();
 const ADDON_LOGO_URL = fs.existsSync(LOCAL_ADDON_LOGO_FILE)
   ? `${PUBLIC_ADDON_BASE_URL}${ASSET_ROUTE}/whoniverse-arabic-logo.svg`
   : DEFAULT_ADDON_LOGO_URL;
-const NEW_WHO_SERIES_POSTER_URL = ADDON_LOGO_URL;
-const NEW_WHO_SERIES_BACKGROUND_URL = ADDON_LOGO_URL;
+const CONTENT_LIBRARY = createContentLibrary({
+  addonLogoUrl: ADDON_LOGO_URL,
+  assetBaseUrl: `${PUBLIC_ADDON_BASE_URL}${ASSET_ROUTE}`
+});
+const NEW_WHO_SERIES = CONTENT_LIBRARY.getSeriesById(NEW_WHO_SERIES_STREMIO_ID);
+const TORCHWOOD_SERIES = CONTENT_LIBRARY.getSeriesById(TORCHWOOD_SERIES_STREMIO_ID);
+const DOCTOR_WHO_MOVIE_1996 = CONTENT_LIBRARY.getMovieById(DOCTOR_WHO_MOVIE_1996_STREMIO_ID);
+const allNewWhoEpisodesPreSorted = NEW_WHO_SERIES.episodes;
+const torchwoodEpisodes = TORCHWOOD_SERIES.episodes;
+
+function buildCatalogMeta(entry) {
+  return {
+    id: entry.id,
+    type: entry.type,
+    name: entry.name,
+    poster: entry.poster,
+    description: entry.catalogDescription,
+    ...(entry.logo ? { logo: entry.logo } : {}),
+    genres: [...entry.genres],
+    releaseInfo: entry.releaseInfo
+  };
+}
+
+function buildTitleMeta(entry) {
+  return {
+    id: entry.id,
+    type: entry.type,
+    name: entry.name,
+    poster: entry.poster,
+    background: entry.background,
+    ...(entry.logo ? { logo: entry.logo } : {}),
+    description: entry.description,
+    releaseInfo: entry.releaseInfo,
+    genres: [...entry.genres]
+  };
+}
 
 const manifest = {
   id: 'community.mhaddad.whoniverse.arabic',
@@ -180,18 +208,7 @@ const manifest = {
   logo: ADDON_LOGO_URL,
   types: ['series', 'movie'],
   resources: ['catalog', 'meta', 'stream', 'subtitles'],
-  catalogs: [
-    {
-      type: 'series',
-      id: 'whoniverse_catalog',
-      name: 'Whoniverse'
-    },
-    {
-      type: 'movie',
-      id: 'whoniverse_movies',
-      name: 'Whoniverse Movies'
-    }
-  ],
+  catalogs: [{ ...CATALOGS.series }, { ...CATALOGS.movies }],
   behaviorHints: {
     configurable: false,
     adult: false
@@ -363,13 +380,14 @@ function buildArabicImprovedSubtitleUrl(arabicName) {
 }
 
 function getMovieArabicSubtitleTrack() {
-  const subtitlePath = getMovieSubtitleFilePath(DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE);
+  const subtitleFilename = DOCTOR_WHO_MOVIE_1996.arabicImprovedSubtitle;
+  const subtitlePath = getMovieSubtitleFilePath(subtitleFilename);
   if (!fs.existsSync(subtitlePath)) {
     return null;
   }
 
   const version = getSubtitleContentVersion(subtitlePath);
-  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${MOVIE_SUBTITLE_ROUTE}/${encodeURIComponent(DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE)}`;
+  const baseUrl = `${PUBLIC_ADDON_BASE_URL}${MOVIE_SUBTITLE_ROUTE}/${encodeURIComponent(subtitleFilename)}`;
   return {
     id: 'movie_ar_improved_sub',
     url: version ? `${baseUrl}?v=${encodeURIComponent(version)}` : baseUrl,
@@ -1487,47 +1505,12 @@ function serveStaticAsset(req, res, filename) {
 }
 
 builder.defineCatalogHandler(async (args) => {
-  if (args.type === 'series' && args.id === manifest.catalogs[0].id) {
-    return {
-      metas: [
-        {
-          id: NEW_WHO_SERIES_STREMIO_ID,
-          type: 'series',
-          name: 'New Who 1080p',
-          poster: NEW_WHO_SERIES_POSTER_URL,
-          description: 'Doctor Who from 2005 onward with separate English and Arabic subtitle tracks plus simple 1080p quality and 480p speed stream choices.',
-          logo: ADDON_LOGO_URL,
-          genres: [...DEFAULT_EPISODE_GENRES],
-          releaseInfo: '2005-Present'
-        },
-        {
-          id: TORCHWOOD_SERIES_STREMIO_ID,
-          type: 'series',
-          name: 'Torchwood 1080p',
-          poster: TORCHWOOD_POSTER_URL,
-          description: 'Torchwood in broadcast order. Original episodes use 1080p Archive.org MKV sources, while selected episodes use clean-cut versions. S01E02 is listed for continuity only and intentionally has no playable stream. Some sources include embedded English subtitles. Arabic subtitles for Torchwood are planned for a later episode-by-episode pass.',
-          logo: ADDON_LOGO_URL,
-          genres: ['Science Fiction', 'Drama'],
-          releaseInfo: '2006-2011'
-        }
-      ]
-    };
+  if (args.type === CATALOGS.series.type && args.id === CATALOGS.series.id) {
+    return { metas: CONTENT_LIBRARY.series.map(buildCatalogMeta) };
   }
 
-  if (args.type === 'movie' && args.id === 'whoniverse_movies') {
-    return {
-      metas: [
-        {
-          id: DOCTOR_WHO_MOVIE_1996_STREMIO_ID,
-          type: 'movie',
-          name: 'Doctor Who: The Movie 1996',
-          poster: DOCTOR_WHO_MOVIE_1996_POSTER_URL,
-          description: 'The Doctor Who television movie starring Paul McGann as the Eighth Doctor.',
-          genres: [...DEFAULT_EPISODE_GENRES],
-          releaseInfo: '1996'
-        }
-      ]
-    };
+  if (args.type === CATALOGS.movies.type && args.id === CATALOGS.movies.id) {
+    return { metas: CONTENT_LIBRARY.movies.map(buildCatalogMeta) };
   }
 
   return { metas: [] };
@@ -1537,15 +1520,7 @@ builder.defineMetaHandler(async (args) => {
   if (args.type === 'series' && args.id === NEW_WHO_SERIES_STREMIO_ID) {
     return {
       meta: {
-        id: NEW_WHO_SERIES_STREMIO_ID,
-        type: 'series',
-        name: 'New Who 1080p',
-        poster: NEW_WHO_SERIES_POSTER_URL,
-        background: NEW_WHO_SERIES_BACKGROUND_URL,
-        logo: ADDON_LOGO_URL,
-        description: 'Doctor Who from 2005 onward in broadcast order, with separate English and Arabic subtitle options plus audited 1080p quality and 480p speed streams.',
-        releaseInfo: '2005-Present',
-        genres: [...DEFAULT_EPISODE_GENRES],
+        ...buildTitleMeta(NEW_WHO_SERIES),
         videos: allNewWhoEpisodes.map((ep) => {
           const tagMetadata = buildEpisodeTagMetadata(ep, EPISODE_TAGS[getEpisodeKey(ep)]);
           return {
@@ -1567,42 +1542,26 @@ builder.defineMetaHandler(async (args) => {
   if (args.type === 'series' && args.id === TORCHWOOD_SERIES_STREMIO_ID) {
     return {
       meta: {
-        id: TORCHWOOD_SERIES_STREMIO_ID,
-        type: 'series',
-        name: 'Torchwood 1080p',
-        poster: TORCHWOOD_POSTER_URL,
-        background: TORCHWOOD_POSTER_URL,
-        logo: ADDON_LOGO_URL,
-        description: 'Torchwood in broadcast order. Original episodes use 1080p Archive.org MKV sources, while selected episodes use clean-cut versions. S01E02 is listed for continuity only and intentionally has no playable stream. Some sources include embedded English subtitles. Arabic subtitles for Torchwood are planned for a later episode-by-episode pass.',
-        releaseInfo: '2006-2011',
-        genres: ['Science Fiction', 'Drama'],
-        videos: torchwoodEpisodes.map((episode) => ({
-          id: `${TORCHWOOD_SERIES_STREMIO_ID}:${episode.season}:${episode.episode}`,
-          title: episode.title,
-          season: episode.season,
-          episode: episode.episode,
-          released: episode.released,
-          overview: episode.overview,
-          thumbnail: episode.thumbnail,
-          available: episode.streams.length > 0
-        }))
+        ...buildTitleMeta(TORCHWOOD_SERIES),
+        videos: torchwoodEpisodes.map((episode) => {
+          const tag = TORCHWOOD_EPISODE_TAGS[getEpisodeKey(episode)];
+          return {
+            id: `${TORCHWOOD_SERIES_STREMIO_ID}:${episode.season}:${episode.episode}`,
+            title: episode.title,
+            season: episode.season,
+            episode: episode.episode,
+            released: episode.released,
+            overview: buildTorchwoodEpisodeOverview(episode, tag),
+            thumbnail: episode.thumbnail,
+            available: episode.streams.length > 0
+          };
+        })
       }
     };
   }
 
   if (args.type === 'movie' && args.id === DOCTOR_WHO_MOVIE_1996_STREMIO_ID) {
-    return {
-      meta: {
-        id: DOCTOR_WHO_MOVIE_1996_STREMIO_ID,
-        type: 'movie',
-        name: 'Doctor Who: The Movie 1996',
-        poster: DOCTOR_WHO_MOVIE_1996_POSTER_URL,
-        background: DOCTOR_WHO_MOVIE_1996_POSTER_URL,
-        description: 'The Doctor Who television movie starring Paul McGann as the Eighth Doctor.',
-        releaseInfo: '1996',
-        genres: [...DEFAULT_EPISODE_GENRES]
-      }
-    };
+    return { meta: buildTitleMeta(DOCTOR_WHO_MOVIE_1996) };
   }
 
   return { meta: null };
@@ -1612,7 +1571,7 @@ builder.defineStreamHandler(async (args) => {
   if (args.type === 'movie' && args.id === DOCTOR_WHO_MOVIE_1996_STREMIO_ID) {
     const arabicSubtitle = getMovieArabicSubtitleTrack();
     return {
-      streams: DOCTOR_WHO_MOVIE_1996_STREAMS.map((stream) => ({
+      streams: DOCTOR_WHO_MOVIE_1996.streams.map((stream) => ({
         ...stream,
         ...(arabicSubtitle ? { subtitles: [arabicSubtitle] } : {})
       }))
@@ -1625,7 +1584,13 @@ builder.defineStreamHandler(async (args) => {
 
   const torchwoodEpisode = getTorchwoodEpisodeFromArgs(args.id);
   if (torchwoodEpisode) {
-    return { streams: torchwoodEpisode.streams.map((stream) => ({ ...stream })) };
+    const tag = TORCHWOOD_EPISODE_TAGS[getEpisodeKey(torchwoodEpisode)];
+    return {
+      streams: torchwoodEpisode.streams.map((stream) => ({
+        ...stream,
+        description: buildTorchwoodStreamDescription(stream, tag)
+      }))
+    };
   }
 
   const episode = getEpisodeFromArgs(args.id);
@@ -1747,7 +1712,7 @@ function serveArabicImprovedSubtitle(req, res, filename) {
 
 function serveMovieSubtitle(req, res, filename) {
   const safeName = path.basename(filename);
-  if (safeName !== DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE) {
+  if (safeName !== DOCTOR_WHO_MOVIE_1996.arabicImprovedSubtitle) {
     sendCorsHeaders(res);
     res.statusCode = 404;
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');

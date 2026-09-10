@@ -595,8 +595,59 @@ ready to use:
 - Earth = `الأرض`
 - aliens = `كائنات فضائية`
 - Rose = `روز`
+- The Master = `السيد`
 
-## 9. Bracketed And Non-Speech Handling Policy
+## 9. Arabic Translation Moderation Rules for Mature Language
+
+This policy applies globally when an episode contains profanity, sexual language, crude insults, or mature slang. It is especially important for future Torchwood translations, because Torchwood uses more mature dialogue than Doctor Who.
+
+### Core Principle
+
+- Preserve story meaning, character intent, emotional force, and scene tone.
+- Soften explicit wording into clean, acceptable Modern Standard Arabic.
+- Do not use direct vulgar Arabic equivalents.
+- Do not make the Arabic stronger, more graphic, childish, or more comedic than the English.
+- Do not delete information that matters to the plot, a relationship, consent, coercion, danger, or characterization.
+- If a vulgar word adds no meaning beyond emphasis, it may be omitted when the Arabic remains natural.
+- If it carries emotional force, replace it with clean Arabic that carries comparable force.
+
+### Moderation Patterns
+
+- Direct profanity: use a softened equivalent such as `تبًا` or `اللعنة`, or omit it if redundant.
+- Vulgar intensifiers: replace them with natural emphasis such as `هذا...` or `شديد...`, or omit them when Arabic does not need an intensifier.
+- Crude insults: use a clean insult or emotional equivalent such as `وغد`, `حقير`, `أحمق`, or `وقح`, according to context and severity.
+- Aggressive phrases: preserve anger, threat, urgency, or contempt without vulgar wording.
+- Repeated profanity: reduce repetition or vary clean emphasis rather than repeating a vulgar equivalent.
+- Sexual explicitness: preserve the mature plot meaning with non-graphic wording such as `علاقة`, `تصرف غير لائق`, `انجذاب`, `إغواء`, `أمر حميم`, or `استغلال`, according to context.
+- Anatomical wording: avoid explicit terms unless they are necessary for medical, scientific, safety, or plot clarity.
+- Vulgar slang: do not reproduce it as vulgar Arabic slang.
+
+### Guideline Examples
+
+These are contextual options, not mandatory one-to-one replacements:
+
+- `fuck` used in anger -> `تبًا`, `اللعنة`, or omission when redundant
+- `fucking...` used only as an intensifier -> natural Arabic emphasis or omission
+- `shit` -> `تبًا`, `مصيبة`, or `هذا سيئ`
+- `bastard` -> `وغد` or `حقير`, depending on severity
+- `asshole` -> `أحمق`, `وقح`, or `وغد`
+- `bloody hell` -> `يا إلهي` or `تبًا`
+
+Doctor Who usually needs less moderation, but the same clean-language policy applies whenever needed. Translation and review must always use the surrounding scene rather than applying this list mechanically.
+
+## 10. Future Torchwood Arabic Translation Plan
+
+- Torchwood Arabic subtitles are postponed and must not be created, mapped, or exposed until a dedicated translation task begins.
+- Translate Torchwood episode by episode from an English subtitle source proven to match the exact playable stream.
+- For clean-cut episodes, use subtitles specifically synchronized to the clean edit; do not attach uncut timings.
+- Follow the same staged review and integration discipline used for Doctor Who Arabic Improved subtitles.
+- Apply the mature-language moderation policy while preserving plot meaning and emotional intent.
+- Perform manual semantic, tone, continuity, pronoun, gender, terminology, and synchronization review for every episode.
+- Run structural and addon validation after every episode or small reviewed batch.
+- Do not bulk auto-translate the full series.
+- Do not expose staged or unreviewed Torchwood subtitles in Stremio.
+
+## 11. Bracketed And Non-Speech Handling Policy
 
 ### A) Removed Standalone
 
@@ -638,7 +689,7 @@ Final Arabic:
 عبر مكبر الصوت: أخلوا المكان فورًا.
 ```
 
-## 10. Pronoun And Gender Accuracy Rules
+## 12. Pronoun And Gender Accuracy Rules
 
 English pronouns are often ambiguous, especially `you`, `your`, and `yourself`. Arabic Improved must not guess randomly.
 
@@ -662,7 +713,7 @@ Examples:
 - If someone is addressing the Doctor: `Are you ready?` -> `هل أنت مستعد؟`
 - If the addressee is unclear, prefer a neutral rewrite when possible: `Are you ready?` -> `هل كل شيء جاهز؟`
 
-## 11. Mechanical Fix Rules
+## 13. Mechanical Fix Rules
 
 If QA or validation fails because of a mechanical issue, fix only the mechanical issue. Mechanical issues include:
 
@@ -676,13 +727,13 @@ If QA or validation fails because of a mechanical issue, fix only the mechanical
 
 Do not retranslate an episode for a mechanical fix unless the user explicitly asks.
 
-## 12. No Full Diff Rule
+## 14. No Full Diff Rule
 
 - Never print full SRT diffs in final output.
 - Use cue counts, validation summaries, and short examples instead.
 - For workflow-only edits, a limited workflow diff is allowed when explicitly requested.
 
-## 13. Episode Importance Tags
+## 15. Episode Importance Tags
 
 - `episodeTags.json` is the source of truth for episode importance and watch guidance.
 - Tag entries use canonical IDs and exact titles from `episodeData.js`; subtitle filename numbering must never be used for matching.

@@ -12,8 +12,15 @@ const arabicSubtitleAlternatives = require('../arabicSubtitleAlternatives.json')
 const { DEFAULT_EPISODE_GENRES, buildEpisodeTagLine, buildEpisodeTagMetadata } = require('../episodeTagMetadata');
 const episodeTags = require('../episodeTags.json');
 const episodeData = require('../episodeData');
+const { CATALOGS, CONTENT_IDS, createContentLibrary } = require('../contentLibrary');
 const { ARCHIVE_IDENTIFIERS: torchwoodArchiveIdentifiers, episodes: torchwoodEpisodes } = require('../torchwoodData');
 const torchwoodEpisodeImages = require('../torchwoodEpisodeImages');
+const {
+  TORCHWOOD_EPISODE_TAGS,
+  buildTorchwoodEpisodeOverview,
+  buildTorchwoodEpisodeTagLine,
+  buildTorchwoodStreamDescription
+} = require('../torchwoodEpisodeTags');
 const streamMetadata = require('../streamMetadata.json');
 const subtitleStatus = require('../subtitleStatus.json');
 
@@ -22,6 +29,11 @@ const warnings = [];
 const EPISODE_TAG_IMPORTANCE = new Set(['canon', 'mid', 'filler']);
 const EPISODE_TAG_WATCH_NOTES = new Set(['essential', 'recommended', 'optional', 'skippable', 'skippable-first-watch']);
 const EPISODE_TAG_QUALITY_NOTES = new Set(['strong', 'good', 'okay', 'weak', 'controversial']);
+const TORCHWOOD_TAG_IMPORTANCE = new Set(['essential', 'important', 'optional', 'skippable']);
+const TORCHWOOD_TAG_CLEAN_STATUS = new Set(['original', 'clean-cut', 'unavailable']);
+const TORCHWOOD_TAG_CONTINUITY = new Set(['main-arc', 'standalone', 'character-focused']);
+const TORCHWOOD_TAG_TONE = new Set(['dark', 'horror', 'action', 'drama', 'thriller']);
+const TORCHWOOD_TAG_CONTENT_NOTE = new Set(['clean', 'moderated', 'mature', 'skipped']);
 
 function fail(message) {
   failures.push(message);
@@ -170,6 +182,55 @@ function checkConsistency() {
 
   if (arabicSubtitles.length !== Object.keys(subtitleStatus.entries || {}).length) {
     fail('subtitleStatus.json entry count does not match arabicSubtitles.json');
+  }
+}
+
+function checkContentLibrary() {
+  const assetBaseUrl = 'https://example.com/assets';
+  const library = createContentLibrary({
+    addonLogoUrl: 'https://example.com/assets/addon-logo.svg',
+    assetBaseUrl
+  });
+  const newWho = library.getSeriesById(CONTENT_IDS.newWho);
+  const torchwood = library.getSeriesById(CONTENT_IDS.torchwood);
+  const movie = library.getMovieById(CONTENT_IDS.doctorWhoMovie1996);
+  const allEntries = [...library.series, ...library.movies];
+
+  if (CATALOGS.series.type !== 'series' || CATALOGS.movies.type !== 'movie' || CATALOGS.series.id === CATALOGS.movies.id) {
+    fail('Content library catalogs must remain separate and type-specific');
+  }
+  if (library.series.length !== 2 || library.movies.length !== 1) {
+    fail(`Content library has ${library.series.length} series and ${library.movies.length} movies; expected 2 and 1`);
+  }
+  if (newWho?.episodes !== episodeData || newWho?.sourceModule !== 'episodeData.js') {
+    fail('Content library Doctor Who entry is detached from episodeData.js');
+  }
+  if (torchwood?.episodes !== torchwoodEpisodes || torchwood?.sourceModule !== 'torchwoodData.js') {
+    fail('Content library Torchwood entry is detached from torchwoodData.js');
+  }
+  if (movie?.streams.length !== 1 || movie?.arabicImprovedSubtitle !== 'doctor-who-movie-1996.primary.improved.ar.srt') {
+    fail('Content library Doctor Who 1996 movie references are invalid');
+  }
+
+  const ids = allEntries.map((entry) => entry.id);
+  if (new Set(ids).size !== ids.length) {
+    fail('Content library contains duplicate content IDs');
+  }
+  for (const entry of allEntries) {
+    if (!entry.id || !entry.type || !entry.name || !entry.poster || !entry.background || !entry.description || !entry.catalogDescription || !entry.releaseInfo || !Array.isArray(entry.genres)) {
+      fail(`Content library entry ${entry.id || '(missing ID)'} is missing high-level metadata`);
+    }
+    for (const artworkUrl of [entry.poster, entry.background]) {
+      if (!artworkUrl.startsWith(`${assetBaseUrl}/`)) {
+        fail(`Content library entry ${entry.id} does not use local title artwork`);
+        continue;
+      }
+
+      const artworkFilename = artworkUrl.slice(assetBaseUrl.length + 1);
+      if (!fs.existsSync(path.join(ROOT, 'assets', artworkFilename))) {
+        fail(`Content library artwork is missing: assets/${artworkFilename}`);
+      }
+    }
   }
 }
 
@@ -370,12 +431,88 @@ function checkEpisodeTagMetadata() {
   }
 }
 
+function checkTorchwoodEpisodeTags() {
+  const tags = TORCHWOOD_EPISODE_TAGS;
+  const episodesById = new Map(torchwoodEpisodes.map((episode) => [episodeToCanonicalId(episode), episode]));
+  const cleanEpisodeIds = new Set(['S01E10', 'S01E13', 'S02E03', 'S02E05', 'S02E09', 'S02E11', 'S04E03', 'S04E07']);
+  const tagIds = Object.keys(tags);
+
+  if (tagIds.length !== torchwoodEpisodes.length) {
+    fail(`Torchwood has ${tagIds.length} tag entries; expected ${torchwoodEpisodes.length}`);
+  }
+
+  const tagPath = path.join(ROOT, 'torchwoodEpisodeTags.js');
+  const rawTagIds = [...fs.readFileSync(tagPath, 'utf8').matchAll(/^\s*(S\d{2}E\d{2}):\s*Object\.freeze/gm)]
+    .map((match) => match[1]);
+  const duplicateIds = rawTagIds.filter((id, index) => rawTagIds.indexOf(id) !== index);
+  if (duplicateIds.length) {
+    fail(`torchwoodEpisodeTags.js contains duplicate canonical IDs: ${[...new Set(duplicateIds)].join(', ')}`);
+  }
+
+  for (const episode of torchwoodEpisodes) {
+    const canonicalId = episodeToCanonicalId(episode);
+    const tag = tags[canonicalId];
+    if (!tag) {
+      fail(`Torchwood ${canonicalId} is missing episode tags`);
+      continue;
+    }
+    if (tag.title !== episode.title) {
+      fail(`Torchwood ${canonicalId} tag title does not match torchwoodData.js`);
+    }
+    if (!TORCHWOOD_TAG_IMPORTANCE.has(tag.importance)
+      || !TORCHWOOD_TAG_CLEAN_STATUS.has(tag.cleanStatus)
+      || !TORCHWOOD_TAG_CONTINUITY.has(tag.continuity)
+      || !TORCHWOOD_TAG_TONE.has(tag.tone)
+      || !EPISODE_TAG_QUALITY_NOTES.has(tag.qualityNote)
+      || !TORCHWOOD_TAG_CONTENT_NOTE.has(tag.contentNote)) {
+      fail(`Torchwood ${canonicalId} contains an invalid or missing tag value`);
+    }
+    if (typeof tag.comment !== 'string' || !tag.comment.trim() || tag.comment.length > 80) {
+      fail(`Torchwood ${canonicalId} tag comment must be short and non-empty`);
+    }
+
+    const expectedCleanStatus = canonicalId === 'S01E02'
+      ? 'unavailable'
+      : cleanEpisodeIds.has(canonicalId) ? 'clean-cut' : 'original';
+    const expectedContentNote = canonicalId === 'S01E02'
+      ? 'skipped'
+      : cleanEpisodeIds.has(canonicalId) ? 'moderated' : null;
+    if (tag.cleanStatus !== expectedCleanStatus || (expectedContentNote && tag.contentNote !== expectedContentNote)) {
+      fail(`Torchwood ${canonicalId} tags do not match its stream availability`);
+    }
+    if (episode.season === 3 && (tag.importance !== 'essential' || tag.continuity !== 'main-arc')) {
+      fail(`Torchwood ${canonicalId} must be tagged as essential main-arc`);
+    }
+
+    const tagLine = buildTorchwoodEpisodeTagLine(tag);
+    const overview = buildTorchwoodEpisodeOverview(episode, tag);
+    if (!tagLine || !overview.startsWith(tagLine) || !overview.endsWith(episode.overview)) {
+      fail(`Torchwood ${canonicalId} tag metadata is not rendered correctly`);
+    }
+    for (const stream of episode.streams) {
+      const description = buildTorchwoodStreamDescription(stream, tag);
+      const expectedPrefix = `[${tag.cleanStatus === 'clean-cut' ? 'Clean Cut' : 'Original'}] [1080p] • `;
+      if (!description.startsWith(expectedPrefix) || !description.endsWith(stream.description)) {
+        fail(`Torchwood ${canonicalId} stream tags are not rendered correctly`);
+      }
+    }
+  }
+
+  for (const canonicalId of tagIds) {
+    if (!episodesById.has(canonicalId)) {
+      fail(`torchwoodEpisodeTags.js references unknown episode ID: ${canonicalId}`);
+    }
+  }
+}
+
 function main() {
   checkNodeSyntax();
   checkConsistency();
+  checkContentLibrary();
   checkTorchwoodData();
   checkEpisodeTags();
   checkEpisodeTagMetadata();
+  checkTorchwoodEpisodeTags();
   checkArabicFiles();
   checkArabicAlternativeFiles();
   checkMovieSubtitle();
@@ -391,6 +528,7 @@ function main() {
     streamEpisodes: Object.keys(streamMetadata.episodes || {}).length,
     manualReviewSubtitles: subtitleStatus.summary?.manual_review || 0,
     taggedEpisodes: Object.keys(episodeTags).length,
+    torchwoodTaggedEpisodes: Object.keys(TORCHWOOD_EPISODE_TAGS).length,
     failures,
     warnings
   };
