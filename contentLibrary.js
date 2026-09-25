@@ -33,7 +33,7 @@ const DOCTOR_WHO_MOVIE_1996_STREAMS = Object.freeze([
 
 function createContentLibrary({ addonLogoUrl, assetBaseUrl }) {
   const assetUrl = (filename) => `${assetBaseUrl}/${filename}`;
-  const torchwoodDescription = 'Torchwood in broadcast order. Original episodes use 1080p Archive.org MKV sources, while selected episodes use clean-cut versions. S01E02 is listed for continuity only and intentionally has no playable stream. Some sources include embedded English subtitles. Arabic subtitles for Torchwood are planned for a later episode-by-episode pass.';
+  const torchwoodDescription = 'Torchwood in broadcast order with Arabic Improved subtitles for all playable episodes. Original episodes use 1080p Archive.org MKV sources, while selected episodes use final clean-cut versions with matching external English and Arabic subtitles. S01E02 is listed for continuity only and intentionally has no playable stream.';
   const series = Object.freeze([
     Object.freeze({
       id: CONTENT_IDS.newWho,
@@ -64,7 +64,7 @@ function createContentLibrary({ addonLogoUrl, assetBaseUrl }) {
       sourceModule: 'torchwoodData.js',
       notes: Object.freeze({
         unavailableEpisodeIds: Object.freeze(['S01E02']),
-        cleanCutEpisodeIds: Object.freeze(['S01E10', 'S01E13', 'S02E03', 'S02E05', 'S02E09', 'S02E11', 'S04E03', 'S04E07'])
+        cleanCutEpisodeIds: Object.freeze(['S01E10', 'S01E13', 'S02E03', 'S02E05', 'S02E09', 'S02E11', 'S02E12', 'S04E03', 'S04E07'])
       })
     })
   ]);

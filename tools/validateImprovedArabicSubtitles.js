@@ -3,10 +3,14 @@ const fs = require('fs');
 const path = require('path');
 
 const episodeData = require('../episodeData');
+const { episodes: torchwoodEpisodes } = require('../torchwoodData');
 
 const ROOT = path.resolve(__dirname, '..');
 const AR_IMPROVED_DIR = path.join(ROOT, 'ar-improved');
 const MAPPING_PATH = path.join(ROOT, 'arabicImprovedSubtitles.json');
+const TORCHWOOD_MAPPING_PATH = path.join(ROOT, 'torchwoodArabicSubtitles.json');
+const TORCHWOOD_AR_IMPROVED_DIR = path.join(ROOT, 'torchwood-subtitles', 'ar-improved');
+const TORCHWOOD_AR_CLEAN_DIR = path.join(ROOT, 'torchwood-subtitles', 'ar-clean');
 const LOCAL_ENGLISH_SEARCH_DIRS = [
   path.join(ROOT, '.subtitle-audit-cache', 'english'),
   path.join(ROOT, 'english'),
@@ -146,6 +150,7 @@ function getEnglishLocalPath(episode) {
 
 function main() {
   const mapping = readJson(MAPPING_PATH);
+  const torchwoodMapping = readJson(TORCHWOOD_MAPPING_PATH);
   const failures = [];
   const warnings = [];
 
@@ -231,9 +236,46 @@ function main() {
     }
   }
 
+  const torchwoodEpisodeMap = new Map(torchwoodEpisodes.map((episode) => [episodeToCanonicalId(episode), episode]));
+  for (const [canonicalId, entry] of Object.entries(torchwoodMapping)) {
+    const episode = torchwoodEpisodeMap.get(canonicalId);
+    if (!episode || !episode.streams.length) {
+      failures.push(`${canonicalId}: Torchwood Arabic mapping references an unavailable episode`);
+      continue;
+    }
+    if (!entry || typeof entry !== 'object' || !['original', 'clean-cut'].includes(entry.variant)) {
+      failures.push(`${canonicalId}: invalid Torchwood Arabic mapping entry`);
+      continue;
+    }
+    const filename = getMappedFilename(entry);
+    if (!filename || filename !== path.basename(filename) || !/\.srt$/i.test(filename)) {
+      failures.push(`${canonicalId}: invalid Torchwood Arabic subtitle filename`);
+      continue;
+    }
+    const directory = entry.variant === 'clean-cut' ? TORCHWOOD_AR_CLEAN_DIR : TORCHWOOD_AR_IMPROVED_DIR;
+    const subtitlePath = path.join(directory, filename);
+    if (!fs.existsSync(subtitlePath)) {
+      failures.push(`${canonicalId}: mapped Torchwood Arabic file not found: ${filename}`);
+      continue;
+    }
+    const subtitleText = fs.readFileSync(subtitlePath, 'utf8');
+    if (subtitleText.includes('�') || subtitleText.includes('\uFFFD')) {
+      failures.push(`${canonicalId}: replacement character found in Torchwood Arabic subtitle (${filename})`);
+      continue;
+    }
+    const parsed = validateSrt(subtitleText, `${canonicalId} (${filename})`);
+    failures.push(...parsed.failures);
+  }
+
+  const playableTorchwoodCount = torchwoodEpisodes.filter((episode) => episode.streams.length > 0).length;
+  if (Object.keys(torchwoodMapping).length !== playableTorchwoodCount) {
+    failures.push(`Torchwood Arabic mapping has ${Object.keys(torchwoodMapping).length} episodes; expected ${playableTorchwoodCount}`);
+  }
+
   const result = {
     status: failures.length ? 'failed' : 'ok',
     mappedEpisodes: Object.keys(mapping).length,
+    torchwoodMappedEpisodes: Object.keys(torchwoodMapping).length,
     failures,
     warnings
   };

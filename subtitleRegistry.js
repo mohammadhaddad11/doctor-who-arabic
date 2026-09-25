@@ -7,7 +7,9 @@ const SUBTITLE_ROUTES = Object.freeze({
   arabicAlternative: '/subtitles/ar-alt',
   arabicImproved: '/subtitles/ar-improved',
   movieArabic: '/subtitles/movie-ar',
-  torchwoodCleanEnglish: '/subtitles/torchwood-en-clean'
+  torchwoodCleanEnglish: '/subtitles/torchwood-en-clean',
+  torchwoodArabic: '/subtitles/torchwood-ar-improved',
+  torchwoodCleanArabic: '/subtitles/torchwood-ar-clean'
 });
 
 const TORCHWOOD_CLEAN_ENGLISH_SUBTITLES = Object.freeze({
@@ -17,6 +19,7 @@ const TORCHWOOD_CLEAN_ENGLISH_SUBTITLES = Object.freeze({
   S02E05: 'S02E05.clean.en.srt',
   S02E09: 'S02E09.clean.en.srt',
   S02E11: 'S02E11.clean.v2.en.srt',
+  S02E12: 'S02E12.clean.en.srt',
   S04E03: 'S04E03.clean.en.srt',
   S04E07: 'S04E07.clean.en.srt'
 });
@@ -44,24 +47,38 @@ function createSubtitleRegistry({
   primaryArabicFiles,
   arabicAlternativeIndex,
   arabicImprovedIndex,
+  torchwoodArabicIndex,
   movie
 }) {
   const primaryFiles = new Set(primaryArabicFiles || []);
   const alternativeIndex = arabicAlternativeIndex || {};
   const improvedIndex = arabicImprovedIndex || {};
+  const torchwoodIndex = torchwoodArabicIndex || {};
   const improvedAllowedFiles = new Set(
     Object.values(improvedIndex)
       .map(getArabicImprovedEntryFilename)
       .filter((filename) => Boolean(filename) && filename === path.basename(filename))
   );
   const torchwoodAllowedFiles = new Set(Object.values(TORCHWOOD_CLEAN_ENGLISH_SUBTITLES));
+  const torchwoodArabicAllowedFiles = new Set(
+    Object.values(torchwoodIndex)
+      .filter((entry) => entry?.variant === 'original')
+      .map((entry) => entry.filename)
+  );
+  const torchwoodCleanArabicAllowedFiles = new Set(
+    Object.values(torchwoodIndex)
+      .filter((entry) => entry?.variant === 'clean-cut')
+      .map((entry) => entry.filename)
+  );
   const versionCache = new Map();
   const directories = {
     arabic: path.join(rootDir, 'ar'),
     arabicAlternative: path.join(rootDir, 'ar-alt'),
     arabicImproved: path.join(rootDir, 'ar-improved'),
     movieArabic: path.join(rootDir, 'movie-subtitles'),
-    torchwoodCleanEnglish: path.join(rootDir, 'torchwood-subtitles', 'en-clean')
+    torchwoodCleanEnglish: path.join(rootDir, 'torchwood-subtitles', 'en-clean'),
+    torchwoodArabic: path.join(rootDir, 'torchwood-subtitles', 'ar-improved'),
+    torchwoodCleanArabic: path.join(rootDir, 'torchwood-subtitles', 'ar-clean')
   };
 
   function getContentVersion(filePath) {
@@ -184,6 +201,37 @@ function createSubtitleRegistry({
     }];
   }
 
+  function getTorchwoodArabicSubtitle(episode) {
+    const entry = torchwoodIndex[getEpisodeKey(episode)];
+    if (!entry || !entry.filename || entry.filename !== path.basename(entry.filename)) {
+      return [];
+    }
+    const kind = entry.variant === 'clean-cut'
+      ? 'torchwoodCleanArabic'
+      : entry.variant === 'original' ? 'torchwoodArabic' : null;
+    const allowedFiles = kind === 'torchwoodCleanArabic'
+      ? torchwoodCleanArabicAllowedFiles
+      : torchwoodArabicAllowedFiles;
+    if (!kind || !allowedFiles.has(entry.filename) || !fs.existsSync(path.join(directories[kind], entry.filename))) {
+      return [];
+    }
+    const cleanTitle = entry.variant === 'clean-cut' ? ' (Clean Cut)' : '';
+    return [{
+      id: 'torchwood_ar_improved_sub',
+      url: buildLocalUrl(kind, entry.filename),
+      lang: 'Arabic',
+      title: `Arabic Improved${cleanTitle}`,
+      name: `Arabic Improved${cleanTitle}`
+    }];
+  }
+
+  function getTorchwoodEpisodeSubtitles(episode) {
+    return [
+      ...getTorchwoodCleanSubtitles(episode),
+      ...getTorchwoodArabicSubtitle(episode)
+    ];
+  }
+
   function sendCorsHeaders(res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', '*');
@@ -225,6 +273,8 @@ function createSubtitleRegistry({
     { kind: 'arabicImproved', isAllowed: (filename) => improvedAllowedFiles.has(filename), message: 'Arabic improved subtitle not found' },
     { kind: 'movieArabic', isAllowed: (filename) => filename === movie?.arabicImprovedSubtitle, message: 'Movie subtitle not found' },
     { kind: 'torchwoodCleanEnglish', isAllowed: (filename) => torchwoodAllowedFiles.has(filename), message: 'Torchwood subtitle not found' },
+    { kind: 'torchwoodArabic', isAllowed: (filename) => torchwoodArabicAllowedFiles.has(filename), message: 'Torchwood Arabic subtitle not found' },
+    { kind: 'torchwoodCleanArabic', isAllowed: (filename) => torchwoodCleanArabicAllowedFiles.has(filename), message: 'Torchwood clean Arabic subtitle not found' },
     { kind: 'arabic', isAllowed: (filename) => primaryFiles.has(filename), message: 'Subtitle not found' }
   ];
 
@@ -259,6 +309,11 @@ function createSubtitleRegistry({
     getMovieSubtitles: getMovie1996Subtitles,
     getMovie1996Subtitles,
     getTorchwoodCleanSubtitles,
+    getTorchwoodEpisodeSubtitles,
+    getTorchwoodArabicEpisodeCount: () => Object.keys(torchwoodIndex).filter((canonicalId) => {
+      const episode = { season: Number(canonicalId.slice(1, 3)), episode: Number(canonicalId.slice(4, 6)) };
+      return getTorchwoodArabicSubtitle(episode).length > 0;
+    }).length,
     getArabicAlternativeEpisodeCount: () => Object.keys(alternativeIndex).length,
     getArabicImprovedEpisodeCount: () => Object.entries(improvedIndex).reduce((count, [, value]) => {
       const filename = getArabicImprovedEntryFilename(value);

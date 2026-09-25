@@ -30,6 +30,7 @@ function loadJsonFile(relativePath, fallbackValue) {
 
 const arabicSubtitleAlternatives = loadJsonFile('arabicSubtitleAlternatives.json', {});
 const arabicImprovedSubtitles = loadJsonFile('arabicImprovedSubtitles.json', {});
+const torchwoodArabicSubtitles = loadJsonFile('torchwoodArabicSubtitles.json', {});
 const episodeTags = loadJsonFile('episodeTags.json', {});
 const streamMetadata = loadJsonFile('streamMetadata.json', { episodes: {}, summary: {} });
 const subtitleStatus = loadJsonFile('subtitleStatus.json', { entries: {}, summary: {} });
@@ -163,6 +164,7 @@ const subtitleRegistry = createSubtitleRegistry({
   primaryArabicFiles: arabicSubtitleFiles,
   arabicAlternativeIndex: arabicSubtitleAlternatives,
   arabicImprovedIndex: arabicImprovedSubtitles,
+  torchwoodArabicIndex: torchwoodArabicSubtitles,
   movie: DOCTOR_WHO_MOVIE_1996
 });
 
@@ -1128,6 +1130,7 @@ function renderLibraryPage() {
   const torchwoodPlayableCount = torchwoodEpisodes.filter((episode) => episode.streams.length > 0).length;
   const torchwoodCleanCount = TORCHWOOD_SERIES.notes.cleanCutEpisodeIds.length;
   const torchwoodOriginalCount = torchwoodPlayableCount - torchwoodCleanCount;
+  const torchwoodArabicCount = subtitleRegistry.getTorchwoodArabicEpisodeCount();
   const movieSubtitleAvailable = subtitleRegistry.getMovie1996Subtitles().length > 0;
   const seriesCatalogPath = `/catalog/${CATALOGS.series.type}/${encodeURIComponent(CATALOGS.series.id)}.json`;
   const movieCatalogPath = `/catalog/${CATALOGS.movies.type}/${encodeURIComponent(CATALOGS.movies.id)}.json`;
@@ -1149,7 +1152,7 @@ function renderLibraryPage() {
     renderLibraryContentCard(TORCHWOOD_SERIES, {
       displayName: 'Torchwood',
       countLabel: `${torchwoodPlayableCount}/${torchwoodEpisodes.length} playable`,
-      subtitleSummary: 'Embedded English on original MKVs; external English on clean cuts; Arabic planned later',
+      subtitleSummary: `Embedded English on original MKVs; external English on clean cuts; ${torchwoodArabicCount} Arabic Improved tracks`,
       catalogPath: seriesCatalogPath
     })
   ].join('');
@@ -1206,10 +1209,11 @@ function renderLibraryPage() {
         <div class="stat"><strong>${torchwoodPlayableCount}</strong><span class="small muted">Playable</span></div>
         <div class="stat"><strong>${torchwoodCleanCount}</strong><span class="small muted">Clean Cut</span></div>
         <div class="stat"><strong>${torchwoodOriginalCount}</strong><span class="small muted">Original MKV</span></div>
+        <div class="stat"><strong>${torchwoodArabicCount}</strong><span class="small muted">Arabic Improved</span></div>
       </div>
       <p><strong>Non-playable:</strong> S01E02 only.</p>
       <p class="small muted"><strong>English subtitles:</strong> Original MKVs may contain embedded English subtitles. All clean-cut episodes have external English subtitles.</p>
-      <p class="small muted"><strong>Arabic subtitles:</strong> Planned later, episode by episode; none are currently wired for Torchwood.</p>
+      <p class="small muted"><strong>Arabic subtitles:</strong> Arabic Improved is available for all ${torchwoodArabicCount} playable episodes.</p>
     </section>
 
     <section>
@@ -1539,6 +1543,11 @@ builder.defineSubtitlesHandler(async (args) => {
     return { subtitles: [] };
   }
 
+  const torchwoodEpisode = getTorchwoodEpisodeFromArgs(args.id);
+  if (torchwoodEpisode) {
+    return { subtitles: subtitleRegistry.getTorchwoodEpisodeSubtitles(torchwoodEpisode) };
+  }
+
   const episode = getEpisodeFromArgs(args.id);
   return { subtitles: subtitleRegistry.getDoctorWhoEpisodeSubtitles(episode) };
 });
@@ -1612,6 +1621,7 @@ const server = http.createServer((req, res) => {
       manifest: getManifestUrl(),
       episodes: allNewWhoEpisodes.length,
       arabicSubtitles: subtitleRegistry.primaryArabicCount,
+      torchwoodArabicSubtitles: subtitleRegistry.getTorchwoodArabicEpisodeCount(),
       streams: streamCounts.episodes
     });
     return;
@@ -1629,6 +1639,7 @@ const server = http.createServer((req, res) => {
       arabicPrimaryCount: subtitleRegistry.primaryArabicCount,
       arabicAlternativeCount: arabicAltCount,
       arabicImprovedCount,
+      torchwoodArabicSubtitleCount: subtitleRegistry.getTorchwoodArabicEpisodeCount(),
       episodesMissingArabicAlternatives: subtitleRegistry.primaryArabicCount - arabicAltCount,
       stream1080pCount: streamCounts.stream1080p,
       stream480pCount: streamCounts.stream480p,
@@ -1692,4 +1703,6 @@ server.listen(port, host, () => {
   console.log(`Install URL: ${getManifestUrl()}`);
   console.log(`Arabic subtitles served from: ${PUBLIC_ADDON_BASE_URL}${subtitleRegistry.routes.arabic}/<filename>`);
   console.log(`Torchwood clean English subtitles served from: ${PUBLIC_ADDON_BASE_URL}${subtitleRegistry.routes.torchwoodCleanEnglish}/<filename>`);
+  console.log(`Torchwood Arabic subtitles served from: ${PUBLIC_ADDON_BASE_URL}${subtitleRegistry.routes.torchwoodArabic}/<filename>`);
+  console.log(`Torchwood clean Arabic subtitles served from: ${PUBLIC_ADDON_BASE_URL}${subtitleRegistry.routes.torchwoodCleanArabic}/<filename>`);
 });

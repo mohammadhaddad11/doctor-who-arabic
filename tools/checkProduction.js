@@ -8,6 +8,8 @@ const arDir = path.join(ROOT, 'ar');
 const arAltDir = path.join(ROOT, 'ar-alt');
 const movieSubtitlePath = path.join(ROOT, 'movie-subtitles', 'doctor-who-movie-1996.primary.improved.ar.srt');
 const torchwoodEnglishSubtitleDir = path.join(ROOT, 'torchwood-subtitles', 'en-clean');
+const torchwoodArabicSubtitleDir = path.join(ROOT, 'torchwood-subtitles', 'ar-improved');
+const torchwoodCleanArabicSubtitleDir = path.join(ROOT, 'torchwood-subtitles', 'ar-clean');
 const arabicSubtitles = require('../arabicSubtitles.json');
 const arabicSubtitleAlternatives = require('../arabicSubtitleAlternatives.json');
 const { DEFAULT_EPISODE_GENRES, buildEpisodeTagLine, buildEpisodeTagMetadata, formatEpisodeTagLabel } = require('../episodeTagMetadata');
@@ -25,6 +27,7 @@ const {
 } = require('../torchwoodEpisodeTags');
 const streamMetadata = require('../streamMetadata.json');
 const subtitleStatus = require('../subtitleStatus.json');
+const torchwoodArabicSubtitles = require('../torchwoodArabicSubtitles.json');
 
 const failures = [];
 const warnings = [];
@@ -221,6 +224,70 @@ function checkTorchwoodEnglishSubtitles() {
   }
 }
 
+function checkTorchwoodArabicSubtitles() {
+  const cleanIds = new Set(Object.keys(TORCHWOOD_CLEAN_ENGLISH_SUBTITLES));
+  const playableEpisodes = torchwoodEpisodes.filter((episode) => episode.streams.length > 0);
+  const playableIds = new Set(playableEpisodes.map(episodeToCanonicalId));
+  const mappedIds = Object.keys(torchwoodArabicSubtitles);
+  if (mappedIds.length !== playableEpisodes.length || mappedIds.some((canonicalId) => !playableIds.has(canonicalId))) {
+    fail('Torchwood Arabic mapping must cover exactly the 40 playable episodes');
+  }
+  if (torchwoodArabicSubtitles.S01E02) {
+    fail('Torchwood S01E02 must not have an Arabic subtitle mapping');
+  }
+
+  const registry = createSubtitleRegistry({
+    rootDir: ROOT,
+    publicBaseUrl: 'https://example.com',
+    primaryArabicFiles: arabicSubtitles,
+    arabicAlternativeIndex: arabicSubtitleAlternatives,
+    arabicImprovedIndex: {},
+    torchwoodArabicIndex: torchwoodArabicSubtitles,
+    movie: null
+  });
+
+  for (const episode of playableEpisodes) {
+    const canonicalId = episodeToCanonicalId(episode);
+    const entry = torchwoodArabicSubtitles[canonicalId];
+    if (!entry || entry.filename !== path.basename(entry.filename) || !/\.srt$/i.test(entry.filename)) {
+      fail(`Torchwood ${canonicalId} has an invalid Arabic subtitle mapping`);
+      continue;
+    }
+    const expectedVariant = cleanIds.has(canonicalId) ? 'clean-cut' : 'original';
+    if (entry.variant !== expectedVariant) {
+      fail(`Torchwood ${canonicalId} Arabic subtitle variant does not match its stream`);
+      continue;
+    }
+    const directory = entry.variant === 'clean-cut' ? torchwoodCleanArabicSubtitleDir : torchwoodArabicSubtitleDir;
+    const subtitlePath = path.join(directory, entry.filename);
+    if (!fs.existsSync(subtitlePath)) {
+      fail(`Torchwood ${canonicalId} production Arabic subtitle is missing: ${entry.filename}`);
+      continue;
+    }
+    const text = fs.readFileSync(subtitlePath, 'utf8');
+    const blocks = text.replace(/^\uFEFF/, '').replace(/\r/g, '').trim().split(/\n{2,}/).filter(Boolean);
+    if (!blocks.length || text.includes('\uFFFD') || blocks.some((block, index) => {
+      const lines = block.split('\n');
+      return Number(lines[0]) !== index + 1
+        || !/^\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3}$/.test(lines[1] || '')
+        || !lines.slice(2).some((line) => line.trim());
+    })) {
+      fail(`Torchwood ${canonicalId} production Arabic subtitle is not a valid sequential SRT`);
+    }
+
+    const subtitles = registry.getTorchwoodEpisodeSubtitles(episode);
+    const arabicTracks = subtitles.filter((subtitle) => subtitle.lang === 'Arabic');
+    const expectedRoute = entry.variant === 'clean-cut' ? registry.routes.torchwoodCleanArabic : registry.routes.torchwoodArabic;
+    if (arabicTracks.length !== 1 || !arabicTracks[0].url.startsWith(`https://example.com${expectedRoute}/${entry.filename}?v=`)) {
+      fail(`Torchwood ${canonicalId} does not expose its mapped Arabic subtitle`);
+    }
+    const englishTracks = subtitles.filter((subtitle) => subtitle.lang === 'English');
+    if (englishTracks.length !== (cleanIds.has(canonicalId) ? 1 : 0)) {
+      fail(`Torchwood ${canonicalId} English subtitle mapping changed unexpectedly`);
+    }
+  }
+}
+
 function checkStreamMetadata() {
   const episodes = streamMetadata.episodes || {};
   const episodeEntries = Object.values(episodes);
@@ -318,7 +385,7 @@ function checkContentLibrary() {
 
 function checkTorchwoodData() {
   const expectedArchiveIdentifiers = {
-    clean: 'Torchwood.clean',
+    clean: 'torchwood-clean',
     season1: 'torchwood-1x-08-volver-a-matar-a-suzie-dual-1080p',
     season2: 'torchwood-2x-04-carne-carne-dual-1080p',
     season3: 'torchwood-temporada-3-dual-1080p',
@@ -331,14 +398,15 @@ function checkTorchwoodData() {
     4: ['The New World', 'Rendition', 'Dead of Night', 'Escape to L.A.', 'The Categories of Life', 'The Middle Men', 'Immortal Sins', 'End of the Road', 'The Gathering', 'The Blood Line']
   };
   const cleanFilenames = new Map([
-    ['S01E10', 'S01E10.clean.v2.fade.mp4'],
-    ['S01E13', 'S01E13.clean.mp4'],
-    ['S02E03', 'S02E03.clean.mp4'],
-    ['S02E05', 'S02E05.clean.mp4'],
-    ['S02E09', 'S02E09.clean.mp4'],
-    ['S02E11', 'S02E11.clean.v2.mp4'],
-    ['S04E03', 'S04E03.clean.mp4'],
-    ['S04E07', 'S04E07.clean.mp4']
+    ['S01E10', 'S01E10.clean.final.mp4'],
+    ['S01E13', 'S01E13.clean.final.mp4'],
+    ['S02E03', 'S02E03.clean.final.mp4'],
+    ['S02E05', 'S02E05.clean.final.mp4'],
+    ['S02E09', 'S02E09.clean.final.mp4'],
+    ['S02E11', 'S02E11.clean.final.mp4'],
+    ['S02E12', 'S02E12.clean.final.mp4'],
+    ['S04E03', 'S04E03.clean.final.mp4'],
+    ['S04E07', 'S04E07.clean.final.mp4']
   ]);
   const expectedIds = new Set(
     Object.entries(expectedTitles).flatMap(([season, titles]) => (
@@ -516,7 +584,7 @@ function checkEpisodeTagMetadata() {
 function checkTorchwoodEpisodeTags() {
   const tags = TORCHWOOD_EPISODE_TAGS;
   const episodesById = new Map(torchwoodEpisodes.map((episode) => [episodeToCanonicalId(episode), episode]));
-  const cleanEpisodeIds = new Set(['S01E10', 'S01E13', 'S02E03', 'S02E05', 'S02E09', 'S02E11', 'S04E03', 'S04E07']);
+  const cleanEpisodeIds = new Set(['S01E10', 'S01E13', 'S02E03', 'S02E05', 'S02E09', 'S02E11', 'S02E12', 'S04E03', 'S04E07']);
   const tagIds = Object.keys(tags);
 
   if (tagIds.length !== torchwoodEpisodes.length) {
@@ -616,6 +684,7 @@ function main() {
   checkArabicAlternativeFiles();
   checkMovieSubtitle();
   checkTorchwoodEnglishSubtitles();
+  checkTorchwoodArabicSubtitles();
   checkStreamMetadata();
 
   const result = {
@@ -630,6 +699,7 @@ function main() {
     taggedEpisodes: Object.keys(episodeTags).length,
     torchwoodTaggedEpisodes: Object.keys(TORCHWOOD_EPISODE_TAGS).length,
     torchwoodCleanEnglishSubtitles: Object.keys(TORCHWOOD_CLEAN_ENGLISH_SUBTITLES).length,
+    torchwoodArabicSubtitles: Object.keys(torchwoodArabicSubtitles).length,
     failures,
     warnings
   };

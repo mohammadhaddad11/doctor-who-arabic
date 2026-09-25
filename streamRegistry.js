@@ -105,7 +105,7 @@ function createStreamRegistry({
   }
 
   function buildTorchwoodStreams(episode, tag) {
-    const subtitles = subtitleRegistry.getTorchwoodCleanSubtitles(episode);
+    const subtitles = subtitleRegistry.getTorchwoodEpisodeSubtitles(episode);
     return episode.streams.map((stream) => attachSubtitlesToStream({
       ...stream,
       description: buildTorchwoodStreamDescription(stream, tag)

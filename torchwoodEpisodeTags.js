@@ -38,7 +38,7 @@ const TORCHWOOD_EPISODE_TAGS = Object.freeze({
   S02E09: Object.freeze({ title: 'Something Borrowed', importance: 'optional', cleanStatus: 'clean-cut', contentNote: 'sexual-scene-removed', comment: 'Clean-cut version used for a smoother watch.' }),
   S02E10: Object.freeze({ title: 'From Out of the Rain', importance: 'optional', cleanStatus: 'original', contentNote: 'horror-violence', comment: 'Optional standalone episode.' }),
   S02E11: Object.freeze({ title: 'Adrift', importance: 'important', cleanStatus: 'clean-cut', contentNote: 'sexual-scene-removed', comment: 'Clean-cut version used for a smoother watch.' }),
-  S02E12: Object.freeze({ title: 'Fragments', importance: 'essential', cleanStatus: 'original', contentNote: 'strong-violence', comment: 'Essential team background.' }),
+  S02E12: Object.freeze({ title: 'Fragments', importance: 'essential', cleanStatus: 'clean-cut', contentNote: 'sexual-scene-removed', comment: 'Essential team background; clean-cut version used.' }),
   S02E13: Object.freeze({ title: 'Exit Wounds', importance: 'essential', cleanStatus: 'original', contentNote: 'strong-violence', comment: 'Season finale and main arc episode.' }),
 
   S03E01: Object.freeze({ title: 'Day One', importance: 'essential', cleanStatus: 'original', contentNote: 'horror-violence', comment: 'Begins the season-long main arc.' }),
