@@ -227,8 +227,8 @@ function createSubtitleRegistry({
 
   function getTorchwoodEpisodeSubtitles(episode) {
     return [
-      ...getTorchwoodCleanSubtitles(episode),
-      ...getTorchwoodArabicSubtitle(episode)
+      ...getTorchwoodArabicSubtitle(episode),
+      ...getTorchwoodCleanSubtitles(episode)
     ];
   }
 
