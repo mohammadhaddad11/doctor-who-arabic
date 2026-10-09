@@ -28,6 +28,7 @@ const {
 const streamMetadata = require('../streamMetadata.json');
 const subtitleStatus = require('../subtitleStatus.json');
 const torchwoodArabicSubtitles = require('../torchwoodArabicSubtitles.json');
+const torchwoodOriginalSpeedStreams = require('../torchwoodOriginalSpeedStreams.json');
 
 const failures = [];
 const warnings = [];
@@ -286,7 +287,7 @@ function checkTorchwoodArabicSubtitles() {
       fail(`Torchwood ${canonicalId} must return Arabic as its first subtitle track`);
     }
     const englishTracks = subtitles.filter((subtitle) => subtitle.lang === 'English');
-    if (englishTracks.length !== (cleanIds.has(canonicalId) ? 1 : 0)) {
+    if (englishTracks.length !== (cleanIds.has(canonicalId) || torchwoodOriginalSpeedStreams[canonicalId] ? 1 : 0)) {
       fail(`Torchwood ${canonicalId} English subtitle mapping changed unexpectedly`);
     }
     for (const stream of streams.buildTorchwoodStreams(episode, TORCHWOOD_EPISODE_TAGS[canonicalId])) {
@@ -455,9 +456,14 @@ function checkTorchwoodData() {
       fail(`Torchwood ${canonicalId} does not have a verified IMDb still mapping`);
     }
 
-    const expectedStreamCount = canonicalId === 'S01E02' ? 0 : cleanFilenames.has(canonicalId) ? 2 : 1;
+    const expectedStreamCount = canonicalId === 'S01E02' ? 0 : cleanFilenames.has(canonicalId) || torchwoodOriginalSpeedStreams[canonicalId] ? 2 : 1;
     if (episode.streams.length !== expectedStreamCount) {
       fail(`Torchwood ${canonicalId} has ${episode.streams.length} streams; expected ${expectedStreamCount}`);
+    }
+    const originalSpeed = torchwoodOriginalSpeedStreams[canonicalId];
+    if (originalSpeed && (cleanFilenames.has(canonicalId) || canonicalId === 'S01E02'
+      || decodeURIComponent(episode.streams[0]?.url.split('/').pop() || '').replace(/\.mkv$/, '.mp4') !== originalSpeed.filename)) {
+      fail(`Torchwood ${canonicalId} Speed derivative does not belong to its original HQ source`);
     }
 
     for (const [streamIndex, stream] of episode.streams.entries()) {
@@ -476,7 +482,10 @@ function checkTorchwoodData() {
         || (speedVariant ? !/480p Speed/.test(stream.name || '') : !/1080p/.test(stream.name || ''))
       );
       const invalidOriginalStream = !cleanFilename && (
-        !stream.url.endsWith('.mkv') || !/Original MKV/.test(stream.name || '')
+        streamIndex === 0
+          ? !stream.url.endsWith('.mkv') || !/Original MKV/.test(stream.name || '')
+          : stream.url !== `${expectedPrefix}${encodeURIComponent(torchwoodOriginalSpeedStreams[canonicalId]?.filename || '')}`
+            || !/Original.*480p Speed/.test(stream.name || '')
       );
 
       if (!stream.url.startsWith(expectedPrefix) || invalidCleanStream || invalidOriginalStream || /50fps/i.test(stream.url) || /Arabic/i.test(stream.name || '')) {
@@ -667,7 +676,8 @@ function checkTorchwoodEpisodeTags() {
       const description = buildTorchwoodStreamDescription(stream, tag);
       const resolution = /480p Speed/.test(stream.name || '') ? '480p' : '1080p';
       const expectedPrefix = `[${tag.cleanStatus === 'clean-cut' ? 'Clean Cut' : 'Original'}] [${resolution}] • `;
-      const expectedSource = tag.cleanStatus === 'clean-cut' ? 'Torchwood Clean Cut' : 'Torchwood Original MKV';
+      const expectedSource = tag.cleanStatus === 'clean-cut' ? 'Torchwood Clean Cut'
+        : resolution === '480p' ? 'Torchwood Original' : 'Torchwood Original MKV';
       const streamTags = description.match(/\[[^\]]+\]/g) || [];
       if (!description.startsWith(`${expectedPrefix}${expectedSource} •`)
         || !description.endsWith(stream.description)

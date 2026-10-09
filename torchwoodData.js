@@ -1,4 +1,5 @@
 const episodeImages = require('./torchwoodEpisodeImages');
+const originalSpeedStreams = require('./torchwoodOriginalSpeedStreams.json');
 
 const ARCHIVE_IDENTIFIERS = Object.freeze({
   clean: 'torchwood-clean',
@@ -431,6 +432,15 @@ const episodes = [
 for (const episode of episodes) {
   const episodeId = `S${String(episode.season).padStart(2, '0')}E${String(episode.episode).padStart(2, '0')}`;
   episode.thumbnail = episodeImages[episodeId]?.url || episode.thumbnail;
+  const speed = originalSpeedStreams[episodeId];
+  if (speed) {
+    episode.streams.push({
+      url: buildArchiveUrl(ARCHIVE_IDENTIFIERS[`season${episode.season}`], speed.filename),
+      name: 'Torchwood Original • 480p Speed',
+      description: `Torchwood Original • ${episodeId} • Archive.org • 480p Speed • AAC audio • External English subtitles • ${formatFileSize(speed.bytes)}`,
+      bytes: speed.bytes
+    });
+  }
 }
 
 module.exports = {
