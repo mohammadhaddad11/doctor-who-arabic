@@ -17,7 +17,8 @@ function buildTorchwoodStreamDescription(stream, tag) {
   if (!tag || !stream?.description) {
     return stream?.description;
   }
-  return `[${formatEpisodeTagLabel(tag.cleanStatus)}] [1080p] • ${stream.description}`;
+  const resolution = /480p Speed/.test(stream.name || '') ? '480p' : '1080p';
+  return `[${formatEpisodeTagLabel(tag.cleanStatus)}] [${resolution}] • ${stream.description}`;
 }
 
 function createStreamRegistry({
