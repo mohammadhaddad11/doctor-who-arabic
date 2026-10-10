@@ -26,6 +26,8 @@ const {
   buildTorchwoodEpisodeTagLine
 } = require('../torchwoodEpisodeTags');
 const streamMetadata = require('../streamMetadata.json');
+const doctorWhoStreamOverrides = require('../doctorWhoStreamOverrides.json');
+const arabicImprovedSubtitles = require('../arabicImprovedSubtitles.json');
 const subtitleStatus = require('../subtitleStatus.json');
 const torchwoodArabicSubtitles = require('../torchwoodArabicSubtitles.json');
 const torchwoodOriginalSpeedStreams = require('../torchwoodOriginalSpeedStreams.json');
@@ -325,6 +327,49 @@ function checkStreamMetadata() {
     for (const alt of entry.alternatives || []) {
       if (alt.label === '480p' && !alt.url) {
         fail(`480p alternative missing URL for ${entry.canonicalId || entry.title}`);
+      }
+    }
+  }
+}
+
+function checkDoctorWhoStreamOverrides() {
+  const registry = createSubtitleRegistry({
+    rootDir: ROOT,
+    publicBaseUrl: 'https://example.com',
+    primaryArabicFiles: arabicSubtitles,
+    arabicAlternativeIndex: arabicSubtitleAlternatives,
+    arabicImprovedIndex: arabicImprovedSubtitles,
+    movie: null
+  });
+  for (const episode of episodeData) {
+    const canonicalId = episodeToCanonicalId(episode);
+    const tracks = registry.getDoctorWhoEpisodeSubtitles(episode);
+    if (tracks.some((track) => track.lang === 'Arabic') && tracks[0]?.lang !== 'Arabic') {
+      fail(`Doctor Who ${canonicalId} must return Arabic first when available`);
+    }
+    if (episode.subtitleUrl && !tracks.some((track) => track.lang === 'English' && track.url === episode.subtitleUrl)) {
+      fail(`Doctor Who ${canonicalId} must retain its English subtitle`);
+    }
+  }
+  for (const [canonicalId, override] of Object.entries(doctorWhoStreamOverrides)) {
+    const metadata = streamMetadata.episodes[canonicalId];
+    if (!metadata || !episodeData.some((episode) => episodeToCanonicalId(episode) === canonicalId)) {
+      fail(`Doctor Who stream override references unknown episode ${canonicalId}`);
+      continue;
+    }
+    const sourceFilename = decodeURIComponent(path.basename(new URL(metadata.primary.url).pathname));
+    const expectedPrefix = `https://archive.org/download/${metadata.archiveItem}/`;
+    if (override.primaryUrl && override.primaryUrl !== `${expectedPrefix}${encodeURIComponent(sourceFilename)}`) {
+      fail(`Doctor Who ${canonicalId} primary override must preserve the exact source file`);
+    }
+    const speed = override.speed || (override.speedUrl ? { url: override.speedUrl } : null);
+    if (speed) {
+      const expectedFilename = sourceFilename.replace(/\.mp4$/i, '.ia.mp4');
+      if (speed.url !== `${expectedPrefix}${encodeURIComponent(expectedFilename)}`) {
+        fail(`Doctor Who ${canonicalId} Speed override does not match its exact source derivative`);
+      }
+      if (override.speed && (speed.label !== '480p' || speed.height !== 480 || !speed.sizeBytes)) {
+        fail(`Doctor Who ${canonicalId} new Speed override must include verified resolution and size`);
       }
     }
   }
@@ -709,6 +754,7 @@ function main() {
   checkTorchwoodEnglishSubtitles();
   checkTorchwoodArabicSubtitles();
   checkStreamMetadata();
+  checkDoctorWhoStreamOverrides();
 
   const result = {
     status: failures.length ? 'failed' : 'ok',

@@ -56,7 +56,8 @@ function createStreamRegistry({
   }
 
   function buildStreamLabel(streamEntry) {
-    const prefix = streamEntry.label === '480p' ? '480p Speed' : '1080p Quality';
+    const resolution = Number(streamEntry.height) > 0 ? `${streamEntry.height}p` : streamEntry.label;
+    const prefix = `${resolution} ${streamEntry.label === '480p' ? 'Speed' : 'Quality'}`;
     return streamEntry.sizeLabel ? `${prefix} • ${streamEntry.sizeLabel}` : prefix;
   }
 

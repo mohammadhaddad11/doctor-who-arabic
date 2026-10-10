@@ -30,6 +30,7 @@ function loadJsonFile(relativePath, fallbackValue) {
 
 const arabicSubtitleAlternatives = loadJsonFile('arabicSubtitleAlternatives.json', {});
 const arabicImprovedSubtitles = loadJsonFile('arabicImprovedSubtitles.json', {});
+const doctorWhoStreamOverrides = loadJsonFile('doctorWhoStreamOverrides.json', {});
 const torchwoodArabicSubtitles = loadJsonFile('torchwoodArabicSubtitles.json', {});
 const episodeTags = loadJsonFile('episodeTags.json', {});
 const streamMetadata = loadJsonFile('streamMetadata.json', { episodes: {}, summary: {} });
@@ -352,6 +353,11 @@ function shouldUseDynamicRedirect(episode, streamEntry) {
     return false;
   }
 
+  const verified = doctorWhoStreamOverrides[canonicalId];
+  if (verified && [verified.primaryUrl, verified.speedUrl, verified.speed?.url].includes(streamEntry.url)) {
+    return false;
+  }
+
   return DYNAMIC_REDIRECT_EPISODE_IDS.has(canonicalId) || SLOW_DYNAMIC_REDIRECT_EPISODE_IDS.has(canonicalId);
 }
 
@@ -578,6 +584,10 @@ function getMetadataBackedStreams(episode) {
   }
 
   const canonicalId = getEpisodeKey(episode);
+  const verified = doctorWhoStreamOverrides[canonicalId] || {};
+  const primary = verified.primaryUrl
+    ? { ...metadata.primary, url: verified.primaryUrl }
+    : metadata.primary;
 
   const speedAlternative = (metadata.alternatives || [])
     .filter((entry) => entry.label === '480p')
@@ -589,8 +599,12 @@ function getMetadataBackedStreams(episode) {
       return (a.responseTimeMs || 0) - (b.responseTimeMs || 0);
     })[0];
 
+  if (verified.speed) {
+    return [primary, verified.speed];
+  }
+
   if (speedAlternative) {
-    return [metadata.primary, speedAlternative];
+    return [primary, verified.speedUrl ? { ...speedAlternative, url: verified.speedUrl } : speedAlternative];
   }
 
   if (FORCE_SPEED_480_EPISODE_IDS.has(canonicalId)) {
@@ -610,12 +624,12 @@ function getMetadataBackedStreams(episode) {
       const primaryStartupScore = metadata.primary.startupScore || metadata.primary.responseTimeMs || Infinity;
       const speedStartupScore = backupSpeedAlternative.startupScore || backupSpeedAlternative.responseTimeMs || Infinity;
       if (speedStartupScore < primaryStartupScore) {
-        return [metadata.primary, backupSpeedAlternative];
+        return [primary, backupSpeedAlternative];
       }
     }
   }
 
-  return [metadata.primary];
+  return [primary];
 }
 
 function getTorrentSourceEntriesFromConfig(config) {

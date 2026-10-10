@@ -135,9 +135,6 @@ function createSubtitleRegistry({
       return [];
     }
     const subtitles = [];
-    if (episode.subtitleUrl) {
-      subtitles.push({ id: 'archive_en_sub', url: episode.subtitleUrl, lang: 'English' });
-    }
 
     const improvedFilename = getArabicImprovedFilename(episode);
     const improvedPath = improvedFilename ? path.join(directories.arabicImproved, improvedFilename) : null;
@@ -174,6 +171,9 @@ function createSubtitleRegistry({
         url: buildLocalUrl('arabicAlternative', entry.filename),
         lang: entry.label || `Arabic Alt${index > 0 ? ` ${index + 1}` : ''}`
       })));
+    if (episode.subtitleUrl) {
+      subtitles.push({ id: 'archive_en_sub', url: episode.subtitleUrl, lang: 'English' });
+    }
     return subtitles;
   }
 

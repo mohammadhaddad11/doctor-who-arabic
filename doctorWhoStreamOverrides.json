@@ -1,0 +1,61 @@
+{
+  "S01E01": { "primaryUrl": "https://archive.org/download/nw_S01/E01_rose.mp4" },
+  "S01E03": { "primaryUrl": "https://archive.org/download/nw_S01/E03_the_unquiet_dead.mp4", "speedUrl": "https://archive.org/download/nw_S01/E03_the_unquiet_dead.ia.mp4" },
+  "S01E06": { "speedUrl": "https://archive.org/download/nw_S01/E06_dalek.ia.mp4" },
+  "S01E09": { "primaryUrl": "https://archive.org/download/nw_S01/E09_the_empty_child.mp4", "speedUrl": "https://archive.org/download/nw_S01/E09_the_empty_child.ia.mp4" },
+  "S01E10": { "primaryUrl": "https://archive.org/download/nw_S01/E10_the_doctor_dances.mp4" },
+  "S01E11": { "primaryUrl": "https://archive.org/download/nw_S01/E11_boom_town.mp4" },
+  "S01E12": {
+    "primaryUrl": "https://archive.org/download/nw_S01/E12_bad_wolf.mp4",
+    "speed": { "url": "https://archive.org/download/nw_S01/E12_bad_wolf.ia.mp4", "label": "480p", "role": "alternative", "width": 836, "height": 480, "sizeBytes": 269813498, "healthScore": 99 }
+  },
+  "S01E13": { "primaryUrl": "https://archive.org/download/nw_S01/E13_the_parting_of_the_ways.mp4" },
+  "S01E14": { "primaryUrl": "https://archive.org/download/nw_S01/E14_born_again_minisode.mp4" },
+  "S02E11": { "primaryUrl": "https://archive.org/download/nw_S02/E11_fear_her.mp4" },
+  "S03E14": { "primaryUrl": "https://archive.org/download/nw_S03/E14_last_of_the_time_lords.mp4" },
+  "S04E04": { "primaryUrl": "https://archive.org/download/nw_S04/E04_the_sontaran_stratagem.mp4" },
+  "S04E11": {
+    "primaryUrl": "https://archive.org/download/nw_S04/E11_turn_left.mp4",
+    "speed": { "url": "https://archive.org/download/nw_S04/E11_turn_left.ia.mp4", "label": "480p", "role": "alternative", "width": 836, "height": 480, "sizeBytes": 310185806, "healthScore": 99 }
+  },
+  "S04E18": { "primaryUrl": "https://archive.org/download/nw_S04/E18_dreamland_animated_series.mp4" },
+  "S05E11": { "primaryUrl": "https://archive.org/download/nw_S05/E11_cold_blood.mp4" },
+  "S07E05": { "primaryUrl": "https://archive.org/download/nw_S07/E05_dinosaurs_on_a_spaceship.mp4" },
+  "S07E08": {
+    "primaryUrl": "https://archive.org/download/nw_S07/E08_the_power_of_three.mp4",
+    "speed": { "url": "https://archive.org/download/nw_S07/E08_the_power_of_three.ia.mp4", "label": "480p", "role": "alternative", "width": 854, "height": 480, "sizeBytes": 249931285, "healthScore": 99 }
+  },
+  "S07E09": {
+    "primaryUrl": "https://archive.org/download/nw_S07/E09_the_angels_take_manhattan.mp4",
+    "speed": { "url": "https://archive.org/download/nw_S07/E09_the_angels_take_manhattan.ia.mp4", "label": "480p", "role": "alternative", "width": 854, "height": 480, "sizeBytes": 268778626, "healthScore": 99 }
+  },
+  "S07E14": {
+    "primaryUrl": "https://archive.org/download/nw_S07/E14_the_snowmen_special.mp4",
+    "speed": { "url": "https://archive.org/download/nw_S07/E14_the_snowmen_special.ia.mp4", "label": "480p", "role": "alternative", "width": 854, "height": 480, "sizeBytes": 363554911, "healthScore": 99 }
+  },
+  "S07E16": { "primaryUrl": "https://archive.org/download/nw_S07/E16_the_bells_of_saint_john.mp4" },
+  "S07E17": {
+    "primaryUrl": "https://archive.org/download/nw_S07/E17_the_rings_of_akhaten.mp4",
+    "speed": { "url": "https://archive.org/download/nw_S07/E17_the_rings_of_akhaten.ia.mp4", "label": "480p", "role": "alternative", "width": 854, "height": 480, "sizeBytes": 265157908, "healthScore": 99 }
+  },
+  "S07E18": { "primaryUrl": "https://archive.org/download/nw_S07/E18_rain_gods_minisode.mp4" },
+  "S07E19": {
+    "primaryUrl": "https://archive.org/download/nw_S07/E19_cold_war.mp4",
+    "speed": { "url": "https://archive.org/download/nw_S07/E19_cold_war.ia.mp4", "label": "480p", "role": "alternative", "width": 854, "height": 480, "sizeBytes": 254064956, "healthScore": 99 }
+  },
+  "S07E20": { "primaryUrl": "https://archive.org/download/nw_S07/E20_hide.mp4" },
+  "S07E21": { "primaryUrl": "https://archive.org/download/nw_S07/E21_journey_to_the_centre_of_the_tardis.mp4" },
+  "S07E22": { "primaryUrl": "https://archive.org/download/nw_S07/E22_clara_and_the_tardis_minisode.mp4" },
+  "S07E23": {
+    "primaryUrl": "https://archive.org/download/nw_S07/E23_the_crimson_horror.mp4",
+    "speed": { "url": "https://archive.org/download/nw_S07/E23_the_crimson_horror.ia.mp4", "label": "480p", "role": "alternative", "width": 854, "height": 480, "sizeBytes": 271458245, "healthScore": 99 }
+  },
+  "S07E24": { "primaryUrl": "https://archive.org/download/nw_S07/E24_nightmare_in_silver.mp4" },
+  "S07E27": {
+    "primaryUrl": "https://archive.org/download/nw_S07/E27_the_name_of_the_doctor.mp4",
+    "speed": { "url": "https://archive.org/download/nw_S07/E27_the_name_of_the_doctor.ia.mp4", "label": "480p", "role": "alternative", "width": 854, "height": 480, "sizeBytes": 269906423, "healthScore": 99 }
+  },
+  "S07E30": { "primaryUrl": "https://archive.org/download/nw_S07/E30_the_day_of_the_doctor_special.mp4" },
+  "S07E31": { "primaryUrl": "https://archive.org/download/nw_S07/E31_the_time_of_the_doctor_special.mp4" },
+  "S08E01": { "primaryUrl": "https://archive.org/download/nw_S08/E01_deep_breath_prequel.mp4" }
+}
