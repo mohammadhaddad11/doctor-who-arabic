@@ -1,7 +1,6 @@
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
-const originalSpeedStreams = require('./torchwoodOriginalSpeedStreams.json');
 
 const SUBTITLE_ROUTES = Object.freeze({
   arabic: '/subtitles/ar',
@@ -62,7 +61,11 @@ function createSubtitleRegistry({
       .filter((filename) => Boolean(filename) && filename === path.basename(filename))
   );
   const torchwoodAllowedFiles = new Set(Object.values(TORCHWOOD_CLEAN_ENGLISH_SUBTITLES));
-  const torchwoodOriginalEnglishAllowedFiles = new Set(Object.keys(originalSpeedStreams).map((id) => `${id}.en.srt`));
+  const torchwoodOriginalEnglishAllowedFiles = new Set(
+    Object.entries(torchwoodIndex)
+      .filter(([, entry]) => entry?.variant === 'original')
+      .map(([id]) => `${id}.en.srt`)
+  );
   const torchwoodArabicAllowedFiles = new Set(
     Object.values(torchwoodIndex)
       .filter((entry) => entry?.variant === 'original')

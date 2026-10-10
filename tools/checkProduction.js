@@ -289,7 +289,7 @@ function checkTorchwoodArabicSubtitles() {
       fail(`Torchwood ${canonicalId} must return Arabic as its first subtitle track`);
     }
     const englishTracks = subtitles.filter((subtitle) => subtitle.lang === 'English');
-    if (englishTracks.length !== (cleanIds.has(canonicalId) || torchwoodOriginalSpeedStreams[canonicalId] ? 1 : 0)) {
+    if (englishTracks.length !== 1) {
       fail(`Torchwood ${canonicalId} English subtitle mapping changed unexpectedly`);
     }
     for (const stream of streams.buildTorchwoodStreams(episode, TORCHWOOD_EPISODE_TAGS[canonicalId])) {
