@@ -1,0 +1,72 @@
+{
+  "S01E10": {
+    "archiveItem": "s-01-e-10_202610",
+    "streams": [
+      { "quality": "1080p HQ", "filename": "S01E10.clean.final.mp4", "bytes": 1288702963 },
+      { "quality": "480p Speed", "filename": "S01E10.clean.final.ia.mp4", "bytes": 236179500 }
+    ]
+  },
+  "S01E13": {
+    "archiveItem": "s-01-e-13_202610",
+    "streams": [
+      { "quality": "1080p HQ", "filename": "S01E13.clean.final.mp4", "bytes": 1670853751 },
+      { "quality": "1080p Speed", "filename": "S01E13.clean.stream1080.mp4", "bytes": 676015747 },
+      { "quality": "480p Speed", "filename": "S01E13.clean.final.ia.mp4", "bytes": 270869336 }
+    ]
+  },
+  "S02E03": {
+    "archiveItem": "s-02-e-03_202610",
+    "streams": [
+      { "quality": "1080p HQ", "filename": "S02E03.clean.final.mp4", "bytes": 2566353882 },
+      { "quality": "1080p Speed", "filename": "S02E03.clean.stream1080.mp4", "bytes": 712561605 },
+      { "quality": "480p Speed", "filename": "S02E03.clean.final.ia.mp4", "bytes": 281641088 }
+    ]
+  },
+  "S02E05": {
+    "archiveItem": "s-02-e-05_202610",
+    "streams": [
+      { "quality": "1080p HQ", "filename": "S02E05.clean.final.mp4", "bytes": 1887349638 },
+      { "quality": "1080p Speed", "filename": "S02E05.clean.stream1080.mp4", "bytes": 736603606 },
+      { "quality": "480p Speed", "filename": "S02E05.clean.final.ia.mp4", "bytes": 291580550 }
+    ]
+  },
+  "S02E09": {
+    "archiveItem": "s-02-e-09_202610",
+    "streams": [
+      { "quality": "1080p HQ", "filename": "S02E09.clean.final.mp4", "bytes": 2109956911 },
+      { "quality": "1080p Speed", "filename": "S02E09.clean.stream1080.mp4", "bytes": 687655848 },
+      { "quality": "480p Speed", "filename": "S02E09.clean.final.ia.mp4", "bytes": 272026993 }
+    ]
+  },
+  "S02E11": {
+    "archiveItem": "s-02-e-11_202610",
+    "streams": [
+      { "quality": "1080p HQ", "filename": "S02E11.clean.final.mp4", "bytes": 1701359203 },
+      { "quality": "1080p Speed", "filename": "S02E11.clean.stream1080.mp4", "bytes": 724121738 },
+      { "quality": "480p Speed", "filename": "S02E11.clean.final.ia.mp4", "bytes": 284873052 }
+    ]
+  },
+  "S02E12": {
+    "archiveItem": "s-02-e-12_202610",
+    "streams": [
+      { "quality": "1080p HQ", "filename": "S02E12.clean.final.mp4", "bytes": 2728791508 },
+      { "quality": "1080p Speed", "filename": "S02E12.clean.stream1080.mp4", "bytes": 734250691 },
+      { "quality": "480p Speed", "filename": "S02E12.clean.final.ia.mp4", "bytes": 292744137 }
+    ]
+  },
+  "S04E03": {
+    "archiveItem": "s-04-e-03_202610",
+    "streams": [
+      { "quality": "1080p HQ", "filename": "S04E03.clean.final.mp4", "bytes": 1003251381 },
+      { "quality": "1080p Speed", "filename": "S04E03.clean.stream1080.mp4", "bytes": 717201468 },
+      { "quality": "480p Speed", "filename": "S04E03.clean.final.ia.mp4", "bytes": 289473813 }
+    ]
+  },
+  "S04E07": {
+    "archiveItem": "s-04-e-07_202610",
+    "streams": [
+      { "quality": "1080p HQ", "filename": "S04E07.clean.final.mp4", "bytes": 823707084 },
+      { "quality": "480p Speed", "filename": "S04E07.clean.final.ia.mp4", "bytes": 267730985 }
+    ]
+  }
+}

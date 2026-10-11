@@ -31,6 +31,7 @@ const arabicImprovedSubtitles = require('../arabicImprovedSubtitles.json');
 const subtitleStatus = require('../subtitleStatus.json');
 const torchwoodArabicSubtitles = require('../torchwoodArabicSubtitles.json');
 const torchwoodOriginalSpeedStreams = require('../torchwoodOriginalSpeedStreams.json');
+const torchwoodCleanStreams = require('../torchwoodCleanStreams.json');
 
 const failures = [];
 const warnings = [];
@@ -292,6 +293,10 @@ function checkTorchwoodArabicSubtitles() {
     if (englishTracks.length !== 1) {
       fail(`Torchwood ${canonicalId} English subtitle mapping changed unexpectedly`);
     }
+    if (cleanIds.has(canonicalId) && (subtitles.length !== 2 || subtitles[1]?.lang !== 'English'
+      || !subtitles[1].url.startsWith(`https://example.com${registry.routes.torchwoodCleanEnglish}/${TORCHWOOD_CLEAN_ENGLISH_SUBTITLES[canonicalId]}?v=`))) {
+      fail(`Torchwood ${canonicalId} clean variants must expose only the existing Arabic-first and clean English-second tracks`);
+    }
     for (const stream of streams.buildTorchwoodStreams(episode, TORCHWOOD_EPISODE_TAGS[canonicalId])) {
       if (JSON.stringify(stream.subtitles) !== JSON.stringify(subtitles)) {
         fail(`Torchwood ${canonicalId} stream variants must attach the same Arabic-first subtitle tracks`);
@@ -440,7 +445,6 @@ function checkContentLibrary() {
 
 function checkTorchwoodData() {
   const expectedArchiveIdentifiers = {
-    clean: 'torchwood-clean',
     season1: 'torchwood-1x-08-volver-a-matar-a-suzie-dual-1080p',
     season2: 'torchwood-2x-04-carne-carne-dual-1080p',
     season3: 'torchwood-temporada-3-dual-1080p',
@@ -463,6 +467,41 @@ function checkTorchwoodData() {
     ['S04E03', 'S04E03.clean.final.mp4'],
     ['S04E07', 'S04E07.clean.final.mp4']
   ]);
+  const expectedCleanItems = {
+    S01E10: 's-01-e-10_202610',
+    S01E13: 's-01-e-13_202610',
+    S02E03: 's-02-e-03_202610',
+    S02E05: 's-02-e-05_202610',
+    S02E09: 's-02-e-09_202610',
+    S02E11: 's-02-e-11_202610',
+    S02E12: 's-02-e-12_202610',
+    S04E03: 's-04-e-03_202610',
+    S04E07: 's-04-e-07_202610'
+  };
+  if (Object.keys(torchwoodCleanStreams).length !== cleanFilenames.size
+    || Object.keys(torchwoodCleanStreams).some((id) => !cleanFilenames.has(id))) {
+    fail('Torchwood dedicated clean mapping must cover exactly the nine clean-cut episodes');
+  }
+  for (const [canonicalId, mapping] of Object.entries(torchwoodCleanStreams)) {
+    const entries = mapping.streams || [];
+    const expectedOrder = entries.length === 3
+      ? ['1080p HQ', '1080p Speed', '480p Speed']
+      : ['1080p HQ', '480p Speed'];
+    if (mapping.archiveItem !== expectedCleanItems[canonicalId]
+      || JSON.stringify(entries.map((entry) => entry.quality)) !== JSON.stringify(expectedOrder)) {
+      fail(`Torchwood ${canonicalId} clean stream item or quality order is invalid`);
+    }
+    if (canonicalId === 'S01E10' && entries.length !== 2) {
+      fail('Torchwood S01E10 must expose HQ and 480p Speed only');
+    }
+    for (const entry of entries) {
+      const suffix = entry.quality === '1080p HQ' ? 'clean.final.mp4'
+        : entry.quality === '1080p Speed' ? 'clean.stream1080.mp4' : 'clean.final.ia.mp4';
+      if (entry.filename !== `${canonicalId}.${suffix}` || !Number.isSafeInteger(entry.bytes) || entry.bytes <= 0) {
+        fail(`Torchwood ${canonicalId} clean stream filename or size is invalid`);
+      }
+    }
+  }
   const expectedIds = new Set(
     Object.entries(expectedTitles).flatMap(([season, titles]) => (
       titles.map((title, index) => ({
@@ -501,9 +540,15 @@ function checkTorchwoodData() {
       fail(`Torchwood ${canonicalId} does not have a verified IMDb still mapping`);
     }
 
-    const expectedStreamCount = canonicalId === 'S01E02' ? 0 : cleanFilenames.has(canonicalId) || torchwoodOriginalSpeedStreams[canonicalId] ? 2 : 1;
+    const cleanMapping = torchwoodCleanStreams[canonicalId];
+    const expectedStreamCount = canonicalId === 'S01E02' ? 0
+      : cleanFilenames.has(canonicalId) ? cleanMapping?.streams.length || 0
+        : torchwoodOriginalSpeedStreams[canonicalId] ? 2 : 1;
     if (episode.streams.length !== expectedStreamCount) {
       fail(`Torchwood ${canonicalId} has ${episode.streams.length} streams; expected ${expectedStreamCount}`);
+    }
+    if (new Set(episode.streams.map((stream) => stream.url)).size !== episode.streams.length) {
+      fail(`Torchwood ${canonicalId} has duplicate stream URLs`);
     }
     const originalSpeed = torchwoodOriginalSpeedStreams[canonicalId];
     if (originalSpeed && (cleanFilenames.has(canonicalId) || canonicalId === 'S01E02'
@@ -513,18 +558,17 @@ function checkTorchwoodData() {
 
     for (const [streamIndex, stream] of episode.streams.entries()) {
       const cleanFilename = cleanFilenames.get(canonicalId);
-      const speedVariant = Boolean(cleanFilename) && streamIndex === 1;
-      const expectedFilename = speedVariant ? cleanFilename.replace(/\.mp4$/, '.ia.mp4') : cleanFilename;
+      const cleanEntry = cleanMapping?.streams[streamIndex];
       const expectedIdentifier = cleanFilename
-        ? torchwoodArchiveIdentifiers.clean
+        ? cleanMapping?.archiveItem
         : torchwoodArchiveIdentifiers[`season${episode.season}`];
       const expectedPrefix = `https://archive.org/download/${expectedIdentifier}/`;
       const expectedCleanUrl = cleanFilename
-        ? `${expectedPrefix}${encodeURIComponent(expectedFilename)}`
+        ? `${expectedPrefix}${encodeURIComponent(cleanEntry?.filename || '')}`
         : null;
       const invalidCleanStream = cleanFilename && (
-        stream.url !== expectedCleanUrl || !/Clean Cut/.test(stream.name || '')
-        || (speedVariant ? !/480p Speed/.test(stream.name || '') : !/1080p/.test(stream.name || ''))
+        stream.url !== expectedCleanUrl || stream.name !== `Torchwood Clean Cut • ${cleanEntry?.quality}`
+        || stream.bytes !== cleanEntry?.bytes || stream.url.includes('/torchwood-clean/')
       );
       const invalidOriginalStream = !cleanFilename && (
         streamIndex === 0

@@ -1,8 +1,8 @@
 const episodeImages = require('./torchwoodEpisodeImages');
 const originalSpeedStreams = require('./torchwoodOriginalSpeedStreams.json');
+const cleanStreams = require('./torchwoodCleanStreams.json');
 
 const ARCHIVE_IDENTIFIERS = Object.freeze({
-  clean: 'torchwood-clean',
   season1: 'torchwood-1x-08-volver-a-matar-a-suzie-dual-1080p',
   season2: 'torchwood-2x-04-carne-carne-dual-1080p',
   season3: 'torchwood-temporada-3-dual-1080p',
@@ -36,25 +36,15 @@ function buildOriginalStream(season, episode, filename, bytes) {
   };
 }
 
-function buildCleanStream(season, episode, filename, bytes) {
-  return {
-    url: buildArchiveUrl(ARCHIVE_IDENTIFIERS.clean, filename),
-    name: 'Torchwood Clean Cut • 1080p',
-    description: `Torchwood Clean Cut • S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')} • Archive.org • AAC audio • External English subtitles • ${formatFileSize(bytes)}`,
-    bytes
-  };
-}
-
-function buildCleanStreams(season, episode, filename, bytes, speedFilename, speedBytes) {
-  return [
-    buildCleanStream(season, episode, filename, bytes),
-    {
-      url: buildArchiveUrl(ARCHIVE_IDENTIFIERS.clean, speedFilename),
-      name: 'Torchwood Clean Cut • 480p Speed',
-      description: `Torchwood Clean Cut • S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')} • Archive.org • 480p Speed • AAC audio • External English subtitles • ${formatFileSize(speedBytes)}`,
-      bytes: speedBytes
-    }
-  ];
+function buildCleanStreams(season, episode) {
+  const canonicalId = `S${String(season).padStart(2, '0')}E${String(episode).padStart(2, '0')}`;
+  const mapping = cleanStreams[canonicalId];
+  return mapping.streams.map((stream) => ({
+    url: buildArchiveUrl(mapping.archiveItem, stream.filename),
+    name: `Torchwood Clean Cut • ${stream.quality}`,
+    description: `Torchwood Clean Cut • ${canonicalId} • Archive.org • ${stream.quality} • AAC audio • External English subtitles • ${formatFileSize(stream.bytes)}`,
+    bytes: stream.bytes
+  }));
 }
 
 const episodes = [
@@ -146,7 +136,7 @@ const episodes = [
     released: new Date('2006-12-17').toISOString(),
     overview: 'Three passengers from 1953 arrive in modern Cardiff through the Rift and must confront the painful reality of lives displaced from their own time.',
     thumbnail: POSTER_URL,
-    streams: buildCleanStreams(1, 10, 'S01E10.clean.final.mp4', 1288702963, 'S01E10.clean.final.ia.mp4', 236179990)
+    streams: buildCleanStreams(1, 10)
   },
   {
     title: 'Combat',
@@ -173,7 +163,7 @@ const episodes = [
     released: new Date('2007-01-01').toISOString(),
     overview: 'As the Rift splinters time across the world, the fractured Torchwood team faces visions of the past and a threat that could end everything.',
     thumbnail: POSTER_URL,
-    streams: buildCleanStreams(1, 13, 'S01E13.clean.final.mp4', 1670853751, 'S01E13.clean.final.ia.mp4', 270866899)
+    streams: buildCleanStreams(1, 13)
   },
   {
     title: 'Kiss Kiss, Bang Bang',
@@ -200,7 +190,7 @@ const episodes = [
     released: new Date('2008-01-30').toISOString(),
     overview: 'Toshiko grows close to a soldier displaced from 1918 whose return to his own time is essential to preventing a catastrophe.',
     thumbnail: POSTER_URL,
-    streams: buildCleanStreams(2, 3, 'S02E03.clean.final.mp4', 2566353882, 'S02E03.clean.final.ia.mp4', 281639258)
+    streams: buildCleanStreams(2, 3)
   },
   {
     title: 'Meat',
@@ -218,7 +208,7 @@ const episodes = [
     released: new Date('2008-02-13').toISOString(),
     overview: 'An alien who can manipulate memories infiltrates Torchwood and rewrites the team’s relationships and identities.',
     thumbnail: POSTER_URL,
-    streams: buildCleanStreams(2, 5, 'S02E05.clean.final.mp4', 1887349638, 'S02E05.clean.final.ia.mp4', 291577825)
+    streams: buildCleanStreams(2, 5)
   },
   {
     title: 'Reset',
@@ -254,7 +244,7 @@ const episodes = [
     released: new Date('2008-03-05').toISOString(),
     overview: 'Gwen’s wedding day is disrupted when an alien shapeshifter leaves her carrying an unexpected passenger.',
     thumbnail: POSTER_URL,
-    streams: buildCleanStreams(2, 9, 'S02E09.clean.final.mp4', 2109956911, 'S02E09.clean.final.ia.mp4', 272026655)
+    streams: buildCleanStreams(2, 9)
   },
   {
     title: 'From Out of the Rain',
@@ -272,7 +262,7 @@ const episodes = [
     released: new Date('2008-03-19').toISOString(),
     overview: 'Gwen investigates people who vanished through the Rift and uncovers a secret Jack has tried to keep hidden.',
     thumbnail: POSTER_URL,
-    streams: buildCleanStreams(2, 11, 'S02E11.clean.final.mp4', 1701359203, 'S02E11.clean.final.ia.mp4', 284873558)
+    streams: buildCleanStreams(2, 11)
   },
   {
     title: 'Fragments',
@@ -281,7 +271,7 @@ const episodes = [
     released: new Date('2008-03-21').toISOString(),
     overview: 'After an explosion traps the team, memories reveal how Jack, Toshiko, Ianto, and Owen each joined Torchwood.',
     thumbnail: POSTER_URL,
-    streams: buildCleanStreams(2, 12, 'S02E12.clean.final.mp4', 2728791508, 'S02E12.clean.final.ia.mp4', 292743683)
+    streams: buildCleanStreams(2, 12)
   },
   {
     title: 'Exit Wounds',
@@ -362,7 +352,7 @@ const episodes = [
     released: new Date('2011-07-22').toISOString(),
     overview: 'Torchwood raids PhiCorp while Jack confronts Oswald Danes and the team begins to uncover the machinery behind the Miracle.',
     thumbnail: POSTER_URL,
-    streams: buildCleanStreams(4, 3, 'S04E03.clean.final.mp4', 1003251381, 'S04E03.clean.final.ia.mp4', 289472365)
+    streams: buildCleanStreams(4, 3)
   },
   {
     title: 'Escape to L.A.',
@@ -398,7 +388,7 @@ const episodes = [
     released: new Date('2011-08-19').toISOString(),
     overview: 'Gwen forces Jack to reveal how a relationship from his past became entwined with the origins of the Miracle.',
     thumbnail: POSTER_URL,
-    streams: buildCleanStreams(4, 7, 'S04E07.clean.final.mp4', 823707084, 'S04E07.clean.final.ia.mp4', 267732330)
+    streams: buildCleanStreams(4, 7)
   },
   {
     title: 'End of the Road',
