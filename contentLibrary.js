@@ -24,10 +24,16 @@ const CATALOGS = Object.freeze({
 const DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE = 'doctor-who-movie-1996.primary.improved.ar.srt';
 const DOCTOR_WHO_MOVIE_1996_STREAMS = Object.freeze([
   Object.freeze({
-    url: 'https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/Doctor%20Who%20The%20Movie%201996%201080p%20BluRay%20HDR10%20FLAC%202%200%20x265-GeneMige.mkv',
-    name: 'Whoniverse Arabic • 1080p • Primary',
+    url: 'https://archive.org/download/1996-movie/1996%20movie.mkv',
+    name: 'Doctor Who 1996 • HQ',
     description: 'Doctor Who (1996) • MKV • HEVC Main 10 HDR • 5.10 GB',
     bytes: 5104562536
+  }),
+  Object.freeze({
+    url: 'https://archive.org/download/1996-movie/1996%20movie.mp4',
+    name: 'Doctor Who 1996 • Speed',
+    description: 'Doctor Who (1996) • 480p Speed • MP4 • H.264 + AAC • 540 MB',
+    bytes: 540314043
   })
 ]);
 

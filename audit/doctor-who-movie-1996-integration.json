@@ -1,0 +1,805 @@
+{
+  "generatedAt": "2026-10-11T08:34:40.447Z",
+  "archiveItem": "1996-movie",
+  "candidates": [
+    {
+      "filename": "1996 movie.mkv",
+      "fileMetadata": {
+        "name": "1996 movie.mkv",
+        "source": "original",
+        "mtime": "1791691040",
+        "size": "5104562536",
+        "md5": "f78b5d420f4188fe41afee3b2cb1c855",
+        "crc32": "b269489c",
+        "sha1": "f420027997e2b291c46fefd54926efc9c983779b",
+        "format": "Matroska",
+        "length": "5408.82",
+        "width": "1440",
+        "height": "1080"
+      },
+      "url": "https://archive.org/download/1996-movie/1996%20movie.mkv",
+      "head": {
+        "url": "https://archive.org/download/1996-movie/1996%20movie.mkv",
+        "rangeStart": 0,
+        "method": "HEAD",
+        "ttfbSeconds": 1.2926,
+        "status": 200,
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mkv"
+          }
+        ],
+        "finalUrl": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mkv",
+        "host": "ia803201.us.archive.org",
+        "headers": {
+          "Server": "nginx/1.31.3",
+          "Content-Type": "application/octet-stream",
+          "Content-Length": "5104562536",
+          "Cache-Control": "max-age=21600",
+          "Accept-Ranges": "bytes"
+        }
+      },
+      "samples": [
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mkv",
+          "rangeStart": 0,
+          "method": "GET",
+          "ttfbSeconds": 1.4585,
+          "totalSeconds": 3.7369,
+          "sampleBytes": 4194304,
+          "throughputMbps": 14.7271,
+          "endToEndMbps": 8.9793,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mkv"
+            }
+          ],
+          "finalUrl": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mkv",
+          "host": "ia803201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "application/octet-stream",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 0-4194303/5104562536"
+          },
+          "trial": 1
+        },
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mkv",
+          "rangeStart": 157286400,
+          "method": "GET",
+          "ttfbSeconds": 1.5767,
+          "totalSeconds": 3.2319,
+          "sampleBytes": 4194304,
+          "throughputMbps": 20.2723,
+          "endToEndMbps": 10.3823,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia903201.us.archive.org/28/items/1996-movie/1996%20movie.mkv"
+            }
+          ],
+          "finalUrl": "https://ia903201.us.archive.org/28/items/1996-movie/1996%20movie.mkv",
+          "host": "ia903201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "application/octet-stream",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 157286400-161480703/5104562536"
+          },
+          "trial": 1
+        },
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mkv",
+          "rangeStart": 0,
+          "method": "GET",
+          "ttfbSeconds": 1.4811,
+          "totalSeconds": 7.1343,
+          "sampleBytes": 4194304,
+          "throughputMbps": 5.9354,
+          "endToEndMbps": 4.7032,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mkv"
+            }
+          ],
+          "finalUrl": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mkv",
+          "host": "ia803201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "application/octet-stream",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 0-4194303/5104562536"
+          },
+          "trial": 2
+        },
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mkv",
+          "rangeStart": 157286400,
+          "method": "GET",
+          "ttfbSeconds": 1.5056,
+          "totalSeconds": 2.9516,
+          "sampleBytes": 4194304,
+          "throughputMbps": 23.2053,
+          "endToEndMbps": 11.3684,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mkv"
+            }
+          ],
+          "finalUrl": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mkv",
+          "host": "ia803201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "application/octet-stream",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 157286400-161480703/5104562536"
+          },
+          "trial": 2
+        },
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mkv",
+          "rangeStart": 0,
+          "method": "GET",
+          "ttfbSeconds": 1.5729,
+          "totalSeconds": 3.0184,
+          "sampleBytes": 4194304,
+          "throughputMbps": 23.2137,
+          "endToEndMbps": 11.1166,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia903201.us.archive.org/28/items/1996-movie/1996%20movie.mkv"
+            }
+          ],
+          "finalUrl": "https://ia903201.us.archive.org/28/items/1996-movie/1996%20movie.mkv",
+          "host": "ia903201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "application/octet-stream",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 0-4194303/5104562536"
+          },
+          "trial": 3
+        },
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mkv",
+          "rangeStart": 157286400,
+          "method": "GET",
+          "ttfbSeconds": 1.4475,
+          "totalSeconds": 2.8805,
+          "sampleBytes": 4194304,
+          "throughputMbps": 23.4155,
+          "endToEndMbps": 11.6489,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mkv"
+            }
+          ],
+          "finalUrl": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mkv",
+          "host": "ia803201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "application/octet-stream",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 157286400-161480703/5104562536"
+          },
+          "trial": 3
+        }
+      ],
+      "media": {
+        "data": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "hevc",
+              "profile": "Main 10",
+              "codec_type": "video",
+              "width": 1920,
+              "height": 1080,
+              "sample_aspect_ratio": "3:4",
+              "display_aspect_ratio": "4:3",
+              "pix_fmt": "yuv420p10le",
+              "r_frame_rate": "24000/1001",
+              "avg_frame_rate": "24000/1001",
+              "start_time": "0.000000",
+              "side_data_list": [
+                {},
+                {}
+              ]
+            },
+            {
+              "index": 1,
+              "codec_name": "subrip",
+              "codec_type": "subtitle",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "start_time": "0.000000",
+              "duration": "5408.820000",
+              "tags": {
+                "language": "eng"
+              }
+            },
+            {
+              "index": 2,
+              "codec_name": "hdmv_pgs_subtitle",
+              "codec_type": "subtitle",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "start_time": "0.000000",
+              "duration": "5408.820000",
+              "tags": {
+                "language": "eng"
+              }
+            },
+            {
+              "index": 3,
+              "codec_name": "subrip",
+              "codec_type": "subtitle",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "start_time": "0.000000",
+              "duration": "5408.820000",
+              "tags": {
+                "language": "eng"
+              }
+            },
+            {
+              "index": 4,
+              "codec_name": "flac",
+              "codec_type": "audio",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "start_time": "0.000000",
+              "tags": {
+                "language": "eng"
+              }
+            },
+            {
+              "index": 5,
+              "codec_name": "eac3",
+              "codec_type": "audio",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "start_time": "0.000000",
+              "bit_rate": "640000",
+              "tags": {
+                "language": "eng"
+              }
+            }
+          ],
+          "format": {
+            "format_name": "matroska,webm",
+            "start_time": "0.000000",
+            "duration": "5408.820000"
+          }
+        },
+        "atoms": [],
+        "success": true
+      },
+      "performance": {
+        "samples": 6,
+        "requiredMbps": 7.5499832288743205,
+        "medianMbps": 21.7388,
+        "minimumMbps": 5.9354,
+        "maximumMbps": 23.4155,
+        "medianTtfbSeconds": 1.49335,
+        "medianTotalSeconds": 3.12515,
+        "medianEndToEndMbps": 10.74945,
+        "headroom": 2.879317654224934,
+        "classification": "GOOD"
+      }
+    },
+    {
+      "filename": "1996 movie.mp4",
+      "fileMetadata": {
+        "name": "1996 movie.mp4",
+        "source": "derivative",
+        "format": "h.264",
+        "original": "1996 movie.mkv",
+        "mtime": "1791699465",
+        "size": "540314043",
+        "md5": "354684f2776e831228727628d56998b6",
+        "crc32": "56a74409",
+        "sha1": "730193be013a6c24641ce087371880b0db6d7731",
+        "length": "5408.84",
+        "width": "640",
+        "height": "480"
+      },
+      "url": "https://archive.org/download/1996-movie/1996%20movie.mp4",
+      "head": {
+        "url": "https://archive.org/download/1996-movie/1996%20movie.mp4",
+        "rangeStart": 0,
+        "method": "HEAD",
+        "ttfbSeconds": 1.2937,
+        "status": 200,
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mp4"
+          }
+        ],
+        "finalUrl": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mp4",
+        "host": "ia803201.us.archive.org",
+        "headers": {
+          "Server": "nginx/1.31.3",
+          "Content-Type": "video/mp4",
+          "Content-Length": "540314043",
+          "Cache-Control": "max-age=21600",
+          "Accept-Ranges": "bytes"
+        }
+      },
+      "samples": [
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mp4",
+          "rangeStart": 0,
+          "method": "GET",
+          "ttfbSeconds": 1.436,
+          "totalSeconds": 4.2717,
+          "sampleBytes": 4194304,
+          "throughputMbps": 11.8329,
+          "endToEndMbps": 7.8551,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mp4"
+            }
+          ],
+          "finalUrl": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mp4",
+          "host": "ia803201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "video/mp4",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 0-4194303/540314043"
+          },
+          "trial": 1
+        },
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mp4",
+          "rangeStart": 157286400,
+          "method": "GET",
+          "ttfbSeconds": 1.4534,
+          "totalSeconds": 2.901,
+          "sampleBytes": 4194304,
+          "throughputMbps": 23.1781,
+          "endToEndMbps": 11.5663,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia903201.us.archive.org/28/items/1996-movie/1996%20movie.mp4"
+            }
+          ],
+          "finalUrl": "https://ia903201.us.archive.org/28/items/1996-movie/1996%20movie.mp4",
+          "host": "ia903201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "video/mp4",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 157286400-161480703/540314043"
+          },
+          "trial": 1
+        },
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mp4",
+          "rangeStart": 0,
+          "method": "GET",
+          "ttfbSeconds": 1.4751,
+          "totalSeconds": 14.5355,
+          "sampleBytes": 4194304,
+          "throughputMbps": 2.5692,
+          "endToEndMbps": 2.3084,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mp4"
+            }
+          ],
+          "finalUrl": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mp4",
+          "host": "ia803201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "video/mp4",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 0-4194303/540314043"
+          },
+          "trial": 2
+        },
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mp4",
+          "rangeStart": 157286400,
+          "method": "GET",
+          "ttfbSeconds": 1.4694,
+          "totalSeconds": 3.2934,
+          "sampleBytes": 4194304,
+          "throughputMbps": 18.3956,
+          "endToEndMbps": 10.1883,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mp4"
+            }
+          ],
+          "finalUrl": "https://ia803201.us.archive.org/28/items/1996-movie/1996%20movie.mp4",
+          "host": "ia803201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "video/mp4",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 157286400-161480703/540314043"
+          },
+          "trial": 2
+        },
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mp4",
+          "rangeStart": 0,
+          "method": "GET",
+          "ttfbSeconds": 1.4726,
+          "totalSeconds": 2.9371,
+          "sampleBytes": 4194304,
+          "throughputMbps": 22.9125,
+          "endToEndMbps": 11.4244,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia903201.us.archive.org/28/items/1996-movie/1996%20movie.mp4"
+            }
+          ],
+          "finalUrl": "https://ia903201.us.archive.org/28/items/1996-movie/1996%20movie.mp4",
+          "host": "ia903201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "video/mp4",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 0-4194303/540314043"
+          },
+          "trial": 3
+        },
+        {
+          "url": "https://archive.org/download/1996-movie/1996%20movie.mp4",
+          "rangeStart": 157286400,
+          "method": "GET",
+          "ttfbSeconds": 1.4702,
+          "totalSeconds": 5.3292,
+          "sampleBytes": 4194304,
+          "throughputMbps": 8.6952,
+          "endToEndMbps": 6.2964,
+          "rangeWorks": true,
+          "status": 206,
+          "redirects": [
+            {
+              "status": 302,
+              "url": "https://ia903201.us.archive.org/28/items/1996-movie/1996%20movie.mp4"
+            }
+          ],
+          "finalUrl": "https://ia903201.us.archive.org/28/items/1996-movie/1996%20movie.mp4",
+          "host": "ia903201.us.archive.org",
+          "headers": {
+            "Server": "nginx/1.31.3",
+            "Content-Type": "video/mp4",
+            "Content-Length": "4194304",
+            "Cache-Control": "max-age=21600",
+            "Content-Range": "bytes 157286400-161480703/540314043"
+          },
+          "trial": 3
+        }
+      ],
+      "media": {
+        "data": {
+          "programs": [],
+          "stream_groups": [],
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_type": "video",
+              "width": 640,
+              "height": 480,
+              "sample_aspect_ratio": "1:1",
+              "display_aspect_ratio": "4:3",
+              "r_frame_rate": "1199/50",
+              "avg_frame_rate": "1199/50",
+              "start_time": "0.000000",
+              "duration": "5408.840701",
+              "bit_rate": "696528",
+              "tags": {
+                "language": "und"
+              },
+              "side_data_list": [
+                {},
+                {}
+              ]
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_type": "audio",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "start_time": "0.000000",
+              "duration": "5394.981000",
+              "bit_rate": "96745",
+              "tags": {
+                "language": "und"
+              }
+            }
+          ],
+          "format": {
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "start_time": "0.000000",
+            "duration": "5408.840701"
+          }
+        },
+        "atoms": [
+          {
+            "type": "ftyp",
+            "offset": 0,
+            "size": 32
+          },
+          {
+            "type": "moov",
+            "offset": 32,
+            "size": 4144386
+          },
+          {
+            "type": "free",
+            "offset": 4144418,
+            "size": 8
+          },
+          {
+            "type": "mdat",
+            "offset": 4144426,
+            "size": 536169617
+          }
+        ],
+        "success": true
+      },
+      "performance": {
+        "samples": 6,
+        "requiredMbps": 0.7991568957098039,
+        "medianMbps": 15.114250000000002,
+        "minimumMbps": 2.5692,
+        "maximumMbps": 23.1781,
+        "medianTtfbSeconds": 1.4698,
+        "medianTotalSeconds": 3.78255,
+        "medianEndToEndMbps": 9.0217,
+        "headroom": 18.912744269791556,
+        "classification": "EXCELLENT"
+      }
+    }
+  ],
+  "oldMovieMapping": {
+    "id": "doctor-who-movie-1996",
+    "type": "movie",
+    "name": "Doctor Who: The Movie 1996",
+    "poster": "http://127.0.0.1:7000/assets/movie.jpg",
+    "background": "http://127.0.0.1:7000/assets/movie.jpg",
+    "catalogDescription": "The Doctor Who television movie starring Paul McGann as the Eighth Doctor.",
+    "description": "The Doctor Who television movie starring Paul McGann as the Eighth Doctor.",
+    "releaseInfo": "1996",
+    "genres": [
+      "Sci-Fi",
+      "Adventure",
+      "Drama"
+    ],
+    "streams": [
+      {
+        "url": "https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/Doctor%20Who%20The%20Movie%201996%201080p%20BluRay%20HDR10%20FLAC%202%200%20x265-GeneMige.mkv",
+        "name": "Whoniverse Arabic • 1080p • Primary",
+        "description": "Doctor Who (1996) • MKV • HEVC Main 10 HDR • 5.10 GB",
+        "bytes": 5104562536
+      }
+    ],
+    "arabicImprovedSubtitle": "doctor-who-movie-1996.primary.improved.ar.srt"
+  },
+  "oldHead": {
+    "url": "https://archive.org/download/doctor-who-the-movie-1996-1080p-blu-ray-hdr-10-flac-2-0-x-265-gene-mige/Doctor%20Who%20The%20Movie%201996%201080p%20BluRay%20HDR10%20FLAC%202%200%20x265-GeneMige.mkv",
+    "rangeStart": 0,
+    "method": "HEAD",
+    "status": 403,
+    "error": "HTTP Error 403: Forbidden",
+    "seconds": 0.7352,
+    "redirects": []
+  },
+  "timelineVerification": {
+    "classification": "YES",
+    "method": "Lightweight verification after user steering; existing bounded observations reused; no further correlations or repeated decoding",
+    "oldSourceChecksumsAvailable": false,
+    "oldIntendedSizeMatchesNewHq": true,
+    "hq": {
+      "containerDurationSeconds": 5408.82,
+      "videoEndSecondsFromBoundedEndingPacket": 5408.819708,
+      "audioDurationSecondsFromFlacHeader": 5394.976,
+      "videoStartSeconds": 0,
+      "audioStartSeconds": 0,
+      "fps": "24000/1001"
+    },
+    "speed": {
+      "videoDurationSeconds": 5408.840701,
+      "containerDurationSeconds": 5408.840701,
+      "audioDurationSeconds": 5394.981,
+      "videoStartSeconds": 0,
+      "audioStartSeconds": 0,
+      "fps": "1199/50",
+      "explicitOriginalReference": "1996 movie.mkv"
+    },
+    "durationInterpretation": "About 21 ms overall duration rounding and 5 ms audio difference; rounded 23.98 fps derivative maintains the same wall-clock timeline. HQ audio also ends before final video credits, so the shorter AAC audio duration is not missing movie audio.",
+    "shortSamples": [
+      {
+        "position": "beginning",
+        "targetSeconds": 3.508,
+        "hqFrameSeconds": 3.504,
+        "speedFrameSeconds": 3.502919,
+        "result": "Matching opening event; no meaningful shift"
+      },
+      {
+        "position": "middle",
+        "targetSeconds": 2703.998,
+        "hqFrameSeconds": 2703.993,
+        "speedFrameSeconds": 2704.003336,
+        "result": "Matching middle event; no meaningful shift"
+      },
+      {
+        "position": "ending dialogue",
+        "targetSeconds": 5343.593,
+        "hqFrameSeconds": 5343.588,
+        "speedFrameSeconds": 5343.577982,
+        "result": "Matching closing event; no meaningful shift"
+      }
+    ],
+    "subtitleDialogueAnchors": [
+      {
+        "arabicCue": 1,
+        "arabicSeconds": 3.508,
+        "embeddedEnglishSeconds": 3.503,
+        "english": "It was on Skaro that my old enemy, the Master,",
+        "maximumOffsetMs": 5
+      },
+      {
+        "arabicCue": 402,
+        "arabicSeconds": 2703.998,
+        "embeddedEnglishSeconds": 2703.993,
+        "english": "Everything gets its power from here.",
+        "maximumOffsetMs": 5
+      }
+    ],
+    "subtitleRetimingRequired": false
+  },
+  "finalMovieMapping": {
+    "id": "doctor-who-movie-1996",
+    "type": "movie",
+    "name": "Doctor Who: The Movie 1996",
+    "poster": "http://127.0.0.1:7000/assets/movie.jpg",
+    "background": "http://127.0.0.1:7000/assets/movie.jpg",
+    "catalogDescription": "The Doctor Who television movie starring Paul McGann as the Eighth Doctor.",
+    "description": "The Doctor Who television movie starring Paul McGann as the Eighth Doctor.",
+    "releaseInfo": "1996",
+    "genres": [
+      "Sci-Fi",
+      "Adventure",
+      "Drama"
+    ],
+    "streams": [
+      {
+        "url": "https://archive.org/download/1996-movie/1996%20movie.mkv",
+        "name": "Doctor Who 1996 • HQ",
+        "description": "Doctor Who (1996) • MKV • HEVC Main 10 HDR • 5.10 GB",
+        "bytes": 5104562536
+      },
+      {
+        "url": "https://archive.org/download/1996-movie/1996%20movie.mp4",
+        "name": "Doctor Who 1996 • Speed",
+        "description": "Doctor Who (1996) • 480p Speed • MP4 • H.264 + AAC • 540 MB",
+        "bytes": 540314043
+      }
+    ],
+    "arabicImprovedSubtitle": "doctor-who-movie-1996.primary.improved.ar.srt"
+  },
+  "actualAddonResponse": {
+    "metaId": "doctor-who-movie-1996",
+    "streams": [
+      {
+        "url": "https://archive.org/download/1996-movie/1996%20movie.mkv",
+        "name": "Doctor Who 1996 • HQ",
+        "description": "Doctor Who (1996) • MKV • HEVC Main 10 HDR • 5.10 GB",
+        "bytes": 5104562536,
+        "subtitles": [
+          {
+            "id": "movie_ar_improved_sub",
+            "url": "http://127.0.0.1:17081/subtitles/movie-ar/doctor-who-movie-1996.primary.improved.ar.srt?v=226709e0df2e",
+            "lang": "Arabic",
+            "title": "Arabic Improved (عربي)",
+            "name": "Arabic Improved (عربي)"
+          }
+        ]
+      },
+      {
+        "url": "https://archive.org/download/1996-movie/1996%20movie.mp4",
+        "name": "Doctor Who 1996 • Speed",
+        "description": "Doctor Who (1996) • 480p Speed • MP4 • H.264 + AAC • 540 MB",
+        "bytes": 540314043,
+        "subtitles": [
+          {
+            "id": "movie_ar_improved_sub",
+            "url": "http://127.0.0.1:17081/subtitles/movie-ar/doctor-who-movie-1996.primary.improved.ar.srt?v=226709e0df2e",
+            "lang": "Arabic",
+            "title": "Arabic Improved (عربي)",
+            "name": "Arabic Improved (عربي)"
+          }
+        ]
+      }
+    ],
+    "subtitles": [
+      {
+        "id": "movie_ar_improved_sub",
+        "url": "http://127.0.0.1:17081/subtitles/movie-ar/doctor-who-movie-1996.primary.improved.ar.srt?v=226709e0df2e",
+        "lang": "Arabic",
+        "title": "Arabic Improved (عربي)",
+        "name": "Arabic Improved (عربي)"
+      }
+    ]
+  },
+  "validation": {
+    "npmRunCheck": "passed",
+    "gitDiffCheck": "passed",
+    "actualMovieResponsePassed": true,
+    "arabicFirst": true,
+    "externalEnglishPreviouslyMapped": false,
+    "externalEnglishSecond": "Not applicable; existing external mapping is Arabic only",
+    "hqEmbeddedEnglishPreserved": true,
+    "movieSubtitleContentVersionUnchanged": true,
+    "doctorWhoEpisodesUnchanged": true,
+    "torchwoodUnchanged": true
+  },
+  "limitations": [
+    "Bounded performance measurements from one network location; HQ has one sample below average bitrate, so Speed remains useful.",
+    "Old dark item exposes no checksums; HQ compatibility is established by exact intended size, matching media profile and existing subtitle-time evidence, not a claimed old/new checksum identity.",
+    "No full downloads, full decodes, frame counts, local whole-video hashes, subtitle edits or automatic commit/push."
+  ]
+}

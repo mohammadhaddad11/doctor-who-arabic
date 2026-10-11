@@ -417,8 +417,35 @@ function checkContentLibrary() {
   if (torchwood?.episodes !== torchwoodEpisodes || torchwood?.sourceModule !== 'torchwoodData.js') {
     fail('Content library Torchwood entry is detached from torchwoodData.js');
   }
-  if (movie?.streams.length !== 1 || movie?.arabicImprovedSubtitle !== 'doctor-who-movie-1996.primary.improved.ar.srt') {
+  if (movie?.streams.length !== 2 || movie?.arabicImprovedSubtitle !== 'doctor-who-movie-1996.primary.improved.ar.srt') {
     fail('Content library Doctor Who 1996 movie references are invalid');
+  }
+  const expectedMovieStreams = [
+    { url: 'https://archive.org/download/1996-movie/1996%20movie.mkv', name: 'Doctor Who 1996 • HQ', bytes: 5104562536 },
+    { url: 'https://archive.org/download/1996-movie/1996%20movie.mp4', name: 'Doctor Who 1996 • Speed', bytes: 540314043 }
+  ];
+  for (const [index, expected] of expectedMovieStreams.entries()) {
+    const stream = movie?.streams[index];
+    if (!stream || stream.url !== expected.url || stream.name !== expected.name || stream.bytes !== expected.bytes) {
+      fail(`Doctor Who 1996 movie stream ${index + 1} must use the verified canonical HQ/Speed source in order`);
+    }
+  }
+  if (new Set((movie?.streams || []).map((stream) => stream.url)).size !== movie?.streams.length) {
+    fail('Doctor Who 1996 movie must not expose duplicate streams');
+  }
+  const movieSubtitleRegistry = createSubtitleRegistry({ rootDir: ROOT, publicBaseUrl: 'https://example.com', movie });
+  const movieTracks = movieSubtitleRegistry.getMovie1996Subtitles();
+  if (movieTracks[0]?.lang !== 'Arabic'
+    || !movieTracks[0].url.startsWith('https://example.com/subtitles/movie-ar/doctor-who-movie-1996.primary.improved.ar.srt?v=')) {
+    fail('Doctor Who 1996 movie must expose its existing Arabic subtitle first');
+  }
+  if (movieTracks.some((track) => track.lang === 'English') && movieTracks[1]?.lang !== 'English') {
+    fail('Doctor Who 1996 movie English subtitles must follow Arabic when available');
+  }
+  for (const stream of createStreamRegistry({ subtitleRegistry: movieSubtitleRegistry }).buildMovieStreams(movie)) {
+    if (JSON.stringify(stream.subtitles) !== JSON.stringify(movieTracks)) {
+      fail('Doctor Who 1996 HQ and Speed streams must share identical movie subtitle tracks');
+    }
   }
 
   const ids = allEntries.map((entry) => entry.id);
