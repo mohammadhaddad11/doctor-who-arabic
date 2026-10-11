@@ -25,13 +25,19 @@ const DOCTOR_WHO_MOVIE_1996_ARABIC_SUBTITLE = 'doctor-who-movie-1996.primary.imp
 const DOCTOR_WHO_MOVIE_1996_STREAMS = Object.freeze([
   Object.freeze({
     url: 'https://archive.org/download/1996-movie/1996%20movie.mkv',
-    name: 'Doctor Who 1996 • HQ',
+    name: 'Doctor Who 1996 • 1080p HQ',
     description: 'Doctor Who (1996) • MKV • HEVC Main 10 HDR • 5.10 GB',
     bytes: 5104562536
   }),
   Object.freeze({
+    url: 'https://archive.org/download/1996-movie/1996%20movie.stream1080.mp4',
+    name: 'Doctor Who 1996 • 1080p Speed',
+    description: 'Doctor Who (1996) • 1080p Speed • MP4 • HEVC Main (8-bit PQ) + AAC • 3.48 GB',
+    bytes: 3479628846
+  }),
+  Object.freeze({
     url: 'https://archive.org/download/1996-movie/1996%20movie.mp4',
-    name: 'Doctor Who 1996 • Speed',
+    name: 'Doctor Who 1996 • 480p Speed',
     description: 'Doctor Who (1996) • 480p Speed • MP4 • H.264 + AAC • 540 MB',
     bytes: 540314043
   })

@@ -417,17 +417,18 @@ function checkContentLibrary() {
   if (torchwood?.episodes !== torchwoodEpisodes || torchwood?.sourceModule !== 'torchwoodData.js') {
     fail('Content library Torchwood entry is detached from torchwoodData.js');
   }
-  if (movie?.streams.length !== 2 || movie?.arabicImprovedSubtitle !== 'doctor-who-movie-1996.primary.improved.ar.srt') {
+  if (movie?.streams.length !== 3 || movie?.arabicImprovedSubtitle !== 'doctor-who-movie-1996.primary.improved.ar.srt') {
     fail('Content library Doctor Who 1996 movie references are invalid');
   }
   const expectedMovieStreams = [
-    { url: 'https://archive.org/download/1996-movie/1996%20movie.mkv', name: 'Doctor Who 1996 • HQ', bytes: 5104562536 },
-    { url: 'https://archive.org/download/1996-movie/1996%20movie.mp4', name: 'Doctor Who 1996 • Speed', bytes: 540314043 }
+    { url: 'https://archive.org/download/1996-movie/1996%20movie.mkv', name: 'Doctor Who 1996 • 1080p HQ', bytes: 5104562536 },
+    { url: 'https://archive.org/download/1996-movie/1996%20movie.stream1080.mp4', name: 'Doctor Who 1996 • 1080p Speed', bytes: 3479628846 },
+    { url: 'https://archive.org/download/1996-movie/1996%20movie.mp4', name: 'Doctor Who 1996 • 480p Speed', bytes: 540314043 }
   ];
   for (const [index, expected] of expectedMovieStreams.entries()) {
     const stream = movie?.streams[index];
     if (!stream || stream.url !== expected.url || stream.name !== expected.name || stream.bytes !== expected.bytes) {
-      fail(`Doctor Who 1996 movie stream ${index + 1} must use the verified canonical HQ/Speed source in order`);
+      fail(`Doctor Who 1996 movie stream ${index + 1} must use the verified canonical 1080p HQ/1080p Speed/480p Speed source in order`);
     }
   }
   if (new Set((movie?.streams || []).map((stream) => stream.url)).size !== movie?.streams.length) {
@@ -444,7 +445,7 @@ function checkContentLibrary() {
   }
   for (const stream of createStreamRegistry({ subtitleRegistry: movieSubtitleRegistry }).buildMovieStreams(movie)) {
     if (JSON.stringify(stream.subtitles) !== JSON.stringify(movieTracks)) {
-      fail('Doctor Who 1996 HQ and Speed streams must share identical movie subtitle tracks');
+      fail('All Doctor Who 1996 movie stream variants must share identical movie subtitle tracks');
     }
   }
 
