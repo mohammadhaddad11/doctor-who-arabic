@@ -417,19 +417,20 @@ function checkContentLibrary() {
   if (torchwood?.episodes !== torchwoodEpisodes || torchwood?.sourceModule !== 'torchwoodData.js') {
     fail('Content library Torchwood entry is detached from torchwoodData.js');
   }
-  if (movie?.streams.length !== 4 || movie?.arabicImprovedSubtitle !== 'doctor-who-movie-1996.primary.improved.ar.srt') {
+  if (movie?.streams.length !== 5 || movie?.arabicImprovedSubtitle !== 'doctor-who-movie-1996.primary.improved.ar.srt') {
     fail('Content library Doctor Who 1996 movie references are invalid');
   }
   const expectedMovieStreams = [
     { url: 'https://archive.org/download/1996-movie/1996%20movie.mkv', name: 'Doctor Who 1996 • 1080p HQ', bytes: 5104562536 },
     { url: 'https://archive.org/download/1996-movie1080/1996%20movie.stream1080.final1.mp4', name: 'Doctor Who 1996 • 1080p Alternate 1', bytes: 3148602103 },
     { url: 'https://archive.org/download/1996-movie_202610/1996%20movie.stream1080.speed.mp4', name: 'Doctor Who 1996 • 1080p Alternate 2', bytes: 2454377909 },
+    { url: 'https://archive.org/download/1996-remaster/Doctor%20Who%201996%20USA%20REMASTERED%201080p%20BluRay%20HEVC%20x265%205%201-BONE.mkv', name: 'Doctor Who 1996 • 1080p Alternate 3 — 1996-remaster BONE', bytes: 1636773453 },
     { url: 'https://archive.org/download/1996-movie/1996%20movie.mp4', name: 'Doctor Who 1996 • 480p Speed', bytes: 540314043 }
   ];
   for (const [index, expected] of expectedMovieStreams.entries()) {
     const stream = movie?.streams[index];
     if (!stream || stream.url !== expected.url || stream.name !== expected.name || stream.bytes !== expected.bytes) {
-      fail(`Doctor Who 1996 movie stream ${index + 1} must use the verified canonical HQ/Alternate 1/Alternate 2/480p Speed source in order`);
+      fail(`Doctor Who 1996 movie stream ${index + 1} must use the verified canonical HQ/Alternate 1/Alternate 2/Alternate 3/480p Speed source in order`);
     }
   }
   if (new Set((movie?.streams || []).map((stream) => stream.url)).size !== movie?.streams.length) {

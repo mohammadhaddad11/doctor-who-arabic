@@ -42,6 +42,12 @@ const DOCTOR_WHO_MOVIE_1996_STREAMS = Object.freeze([
     bytes: 2454377909
   }),
   Object.freeze({
+    url: 'https://archive.org/download/1996-remaster/Doctor%20Who%201996%20USA%20REMASTERED%201080p%20BluRay%20HEVC%20x265%205%201-BONE.mkv',
+    name: 'Doctor Who 1996 • 1080p Alternate 3 — 1996-remaster BONE',
+    description: 'Doctor Who (1996) • 1080p BONE remaster • MKV • HEVC Main SDR + AAC 5.1 • 1.64 GB',
+    bytes: 1636773453
+  }),
+  Object.freeze({
     url: 'https://archive.org/download/1996-movie/1996%20movie.mp4',
     name: 'Doctor Who 1996 • 480p Speed',
     description: 'Doctor Who (1996) • 480p Speed • MP4 • H.264 + AAC • 540 MB',
