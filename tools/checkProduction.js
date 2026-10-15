@@ -32,6 +32,7 @@ const subtitleStatus = require('../subtitleStatus.json');
 const torchwoodArabicSubtitles = require('../torchwoodArabicSubtitles.json');
 const torchwoodOriginalSpeedStreams = require('../torchwoodOriginalSpeedStreams.json');
 const torchwoodCleanStreams = require('../torchwoodCleanStreams.json');
+const { validateVulgarWarnings } = require('./validateVulgarWarnings');
 
 const failures = [];
 const warnings = [];
@@ -829,6 +830,8 @@ function main() {
   checkTorchwoodArabicSubtitles();
   checkStreamMetadata();
   checkDoctorWhoStreamOverrides();
+  const vulgarWarningResult = validateVulgarWarnings();
+  failures.push(...vulgarWarningResult.failures);
 
   const result = {
     status: failures.length ? 'failed' : 'ok',
@@ -843,6 +846,8 @@ function main() {
     torchwoodTaggedEpisodes: Object.keys(TORCHWOOD_EPISODE_TAGS).length,
     torchwoodCleanEnglishSubtitles: Object.keys(TORCHWOOD_CLEAN_ENGLISH_SUBTITLES).length,
     torchwoodArabicSubtitles: Object.keys(torchwoodArabicSubtitles).length,
+    vulgarWarningAuditEntries: vulgarWarningResult.audited,
+    detailedVulgarWarnings: vulgarWarningResult.changed,
     failures,
     warnings
   };

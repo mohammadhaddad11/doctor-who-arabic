@@ -13,6 +13,7 @@ const {
   buildTorchwoodEpisodeTagLine
 } = require('./torchwoodEpisodeTags');
 const arabicSubtitleFiles = require('./arabicSubtitles.json');
+const { appendVulgarWarnings, renderVulgarWarnings } = require('./vulgarWarnings');
 
 function loadJsonFile(relativePath, fallbackValue) {
   const filePath = path.join(__dirname, relativePath);
@@ -190,7 +191,9 @@ function buildTitleMeta(entry) {
     poster: entry.poster,
     background: entry.background,
     ...(entry.logo ? { logo: entry.logo } : {}),
-    description: entry.description,
+    description: entry.type === 'movie'
+      ? appendVulgarWarnings(entry.description, 'movies', entry.id)
+      : entry.description,
     releaseInfo: entry.releaseInfo,
     genres: [...entry.genres]
   };
@@ -1121,7 +1124,7 @@ function renderTorchwoodEpisodeTable(season, episodes) {
       <td><strong>${htmlEscape(episode.title)}</strong></td>
       <td class="${playable ? 'yes' : 'no'}">${playable ? 'Yes' : 'No'}</td>
       <td>${htmlEscape(formatEpisodeTagLabel(tag?.cleanStatus))}</td>
-      <td><div class="badge-row">${badges}</div></td>
+      <td><div class="badge-row">${badges}</div>${renderVulgarWarnings('torchwood', canonicalId)}</td>
       <td>${htmlEscape(note)}</td>
       <td><a href="${htmlEscape(streamPath)}">Stream JSON</a></td>
     </tr>`;
@@ -1134,6 +1137,22 @@ function renderTorchwoodEpisodeTable(season, episodes) {
         <tbody>${rows}</tbody>
       </table>
     </div>`;
+}
+
+function renderDoctorWhoWarningTables() {
+  return [...new Set(allNewWhoEpisodes.map((episode) => episode.season))].map((season) => {
+    const rows = allNewWhoEpisodes.filter((episode) => episode.season === season).map((episode) => {
+      const canonicalId = getEpisodeKey(episode);
+      return `<tr>
+        <td><span class="episode-code">${htmlEscape(canonicalId)}</span></td>
+        <td><strong>${htmlEscape(episode.title)}</strong></td>
+        <td>${htmlEscape(buildEpisodeTagLine(EPISODE_TAGS[canonicalId]))}${renderVulgarWarnings('doctorWho', canonicalId)}</td>
+      </tr>`;
+    }).join('');
+    return `<details><summary>Season ${season}</summary><div class="table-wrap"><table>
+      <thead><tr><th>Episode</th><th>Title</th><th>Viewer tags</th></tr></thead>
+      <tbody>${rows}</tbody></table></div></details>`;
+  }).join('');
 }
 
 function renderLibraryPage() {
@@ -1215,6 +1234,11 @@ function renderLibraryPage() {
       </div>
     </section>
 
+    <section>
+      <div class="section-heading"><div><p class="eyebrow">Episode guide</p><h2>Doctor Who Episodes</h2></div><p class="small muted">Grouped by season</p></div>
+      ${renderDoctorWhoWarningTables()}
+    </section>
+
     <section class="card">
       <p class="eyebrow">Torchwood</p>
       <h2>Torchwood Summary</h2>
@@ -1239,6 +1263,7 @@ function renderLibraryPage() {
       <p class="eyebrow">Movie</p>
       <h2>${htmlEscape(DOCTOR_WHO_MOVIE_1996.name)}</h2>
       <p>${htmlEscape(DOCTOR_WHO_MOVIE_1996.description)}</p>
+      ${renderVulgarWarnings('movies', DOCTOR_WHO_MOVIE_1996_STREMIO_ID)}
       <p><strong>Stream:</strong> ${DOCTOR_WHO_MOVIE_1996.streams.length ? 'Available' : 'Unavailable'}</p>
       <p><strong>Arabic Improved:</strong> ${movieSubtitleAvailable ? 'Available' : 'Unavailable'}</p>
       <div class="actions">
@@ -1491,7 +1516,7 @@ builder.defineMetaHandler(async (args) => {
             season: ep.season,
             episode: ep.episode,
             released: ep.released,
-            overview: tagMetadata.overview,
+            overview: appendVulgarWarnings(tagMetadata.overview, 'doctorWho', getEpisodeKey(ep)),
             genres: tagMetadata.genres,
             thumbnail: getEpisodeThumbnail(ep),
             available: Boolean(ep.streamUrl)
@@ -1513,7 +1538,7 @@ builder.defineMetaHandler(async (args) => {
             season: episode.season,
             episode: episode.episode,
             released: episode.released,
-            overview: buildTorchwoodEpisodeOverview(episode, tag),
+            overview: appendVulgarWarnings(buildTorchwoodEpisodeOverview(episode, tag), 'torchwood', getEpisodeKey(episode)),
             thumbnail: episode.thumbnail,
             available: episode.streams.length > 0
           };
