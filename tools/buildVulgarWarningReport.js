@@ -20,7 +20,8 @@ const lines = [
   '## Evidence and scope', '',
   '- Only vulgar/sexual language and evidence-backed sensual/sexual actions were audited.',
   '- The table contains changed entries only. “Previous warning” is the previous content-warning label; existing importance, quality, edit/version and unrelated content tags remain in place.',
-  '- Words are short actual subtitle matches, deduplicated ignoring case and Arabic diacritics. English and Arabic equivalents may both appear when both are present in the reviewed subtitles.',
+  '- Warning blocks use English only, after the original English summary: [Vulgar words: ...] and [Sexual actions: ...]. Brackets preserve separation in clients that collapse newlines.',
+  '- Displayed terms are actual English subtitle matches or English equivalents of reviewed Arabic matches. Equivalent translations are deduplicated after translation; original terms remain in the evidence snapshot.',
   '- Whole-word matching and reviewed context exclusions remove species/gender uses, literal curses, rods/equipment, neutral anatomy, religious titles, proper names and “and tomorrow” Arabic false positives.',
   '- Explicit sex/sexual/sexy dialogue qualifies as language. Dialogue about sex, requests to kiss/undress, and accounts of past sex do not prove an action in the playable scene.',
   '- One entry has a directly confirmed sensual-action description: Doctor Who S05E14, caption 654 at 00:38:23,120, “KISSING AND SIGHS OF PLEASURE”. The wording describes kissing and sounds, without asserting intercourse.',
@@ -29,14 +30,17 @@ const lines = [
   '- Torchwood S01E02 is unavailable and excluded. The movie uses its existing Arabic subtitle source; no English movie transcript was available locally.',
   '- Per-word/per-action source paths, SHA-256 digests, cue numbers and timestamps for all 280 entries are in [vulgar-warning-evidence.json](vulgar-warning-evidence.json). Long subtitle quotations are not reproduced.', '',
   '## Changed entries', '',
-  '| Show / ID | Title | Previous warning | Actual words | Confirmed actions | New detailed warning |',
+  '| Show / ID | Title | Previous warning | Displayed words | Confirmed actions | New detailed warning |',
   '| --- | --- | --- | --- | --- | --- |'
 ];
 for (const entry of changed) {
   const current = warnings[entry.show][entry.id];
   const label = { doctorWho: 'Doctor Who', torchwood: 'Torchwood', movies: 'Movie' }[entry.show];
-  const text = buildWarningSections(current).map(({ label: heading, items }) => `${heading}: ${items.join('، ')}`).join('\n');
-  lines.push(`| ${label} ${entry.id} | ${cell(entry.title)} | ${oldWarning(entry)} | ${cell(current.words.join('، ') || '—')} | ${cell(current.actions.join('، ') || '—')} | ${cell(text)} |`);
+  const sections = buildWarningSections(current);
+  const text = sections.map(({ label: heading, items }) => `[${heading}: ${items.join(', ')}]`).join('\n');
+  const words = sections.find((section) => section.label === 'Vulgar words')?.items || [];
+  const actions = sections.find((section) => section.label === 'Sexual actions')?.items || [];
+  lines.push(`| ${label} ${entry.id} | ${cell(entry.title)} | ${oldWarning(entry)} | ${cell(words.join(', ') || '—')} | ${cell(actions.join(', ') || '—')} | ${cell(text)} |`);
 }
 lines.push('', '## Rebuilding and validation', '',
   'The offline corpus includes the local Doctor Who English audit cache and Torchwood original English sources. With those present:', '',

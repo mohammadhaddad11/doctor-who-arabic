@@ -73,7 +73,20 @@ function validateVulgarWarnings() {
       check(Boolean(entry.sources[item.language]) && Number.isInteger(item.cue) && item.cue > 0
         && /^\d\d:\d\d:\d\d[,.]\d{3}$/.test(item.time), `${id}: incomplete evidence reference`);
     }
-    check(!renderVulgarWarnings(entry.show, entry.id).includes('<strong>أفعال بذيئة:' ) || warnings.actions.length > 0, `${id}: empty action section`);
+    const sections = buildWarningSections(warnings);
+    const html = renderVulgarWarnings(entry.show, entry.id);
+    const summary = 'Original English summary.';
+    const formatted = appendVulgarWarnings(summary, entry.show, entry.id);
+    check(!/[^\x00-\x7f]/.test(html), `${id}: warnings must render in English only`);
+    check(formatted.startsWith(summary), `${id}: original summary changed`);
+    const blocks = sections.map(({ label, items }) => `[${label}: ${items.join(', ')}]`);
+    check(formatted === (blocks.length ? `${summary}\n\n${blocks.join('\n')}` : summary), `${id}: warnings must follow summary as bracketed blocks`);
+    for (const { label, items } of sections) {
+      check(['Vulgar words', 'Sexual actions'].includes(label), `${id}: unsupported presentation label`);
+      check(items.length === new Set(items.map(normalizeWarningTerm)).size, `${id}: duplicate English terms`);
+      check(html.includes(`<p>[<strong>${label}:</strong>`) && html.includes(']</p>'), `${id}: missing bracketed HTML warning`);
+    }
+    check(!html.includes('<strong>Sexual actions:') || warnings.actions.length > 0, `${id}: empty action section`);
   }
   check(expected.size === seen.size && [...expected].every((id) => seen.has(id)), 'Warning audit does not cover every playable entry');
   for (const show of ['doctorWho', 'torchwood', 'movies']) {
@@ -81,13 +94,21 @@ function validateVulgarWarnings() {
   }
   try {
     assert.deepEqual(buildWarningSections({ words: ['Sex', 'sex', 'تبًا', 'تبا', ''], actions: [] }), [
-      { label: 'كلمات بذيئة', items: ['Sex', 'تبًا'] }
+      { label: 'Vulgar words', items: ['Sex', 'damn'] }
     ]);
     assert.equal(renderVulgarWarnings('torchwood', 'S01E02'), '');
     assert.equal(appendVulgarWarnings('Original overview', 'unknown', 'missing'), 'Original overview');
-    assert.deepEqual(buildWarningSections({ words: [], actions: ['تقبيل حميم', 'تقبيل حميم'] }), [
-      { label: 'أفعال بذيئة', items: ['تقبيل حميم'] }
+    assert.deepEqual(buildWarningSections({ words: [], actions: ['تقبيل حميم مع أصوات متعة', 'تقبيل حميم مع أصوات متعة'] }), [
+      { label: 'Sexual actions', items: ['sensual kissing with sounds of pleasure'] }
     ]);
+    assert.deepEqual(buildWarningSections({ words: ['damn', 'تبًا', 'اللعنة', 'sex', 'الجنس', 'sexy', 'جنسي'] }), [
+      { label: 'Vulgar words', items: ['damn', 'sex', 'sexy'] }
+    ]);
+    assert.deepEqual(buildWarningSections({ words: [], actions: [] }), []);
+    assert.equal(appendVulgarWarnings('Original English summary.', 'movies', 'doctor-who-movie-1996'),
+      'Original English summary.\n\n[Vulgar words: damn]');
+    assert.match(appendVulgarWarnings('Original English summary.', 'doctorWho', 'S05E14'),
+      /^Original English summary\.\n\n\[Vulgar words: what the hell\]\n\[Sexual actions: sensual kissing with sounds of pleasure\]$/);
     for (const [id, word] of [['S01E04', 'sexual'], ['S06E09', 'sexy'], ['S08E09', 'sex']]) {
       assert.ok(getVulgarWarnings('doctorWho', id).words.includes(word));
     }

@@ -6,9 +6,9 @@
 - `git diff --check`: **passed**.
 - Audit coverage: **280 playable entries**.
 - Detailed warning entries: **204** (163 Doctor Who, 40 Torchwood, 1 movie).
-- Library rendering: all 204 entries found in the generated HTML, with Arabic RTL sections and isolated mixed-language terms.
+- Library rendering: all 204 entries found in the generated HTML, with English-only, left-to-right bracketed warning blocks after the English summaries.
 - Empty sections: hidden; no empty term elements. The library contains 204 word sections and one confirmed action section.
-- Runtime Stremio metadata comparison against the original `HEAD:index.js`: exactly 203 episode overviews and the movie description gain the detailed warnings. Every other metadata field, both catalogs, and the unavailable Torchwood entry match the baseline.
+- Runtime Stremio metadata comparison against the pre-formatting version: all 280 episode metadata entries (including unavailable Torchwood S01E02) and the movie were checked. Only the existing warning suffixes are reformatted; original summaries and all other metadata fields match the baseline.
 - Runtime stream/subtitle comparison: **562 identical response objects**, covering every Doctor Who episode, every Torchwood entry including unavailable S01E02, and the movie.
 
 The combined stream/subtitle JSON response snapshot has the same SHA-256 digest before and after:
@@ -25,7 +25,8 @@ The comparison includes stream descriptions, URLs, option order, attached subtit
 
 - Complete playable-entry coverage and absence of warnings for unknown entries.
 - Exact agreement between displayed terms and audited word/action evidence.
-- Deduplication, hidden empty sections, and Arabic diacritic/case normalization.
+- Deduplication before and after English translation, hidden empty sections, and source diacritic/case normalization.
+- English-only `[Vulgar words: ...]` and `[Sexual actions: ...]` blocks after the unchanged summary, with HTML paragraph breaks and a newline-collapse-safe bracketed metadata format.
 - Explicit `sex`, `sexual`, and `sexy` examples.
 - Reviewed species, rod, proper-name, and literal-curse exclusions.
 - Exact playable clean-cut English sources and published Torchwood Arabic paths.

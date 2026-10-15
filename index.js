@@ -1124,8 +1124,8 @@ function renderTorchwoodEpisodeTable(season, episodes) {
       <td><strong>${htmlEscape(episode.title)}</strong></td>
       <td class="${playable ? 'yes' : 'no'}">${playable ? 'Yes' : 'No'}</td>
       <td>${htmlEscape(formatEpisodeTagLabel(tag?.cleanStatus))}</td>
-      <td><div class="badge-row">${badges}</div>${renderVulgarWarnings('torchwood', canonicalId)}</td>
-      <td>${htmlEscape(note)}</td>
+      <td><div class="badge-row">${badges}</div></td>
+      <td><p>${htmlEscape([note, episode.overview].filter(Boolean).join(' '))}</p>${renderVulgarWarnings('torchwood', canonicalId)}</td>
       <td><a href="${htmlEscape(streamPath)}">Stream JSON</a></td>
     </tr>`;
   }).join('');
@@ -1146,7 +1146,7 @@ function renderDoctorWhoWarningTables() {
       return `<tr>
         <td><span class="episode-code">${htmlEscape(canonicalId)}</span></td>
         <td><strong>${htmlEscape(episode.title)}</strong></td>
-        <td>${htmlEscape(buildEpisodeTagLine(EPISODE_TAGS[canonicalId]))}${renderVulgarWarnings('doctorWho', canonicalId)}</td>
+        <td>${htmlEscape(buildEpisodeTagLine(EPISODE_TAGS[canonicalId]))}<p>${htmlEscape(episode.overview || '')}</p>${renderVulgarWarnings('doctorWho', canonicalId)}</td>
       </tr>`;
     }).join('');
     return `<details><summary>Season ${season}</summary><div class="table-wrap"><table>
